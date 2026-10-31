@@ -1,0 +1,2057 @@
+{
+  "version": 1,
+  "fingerprint": "1135f62aa6f1fdd0073ad00ff9edbde1f20f7f07d17860e3dfa14c5dfec098e3",
+  "execution": {
+    "current": "evolution3.md",
+    "kind": "realize",
+    "status": "succeeded",
+    "error": null,
+    "summary": "Évolution 3 réalisée : computeSpatialGraphe assemble placements et routage orthogonal avec marges, dégagements, préférences importées et diagnostics bornés. diagram.json produit 18 placements et 24 chemins sans conflit dans les trois vérificateurs. Les 71 tests automatisés et npm run typecheck passent. Les 51 cas antérieurs sont conservés, 20 ajoutés, aucun supprimé. Documentation actualisée, fichiers de suivi préservés. Aucun serveur démarré.",
+    "tests": [
+      {
+        "name": "typecheck",
+        "command": "\"npm\" \"run\" \"typecheck\"",
+        "exitCode": 0,
+        "output": "\n> diagrams-codex@0.1.0 typecheck\n> tsc -p tsconfig.server.json --noEmit && tsc -p tsconfig.client.json --noEmit\n\n"
+      },
+      {
+        "name": "connexions-losange-absolues",
+        "command": "\"node\" \"scripts/test.mjs\" \"connexions-losange-absolues\"",
+        "exitCode": 0,
+        "output": "✔ connexions-losange-absolues (1.909638ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 72.502792\n"
+      },
+      {
+        "name": "connexions-ovale-absolues",
+        "command": "\"node\" \"scripts/test.mjs\" \"connexions-ovale-absolues\"",
+        "exitCode": 0,
+        "output": "✔ connexions-ovale-absolues (0.899347ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 45.086591\n"
+      },
+      {
+        "name": "connexions-rectangle-ancres-multiples",
+        "command": "\"node\" \"scripts/test.mjs\" \"connexions-rectangle-ancres-multiples\"",
+        "exitCode": 0,
+        "output": "✔ connexions-rectangle-ancres-multiples (2.746185ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 68.893307\n"
+      },
+      {
+        "name": "connexions-rectangle-incidents-et-handles",
+        "command": "\"node\" \"scripts/test.mjs\" \"connexions-rectangle-incidents-et-handles\"",
+        "exitCode": 0,
+        "output": "✔ connexions-rectangle-incidents-et-handles (1.09018ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 40.850162\n"
+      },
+      {
+        "name": "connexions-rectangle-coins-dedupliques",
+        "command": "\"node\" \"scripts/test.mjs\" \"connexions-rectangle-coins-dedupliques\"",
+        "exitCode": 0,
+        "output": "✔ connexions-rectangle-coins-dedupliques (2.103687ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 68.783579\n"
+      },
+      {
+        "name": "connexions-diagnostics-invalides",
+        "command": "\"node\" \"scripts/test.mjs\" \"connexions-diagnostics-invalides\"",
+        "exitCode": 0,
+        "output": "✔ connexions-diagnostics-invalides (0.853027ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 41.48698\n"
+      },
+      {
+        "name": "destination-pas-signes-et-immuabilite",
+        "command": "\"node\" \"scripts/test.mjs\" \"destination-pas-signes-et-immuabilite\"",
+        "exitCode": 0,
+        "output": "✔ destination-pas-signes-et-immuabilite (0.766019ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 39.888351\n"
+      },
+      {
+        "name": "chemin-connexion-source-et-arrivees",
+        "command": "\"node\" \"scripts/test.mjs\" \"chemin-connexion-source-et-arrivees\"",
+        "exitCode": 0,
+        "output": "✔ chemin-connexion-source-et-arrivees (1.085475ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 38.337546\n"
+      },
+      {
+        "name": "chemin-tolerance-distance-carree",
+        "command": "\"node\" \"scripts/test.mjs\" \"chemin-tolerance-distance-carree\"",
+        "exitCode": 0,
+        "output": "✔ chemin-tolerance-distance-carree (1.335957ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 60.361904\n"
+      },
+      {
+        "name": "placements-separes-tangents-superposes",
+        "command": "\"node\" \"scripts/test.mjs\" \"placements-separes-tangents-superposes\"",
+        "exitCode": 0,
+        "output": "✔ placements-separes-tangents-superposes (2.586104ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 59.427037\n"
+      },
+      {
+        "name": "segments-interieur-bords-contacts-deux-sens",
+        "command": "\"node\" \"scripts/test.mjs\" \"segments-interieur-bords-contacts-deux-sens\"",
+        "exitCode": 0,
+        "output": "✔ segments-interieur-bords-contacts-deux-sens (2.687001ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 45.901122\n"
+      },
+      {
+        "name": "placement-chemin-exclusions-paralleles-deduplication",
+        "command": "\"node\" \"scripts/test.mjs\" \"placement-chemin-exclusions-paralleles-deduplication\"",
+        "exitCode": 0,
+        "output": "✔ placement-chemin-exclusions-paralleles-deduplication (1.999159ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 40.562864\n"
+      },
+      {
+        "name": "geometrie-configuration-valide-et-vide",
+        "command": "\"node\" \"scripts/test.mjs\" \"geometrie-configuration-valide-et-vide\"",
+        "exitCode": 0,
+        "output": "✔ geometrie-configuration-valide-et-vide (1.781573ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 45.149279\n"
+      },
+      {
+        "name": "geometrie-diagnostics-references-et-indices",
+        "command": "\"node\" \"scripts/test.mjs\" \"geometrie-diagnostics-references-et-indices\"",
+        "exitCode": 0,
+        "output": "✔ geometrie-diagnostics-references-et-indices (2.360503ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 39.902718\n"
+      },
+      {
+        "name": "geometrie-diagnostics-nombres-et-pas",
+        "command": "\"node\" \"scripts/test.mjs\" \"geometrie-diagnostics-nombres-et-pas\"",
+        "exitCode": 0,
+        "output": "✔ geometrie-diagnostics-nombres-et-pas (4.18619ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 66.439474\n"
+      },
+      {
+        "name": "geometrie-identifiants-speciaux",
+        "command": "\"node\" \"scripts/test.mjs\" \"geometrie-identifiants-speciaux\"",
+        "exitCode": 0,
+        "output": "✔ geometrie-identifiants-speciaux (1.143843ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 41.16621\n"
+      },
+      {
+        "name": "connexions-integration-diagramme-reference",
+        "command": "\"node\" \"scripts/test.mjs\" \"connexions-integration-diagramme-reference\"",
+        "exitCode": 0,
+        "output": "✔ connexions-integration-diagramme-reference (4.158365ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 58.881498\n"
+      },
+      {
+        "name": "diagram-reference",
+        "command": "\"node\" \"scripts/test.mjs\" \"diagram-reference\"",
+        "exitCode": 0,
+        "output": "✔ diagram-reference (3.599004ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 34.173692\n"
+      },
+      {
+        "name": "formes-et-dimensions",
+        "command": "\"node\" \"scripts/test.mjs\" \"formes-et-dimensions\"",
+        "exitCode": 0,
+        "output": "✔ formes-et-dimensions (0.988979ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 35.010158\n"
+      },
+      {
+        "name": "arcs-paralleles",
+        "command": "\"node\" \"scripts/test.mjs\" \"arcs-paralleles\"",
+        "exitCode": 0,
+        "output": "✔ arcs-paralleles (1.079716ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 45.268815\n"
+      },
+      {
+        "name": "cycle-et-boucle",
+        "command": "\"node\" \"scripts/test.mjs\" \"cycle-et-boucle\"",
+        "exitCode": 0,
+        "output": "✔ cycle-et-boucle (1.059667ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 45.828272\n"
+      },
+      {
+        "name": "noeud-isole",
+        "command": "\"node\" \"scripts/test.mjs\" \"noeud-isole\"",
+        "exitCode": 0,
+        "output": "✔ noeud-isole (0.787395ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 43.76473\n"
+      },
+      {
+        "name": "tableaux-vides",
+        "command": "\"node\" \"scripts/test.mjs\" \"tableaux-vides\"",
+        "exitCode": 0,
+        "output": "✔ tableaux-vides (1.852198ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 51.186081\n"
+      },
+      {
+        "name": "libelles-unicode-multilignes",
+        "command": "\"node\" \"scripts/test.mjs\" \"libelles-unicode-multilignes\"",
+        "exitCode": 0,
+        "output": "✔ libelles-unicode-multilignes (0.786594ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 29.110011\n"
+      },
+      {
+        "name": "json-mal-forme",
+        "command": "\"node\" \"scripts/test.mjs\" \"json-mal-forme\"",
+        "exitCode": 0,
+        "output": "✔ json-mal-forme (1.848326ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 52.685317\n"
+      },
+      {
+        "name": "identifiants-invalides-et-dupliques",
+        "command": "\"node\" \"scripts/test.mjs\" \"identifiants-invalides-et-dupliques\"",
+        "exitCode": 0,
+        "output": "✔ identifiants-invalides-et-dupliques (3.453675ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 60.024461\n"
+      },
+      {
+        "name": "references-absentes",
+        "command": "\"node\" \"scripts/test.mjs\" \"references-absentes\"",
+        "exitCode": 0,
+        "output": "✔ references-absentes (1.291604ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 30.781889\n"
+      },
+      {
+        "name": "dimensions-invalides",
+        "command": "\"node\" \"scripts/test.mjs\" \"dimensions-invalides\"",
+        "exitCode": 0,
+        "output": "✔ dimensions-invalides (1.620933ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 30.142735\n"
+      },
+      {
+        "name": "types-non-pris-en-charge",
+        "command": "\"node\" \"scripts/test.mjs\" \"types-non-pris-en-charge\"",
+        "exitCode": 0,
+        "output": "✔ types-non-pris-en-charge (1.547733ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 48.418647\n"
+      },
+      {
+        "name": "structure-invalide",
+        "command": "\"node\" \"scripts/test.mjs\" \"structure-invalide\"",
+        "exitCode": 0,
+        "output": "✔ structure-invalide (3.915357ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 56.860338\n"
+      },
+      {
+        "name": "indications-spatiales",
+        "command": "\"node\" \"scripts/test.mjs\" \"indications-spatiales\"",
+        "exitCode": 0,
+        "output": "✔ indications-spatiales (1.690373ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 33.015175\n"
+      },
+      {
+        "name": "absence-mutation-et-alias",
+        "command": "\"node\" \"scripts/test.mjs\" \"absence-mutation-et-alias\"",
+        "exitCode": 0,
+        "output": "✔ absence-mutation-et-alias (1.117731ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 31.354834\n"
+      },
+      {
+        "name": "identifiants-et-metadonnees-speciaux",
+        "command": "\"node\" \"scripts/test.mjs\" \"identifiants-et-metadonnees-speciaux\"",
+        "exitCode": 0,
+        "output": "✔ identifiants-et-metadonnees-speciaux (1.020836ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 42.335429\n"
+      },
+      {
+        "name": "metadonnees-non-json",
+        "command": "\"node\" \"scripts/test.mjs\" \"metadonnees-non-json\"",
+        "exitCode": 0,
+        "output": "✔ metadonnees-non-json (1.521621ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 50.158781\n"
+      },
+      {
+        "name": "placements-diagram-reference",
+        "command": "\"node\" \"scripts/test.mjs\" \"placements-diagram-reference\"",
+        "exitCode": 0,
+        "output": "✔ placements-diagram-reference (7.76804ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 48.04287\n"
+      },
+      {
+        "name": "placements-chaine",
+        "command": "\"node\" \"scripts/test.mjs\" \"placements-chaine\"",
+        "exitCode": 0,
+        "output": "✔ placements-chaine (2.516936ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 53.433831\n"
+      },
+      {
+        "name": "placements-embranchement-convergence",
+        "command": "\"node\" \"scripts/test.mjs\" \"placements-embranchement-convergence\"",
+        "exitCode": 0,
+        "output": "✔ placements-embranchement-convergence (2.676217ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 41.630946\n"
+      },
+      {
+        "name": "placements-cycle-et-boucles",
+        "command": "\"node\" \"scripts/test.mjs\" \"placements-cycle-et-boucles\"",
+        "exitCode": 0,
+        "output": "✔ placements-cycle-et-boucles (2.827128ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 41.54133\n"
+      },
+      {
+        "name": "placements-sommet-isole",
+        "command": "\"node\" \"scripts/test.mjs\" \"placements-sommet-isole\"",
+        "exitCode": 0,
+        "output": "✔ placements-sommet-isole (1.734885ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 57.648883\n"
+      },
+      {
+        "name": "placements-composantes-deconnectees",
+        "command": "\"node\" \"scripts/test.mjs\" \"placements-composantes-deconnectees\"",
+        "exitCode": 0,
+        "output": "✔ placements-composantes-deconnectees (2.76532ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 41.330592\n"
+      },
+      {
+        "name": "placements-graphe-vide",
+        "command": "\"node\" \"scripts/test.mjs\" \"placements-graphe-vide\"",
+        "exitCode": 0,
+        "output": "✔ placements-graphe-vide (1.082179ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 55.025451\n"
+      },
+      {
+        "name": "placements-positions-superposees-negatives",
+        "command": "\"node\" \"scripts/test.mjs\" \"placements-positions-superposees-negatives\"",
+        "exitCode": 0,
+        "output": "✔ placements-positions-superposees-negatives (2.682857ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 43.644839\n"
+      },
+      {
+        "name": "placements-indications-compatibles",
+        "command": "\"node\" \"scripts/test.mjs\" \"placements-indications-compatibles\"",
+        "exitCode": 0,
+        "output": "✔ placements-indications-compatibles (2.798952ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 50.2503\n"
+      },
+      {
+        "name": "placements-libelles-longs-multilignes",
+        "command": "\"node\" \"scripts/test.mjs\" \"placements-libelles-longs-multilignes\"",
+        "exitCode": 0,
+        "output": "✔ placements-libelles-longs-multilignes (4.492446ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 69.02535\n"
+      },
+      {
+        "name": "texte-graphemes-et-coupures",
+        "command": "\"node\" \"scripts/test.mjs\" \"texte-graphemes-et-coupures\"",
+        "exitCode": 0,
+        "output": "✔ texte-graphemes-et-coupures (1.986502ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 39.105065\n"
+      },
+      {
+        "name": "placements-marges-limites-boites",
+        "command": "\"node\" \"scripts/test.mjs\" \"placements-marges-limites-boites\"",
+        "exitCode": 0,
+        "output": "✔ placements-marges-limites-boites (5.265088ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 73.380932\n"
+      },
+      {
+        "name": "placements-determinisme-et-immuabilite",
+        "command": "\"node\" \"scripts/test.mjs\" \"placements-determinisme-et-immuabilite\"",
+        "exitCode": 0,
+        "output": "✔ placements-determinisme-et-immuabilite (6.531364ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 76.117852\n"
+      },
+      {
+        "name": "placements-connexions-apres-deplacement-redimensionnement",
+        "command": "\"node\" \"scripts/test.mjs\" \"placements-connexions-apres-deplacement-redimensionnement\"",
+        "exitCode": 0,
+        "output": "✔ placements-connexions-apres-deplacement-redimensionnement (2.518472ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 57.767219\n"
+      },
+      {
+        "name": "placements-diagnostics-entrees-invalides",
+        "command": "\"node\" \"scripts/test.mjs\" \"placements-diagnostics-entrees-invalides\"",
+        "exitCode": 0,
+        "output": "✔ placements-diagnostics-entrees-invalides (6.367796ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 76.043036\n"
+      },
+      {
+        "name": "placements-identifiants-speciaux",
+        "command": "\"node\" \"scripts/test.mjs\" \"placements-identifiants-speciaux\"",
+        "exitCode": 0,
+        "output": "✔ placements-identifiants-speciaux (2.641848ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 39.829899\n"
+      },
+      {
+        "name": "placements-graphes-generes-reproductibles",
+        "command": "\"node\" \"scripts/test.mjs\" \"placements-graphes-generes-reproductibles\"",
+        "exitCode": 0,
+        "output": "✔ placements-graphes-generes-reproductibles (52.192241ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 93.399041\n"
+      },
+      {
+        "name": "routage-diagram-reference",
+        "command": "\"node\" \"scripts/test.mjs\" \"routage-diagram-reference\"",
+        "exitCode": 0,
+        "output": "✔ routage-diagram-reference (663.564769ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 737.347958\n"
+      },
+      {
+        "name": "routage-trajet-direct",
+        "command": "\"node\" \"scripts/test.mjs\" \"routage-trajet-direct\"",
+        "exitCode": 0,
+        "output": "✔ routage-trajet-direct (3.722203ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 43.28487\n"
+      },
+      {
+        "name": "routage-obstacle-interpose",
+        "command": "\"node\" \"scripts/test.mjs\" \"routage-obstacle-interpose\"",
+        "exitCode": 0,
+        "output": "✔ routage-obstacle-interpose (8.062329ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 48.976711\n"
+      },
+      {
+        "name": "routage-embranchement-convergence",
+        "command": "\"node\" \"scripts/test.mjs\" \"routage-embranchement-convergence\"",
+        "exitCode": 0,
+        "output": "✔ routage-embranchement-convergence (11.18517ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 65.309945\n"
+      },
+      {
+        "name": "routage-cycle-retour",
+        "command": "\"node\" \"scripts/test.mjs\" \"routage-cycle-retour\"",
+        "exitCode": 0,
+        "output": "✔ routage-cycle-retour (7.880664ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 72.212526\n"
+      },
+      {
+        "name": "routage-boucles-sur-soi",
+        "command": "\"node\" \"scripts/test.mjs\" \"routage-boucles-sur-soi\"",
+        "exitCode": 0,
+        "output": "✔ routage-boucles-sur-soi (7.047126ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 48.018036\n"
+      },
+      {
+        "name": "routage-arcs-paralleles",
+        "command": "\"node\" \"scripts/test.mjs\" \"routage-arcs-paralleles\"",
+        "exitCode": 0,
+        "output": "✔ routage-arcs-paralleles (12.903416ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 79.103475\n"
+      },
+      {
+        "name": "routage-rectangle-connexions-meme-cote",
+        "command": "\"node\" \"scripts/test.mjs\" \"routage-rectangle-connexions-meme-cote\"",
+        "exitCode": 0,
+        "output": "✔ routage-rectangle-connexions-meme-cote (10.115983ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 47.831507\n"
+      },
+      {
+        "name": "routage-preferences-ancres-handles",
+        "command": "\"node\" \"scripts/test.mjs\" \"routage-preferences-ancres-handles\"",
+        "exitCode": 0,
+        "output": "✔ routage-preferences-ancres-handles (6.720613ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 49.469624\n"
+      },
+      {
+        "name": "routage-points-importes-valides",
+        "command": "\"node\" \"scripts/test.mjs\" \"routage-points-importes-valides\"",
+        "exitCode": 0,
+        "output": "✔ routage-points-importes-valides (3.49905ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 66.445052\n"
+      },
+      {
+        "name": "routage-points-preferent-ports-lateraux",
+        "command": "\"node\" \"scripts/test.mjs\" \"routage-points-preferent-ports-lateraux\"",
+        "exitCode": 0,
+        "output": "✔ routage-points-preferent-ports-lateraux (3.521787ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 41.254654\n"
+      },
+      {
+        "name": "routage-indications-incoherentes-recalculees",
+        "command": "\"node\" \"scripts/test.mjs\" \"routage-indications-incoherentes-recalculees\"",
+        "exitCode": 0,
+        "output": "✔ routage-indications-incoherentes-recalculees (18.644393ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 59.22911\n"
+      },
+      {
+        "name": "routage-formes-cardinales-et-coins",
+        "command": "\"node\" \"scripts/test.mjs\" \"routage-formes-cardinales-et-coins\"",
+        "exitCode": 0,
+        "output": "✔ routage-formes-cardinales-et-coins (8.973083ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 61.796478\n"
+      },
+      {
+        "name": "routage-degagements-source-cible-tous-cotes",
+        "command": "\"node\" \"scripts/test.mjs\" \"routage-degagements-source-cible-tous-cotes\"",
+        "exitCode": 0,
+        "output": "✔ routage-degagements-source-cible-tous-cotes (29.386442ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 84.9893\n"
+      },
+      {
+        "name": "routage-echec-controle-budget",
+        "command": "\"node\" \"scripts/test.mjs\" \"routage-echec-controle-budget\"",
+        "exitCode": 0,
+        "output": "✔ routage-echec-controle-budget (4.428622ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 61.970014\n"
+      },
+      {
+        "name": "routage-repli-et-limite-essais",
+        "command": "\"node\" \"scripts/test.mjs\" \"routage-repli-et-limite-essais\"",
+        "exitCode": 0,
+        "output": "✔ routage-repli-et-limite-essais (4.292926ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 40.776573\n"
+      },
+      {
+        "name": "routage-determinisme-et-immuabilite",
+        "command": "\"node\" \"scripts/test.mjs\" \"routage-determinisme-et-immuabilite\"",
+        "exitCode": 0,
+        "output": "✔ routage-determinisme-et-immuabilite (1753.575335ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 1812.285882\n"
+      },
+      {
+        "name": "routage-diagnostics-entrees",
+        "command": "\"node\" \"scripts/test.mjs\" \"routage-diagnostics-entrees\"",
+        "exitCode": 0,
+        "output": "✔ routage-diagnostics-entrees (3.22225ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 69.197474\n"
+      },
+      {
+        "name": "routage-vide-isoles-identifiants-speciaux",
+        "command": "\"node\" \"scripts/test.mjs\" \"routage-vide-isoles-identifiants-speciaux\"",
+        "exitCode": 0,
+        "output": "✔ routage-vide-isoles-identifiants-speciaux (5.322144ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 67.76035\n"
+      },
+      {
+        "name": "routage-graphes-generes-reproductibles",
+        "command": "\"node\" \"scripts/test.mjs\" \"routage-graphes-generes-reproductibles\"",
+        "exitCode": 0,
+        "output": "✔ routage-graphes-generes-reproductibles (609.046124ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 675.03938\n"
+      },
+      {
+        "name": "npm run build",
+        "command": "\"npm\" \"run\" \"build\"",
+        "exitCode": 0,
+        "output": "\n> diagrams-codex@0.1.0 build\n> tsc -p tsconfig.server.json && tsc -p tsconfig.client.json\n\n"
+      },
+      {
+        "name": "npm run test",
+        "command": "\"npm\" \"run\" \"test\"",
+        "exitCode": 0,
+        "output": "\n> diagrams-codex@0.1.0 test\n> node scripts/test.mjs\n\n✔ connexions-losange-absolues (0.932659ms)\n✔ connexions-ovale-absolues (0.089601ms)\n✔ connexions-rectangle-ancres-multiples (0.256688ms)\n✔ connexions-rectangle-incidents-et-handles (0.63365ms)\n✔ connexions-rectangle-coins-dedupliques (0.093761ms)\n✔ connexions-diagnostics-invalides (0.297745ms)\n✔ destination-pas-signes-et-immuabilite (0.116784ms)\n✔ chemin-connexion-source-et-arrivees (0.280417ms)\n✔ chemin-tolerance-distance-carree (0.177265ms)\n✔ placements-separes-tangents-superposes (0.323777ms)\n✔ segments-interieur-bords-contacts-deux-sens (0.584146ms)\n✔ placement-chemin-exclusions-paralleles-deduplication (0.1564ms)\n✔ geometrie-configuration-valide-et-vide (0.151761ms)\n✔ geometrie-diagnostics-references-et-indices (1.212195ms)\n✔ geometrie-diagnostics-nombres-et-pas (0.563154ms)\n✔ geometrie-identifiants-speciaux (0.069744ms)\n✔ connexions-integration-diagramme-reference (4.58267ms)\n✔ diagram-reference (8.677755ms)\n✔ formes-et-dimensions (0.433442ms)\n✔ arcs-paralleles (0.308289ms)\n✔ cycle-et-boucle (0.207328ms)\n✔ noeud-isole (0.236384ms)\n✔ tableaux-vides (0.173473ms)\n✔ libelles-unicode-multilignes (0.251489ms)\n✔ json-mal-forme (0.553858ms)\n✔ identifiants-invalides-et-dupliques (1.061603ms)\n✔ references-absentes (0.451554ms)\n✔ dimensions-invalides (1.334244ms)\n✔ types-non-pris-en-charge (0.738242ms)\n✔ structure-invalide (1.090148ms)\n✔ indications-spatiales (0.977395ms)\n✔ absence-mutation-et-alias (0.11432ms)\n✔ identifiants-et-metadonnees-speciaux (0.0768ms)\n✔ metadonnees-non-json (0.394098ms)\n✔ placements-diagram-reference (8.519722ms)\n✔ placements-chaine (0.339153ms)\n✔ placements-embranchement-convergence (0.255825ms)\n✔ placements-cycle-et-boucles (0.322833ms)\n✔ placements-sommet-isole (0.106704ms)\n✔ placements-composantes-deconnectees (0.279841ms)\n✔ placements-graphe-vide (0.057264ms)\n✔ placements-positions-superposees-negatives (0.215105ms)\n✔ placements-indications-compatibles (0.244849ms)\n✔ placements-libelles-longs-multilignes (1.233044ms)\n✔ texte-graphemes-et-coupures (0.210064ms)\n✔ placements-marges-limites-boites (0.166945ms)\n✔ placements-determinisme-et-immuabilite (0.70309ms)\n✔ placements-connexions-apres-deplacement-redimensionnement (0.384369ms)\n✔ placements-diagnostics-entrees-invalides (1.005987ms)\n✔ placements-identifiants-speciaux (0.24832ms)\n✔ placements-graphes-generes-reproductibles (53.791219ms)\n✔ routage-diagram-reference (768.622108ms)\n✔ routage-trajet-direct (0.729283ms)\n✔ routage-obstacle-interpose (2.042102ms)\n✔ routage-embranchement-convergence (2.719288ms)\n✔ routage-cycle-retour (2.009111ms)\n✔ routage-boucles-sur-soi (1.264388ms)\n✔ routage-arcs-paralleles (2.311063ms)\n✔ routage-rectangle-connexions-meme-cote (2.906185ms)\n✔ routage-preferences-ancres-handles (1.114771ms)\n✔ routage-points-importes-valides (0.331233ms)\n✔ routage-points-preferent-ports-lateraux (0.217825ms)\n✔ routage-indications-incoherentes-recalculees (8.233209ms)\n✔ routage-formes-cardinales-et-coins (1.527621ms)\n✔ routage-degagements-source-cible-tous-cotes (13.255064ms)\n✔ routage-echec-controle-budget (0.820755ms)\n✔ routage-repli-et-limite-essais (0.309169ms)\n✔ routage-determinisme-et-immuabilite (1918.826674ms)\n✔ routage-diagnostics-entrees (0.639954ms)\n✔ routage-vide-isoles-identifiants-speciaux (0.713394ms)\n✔ routage-graphes-generes-reproductibles (572.671859ms)\nℹ tests 71\nℹ suites 0\nℹ pass 71\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 3385.168172\n"
+      }
+    ],
+    "updatedAt": "2026-10-31T09:46:03.546Z",
+    "rawResponse": "{\n  \"current\": \"evolution3.md\",\n  \"workCompleted\": true,\n  \"summary\": \"Évolution 3 réalisée : computeSpatialGraphe assemble placements et routage orthogonal avec marges, dégagements, préférences importées et diagnostics bornés. diagram.json produit 18 placements et 24 chemins sans conflit dans les trois vérificateurs. Les 71 tests automatisés et npm run typecheck passent. Les 51 cas antérieurs sont conservés, 20 ajoutés, aucun supprimé. Documentation actualisée, fichiers de suivi préservés. Aucun serveur démarré.\",\n  \"tests\": [\n    {\"name\":\"typecheck\",\"executable\":\"npm\",\"args\":[\"run\",\"typecheck\"],\"status\":\"passed\",\"covers\":[3]},\n    {\"name\":\"connexions-losange-absolues\",\"executable\":\"node\",\"args\":[\"scripts/test.mjs\",\"connexions-losange-absolues\"],\"status\":\"passed\",\"covers\":[]},\n    {\"name\":\"connexions-ovale-absolues\",\"executable\":\"node\",\"args\":[\"scripts/test.mjs\",\"connexions-ovale-absolues\"],\"status\":\"passed\",\"covers\":[]},\n    {\"name\":\"connexions-rectangle-ancres-multiples\",\"executable\":\"node\",\"args\":[\"scripts/test.mjs\",\"connexions-rectangle-ancres-multiples\"],\"status\":\"passed\",\"covers\":[]},\n    {\"name\":\"connexions-rectangle-incidents-et-handles\",\"executable\":\"node\",\"args\":[\"scripts/test.mjs\",\"connexions-rectangle-incidents-et-handles\"],\"status\":\"passed\",\"covers\":[]},\n    {\"name\":\"connexions-rectangle-coins-dedupliques\",\"executable\":\"node\",\"args\":[\"scripts/test.mjs\",\"connexions-rectangle-coins-dedupliques\"],\"status\":\"passed\",\"covers\":[]},\n    {\"name\":\"connexions-diagnostics-invalides\",\"executable\":\"node\",\"args\":[\"scripts/test.mjs\",\"connexions-diagnostics-invalides\"],\"status\":\"passed\",\"covers\":[]},\n    {\"name\":\"destination-pas-signes-et-immuabilite\",\"executable\":\"node\",\"args\":[\"scripts/test.mjs\",\"destination-pas-signes-et-immuabilite\"],\"status\":\"passed\",\"covers\":[]},\n    {\"name\":\"chemin-connexion-source-et-arrivees\",\"executable\":\"node\",\"args\":[\"scripts/test.mjs\",\"chemin-connexion-source-et-arrivees\"],\"status\":\"passed\",\"covers\":[]},\n    {\"name\":\"chemin-tolerance-distance-carree\",\"executable\":\"node\",\"args\":[\"scripts/test.mjs\",\"chemin-tolerance-distance-carree\"],\"status\":\"passed\",\"covers\":[]},\n    {\"name\":\"placements-separes-tangents-superposes\",\"executable\":\"node\",\"args\":[\"scripts/test.mjs\",\"placements-separes-tangents-superposes\"],\"status\":\"passed\",\"covers\":[]},\n    {\"name\":\"segments-interieur-bords-contacts-deux-sens\",\"executable\":\"node\",\"args\":[\"scripts/test.mjs\",\"segments-interieur-bords-contacts-deux-sens\"],\"status\":\"passed\",\"covers\":[]},\n    {\"name\":\"placement-chemin-exclusions-paralleles-deduplication\",\"executable\":\"node\",\"args\":[\"scripts/test.mjs\",\"placement-chemin-exclusions-paralleles-deduplication\"],\"status\":\"passed\",\"covers\":[]},\n    {\"name\":\"geometrie-configuration-valide-et-vide\",\"executable\":\"node\",\"args\":[\"scripts/test.mjs\",\"geometrie-configuration-valide-et-vide\"],\"status\":\"passed\",\"covers\":[]},\n    {\"name\":\"geometrie-diagnostics-references-et-indices\",\"executable\":\"node\",\"args\":[\"scripts/test.mjs\",\"geometrie-diagnostics-references-et-indices\"],\"status\":\"passed\",\"covers\":[]},\n    {\"name\":\"geometrie-diagnostics-nombres-et-pas\",\"executable\":\"node\",\"args\":[\"scripts/test.mjs\",\"geometrie-diagnostics-nombres-et-pas\"],\"status\":\"passed\",\"covers\":[]},\n    {\"name\":\"geometrie-identifiants-speciaux\",\"executable\":\"node\",\"args\":[\"scripts/test.mjs\",\"geometrie-identifiants-speciaux\"],\"status\":\"passed\",\"covers\":[]},\n    {\"name\":\"connexions-integration-diagramme-reference\",\"executable\":\"node\",\"args\":[\"scripts/test.mjs\",\"connexions-integration-diagramme-reference\"],\"status\":\"passed\",\"covers\":[]},\n    {\"name\":\"diagram-reference\",\"executable\":\"node\",\"args\":[\"scripts/test.mjs\",\"diagram-reference\"],\"status\":\"passed\",\"covers\":[]},\n    {\"name\":\"formes-et-dimensions\",\"executable\":\"node\",\"args\":[\"scripts/test.mjs\",\"formes-et-dimensions\"],\"status\":\"passed\",\"covers\":[]},\n    {\"name\":\"arcs-paralleles\",\"executable\":\"node\",\"args\":[\"scripts/test.mjs\",\"arcs-paralleles\"],\"status\":\"passed\",\"covers\":[]},\n    {\"name\":\"cycle-et-boucle\",\"executable\":\"node\",\"args\":[\"scripts/test.mjs\",\"cycle-et-boucle\"],\"status\":\"passed\",\"covers\":[]},\n    {\"name\":\"noeud-isole\",\"executable\":\"node\",\"args\":[\"scripts/test.mjs\",\"noeud-isole\"],\"status\":\"passed\",\"covers\":[]},\n    {\"name\":\"tableaux-vides\",\"executable\":\"node\",\"args\":[\"scripts/test.mjs\",\"tableaux-vides\"],\"status\":\"passed\",\"covers\":[]},\n    {\"name\":\"libelles-unicode-multilignes\",\"executable\":\"node\",\"args\":[\"scripts/test.mjs\",\"libelles-unicode-multilignes\"],\"status\":\"passed\",\"covers\":[]},\n    {\"name\":\"json-mal-forme\",\"executable\":\"node\",\"args\":[\"scripts/test.mjs\",\"json-mal-forme\"],\"status\":\"passed\",\"covers\":[]},\n    {\"name\":\"identifiants-invalides-et-dupliques\",\"executable\":\"node\",\"args\":[\"scripts/test.mjs\",\"identifiants-invalides-et-dupliques\"],\"status\":\"passed\",\"covers\":[]},\n    {\"name\":\"references-absentes\",\"executable\":\"node\",\"args\":[\"scripts/test.mjs\",\"references-absentes\"],\"status\":\"passed\",\"covers\":[]},\n    {\"name\":\"dimensions-invalides\",\"executable\":\"node\",\"args\":[\"scripts/test.mjs\",\"dimensions-invalides\"],\"status\":\"passed\",\"covers\":[]},\n    {\"name\":\"types-non-pris-en-charge\",\"executable\":\"node\",\"args\":[\"scripts/test.mjs\",\"types-non-pris-en-charge\"],\"status\":\"passed\",\"covers\":[]},\n    {\"name\":\"structure-invalide\",\"executable\":\"node\",\"args\":[\"scripts/test.mjs\",\"structure-invalide\"],\"status\":\"passed\",\"covers\":[]},\n    {\"name\":\"indications-spatiales\",\"executable\":\"node\",\"args\":[\"scripts/test.mjs\",\"indications-spatiales\"],\"status\":\"passed\",\"covers\":[]},\n    {\"name\":\"absence-mutation-et-alias\",\"executable\":\"node\",\"args\":[\"scripts/test.mjs\",\"absence-mutation-et-alias\"],\"status\":\"passed\",\"covers\":[]},\n    {\"name\":\"identifiants-et-metadonnees-speciaux\",\"executable\":\"node\",\"args\":[\"scripts/test.mjs\",\"identifiants-et-metadonnees-speciaux\"],\"status\":\"passed\",\"covers\":[]},\n    {\"name\":\"metadonnees-non-json\",\"executable\":\"node\",\"args\":[\"scripts/test.mjs\",\"metadonnees-non-json\"],\"status\":\"passed\",\"covers\":[]},\n    {\"name\":\"placements-diagram-reference\",\"executable\":\"node\",\"args\":[\"scripts/test.mjs\",\"placements-diagram-reference\"],\"status\":\"passed\",\"covers\":[]},\n    {\"name\":\"placements-chaine\",\"executable\":\"node\",\"args\":[\"scripts/test.mjs\",\"placements-chaine\"],\"status\":\"passed\",\"covers\":[]},\n    {\"name\":\"placements-embranchement-convergence\",\"executable\":\"node\",\"args\":[\"scripts/test.mjs\",\"placements-embranchement-convergence\"],\"status\":\"passed\",\"covers\":[]},\n    {\"name\":\"placements-cycle-et-boucles\",\"executable\":\"node\",\"args\":[\"scripts/test.mjs\",\"placements-cycle-et-boucles\"],\"status\":\"passed\",\"covers\":[]},\n    {\"name\":\"placements-sommet-isole\",\"executable\":\"node\",\"args\":[\"scripts/test.mjs\",\"placements-sommet-isole\"],\"status\":\"passed\",\"covers\":[]},\n    {\"name\":\"placements-composantes-deconnectees\",\"executable\":\"node\",\"args\":[\"scripts/test.mjs\",\"placements-composantes-deconnectees\"],\"status\":\"passed\",\"covers\":[]},\n    {\"name\":\"placements-graphe-vide\",\"executable\":\"node\",\"args\":[\"scripts/test.mjs\",\"placements-graphe-vide\"],\"status\":\"passed\",\"covers\":[]},\n    {\"name\":\"placements-positions-superposees-negatives\",\"executable\":\"node\",\"args\":[\"scripts/test.mjs\",\"placements-positions-superposees-negatives\"],\"status\":\"passed\",\"covers\":[]},\n    {\"name\":\"placements-indications-compatibles\",\"executable\":\"node\",\"args\":[\"scripts/test.mjs\",\"placements-indications-compatibles\"],\"status\":\"passed\",\"covers\":[]},\n    {\"name\":\"placements-libelles-longs-multilignes\",\"executable\":\"node\",\"args\":[\"scripts/test.mjs\",\"placements-libelles-longs-multilignes\"],\"status\":\"passed\",\"covers\":[]},\n    {\"name\":\"texte-graphemes-et-coupures\",\"executable\":\"node\",\"args\":[\"scripts/test.mjs\",\"texte-graphemes-et-coupures\"],\"status\":\"passed\",\"covers\":[]},\n    {\"name\":\"placements-marges-limites-boites\",\"executable\":\"node\",\"args\":[\"scripts/test.mjs\",\"placements-marges-limites-boites\"],\"status\":\"passed\",\"covers\":[]},\n    {\"name\":\"placements-determinisme-et-immuabilite\",\"executable\":\"node\",\"args\":[\"scripts/test.mjs\",\"placements-determinisme-et-immuabilite\"],\"status\":\"passed\",\"covers\":[]},\n    {\"name\":\"placements-connexions-apres-deplacement-redimensionnement\",\"executable\":\"node\",\"args\":[\"scripts/test.mjs\",\"placements-connexions-apres-deplacement-redimensionnement\"],\"status\":\"passed\",\"covers\":[]},\n    {\"name\":\"placements-diagnostics-entrees-invalides\",\"executable\":\"node\",\"args\":[\"scripts/test.mjs\",\"placements-diagnostics-entrees-invalides\"],\"status\":\"passed\",\"covers\":[]},\n    {\"name\":\"placements-identifiants-speciaux\",\"executable\":\"node\",\"args\":[\"scripts/test.mjs\",\"placements-identifiants-speciaux\"],\"status\":\"passed\",\"covers\":[]},\n    {\"name\":\"placements-graphes-generes-reproductibles\",\"executable\":\"node\",\"args\":[\"scripts/test.mjs\",\"placements-graphes-generes-reproductibles\"],\"status\":\"passed\",\"covers\":[]},\n    {\"name\":\"routage-diagram-reference\",\"executable\":\"node\",\"args\":[\"scripts/test.mjs\",\"routage-diagram-reference\"],\"status\":\"passed\",\"covers\":[0,2]},\n    {\"name\":\"routage-trajet-direct\",\"executable\":\"node\",\"args\":[\"scripts/test.mjs\",\"routage-trajet-direct\"],\"status\":\"passed\",\"covers\":[1,2]},\n    {\"name\":\"routage-obstacle-interpose\",\"executable\":\"node\",\"args\":[\"scripts/test.mjs\",\"routage-obstacle-interpose\"],\"status\":\"passed\",\"covers\":[1,2]},\n    {\"name\":\"routage-embranchement-convergence\",\"executable\":\"node\",\"args\":[\"scripts/test.mjs\",\"routage-embranchement-convergence\"],\"status\":\"passed\",\"covers\":[1,2]},\n    {\"name\":\"routage-cycle-retour\",\"executable\":\"node\",\"args\":[\"scripts/test.mjs\",\"routage-cycle-retour\"],\"status\":\"passed\",\"covers\":[1,2]},\n    {\"name\":\"routage-boucles-sur-soi\",\"executable\":\"node\",\"args\":[\"scripts/test.mjs\",\"routage-boucles-sur-soi\"],\"status\":\"passed\",\"covers\":[1,2]},\n    {\"name\":\"routage-arcs-paralleles\",\"executable\":\"node\",\"args\":[\"scripts/test.mjs\",\"routage-arcs-paralleles\"],\"status\":\"passed\",\"covers\":[1,2]},\n    {\"name\":\"routage-rectangle-connexions-meme-cote\",\"executable\":\"node\",\"args\":[\"scripts/test.mjs\",\"routage-rectangle-connexions-meme-cote\"],\"status\":\"passed\",\"covers\":[1,2]},\n    {\"name\":\"routage-preferences-ancres-handles\",\"executable\":\"node\",\"args\":[\"scripts/test.mjs\",\"routage-preferences-ancres-handles\"],\"status\":\"passed\",\"covers\":[2]},\n    {\"name\":\"routage-points-importes-valides\",\"executable\":\"node\",\"args\":[\"scripts/test.mjs\",\"routage-points-importes-valides\"],\"status\":\"passed\",\"covers\":[2]},\n    {\"name\":\"routage-points-preferent-ports-lateraux\",\"executable\":\"node\",\"args\":[\"scripts/test.mjs\",\"routage-points-preferent-ports-lateraux\"],\"status\":\"passed\",\"covers\":[2]},\n    {\"name\":\"routage-indications-incoherentes-recalculees\",\"executable\":\"node\",\"args\":[\"scripts/test.mjs\",\"routage-indications-incoherentes-recalculees\"],\"status\":\"passed\",\"covers\":[2]},\n    {\"name\":\"routage-formes-cardinales-et-coins\",\"executable\":\"node\",\"args\":[\"scripts/test.mjs\",\"routage-formes-cardinales-et-coins\"],\"status\":\"passed\",\"covers\":[2]},\n    {\"name\":\"routage-degagements-source-cible-tous-cotes\",\"executable\":\"node\",\"args\":[\"scripts/test.mjs\",\"routage-degagements-source-cible-tous-cotes\"],\"status\":\"passed\",\"covers\":[2]},\n    {\"name\":\"routage-echec-controle-budget\",\"executable\":\"node\",\"args\":[\"scripts/test.mjs\",\"routage-echec-controle-budget\"],\"status\":\"passed\",\"covers\":[3]},\n    {\"name\":\"routage-repli-et-limite-essais\",\"executable\":\"node\",\"args\":[\"scripts/test.mjs\",\"routage-repli-et-limite-essais\"],\"status\":\"passed\",\"covers\":[2,3]},\n    {\"name\":\"routage-determinisme-et-immuabilite\",\"executable\":\"node\",\"args\":[\"scripts/test.mjs\",\"routage-determinisme-et-immuabilite\"],\"status\":\"passed\",\"covers\":[3]},\n    {\"name\":\"routage-diagnostics-entrees\",\"executable\":\"node\",\"args\":[\"scripts/test.mjs\",\"routage-diagnostics-entrees\"],\"status\":\"passed\",\"covers\":[3]},\n    {\"name\":\"routage-vide-isoles-identifiants-speciaux\",\"executable\":\"node\",\"args\":[\"scripts/test.mjs\",\"routage-vide-isoles-identifiants-speciaux\"],\"status\":\"passed\",\"covers\":[]},\n    {\"name\":\"routage-graphes-generes-reproductibles\",\"executable\":\"node\",\"args\":[\"scripts/test.mjs\",\"routage-graphes-generes-reproductibles\"],\"status\":\"passed\",\"covers\":[1,2,3]}\n  ],\n  \"testChanges\": {\n    \"removed\": [],\n    \"added\": [52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71]\n  },\n  \"serversStopped\": true,\n  \"servers\": []\n}",
+    "report": {
+      "current": "evolution3.md",
+      "workCompleted": true,
+      "summary": "Évolution 3 réalisée : computeSpatialGraphe assemble placements et routage orthogonal avec marges, dégagements, préférences importées et diagnostics bornés. diagram.json produit 18 placements et 24 chemins sans conflit dans les trois vérificateurs. Les 71 tests automatisés et npm run typecheck passent. Les 51 cas antérieurs sont conservés, 20 ajoutés, aucun supprimé. Documentation actualisée, fichiers de suivi préservés. Aucun serveur démarré.",
+      "tests": [
+        {
+          "name": "typecheck",
+          "executable": "npm",
+          "args": [
+            "run",
+            "typecheck"
+          ],
+          "status": "passed",
+          "covers": [
+            3
+          ]
+        },
+        {
+          "name": "connexions-losange-absolues",
+          "executable": "node",
+          "args": [
+            "scripts/test.mjs",
+            "connexions-losange-absolues"
+          ],
+          "status": "passed",
+          "covers": []
+        },
+        {
+          "name": "connexions-ovale-absolues",
+          "executable": "node",
+          "args": [
+            "scripts/test.mjs",
+            "connexions-ovale-absolues"
+          ],
+          "status": "passed",
+          "covers": []
+        },
+        {
+          "name": "connexions-rectangle-ancres-multiples",
+          "executable": "node",
+          "args": [
+            "scripts/test.mjs",
+            "connexions-rectangle-ancres-multiples"
+          ],
+          "status": "passed",
+          "covers": []
+        },
+        {
+          "name": "connexions-rectangle-incidents-et-handles",
+          "executable": "node",
+          "args": [
+            "scripts/test.mjs",
+            "connexions-rectangle-incidents-et-handles"
+          ],
+          "status": "passed",
+          "covers": []
+        },
+        {
+          "name": "connexions-rectangle-coins-dedupliques",
+          "executable": "node",
+          "args": [
+            "scripts/test.mjs",
+            "connexions-rectangle-coins-dedupliques"
+          ],
+          "status": "passed",
+          "covers": []
+        },
+        {
+          "name": "connexions-diagnostics-invalides",
+          "executable": "node",
+          "args": [
+            "scripts/test.mjs",
+            "connexions-diagnostics-invalides"
+          ],
+          "status": "passed",
+          "covers": []
+        },
+        {
+          "name": "destination-pas-signes-et-immuabilite",
+          "executable": "node",
+          "args": [
+            "scripts/test.mjs",
+            "destination-pas-signes-et-immuabilite"
+          ],
+          "status": "passed",
+          "covers": []
+        },
+        {
+          "name": "chemin-connexion-source-et-arrivees",
+          "executable": "node",
+          "args": [
+            "scripts/test.mjs",
+            "chemin-connexion-source-et-arrivees"
+          ],
+          "status": "passed",
+          "covers": []
+        },
+        {
+          "name": "chemin-tolerance-distance-carree",
+          "executable": "node",
+          "args": [
+            "scripts/test.mjs",
+            "chemin-tolerance-distance-carree"
+          ],
+          "status": "passed",
+          "covers": []
+        },
+        {
+          "name": "placements-separes-tangents-superposes",
+          "executable": "node",
+          "args": [
+            "scripts/test.mjs",
+            "placements-separes-tangents-superposes"
+          ],
+          "status": "passed",
+          "covers": []
+        },
+        {
+          "name": "segments-interieur-bords-contacts-deux-sens",
+          "executable": "node",
+          "args": [
+            "scripts/test.mjs",
+            "segments-interieur-bords-contacts-deux-sens"
+          ],
+          "status": "passed",
+          "covers": []
+        },
+        {
+          "name": "placement-chemin-exclusions-paralleles-deduplication",
+          "executable": "node",
+          "args": [
+            "scripts/test.mjs",
+            "placement-chemin-exclusions-paralleles-deduplication"
+          ],
+          "status": "passed",
+          "covers": []
+        },
+        {
+          "name": "geometrie-configuration-valide-et-vide",
+          "executable": "node",
+          "args": [
+            "scripts/test.mjs",
+            "geometrie-configuration-valide-et-vide"
+          ],
+          "status": "passed",
+          "covers": []
+        },
+        {
+          "name": "geometrie-diagnostics-references-et-indices",
+          "executable": "node",
+          "args": [
+            "scripts/test.mjs",
+            "geometrie-diagnostics-references-et-indices"
+          ],
+          "status": "passed",
+          "covers": []
+        },
+        {
+          "name": "geometrie-diagnostics-nombres-et-pas",
+          "executable": "node",
+          "args": [
+            "scripts/test.mjs",
+            "geometrie-diagnostics-nombres-et-pas"
+          ],
+          "status": "passed",
+          "covers": []
+        },
+        {
+          "name": "geometrie-identifiants-speciaux",
+          "executable": "node",
+          "args": [
+            "scripts/test.mjs",
+            "geometrie-identifiants-speciaux"
+          ],
+          "status": "passed",
+          "covers": []
+        },
+        {
+          "name": "connexions-integration-diagramme-reference",
+          "executable": "node",
+          "args": [
+            "scripts/test.mjs",
+            "connexions-integration-diagramme-reference"
+          ],
+          "status": "passed",
+          "covers": []
+        },
+        {
+          "name": "diagram-reference",
+          "executable": "node",
+          "args": [
+            "scripts/test.mjs",
+            "diagram-reference"
+          ],
+          "status": "passed",
+          "covers": []
+        },
+        {
+          "name": "formes-et-dimensions",
+          "executable": "node",
+          "args": [
+            "scripts/test.mjs",
+            "formes-et-dimensions"
+          ],
+          "status": "passed",
+          "covers": []
+        },
+        {
+          "name": "arcs-paralleles",
+          "executable": "node",
+          "args": [
+            "scripts/test.mjs",
+            "arcs-paralleles"
+          ],
+          "status": "passed",
+          "covers": []
+        },
+        {
+          "name": "cycle-et-boucle",
+          "executable": "node",
+          "args": [
+            "scripts/test.mjs",
+            "cycle-et-boucle"
+          ],
+          "status": "passed",
+          "covers": []
+        },
+        {
+          "name": "noeud-isole",
+          "executable": "node",
+          "args": [
+            "scripts/test.mjs",
+            "noeud-isole"
+          ],
+          "status": "passed",
+          "covers": []
+        },
+        {
+          "name": "tableaux-vides",
+          "executable": "node",
+          "args": [
+            "scripts/test.mjs",
+            "tableaux-vides"
+          ],
+          "status": "passed",
+          "covers": []
+        },
+        {
+          "name": "libelles-unicode-multilignes",
+          "executable": "node",
+          "args": [
+            "scripts/test.mjs",
+            "libelles-unicode-multilignes"
+          ],
+          "status": "passed",
+          "covers": []
+        },
+        {
+          "name": "json-mal-forme",
+          "executable": "node",
+          "args": [
+            "scripts/test.mjs",
+            "json-mal-forme"
+          ],
+          "status": "passed",
+          "covers": []
+        },
+        {
+          "name": "identifiants-invalides-et-dupliques",
+          "executable": "node",
+          "args": [
+            "scripts/test.mjs",
+            "identifiants-invalides-et-dupliques"
+          ],
+          "status": "passed",
+          "covers": []
+        },
+        {
+          "name": "references-absentes",
+          "executable": "node",
+          "args": [
+            "scripts/test.mjs",
+            "references-absentes"
+          ],
+          "status": "passed",
+          "covers": []
+        },
+        {
+          "name": "dimensions-invalides",
+          "executable": "node",
+          "args": [
+            "scripts/test.mjs",
+            "dimensions-invalides"
+          ],
+          "status": "passed",
+          "covers": []
+        },
+        {
+          "name": "types-non-pris-en-charge",
+          "executable": "node",
+          "args": [
+            "scripts/test.mjs",
+            "types-non-pris-en-charge"
+          ],
+          "status": "passed",
+          "covers": []
+        },
+        {
+          "name": "structure-invalide",
+          "executable": "node",
+          "args": [
+            "scripts/test.mjs",
+            "structure-invalide"
+          ],
+          "status": "passed",
+          "covers": []
+        },
+        {
+          "name": "indications-spatiales",
+          "executable": "node",
+          "args": [
+            "scripts/test.mjs",
+            "indications-spatiales"
+          ],
+          "status": "passed",
+          "covers": []
+        },
+        {
+          "name": "absence-mutation-et-alias",
+          "executable": "node",
+          "args": [
+            "scripts/test.mjs",
+            "absence-mutation-et-alias"
+          ],
+          "status": "passed",
+          "covers": []
+        },
+        {
+          "name": "identifiants-et-metadonnees-speciaux",
+          "executable": "node",
+          "args": [
+            "scripts/test.mjs",
+            "identifiants-et-metadonnees-speciaux"
+          ],
+          "status": "passed",
+          "covers": []
+        },
+        {
+          "name": "metadonnees-non-json",
+          "executable": "node",
+          "args": [
+            "scripts/test.mjs",
+            "metadonnees-non-json"
+          ],
+          "status": "passed",
+          "covers": []
+        },
+        {
+          "name": "placements-diagram-reference",
+          "executable": "node",
+          "args": [
+            "scripts/test.mjs",
+            "placements-diagram-reference"
+          ],
+          "status": "passed",
+          "covers": []
+        },
+        {
+          "name": "placements-chaine",
+          "executable": "node",
+          "args": [
+            "scripts/test.mjs",
+            "placements-chaine"
+          ],
+          "status": "passed",
+          "covers": []
+        },
+        {
+          "name": "placements-embranchement-convergence",
+          "executable": "node",
+          "args": [
+            "scripts/test.mjs",
+            "placements-embranchement-convergence"
+          ],
+          "status": "passed",
+          "covers": []
+        },
+        {
+          "name": "placements-cycle-et-boucles",
+          "executable": "node",
+          "args": [
+            "scripts/test.mjs",
+            "placements-cycle-et-boucles"
+          ],
+          "status": "passed",
+          "covers": []
+        },
+        {
+          "name": "placements-sommet-isole",
+          "executable": "node",
+          "args": [
+            "scripts/test.mjs",
+            "placements-sommet-isole"
+          ],
+          "status": "passed",
+          "covers": []
+        },
+        {
+          "name": "placements-composantes-deconnectees",
+          "executable": "node",
+          "args": [
+            "scripts/test.mjs",
+            "placements-composantes-deconnectees"
+          ],
+          "status": "passed",
+          "covers": []
+        },
+        {
+          "name": "placements-graphe-vide",
+          "executable": "node",
+          "args": [
+            "scripts/test.mjs",
+            "placements-graphe-vide"
+          ],
+          "status": "passed",
+          "covers": []
+        },
+        {
+          "name": "placements-positions-superposees-negatives",
+          "executable": "node",
+          "args": [
+            "scripts/test.mjs",
+            "placements-positions-superposees-negatives"
+          ],
+          "status": "passed",
+          "covers": []
+        },
+        {
+          "name": "placements-indications-compatibles",
+          "executable": "node",
+          "args": [
+            "scripts/test.mjs",
+            "placements-indications-compatibles"
+          ],
+          "status": "passed",
+          "covers": []
+        },
+        {
+          "name": "placements-libelles-longs-multilignes",
+          "executable": "node",
+          "args": [
+            "scripts/test.mjs",
+            "placements-libelles-longs-multilignes"
+          ],
+          "status": "passed",
+          "covers": []
+        },
+        {
+          "name": "texte-graphemes-et-coupures",
+          "executable": "node",
+          "args": [
+            "scripts/test.mjs",
+            "texte-graphemes-et-coupures"
+          ],
+          "status": "passed",
+          "covers": []
+        },
+        {
+          "name": "placements-marges-limites-boites",
+          "executable": "node",
+          "args": [
+            "scripts/test.mjs",
+            "placements-marges-limites-boites"
+          ],
+          "status": "passed",
+          "covers": []
+        },
+        {
+          "name": "placements-determinisme-et-immuabilite",
+          "executable": "node",
+          "args": [
+            "scripts/test.mjs",
+            "placements-determinisme-et-immuabilite"
+          ],
+          "status": "passed",
+          "covers": []
+        },
+        {
+          "name": "placements-connexions-apres-deplacement-redimensionnement",
+          "executable": "node",
+          "args": [
+            "scripts/test.mjs",
+            "placements-connexions-apres-deplacement-redimensionnement"
+          ],
+          "status": "passed",
+          "covers": []
+        },
+        {
+          "name": "placements-diagnostics-entrees-invalides",
+          "executable": "node",
+          "args": [
+            "scripts/test.mjs",
+            "placements-diagnostics-entrees-invalides"
+          ],
+          "status": "passed",
+          "covers": []
+        },
+        {
+          "name": "placements-identifiants-speciaux",
+          "executable": "node",
+          "args": [
+            "scripts/test.mjs",
+            "placements-identifiants-speciaux"
+          ],
+          "status": "passed",
+          "covers": []
+        },
+        {
+          "name": "placements-graphes-generes-reproductibles",
+          "executable": "node",
+          "args": [
+            "scripts/test.mjs",
+            "placements-graphes-generes-reproductibles"
+          ],
+          "status": "passed",
+          "covers": []
+        },
+        {
+          "name": "routage-diagram-reference",
+          "executable": "node",
+          "args": [
+            "scripts/test.mjs",
+            "routage-diagram-reference"
+          ],
+          "status": "passed",
+          "covers": [
+            0,
+            2
+          ]
+        },
+        {
+          "name": "routage-trajet-direct",
+          "executable": "node",
+          "args": [
+            "scripts/test.mjs",
+            "routage-trajet-direct"
+          ],
+          "status": "passed",
+          "covers": [
+            1,
+            2
+          ]
+        },
+        {
+          "name": "routage-obstacle-interpose",
+          "executable": "node",
+          "args": [
+            "scripts/test.mjs",
+            "routage-obstacle-interpose"
+          ],
+          "status": "passed",
+          "covers": [
+            1,
+            2
+          ]
+        },
+        {
+          "name": "routage-embranchement-convergence",
+          "executable": "node",
+          "args": [
+            "scripts/test.mjs",
+            "routage-embranchement-convergence"
+          ],
+          "status": "passed",
+          "covers": [
+            1,
+            2
+          ]
+        },
+        {
+          "name": "routage-cycle-retour",
+          "executable": "node",
+          "args": [
+            "scripts/test.mjs",
+            "routage-cycle-retour"
+          ],
+          "status": "passed",
+          "covers": [
+            1,
+            2
+          ]
+        },
+        {
+          "name": "routage-boucles-sur-soi",
+          "executable": "node",
+          "args": [
+            "scripts/test.mjs",
+            "routage-boucles-sur-soi"
+          ],
+          "status": "passed",
+          "covers": [
+            1,
+            2
+          ]
+        },
+        {
+          "name": "routage-arcs-paralleles",
+          "executable": "node",
+          "args": [
+            "scripts/test.mjs",
+            "routage-arcs-paralleles"
+          ],
+          "status": "passed",
+          "covers": [
+            1,
+            2
+          ]
+        },
+        {
+          "name": "routage-rectangle-connexions-meme-cote",
+          "executable": "node",
+          "args": [
+            "scripts/test.mjs",
+            "routage-rectangle-connexions-meme-cote"
+          ],
+          "status": "passed",
+          "covers": [
+            1,
+            2
+          ]
+        },
+        {
+          "name": "routage-preferences-ancres-handles",
+          "executable": "node",
+          "args": [
+            "scripts/test.mjs",
+            "routage-preferences-ancres-handles"
+          ],
+          "status": "passed",
+          "covers": [
+            2
+          ]
+        },
+        {
+          "name": "routage-points-importes-valides",
+          "executable": "node",
+          "args": [
+            "scripts/test.mjs",
+            "routage-points-importes-valides"
+          ],
+          "status": "passed",
+          "covers": [
+            2
+          ]
+        },
+        {
+          "name": "routage-points-preferent-ports-lateraux",
+          "executable": "node",
+          "args": [
+            "scripts/test.mjs",
+            "routage-points-preferent-ports-lateraux"
+          ],
+          "status": "passed",
+          "covers": [
+            2
+          ]
+        },
+        {
+          "name": "routage-indications-incoherentes-recalculees",
+          "executable": "node",
+          "args": [
+            "scripts/test.mjs",
+            "routage-indications-incoherentes-recalculees"
+          ],
+          "status": "passed",
+          "covers": [
+            2
+          ]
+        },
+        {
+          "name": "routage-formes-cardinales-et-coins",
+          "executable": "node",
+          "args": [
+            "scripts/test.mjs",
+            "routage-formes-cardinales-et-coins"
+          ],
+          "status": "passed",
+          "covers": [
+            2
+          ]
+        },
+        {
+          "name": "routage-degagements-source-cible-tous-cotes",
+          "executable": "node",
+          "args": [
+            "scripts/test.mjs",
+            "routage-degagements-source-cible-tous-cotes"
+          ],
+          "status": "passed",
+          "covers": [
+            2
+          ]
+        },
+        {
+          "name": "routage-echec-controle-budget",
+          "executable": "node",
+          "args": [
+            "scripts/test.mjs",
+            "routage-echec-controle-budget"
+          ],
+          "status": "passed",
+          "covers": [
+            3
+          ]
+        },
+        {
+          "name": "routage-repli-et-limite-essais",
+          "executable": "node",
+          "args": [
+            "scripts/test.mjs",
+            "routage-repli-et-limite-essais"
+          ],
+          "status": "passed",
+          "covers": [
+            2,
+            3
+          ]
+        },
+        {
+          "name": "routage-determinisme-et-immuabilite",
+          "executable": "node",
+          "args": [
+            "scripts/test.mjs",
+            "routage-determinisme-et-immuabilite"
+          ],
+          "status": "passed",
+          "covers": [
+            3
+          ]
+        },
+        {
+          "name": "routage-diagnostics-entrees",
+          "executable": "node",
+          "args": [
+            "scripts/test.mjs",
+            "routage-diagnostics-entrees"
+          ],
+          "status": "passed",
+          "covers": [
+            3
+          ]
+        },
+        {
+          "name": "routage-vide-isoles-identifiants-speciaux",
+          "executable": "node",
+          "args": [
+            "scripts/test.mjs",
+            "routage-vide-isoles-identifiants-speciaux"
+          ],
+          "status": "passed",
+          "covers": []
+        },
+        {
+          "name": "routage-graphes-generes-reproductibles",
+          "executable": "node",
+          "args": [
+            "scripts/test.mjs",
+            "routage-graphes-generes-reproductibles"
+          ],
+          "status": "passed",
+          "covers": [
+            1,
+            2,
+            3
+          ]
+        }
+      ],
+      "testChanges": {
+        "removed": [],
+        "added": [
+          52,
+          53,
+          54,
+          55,
+          56,
+          57,
+          58,
+          59,
+          60,
+          61,
+          62,
+          63,
+          64,
+          65,
+          66,
+          67,
+          68,
+          69,
+          70,
+          71
+        ]
+      },
+      "serversStopped": true,
+      "servers": []
+    }
+  },
+  "commands": [
+    {
+      "name": "typecheck",
+      "executable": "npm",
+      "args": [
+        "run",
+        "typecheck"
+      ],
+      "status": "passed",
+      "covers": [
+        3
+      ]
+    },
+    {
+      "name": "connexions-losange-absolues",
+      "executable": "node",
+      "args": [
+        "scripts/test.mjs",
+        "connexions-losange-absolues"
+      ],
+      "status": "passed",
+      "covers": []
+    },
+    {
+      "name": "connexions-ovale-absolues",
+      "executable": "node",
+      "args": [
+        "scripts/test.mjs",
+        "connexions-ovale-absolues"
+      ],
+      "status": "passed",
+      "covers": []
+    },
+    {
+      "name": "connexions-rectangle-ancres-multiples",
+      "executable": "node",
+      "args": [
+        "scripts/test.mjs",
+        "connexions-rectangle-ancres-multiples"
+      ],
+      "status": "passed",
+      "covers": []
+    },
+    {
+      "name": "connexions-rectangle-incidents-et-handles",
+      "executable": "node",
+      "args": [
+        "scripts/test.mjs",
+        "connexions-rectangle-incidents-et-handles"
+      ],
+      "status": "passed",
+      "covers": []
+    },
+    {
+      "name": "connexions-rectangle-coins-dedupliques",
+      "executable": "node",
+      "args": [
+        "scripts/test.mjs",
+        "connexions-rectangle-coins-dedupliques"
+      ],
+      "status": "passed",
+      "covers": []
+    },
+    {
+      "name": "connexions-diagnostics-invalides",
+      "executable": "node",
+      "args": [
+        "scripts/test.mjs",
+        "connexions-diagnostics-invalides"
+      ],
+      "status": "passed",
+      "covers": []
+    },
+    {
+      "name": "destination-pas-signes-et-immuabilite",
+      "executable": "node",
+      "args": [
+        "scripts/test.mjs",
+        "destination-pas-signes-et-immuabilite"
+      ],
+      "status": "passed",
+      "covers": []
+    },
+    {
+      "name": "chemin-connexion-source-et-arrivees",
+      "executable": "node",
+      "args": [
+        "scripts/test.mjs",
+        "chemin-connexion-source-et-arrivees"
+      ],
+      "status": "passed",
+      "covers": []
+    },
+    {
+      "name": "chemin-tolerance-distance-carree",
+      "executable": "node",
+      "args": [
+        "scripts/test.mjs",
+        "chemin-tolerance-distance-carree"
+      ],
+      "status": "passed",
+      "covers": []
+    },
+    {
+      "name": "placements-separes-tangents-superposes",
+      "executable": "node",
+      "args": [
+        "scripts/test.mjs",
+        "placements-separes-tangents-superposes"
+      ],
+      "status": "passed",
+      "covers": []
+    },
+    {
+      "name": "segments-interieur-bords-contacts-deux-sens",
+      "executable": "node",
+      "args": [
+        "scripts/test.mjs",
+        "segments-interieur-bords-contacts-deux-sens"
+      ],
+      "status": "passed",
+      "covers": []
+    },
+    {
+      "name": "placement-chemin-exclusions-paralleles-deduplication",
+      "executable": "node",
+      "args": [
+        "scripts/test.mjs",
+        "placement-chemin-exclusions-paralleles-deduplication"
+      ],
+      "status": "passed",
+      "covers": []
+    },
+    {
+      "name": "geometrie-configuration-valide-et-vide",
+      "executable": "node",
+      "args": [
+        "scripts/test.mjs",
+        "geometrie-configuration-valide-et-vide"
+      ],
+      "status": "passed",
+      "covers": []
+    },
+    {
+      "name": "geometrie-diagnostics-references-et-indices",
+      "executable": "node",
+      "args": [
+        "scripts/test.mjs",
+        "geometrie-diagnostics-references-et-indices"
+      ],
+      "status": "passed",
+      "covers": []
+    },
+    {
+      "name": "geometrie-diagnostics-nombres-et-pas",
+      "executable": "node",
+      "args": [
+        "scripts/test.mjs",
+        "geometrie-diagnostics-nombres-et-pas"
+      ],
+      "status": "passed",
+      "covers": []
+    },
+    {
+      "name": "geometrie-identifiants-speciaux",
+      "executable": "node",
+      "args": [
+        "scripts/test.mjs",
+        "geometrie-identifiants-speciaux"
+      ],
+      "status": "passed",
+      "covers": []
+    },
+    {
+      "name": "connexions-integration-diagramme-reference",
+      "executable": "node",
+      "args": [
+        "scripts/test.mjs",
+        "connexions-integration-diagramme-reference"
+      ],
+      "status": "passed",
+      "covers": []
+    },
+    {
+      "name": "diagram-reference",
+      "executable": "node",
+      "args": [
+        "scripts/test.mjs",
+        "diagram-reference"
+      ],
+      "status": "passed",
+      "covers": []
+    },
+    {
+      "name": "formes-et-dimensions",
+      "executable": "node",
+      "args": [
+        "scripts/test.mjs",
+        "formes-et-dimensions"
+      ],
+      "status": "passed",
+      "covers": []
+    },
+    {
+      "name": "arcs-paralleles",
+      "executable": "node",
+      "args": [
+        "scripts/test.mjs",
+        "arcs-paralleles"
+      ],
+      "status": "passed",
+      "covers": []
+    },
+    {
+      "name": "cycle-et-boucle",
+      "executable": "node",
+      "args": [
+        "scripts/test.mjs",
+        "cycle-et-boucle"
+      ],
+      "status": "passed",
+      "covers": []
+    },
+    {
+      "name": "noeud-isole",
+      "executable": "node",
+      "args": [
+        "scripts/test.mjs",
+        "noeud-isole"
+      ],
+      "status": "passed",
+      "covers": []
+    },
+    {
+      "name": "tableaux-vides",
+      "executable": "node",
+      "args": [
+        "scripts/test.mjs",
+        "tableaux-vides"
+      ],
+      "status": "passed",
+      "covers": []
+    },
+    {
+      "name": "libelles-unicode-multilignes",
+      "executable": "node",
+      "args": [
+        "scripts/test.mjs",
+        "libelles-unicode-multilignes"
+      ],
+      "status": "passed",
+      "covers": []
+    },
+    {
+      "name": "json-mal-forme",
+      "executable": "node",
+      "args": [
+        "scripts/test.mjs",
+        "json-mal-forme"
+      ],
+      "status": "passed",
+      "covers": []
+    },
+    {
+      "name": "identifiants-invalides-et-dupliques",
+      "executable": "node",
+      "args": [
+        "scripts/test.mjs",
+        "identifiants-invalides-et-dupliques"
+      ],
+      "status": "passed",
+      "covers": []
+    },
+    {
+      "name": "references-absentes",
+      "executable": "node",
+      "args": [
+        "scripts/test.mjs",
+        "references-absentes"
+      ],
+      "status": "passed",
+      "covers": []
+    },
+    {
+      "name": "dimensions-invalides",
+      "executable": "node",
+      "args": [
+        "scripts/test.mjs",
+        "dimensions-invalides"
+      ],
+      "status": "passed",
+      "covers": []
+    },
+    {
+      "name": "types-non-pris-en-charge",
+      "executable": "node",
+      "args": [
+        "scripts/test.mjs",
+        "types-non-pris-en-charge"
+      ],
+      "status": "passed",
+      "covers": []
+    },
+    {
+      "name": "structure-invalide",
+      "executable": "node",
+      "args": [
+        "scripts/test.mjs",
+        "structure-invalide"
+      ],
+      "status": "passed",
+      "covers": []
+    },
+    {
+      "name": "indications-spatiales",
+      "executable": "node",
+      "args": [
+        "scripts/test.mjs",
+        "indications-spatiales"
+      ],
+      "status": "passed",
+      "covers": []
+    },
+    {
+      "name": "absence-mutation-et-alias",
+      "executable": "node",
+      "args": [
+        "scripts/test.mjs",
+        "absence-mutation-et-alias"
+      ],
+      "status": "passed",
+      "covers": []
+    },
+    {
+      "name": "identifiants-et-metadonnees-speciaux",
+      "executable": "node",
+      "args": [
+        "scripts/test.mjs",
+        "identifiants-et-metadonnees-speciaux"
+      ],
+      "status": "passed",
+      "covers": []
+    },
+    {
+      "name": "metadonnees-non-json",
+      "executable": "node",
+      "args": [
+        "scripts/test.mjs",
+        "metadonnees-non-json"
+      ],
+      "status": "passed",
+      "covers": []
+    },
+    {
+      "name": "placements-diagram-reference",
+      "executable": "node",
+      "args": [
+        "scripts/test.mjs",
+        "placements-diagram-reference"
+      ],
+      "status": "passed",
+      "covers": []
+    },
+    {
+      "name": "placements-chaine",
+      "executable": "node",
+      "args": [
+        "scripts/test.mjs",
+        "placements-chaine"
+      ],
+      "status": "passed",
+      "covers": []
+    },
+    {
+      "name": "placements-embranchement-convergence",
+      "executable": "node",
+      "args": [
+        "scripts/test.mjs",
+        "placements-embranchement-convergence"
+      ],
+      "status": "passed",
+      "covers": []
+    },
+    {
+      "name": "placements-cycle-et-boucles",
+      "executable": "node",
+      "args": [
+        "scripts/test.mjs",
+        "placements-cycle-et-boucles"
+      ],
+      "status": "passed",
+      "covers": []
+    },
+    {
+      "name": "placements-sommet-isole",
+      "executable": "node",
+      "args": [
+        "scripts/test.mjs",
+        "placements-sommet-isole"
+      ],
+      "status": "passed",
+      "covers": []
+    },
+    {
+      "name": "placements-composantes-deconnectees",
+      "executable": "node",
+      "args": [
+        "scripts/test.mjs",
+        "placements-composantes-deconnectees"
+      ],
+      "status": "passed",
+      "covers": []
+    },
+    {
+      "name": "placements-graphe-vide",
+      "executable": "node",
+      "args": [
+        "scripts/test.mjs",
+        "placements-graphe-vide"
+      ],
+      "status": "passed",
+      "covers": []
+    },
+    {
+      "name": "placements-positions-superposees-negatives",
+      "executable": "node",
+      "args": [
+        "scripts/test.mjs",
+        "placements-positions-superposees-negatives"
+      ],
+      "status": "passed",
+      "covers": []
+    },
+    {
+      "name": "placements-indications-compatibles",
+      "executable": "node",
+      "args": [
+        "scripts/test.mjs",
+        "placements-indications-compatibles"
+      ],
+      "status": "passed",
+      "covers": []
+    },
+    {
+      "name": "placements-libelles-longs-multilignes",
+      "executable": "node",
+      "args": [
+        "scripts/test.mjs",
+        "placements-libelles-longs-multilignes"
+      ],
+      "status": "passed",
+      "covers": []
+    },
+    {
+      "name": "texte-graphemes-et-coupures",
+      "executable": "node",
+      "args": [
+        "scripts/test.mjs",
+        "texte-graphemes-et-coupures"
+      ],
+      "status": "passed",
+      "covers": []
+    },
+    {
+      "name": "placements-marges-limites-boites",
+      "executable": "node",
+      "args": [
+        "scripts/test.mjs",
+        "placements-marges-limites-boites"
+      ],
+      "status": "passed",
+      "covers": []
+    },
+    {
+      "name": "placements-determinisme-et-immuabilite",
+      "executable": "node",
+      "args": [
+        "scripts/test.mjs",
+        "placements-determinisme-et-immuabilite"
+      ],
+      "status": "passed",
+      "covers": []
+    },
+    {
+      "name": "placements-connexions-apres-deplacement-redimensionnement",
+      "executable": "node",
+      "args": [
+        "scripts/test.mjs",
+        "placements-connexions-apres-deplacement-redimensionnement"
+      ],
+      "status": "passed",
+      "covers": []
+    },
+    {
+      "name": "placements-diagnostics-entrees-invalides",
+      "executable": "node",
+      "args": [
+        "scripts/test.mjs",
+        "placements-diagnostics-entrees-invalides"
+      ],
+      "status": "passed",
+      "covers": []
+    },
+    {
+      "name": "placements-identifiants-speciaux",
+      "executable": "node",
+      "args": [
+        "scripts/test.mjs",
+        "placements-identifiants-speciaux"
+      ],
+      "status": "passed",
+      "covers": []
+    },
+    {
+      "name": "placements-graphes-generes-reproductibles",
+      "executable": "node",
+      "args": [
+        "scripts/test.mjs",
+        "placements-graphes-generes-reproductibles"
+      ],
+      "status": "passed",
+      "covers": []
+    },
+    {
+      "name": "routage-diagram-reference",
+      "executable": "node",
+      "args": [
+        "scripts/test.mjs",
+        "routage-diagram-reference"
+      ],
+      "status": "passed",
+      "covers": [
+        0,
+        2
+      ]
+    },
+    {
+      "name": "routage-trajet-direct",
+      "executable": "node",
+      "args": [
+        "scripts/test.mjs",
+        "routage-trajet-direct"
+      ],
+      "status": "passed",
+      "covers": [
+        1,
+        2
+      ]
+    },
+    {
+      "name": "routage-obstacle-interpose",
+      "executable": "node",
+      "args": [
+        "scripts/test.mjs",
+        "routage-obstacle-interpose"
+      ],
+      "status": "passed",
+      "covers": [
+        1,
+        2
+      ]
+    },
+    {
+      "name": "routage-embranchement-convergence",
+      "executable": "node",
+      "args": [
+        "scripts/test.mjs",
+        "routage-embranchement-convergence"
+      ],
+      "status": "passed",
+      "covers": [
+        1,
+        2
+      ]
+    },
+    {
+      "name": "routage-cycle-retour",
+      "executable": "node",
+      "args": [
+        "scripts/test.mjs",
+        "routage-cycle-retour"
+      ],
+      "status": "passed",
+      "covers": [
+        1,
+        2
+      ]
+    },
+    {
+      "name": "routage-boucles-sur-soi",
+      "executable": "node",
+      "args": [
+        "scripts/test.mjs",
+        "routage-boucles-sur-soi"
+      ],
+      "status": "passed",
+      "covers": [
+        1,
+        2
+      ]
+    },
+    {
+      "name": "routage-arcs-paralleles",
+      "executable": "node",
+      "args": [
+        "scripts/test.mjs",
+        "routage-arcs-paralleles"
+      ],
+      "status": "passed",
+      "covers": [
+        1,
+        2
+      ]
+    },
+    {
+      "name": "routage-rectangle-connexions-meme-cote",
+      "executable": "node",
+      "args": [
+        "scripts/test.mjs",
+        "routage-rectangle-connexions-meme-cote"
+      ],
+      "status": "passed",
+      "covers": [
+        1,
+        2
+      ]
+    },
+    {
+      "name": "routage-preferences-ancres-handles",
+      "executable": "node",
+      "args": [
+        "scripts/test.mjs",
+        "routage-preferences-ancres-handles"
+      ],
+      "status": "passed",
+      "covers": [
+        2
+      ]
+    },
+    {
+      "name": "routage-points-importes-valides",
+      "executable": "node",
+      "args": [
+        "scripts/test.mjs",
+        "routage-points-importes-valides"
+      ],
+      "status": "passed",
+      "covers": [
+        2
+      ]
+    },
+    {
+      "name": "routage-points-preferent-ports-lateraux",
+      "executable": "node",
+      "args": [
+        "scripts/test.mjs",
+        "routage-points-preferent-ports-lateraux"
+      ],
+      "status": "passed",
+      "covers": [
+        2
+      ]
+    },
+    {
+      "name": "routage-indications-incoherentes-recalculees",
+      "executable": "node",
+      "args": [
+        "scripts/test.mjs",
+        "routage-indications-incoherentes-recalculees"
+      ],
+      "status": "passed",
+      "covers": [
+        2
+      ]
+    },
+    {
+      "name": "routage-formes-cardinales-et-coins",
+      "executable": "node",
+      "args": [
+        "scripts/test.mjs",
+        "routage-formes-cardinales-et-coins"
+      ],
+      "status": "passed",
+      "covers": [
+        2
+      ]
+    },
+    {
+      "name": "routage-degagements-source-cible-tous-cotes",
+      "executable": "node",
+      "args": [
+        "scripts/test.mjs",
+        "routage-degagements-source-cible-tous-cotes"
+      ],
+      "status": "passed",
+      "covers": [
+        2
+      ]
+    },
+    {
+      "name": "routage-echec-controle-budget",
+      "executable": "node",
+      "args": [
+        "scripts/test.mjs",
+        "routage-echec-controle-budget"
+      ],
+      "status": "passed",
+      "covers": [
+        3
+      ]
+    },
+    {
+      "name": "routage-repli-et-limite-essais",
+      "executable": "node",
+      "args": [
+        "scripts/test.mjs",
+        "routage-repli-et-limite-essais"
+      ],
+      "status": "passed",
+      "covers": [
+        2,
+        3
+      ]
+    },
+    {
+      "name": "routage-determinisme-et-immuabilite",
+      "executable": "node",
+      "args": [
+        "scripts/test.mjs",
+        "routage-determinisme-et-immuabilite"
+      ],
+      "status": "passed",
+      "covers": [
+        3
+      ]
+    },
+    {
+      "name": "routage-diagnostics-entrees",
+      "executable": "node",
+      "args": [
+        "scripts/test.mjs",
+        "routage-diagnostics-entrees"
+      ],
+      "status": "passed",
+      "covers": [
+        3
+      ]
+    },
+    {
+      "name": "routage-vide-isoles-identifiants-speciaux",
+      "executable": "node",
+      "args": [
+        "scripts/test.mjs",
+        "routage-vide-isoles-identifiants-speciaux"
+      ],
+      "status": "passed",
+      "covers": []
+    },
+    {
+      "name": "routage-graphes-generes-reproductibles",
+      "executable": "node",
+      "args": [
+        "scripts/test.mjs",
+        "routage-graphes-generes-reproductibles"
+      ],
+      "status": "passed",
+      "covers": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "name": "npm run build",
+      "executable": "npm",
+      "args": [
+        "run",
+        "build"
+      ],
+      "status": "passed",
+      "covers": []
+    },
+    {
+      "name": "npm run test",
+      "executable": "npm",
+      "args": [
+        "run",
+        "test"
+      ],
+      "status": "passed",
+      "covers": []
+    }
+  ]
+}

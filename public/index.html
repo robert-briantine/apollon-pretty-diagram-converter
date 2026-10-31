@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="dark">
+    <title>Diagrammes d’activité — Générer un SVG</title>
+    <link rel="stylesheet" href="/styles.css">
+    <script type="module" src="/assets/main.js"></script>
+  </head>
+  <body>
+    <main>
+      <header>
+        <p class="eyebrow">Appolon JS · Export de présentation</p>
+        <h1>Votre diagramme, prêt à présenter</h1>
+        <p>Sélectionnez un diagramme JSON, puis générez un SVG autonome à consulter et à enregistrer.</p>
+      </header>
+      <section aria-labelledby="selection-title" class="panel">
+        <h2 id="selection-title">1. Choisir et générer</h2>
+        <form id="generate-form" aria-busy="false">
+          <label for="diagram-file">Fichier du diagramme JSON</label>
+          <p id="file-help" class="hint">Export Appolon JS, par exemple diagram.json. Taille maximale : 1 Mio.</p>
+          <input id="diagram-file" type="file" accept=".json,application/json" aria-describedby="file-help file-name" disabled>
+          <p id="file-name">Aucun fichier sélectionné.</p>
+          <button id="generate" type="submit" disabled>Générer le SVG</button>
+        </form>
+        <p id="app-status" role="status" aria-live="polite" aria-atomic="true">Chargement de l’interface…</p>
+        <p id="app-error" role="alert" aria-atomic="true" hidden></p>
+        <noscript>Activez JavaScript pour sélectionner un fichier et générer son SVG.</noscript>
+      </section>
+      <section id="result" class="panel" aria-labelledby="result-title" hidden>
+        <h2 id="result-title">2. Consulter et enregistrer</h2>
+        <p id="result-name"></p>
+        <div class="actions">
+          <a id="open-svg" class="button secondary" target="_blank" rel="noopener">Ouvrir à taille réelle (nouvel onglet)</a>
+          <a id="download-svg" class="button" download>Enregistrer le SVG</a>
+          <button id="fullscreen" type="button" class="secondary" aria-pressed="false" aria-controls="result">Plein écran</button>
+          <div class="zoom-controls" role="group" aria-label="Zoom du diagramme">
+            <button id="zoom-out" type="button" class="secondary" aria-label="Réduire le zoom" aria-controls="svg-preview" disabled>−</button>
+            <label class="zoom" for="zoom">Zoom <output id="zoom-value" for="zoom" aria-live="polite">100 %</output>
+              <input id="zoom" type="range" min="100" max="400" step="25" value="100" aria-controls="svg-preview">
+            </label>
+            <button id="zoom-in" type="button" class="secondary" aria-label="Agrandir le zoom" aria-controls="svg-preview">+</button>
+          </div>
+          <button id="fit" type="button" class="secondary">Vue d’ensemble</button>
+        </div>
+        <p class="hint viewer-help">Zoom : boutons − / +, curseur ou Ctrl + molette sur le diagramme. Faites défiler pour lire les détails. Plein écran maximise la vue ; Échap permet de la quitter.</p>
+        <figure>
+          <div class="preview" tabindex="0" role="region" aria-label="Aperçu du diagramme, défilement au clavier"><img id="svg-preview" alt=""></div>
+          <figcaption id="preview-caption"></figcaption>
+        </figure>
+      </section>
+    </main>
+  </body>
+</html>

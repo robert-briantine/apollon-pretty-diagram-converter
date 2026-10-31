@@ -1,0 +1,823 @@
+{
+  "version": 1,
+  "fingerprint": "f1db034ff13d19b1a5f0b3619539b4918ead1530947cf75220d08fd73707064c",
+  "execution": {
+    "current": "evolution6.md",
+    "kind": "realize",
+    "status": "succeeded",
+    "error": null,
+    "summary": "Route POST /api/generate réalisée et documentée : réutilisation du service commun, SVG UTF-8, limite explicite de 1 Mio et erreurs JSON 400/413/500. Ressources statiques et paramètres de démarrage préservés. Correction d’une annonce de disponibilité erronée lorsque le port est occupé. Typecheck, build et suite complète réussis : 120 cas, dont 105 conservés et 15 nouveaux. Consultation, téléchargement et réouverture hors ligne vérifiés dans Chromium. Aucun test supprimé. Instances de test arrêtées et pilotage PID 83835 préservé. Aucun fichier de suivi modifié par l’intervention.",
+    "tests": [
+      {
+        "name": "Vérification TypeScript",
+        "command": "\"npm\" \"run\" \"typecheck\"",
+        "exitCode": 0,
+        "output": "\n> diagrams-codex@0.1.0 typecheck\n> tsc -p tsconfig.server.json --noEmit && tsc -p tsconfig.client.json --noEmit\n\n"
+      },
+      {
+        "name": "Compilation serveur et navigateur",
+        "command": "\"npm\" \"run\" \"build\"",
+        "exitCode": 0,
+        "output": "\n> diagrams-codex@0.1.0 build\n> tsc -p tsconfig.server.json && tsc -p tsconfig.client.json\n\n"
+      },
+      {
+        "name": "Suite actuelle complète — 120 cas",
+        "command": "\"npm\" \"test\"",
+        "exitCode": 0,
+        "output": "\n> diagrams-codex@0.1.0 test\n> node scripts/test.mjs\n\n✔ conversion-service-memoire-equivalence-et-immuabilite (5.876089ms)\n✔ conversion-service-diagnostics-json-import-calcul (0.728869ms)\n✔ conversion-cli-commande-documentee-utf8-et-service (1618.033349ms)\n✔ conversion-cli-svg-ouverture-navigateur (888.708201ms)\n✔ conversion-cli-lecture-inexistante (74.220292ms)\n✔ conversion-cli-json-invalide (101.963398ms)\n✔ conversion-cli-diagramme-invalide (65.135446ms)\n✔ conversion-cli-erreur-geometrique-controlee (81.96761ms)\n✔ conversion-cli-refus-chemin-invalide (112.914913ms)\n✔ conversion-cli-refus-placements-superposes (82.153851ms)\n✔ conversion-cli-refus-chemin-traversant-forme (110.875539ms)\n✔ conversion-cli-diagnostic-rendu (80.24339ms)\n✔ conversion-cli-ecriture-interrompue-atomique (119.494462ms)\n✔ conversion-cli-destination-inaccessible (72.922731ms)\n✔ conversion-cli-refus-destination-source (57.535168ms)\n✔ conversion-cli-refus-alias-source (77.296345ms)\n✔ conversion-cli-remplacement-destination-et-chemins-espaces (59.166379ms)\n✔ conversion-cli-arguments-invalides (124.110783ms)\n✔ connexions-losange-absolues (0.976071ms)\n✔ connexions-ovale-absolues (0.099985ms)\n✔ connexions-rectangle-ancres-multiples (1.118168ms)\n✔ connexions-rectangle-incidents-et-handles (0.182321ms)\n✔ connexions-rectangle-coins-dedupliques (0.092817ms)\n✔ connexions-diagnostics-invalides (0.314066ms)\n✔ destination-pas-signes-et-immuabilite (0.425283ms)\n✔ chemin-connexion-source-et-arrivees (0.367154ms)\n✔ chemin-tolerance-distance-carree (0.214865ms)\n✔ placements-separes-tangents-superposes (0.361507ms)\n✔ segments-interieur-bords-contacts-deux-sens (0.61506ms)\n✔ placement-chemin-exclusions-paralleles-deduplication (0.182194ms)\n✔ geometrie-configuration-valide-et-vide (0.143441ms)\n✔ geometrie-diagnostics-references-et-indices (1.179608ms)\n✔ geometrie-diagnostics-nombres-et-pas (0.57338ms)\n✔ geometrie-identifiants-speciaux (0.082817ms)\n✔ connexions-integration-diagramme-reference (4.948851ms)\nserveur-test {\"pid\":1711684,\"port\":36303,\"stopped\":true}\n✔ http-diagram-reference-svg-utf8-et-equivalence-service (1580.198126ms)\nserveur-test {\"pid\":1712047,\"port\":38155,\"stopped\":true}\n✔ http-json-mal-forme-et-reprise (1554.743841ms)\nserveur-test {\"pid\":1712319,\"port\":37617,\"stopped\":true}\n✔ http-reference-arc-invalide-et-reprise (1349.770214ms)\nserveur-test {\"pid\":1712464,\"port\":42949,\"stopped\":true}\n✔ http-structure-corps-et-refus-chemin-local (1308.883202ms)\nserveur-test {\"pid\":1712491,\"port\":35631,\"stopped\":true}\n✔ http-limite-un-mio-octets-et-reprise (1301.21146ms)\nserveur-test {\"pid\":1712500,\"port\":40237,\"stopped\":true}\n✔ http-format-contenu-charset-compression-et-reprise (1473.201685ms)\nserveur-test {\"pid\":1712513,\"port\":37087,\"stopped\":true}\n✔ http-erreur-interne-rendu-controlee-et-reprise (1818.558768ms)\nserveur-test {\"pid\":1712524,\"port\":34087,\"stopped\":true}\n✔ http-erreur-interne-import-inattendue-et-reprise (1297.22595ms)\nserveur-test {\"pid\":1712533,\"port\":39979,\"stopped\":true}\n✔ http-verificateur-chemin-bloque-succes (79.690823ms)\nserveur-test {\"pid\":1712540,\"port\":37373,\"stopped\":true}\n✔ http-verificateur-placement-bloque-succes (78.325262ms)\nserveur-test {\"pid\":1712547,\"port\":33857,\"stopped\":true}\n✔ http-verificateur-placement-chemin-bloque-succes (78.259485ms)\nserveur-test {\"pid\":1712554,\"port\":46735,\"stopped\":true}\n✔ http-trois-verificateurs-avant-rendu (1291.559005ms)\nserveur-test {\"pid\":1712564,\"port\":38509,\"stopped\":true}\n✔ http-socle-statique-host-port-zero-et-navigateur (216.025092ms)\nserveur-test {\"pid\":1712661,\"port\":null,\"stopped\":true}\nserveur-test {\"pid\":1712668,\"port\":33965,\"stopped\":true}\nserveur-test {\"pid\":1712675,\"port\":null,\"stopped\":true}\nserveur-test {\"pid\":1712682,\"port\":null,\"stopped\":true}\nserveur-test {\"pid\":1712689,\"port\":null,\"stopped\":true}\nserveur-test {\"pid\":1712696,\"port\":null,\"stopped\":true}\nserveur-test {\"pid\":1712703,\"port\":null,\"stopped\":true}\n✔ http-host-personnalise-port-fixe-et-diagnostics-demarrage (410.592211ms)\nserveur-test {\"pid\":1712710,\"port\":38103,\"stopped\":true}\n✔ http-svg-consultation-et-enregistrement-navigateur (1702.706598ms)\n✔ diagram-reference (9.268416ms)\n✔ formes-et-dimensions (0.493828ms)\n✔ arcs-paralleles (0.320866ms)\n✔ cycle-et-boucle (0.249185ms)\n✔ noeud-isole (0.251505ms)\n✔ tableaux-vides (0.173793ms)\n✔ libelles-unicode-multilignes (0.253233ms)\n✔ json-mal-forme (0.632308ms)\n✔ identifiants-invalides-et-dupliques (1.145559ms)\n✔ references-absentes (0.478115ms)\n✔ dimensions-invalides (1.424666ms)\n✔ types-non-pris-en-charge (0.763525ms)\n✔ structure-invalide (1.092199ms)\n✔ indications-spatiales (1.208776ms)\n✔ absence-mutation-et-alias (0.289154ms)\n✔ identifiants-et-metadonnees-speciaux (0.232977ms)\n✔ metadonnees-non-json (0.930007ms)\n✔ placements-diagram-reference (16.393218ms)\n✔ placements-chaine (0.785765ms)\n✔ placements-embranchement-convergence (0.668741ms)\n✔ placements-cycle-et-boucles (0.759445ms)\n✔ placements-sommet-isole (0.315298ms)\n✔ placements-composantes-deconnectees (0.726069ms)\n✔ placements-graphe-vide (0.172961ms)\n✔ placements-positions-superposees-negatives (0.577764ms)\n✔ placements-indications-compatibles (0.586628ms)\n✔ placements-libelles-longs-multilignes (2.710627ms)\n✔ texte-graphemes-et-coupures (0.489652ms)\n✔ placements-marges-limites-boites (0.430547ms)\n✔ placements-determinisme-et-immuabilite (1.61446ms)\n✔ placements-connexions-apres-deplacement-redimensionnement (0.907782ms)\n✔ placements-diagnostics-entrees-invalides (2.181664ms)\n✔ placements-identifiants-speciaux (0.293442ms)\n✔ placements-graphes-generes-reproductibles (66.041292ms)\n✔ routage-diagram-reference (797.348612ms)\n✔ routage-trajet-direct (0.75463ms)\n✔ routage-obstacle-interpose (1.918685ms)\n✔ routage-embranchement-convergence (2.653747ms)\n✔ routage-cycle-retour (0.835622ms)\n✔ routage-boucles-sur-soi (0.918103ms)\n✔ routage-arcs-paralleles (1.477658ms)\n✔ routage-rectangle-connexions-meme-cote (1.762621ms)\n✔ routage-preferences-ancres-handles (0.745669ms)\n✔ routage-points-importes-valides (0.311746ms)\n✔ routage-points-preferent-ports-lateraux (0.275618ms)\n✔ routage-indications-incoherentes-recalculees (5.855049ms)\n✔ routage-formes-cardinales-et-coins (1.395081ms)\n✔ routage-degagements-source-cible-tous-cotes (12.263845ms)\n✔ routage-echec-controle-budget (0.817286ms)\n✔ routage-repli-et-limite-essais (0.334434ms)\n✔ routage-determinisme-et-immuabilite (2034.092414ms)\n✔ routage-diagnostics-entrees (0.567492ms)\n✔ routage-vide-isoles-identifiants-speciaux (0.711221ms)\n✔ routage-graphes-generes-reproductibles (608.598632ms)\n✔ svg-navigateur-diagram-taille-normale-et-double (982.155769ms)\n✔ svg-navigateur-coordonnees-negatives-et-marges (130.897679ms)\n✔ svg-navigateur-texte-long-et-retours (161.137394ms)\n✔ svg-navigateur-xml-inerte-et-hors-ligne (130.884079ms)\n✔ svg-diagram-xml-complet (777.30332ms)\n✔ svg-formes-connexions-et-fleches (676.613143ms)\n✔ svg-libelles-sans-collision (629.681199ms)\n✔ svg-texte-placement-multiligne (2.071519ms)\n✔ svg-viewbox-negatif-et-detours (0.545156ms)\n✔ svg-xml-echappement-et-autonomie (1.22428ms)\n✔ svg-xml-caracteres-invalides (0.355266ms)\n✔ svg-vide-et-labels-vides (0.503252ms)\n✔ svg-arcs-paralleles-boucles-identifiants (3.075269ms)\n✔ svg-immuabilite-et-determinisme (613.771902ms)\n✔ svg-diagnostics-associations-manquantes (0.863862ms)\n✔ svg-libelles-denses-repli (6.226875ms)\nℹ tests 120\nℹ suites 0\nℹ pass 120\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 15804.466798\n"
+      },
+      {
+        "name": "http-diagram-reference-svg-utf8-et-equivalence-service",
+        "command": "\"node\" \"scripts/test.mjs\" \"http-diagram-reference-svg-utf8-et-equivalence-service\"",
+        "exitCode": 0,
+        "output": "serveur-test {\"pid\":1712932,\"port\":46605,\"stopped\":true}\n✔ http-diagram-reference-svg-utf8-et-equivalence-service (1510.544776ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 1731.397018\n"
+      },
+      {
+        "name": "http-json-mal-forme-et-reprise",
+        "command": "\"node\" \"scripts/test.mjs\" \"http-json-mal-forme-et-reprise\"",
+        "exitCode": 0,
+        "output": "serveur-test {\"pid\":1713033,\"port\":39049,\"stopped\":true}\n✔ http-json-mal-forme-et-reprise (1502.443762ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 1757.582974\n"
+      },
+      {
+        "name": "http-reference-arc-invalide-et-reprise",
+        "command": "\"node\" \"scripts/test.mjs\" \"http-reference-arc-invalide-et-reprise\"",
+        "exitCode": 0,
+        "output": "serveur-test {\"pid\":1713147,\"port\":42237,\"stopped\":true}\n✔ http-reference-arc-invalide-et-reprise (1496.286632ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 1753.649425\n"
+      },
+      {
+        "name": "http-structure-corps-et-refus-chemin-local",
+        "command": "\"node\" \"scripts/test.mjs\" \"http-structure-corps-et-refus-chemin-local\"",
+        "exitCode": 0,
+        "output": "serveur-test {\"pid\":1713242,\"port\":44389,\"stopped\":true}\n✔ http-structure-corps-et-refus-chemin-local (1373.827185ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 1599.297581\n"
+      },
+      {
+        "name": "http-limite-un-mio-octets-et-reprise",
+        "command": "\"node\" \"scripts/test.mjs\" \"http-limite-un-mio-octets-et-reprise\"",
+        "exitCode": 0,
+        "output": "serveur-test {\"pid\":1713339,\"port\":43823,\"stopped\":true}\n✔ http-limite-un-mio-octets-et-reprise (1410.364095ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 1636.724111\n"
+      },
+      {
+        "name": "http-format-contenu-charset-compression-et-reprise",
+        "command": "\"node\" \"scripts/test.mjs\" \"http-format-contenu-charset-compression-et-reprise\"",
+        "exitCode": 0,
+        "output": "serveur-test {\"pid\":1713438,\"port\":45951,\"stopped\":true}\n✔ http-format-contenu-charset-compression-et-reprise (1385.574664ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 1615.075772\n"
+      },
+      {
+        "name": "http-erreur-interne-rendu-controlee-et-reprise",
+        "command": "\"node\" \"scripts/test.mjs\" \"http-erreur-interne-rendu-controlee-et-reprise\"",
+        "exitCode": 0,
+        "output": "serveur-test {\"pid\":1713536,\"port\":46861,\"stopped\":true}\n✔ http-erreur-interne-rendu-controlee-et-reprise (1916.579672ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 2146.308234\n"
+      },
+      {
+        "name": "http-erreur-interne-import-inattendue-et-reprise",
+        "command": "\"node\" \"scripts/test.mjs\" \"http-erreur-interne-import-inattendue-et-reprise\"",
+        "exitCode": 0,
+        "output": "serveur-test {\"pid\":1713634,\"port\":45827,\"stopped\":true}\n✔ http-erreur-interne-import-inattendue-et-reprise (1564.932516ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 1793.661789\n"
+      },
+      {
+        "name": "http-verificateur-chemin-bloque-succes",
+        "command": "\"node\" \"scripts/test.mjs\" \"http-verificateur-chemin-bloque-succes\"",
+        "exitCode": 0,
+        "output": "serveur-test {\"pid\":1713731,\"port\":34577,\"stopped\":true}\n✔ http-verificateur-chemin-bloque-succes (102.296777ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 367.4082\n"
+      },
+      {
+        "name": "http-verificateur-placement-bloque-succes",
+        "command": "\"node\" \"scripts/test.mjs\" \"http-verificateur-placement-bloque-succes\"",
+        "exitCode": 0,
+        "output": "serveur-test {\"pid\":1713826,\"port\":37659,\"stopped\":true}\n✔ http-verificateur-placement-bloque-succes (91.564ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 316.696462\n"
+      },
+      {
+        "name": "http-verificateur-placement-chemin-bloque-succes",
+        "command": "\"node\" \"scripts/test.mjs\" \"http-verificateur-placement-chemin-bloque-succes\"",
+        "exitCode": 0,
+        "output": "serveur-test {\"pid\":1713937,\"port\":44019,\"stopped\":true}\n✔ http-verificateur-placement-chemin-bloque-succes (96.768547ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 336.632388\n"
+      },
+      {
+        "name": "http-trois-verificateurs-avant-rendu",
+        "command": "\"node\" \"scripts/test.mjs\" \"http-trois-verificateurs-avant-rendu\"",
+        "exitCode": 0,
+        "output": "serveur-test {\"pid\":1714032,\"port\":33513,\"stopped\":true}\n✔ http-trois-verificateurs-avant-rendu (1542.398941ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 1787.506544\n"
+      },
+      {
+        "name": "http-socle-statique-host-port-zero-et-navigateur",
+        "command": "\"node\" \"scripts/test.mjs\" \"http-socle-statique-host-port-zero-et-navigateur\"",
+        "exitCode": 0,
+        "output": "serveur-test {\"pid\":1714130,\"port\":37045,\"stopped\":true}\n✔ http-socle-statique-host-port-zero-et-navigateur (231.179619ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 449.318445\n"
+      },
+      {
+        "name": "http-host-personnalise-port-fixe-et-diagnostics-demarrage",
+        "command": "\"node\" \"scripts/test.mjs\" \"http-host-personnalise-port-fixe-et-diagnostics-demarrage\"",
+        "exitCode": 0,
+        "output": "serveur-test {\"pid\":1714317,\"port\":null,\"stopped\":true}\nserveur-test {\"pid\":1714324,\"port\":37787,\"stopped\":true}\nserveur-test {\"pid\":1714331,\"port\":null,\"stopped\":true}\nserveur-test {\"pid\":1714338,\"port\":null,\"stopped\":true}\nserveur-test {\"pid\":1714345,\"port\":null,\"stopped\":true}\nserveur-test {\"pid\":1714352,\"port\":null,\"stopped\":true}\nserveur-test {\"pid\":1714359,\"port\":null,\"stopped\":true}\n✔ http-host-personnalise-port-fixe-et-diagnostics-demarrage (463.480956ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 695.984999\n"
+      },
+      {
+        "name": "http-svg-consultation-et-enregistrement-navigateur",
+        "command": "\"node\" \"scripts/test.mjs\" \"http-svg-consultation-et-enregistrement-navigateur\"",
+        "exitCode": 0,
+        "output": "serveur-test {\"pid\":1714456,\"port\":44355,\"stopped\":true}\n✔ http-svg-consultation-et-enregistrement-navigateur (1622.901619ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 1849.62615\n"
+      }
+    ],
+    "updatedAt": "2026-10-31T10:21:50.007Z",
+    "rawResponse": "{\n  \"current\": \"evolution6.md\",\n  \"workCompleted\": true,\n  \"summary\": \"Route POST /api/generate réalisée et documentée : réutilisation du service commun, SVG UTF-8, limite explicite de 1 Mio et erreurs JSON 400/413/500. Ressources statiques et paramètres de démarrage préservés. Correction d’une annonce de disponibilité erronée lorsque le port est occupé. Typecheck, build et suite complète réussis : 120 cas, dont 105 conservés et 15 nouveaux. Consultation, téléchargement et réouverture hors ligne vérifiés dans Chromium. Aucun test supprimé. Instances de test arrêtées et pilotage PID 83835 préservé. Aucun fichier de suivi modifié par l’intervention.\",\n  \"tests\": [\n    {\n      \"name\": \"Vérification TypeScript\",\n      \"executable\": \"npm\",\n      \"args\": [\"run\", \"typecheck\"],\n      \"status\": \"passed\",\n      \"covers\": [0]\n    },\n    {\n      \"name\": \"Compilation serveur et navigateur\",\n      \"executable\": \"npm\",\n      \"args\": [\"run\", \"build\"],\n      \"status\": \"passed\",\n      \"covers\": [0, 2]\n    },\n    {\n      \"name\": \"Suite actuelle complète — 120 cas\",\n      \"executable\": \"npm\",\n      \"args\": [\"test\"],\n      \"status\": \"passed\",\n      \"covers\": [0, 1, 2, 3]\n    },\n    {\n      \"name\": \"http-diagram-reference-svg-utf8-et-equivalence-service\",\n      \"executable\": \"node\",\n      \"args\": [\"scripts/test.mjs\", \"http-diagram-reference-svg-utf8-et-equivalence-service\"],\n      \"status\": \"passed\",\n      \"covers\": [0, 3]\n    },\n    {\n      \"name\": \"http-json-mal-forme-et-reprise\",\n      \"executable\": \"node\",\n      \"args\": [\"scripts/test.mjs\", \"http-json-mal-forme-et-reprise\"],\n      \"status\": \"passed\",\n      \"covers\": [1]\n    },\n    {\n      \"name\": \"http-reference-arc-invalide-et-reprise\",\n      \"executable\": \"node\",\n      \"args\": [\"scripts/test.mjs\", \"http-reference-arc-invalide-et-reprise\"],\n      \"status\": \"passed\",\n      \"covers\": [1]\n    },\n    {\n      \"name\": \"http-structure-corps-et-refus-chemin-local\",\n      \"executable\": \"node\",\n      \"args\": [\"scripts/test.mjs\", \"http-structure-corps-et-refus-chemin-local\"],\n      \"status\": \"passed\",\n      \"covers\": [1]\n    },\n    {\n      \"name\": \"http-limite-un-mio-octets-et-reprise\",\n      \"executable\": \"node\",\n      \"args\": [\"scripts/test.mjs\", \"http-limite-un-mio-octets-et-reprise\"],\n      \"status\": \"passed\",\n      \"covers\": [1]\n    },\n    {\n      \"name\": \"http-format-contenu-charset-compression-et-reprise\",\n      \"executable\": \"node\",\n      \"args\": [\"scripts/test.mjs\", \"http-format-contenu-charset-compression-et-reprise\"],\n      \"status\": \"passed\",\n      \"covers\": [1]\n    },\n    {\n      \"name\": \"http-erreur-interne-rendu-controlee-et-reprise\",\n      \"executable\": \"node\",\n      \"args\": [\"scripts/test.mjs\", \"http-erreur-interne-rendu-controlee-et-reprise\"],\n      \"status\": \"passed\",\n      \"covers\": [1]\n    },\n    {\n      \"name\": \"http-erreur-interne-import-inattendue-et-reprise\",\n      \"executable\": \"node\",\n      \"args\": [\"scripts/test.mjs\", \"http-erreur-interne-import-inattendue-et-reprise\"],\n      \"status\": \"passed\",\n      \"covers\": [1]\n    },\n    {\n      \"name\": \"http-verificateur-chemin-bloque-succes\",\n      \"executable\": \"node\",\n      \"args\": [\"scripts/test.mjs\", \"http-verificateur-chemin-bloque-succes\"],\n      \"status\": \"passed\",\n      \"covers\": [0, 1]\n    },\n    {\n      \"name\": \"http-verificateur-placement-bloque-succes\",\n      \"executable\": \"node\",\n      \"args\": [\"scripts/test.mjs\", \"http-verificateur-placement-bloque-succes\"],\n      \"status\": \"passed\",\n      \"covers\": [0, 1]\n    },\n    {\n      \"name\": \"http-verificateur-placement-chemin-bloque-succes\",\n      \"executable\": \"node\",\n      \"args\": [\"scripts/test.mjs\", \"http-verificateur-placement-chemin-bloque-succes\"],\n      \"status\": \"passed\",\n      \"covers\": [0, 1]\n    },\n    {\n      \"name\": \"http-trois-verificateurs-avant-rendu\",\n      \"executable\": \"node\",\n      \"args\": [\"scripts/test.mjs\", \"http-trois-verificateurs-avant-rendu\"],\n      \"status\": \"passed\",\n      \"covers\": [0]\n    },\n    {\n      \"name\": \"http-socle-statique-host-port-zero-et-navigateur\",\n      \"executable\": \"node\",\n      \"args\": [\"scripts/test.mjs\", \"http-socle-statique-host-port-zero-et-navigateur\"],\n      \"status\": \"passed\",\n      \"covers\": [2]\n    },\n    {\n      \"name\": \"http-host-personnalise-port-fixe-et-diagnostics-demarrage\",\n      \"executable\": \"node\",\n      \"args\": [\"scripts/test.mjs\", \"http-host-personnalise-port-fixe-et-diagnostics-demarrage\"],\n      \"status\": \"passed\",\n      \"covers\": [2]\n    },\n    {\n      \"name\": \"http-svg-consultation-et-enregistrement-navigateur\",\n      \"executable\": \"node\",\n      \"args\": [\"scripts/test.mjs\", \"http-svg-consultation-et-enregistrement-navigateur\"],\n      \"status\": \"passed\",\n      \"covers\": [0, 3]\n    }\n  ],\n  \"testChanges\": {\n    \"removed\": [],\n    \"added\": [3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17]\n  },\n  \"serversStopped\": true,\n  \"servers\": [\n    {\"pid\": 1708498, \"port\": 33181, \"stopped\": true},\n    {\"pid\": 1708511, \"port\": 46383, \"stopped\": true},\n    {\"pid\": 1708520, \"port\": 45317, \"stopped\": true},\n    {\"pid\": 1708530, \"port\": 33135, \"stopped\": true},\n    {\"pid\": 1708541, \"port\": 34169, \"stopped\": true},\n    {\"pid\": 1708557, \"port\": 45209, \"stopped\": true},\n    {\"pid\": 1708567, \"port\": 37179, \"stopped\": true},\n    {\"pid\": 1708597, \"port\": 40141, \"stopped\": true},\n    {\"pid\": 1708608, \"port\": 36637, \"stopped\": true},\n    {\"pid\": 1708616, \"port\": 43543, \"stopped\": true},\n    {\"pid\": 1708623, \"port\": 46531, \"stopped\": true},\n    {\"pid\": 1708630, \"port\": 46815, \"stopped\": true},\n    {\"pid\": 1708639, \"port\": 37929, \"stopped\": true},\n    {\"pid\": 1708737, \"port\": null, \"stopped\": true},\n    {\"pid\": 1708745, \"port\": 45481, \"stopped\": true},\n    {\"pid\": 1708792, \"port\": 35045, \"stopped\": true},\n    {\"pid\": 1709261, \"port\": null, \"stopped\": true},\n    {\"pid\": 1709268, \"port\": 38629, \"stopped\": true},\n    {\"pid\": 1709277, \"port\": null, \"stopped\": true},\n    {\"pid\": 1709284, \"port\": null, \"stopped\": true},\n    {\"pid\": 1709291, \"port\": null, \"stopped\": true},\n    {\"pid\": 1709298, \"port\": null, \"stopped\": true},\n    {\"pid\": 1709305, \"port\": null, \"stopped\": true},\n    {\"pid\": 1709514, \"port\": 41143, \"stopped\": true},\n    {\"pid\": 1709892, \"port\": 36059, \"stopped\": true},\n    {\"pid\": 1710169, \"port\": 43383, \"stopped\": true},\n    {\"pid\": 1710326, \"port\": 43843, \"stopped\": true},\n    {\"pid\": 1710338, \"port\": 46421, \"stopped\": true},\n    {\"pid\": 1710347, \"port\": 40677, \"stopped\": true},\n    {\"pid\": 1710356, \"port\": 36095, \"stopped\": true},\n    {\"pid\": 1710367, \"port\": 46423, \"stopped\": true},\n    {\"pid\": 1710378, \"port\": 41781, \"stopped\": true},\n    {\"pid\": 1710385, \"port\": 41573, \"stopped\": true},\n    {\"pid\": 1710392, \"port\": 46425, \"stopped\": true},\n    {\"pid\": 1710399, \"port\": 46285, \"stopped\": true},\n    {\"pid\": 1710417, \"port\": 44865, \"stopped\": true},\n    {\"pid\": 1710521, \"port\": null, \"stopped\": true},\n    {\"pid\": 1710528, \"port\": 42455, \"stopped\": true},\n    {\"pid\": 1710537, \"port\": null, \"stopped\": true},\n    {\"pid\": 1710544, \"port\": null, \"stopped\": true},\n    {\"pid\": 1710551, \"port\": null, \"stopped\": true},\n    {\"pid\": 1710558, \"port\": null, \"stopped\": true},\n    {\"pid\": 1710565, \"port\": null, \"stopped\": true},\n    {\"pid\": 1710572, \"port\": 39539, \"stopped\": true}\n  ]\n}",
+    "report": {
+      "current": "evolution6.md",
+      "workCompleted": true,
+      "summary": "Route POST /api/generate réalisée et documentée : réutilisation du service commun, SVG UTF-8, limite explicite de 1 Mio et erreurs JSON 400/413/500. Ressources statiques et paramètres de démarrage préservés. Correction d’une annonce de disponibilité erronée lorsque le port est occupé. Typecheck, build et suite complète réussis : 120 cas, dont 105 conservés et 15 nouveaux. Consultation, téléchargement et réouverture hors ligne vérifiés dans Chromium. Aucun test supprimé. Instances de test arrêtées et pilotage PID 83835 préservé. Aucun fichier de suivi modifié par l’intervention.",
+      "tests": [
+        {
+          "name": "Vérification TypeScript",
+          "executable": "npm",
+          "args": [
+            "run",
+            "typecheck"
+          ],
+          "status": "passed",
+          "covers": [
+            0
+          ]
+        },
+        {
+          "name": "Compilation serveur et navigateur",
+          "executable": "npm",
+          "args": [
+            "run",
+            "build"
+          ],
+          "status": "passed",
+          "covers": [
+            0,
+            2
+          ]
+        },
+        {
+          "name": "Suite actuelle complète — 120 cas",
+          "executable": "npm",
+          "args": [
+            "test"
+          ],
+          "status": "passed",
+          "covers": [
+            0,
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "name": "http-diagram-reference-svg-utf8-et-equivalence-service",
+          "executable": "node",
+          "args": [
+            "scripts/test.mjs",
+            "http-diagram-reference-svg-utf8-et-equivalence-service"
+          ],
+          "status": "passed",
+          "covers": [
+            0,
+            3
+          ]
+        },
+        {
+          "name": "http-json-mal-forme-et-reprise",
+          "executable": "node",
+          "args": [
+            "scripts/test.mjs",
+            "http-json-mal-forme-et-reprise"
+          ],
+          "status": "passed",
+          "covers": [
+            1
+          ]
+        },
+        {
+          "name": "http-reference-arc-invalide-et-reprise",
+          "executable": "node",
+          "args": [
+            "scripts/test.mjs",
+            "http-reference-arc-invalide-et-reprise"
+          ],
+          "status": "passed",
+          "covers": [
+            1
+          ]
+        },
+        {
+          "name": "http-structure-corps-et-refus-chemin-local",
+          "executable": "node",
+          "args": [
+            "scripts/test.mjs",
+            "http-structure-corps-et-refus-chemin-local"
+          ],
+          "status": "passed",
+          "covers": [
+            1
+          ]
+        },
+        {
+          "name": "http-limite-un-mio-octets-et-reprise",
+          "executable": "node",
+          "args": [
+            "scripts/test.mjs",
+            "http-limite-un-mio-octets-et-reprise"
+          ],
+          "status": "passed",
+          "covers": [
+            1
+          ]
+        },
+        {
+          "name": "http-format-contenu-charset-compression-et-reprise",
+          "executable": "node",
+          "args": [
+            "scripts/test.mjs",
+            "http-format-contenu-charset-compression-et-reprise"
+          ],
+          "status": "passed",
+          "covers": [
+            1
+          ]
+        },
+        {
+          "name": "http-erreur-interne-rendu-controlee-et-reprise",
+          "executable": "node",
+          "args": [
+            "scripts/test.mjs",
+            "http-erreur-interne-rendu-controlee-et-reprise"
+          ],
+          "status": "passed",
+          "covers": [
+            1
+          ]
+        },
+        {
+          "name": "http-erreur-interne-import-inattendue-et-reprise",
+          "executable": "node",
+          "args": [
+            "scripts/test.mjs",
+            "http-erreur-interne-import-inattendue-et-reprise"
+          ],
+          "status": "passed",
+          "covers": [
+            1
+          ]
+        },
+        {
+          "name": "http-verificateur-chemin-bloque-succes",
+          "executable": "node",
+          "args": [
+            "scripts/test.mjs",
+            "http-verificateur-chemin-bloque-succes"
+          ],
+          "status": "passed",
+          "covers": [
+            0,
+            1
+          ]
+        },
+        {
+          "name": "http-verificateur-placement-bloque-succes",
+          "executable": "node",
+          "args": [
+            "scripts/test.mjs",
+            "http-verificateur-placement-bloque-succes"
+          ],
+          "status": "passed",
+          "covers": [
+            0,
+            1
+          ]
+        },
+        {
+          "name": "http-verificateur-placement-chemin-bloque-succes",
+          "executable": "node",
+          "args": [
+            "scripts/test.mjs",
+            "http-verificateur-placement-chemin-bloque-succes"
+          ],
+          "status": "passed",
+          "covers": [
+            0,
+            1
+          ]
+        },
+        {
+          "name": "http-trois-verificateurs-avant-rendu",
+          "executable": "node",
+          "args": [
+            "scripts/test.mjs",
+            "http-trois-verificateurs-avant-rendu"
+          ],
+          "status": "passed",
+          "covers": [
+            0
+          ]
+        },
+        {
+          "name": "http-socle-statique-host-port-zero-et-navigateur",
+          "executable": "node",
+          "args": [
+            "scripts/test.mjs",
+            "http-socle-statique-host-port-zero-et-navigateur"
+          ],
+          "status": "passed",
+          "covers": [
+            2
+          ]
+        },
+        {
+          "name": "http-host-personnalise-port-fixe-et-diagnostics-demarrage",
+          "executable": "node",
+          "args": [
+            "scripts/test.mjs",
+            "http-host-personnalise-port-fixe-et-diagnostics-demarrage"
+          ],
+          "status": "passed",
+          "covers": [
+            2
+          ]
+        },
+        {
+          "name": "http-svg-consultation-et-enregistrement-navigateur",
+          "executable": "node",
+          "args": [
+            "scripts/test.mjs",
+            "http-svg-consultation-et-enregistrement-navigateur"
+          ],
+          "status": "passed",
+          "covers": [
+            0,
+            3
+          ]
+        }
+      ],
+      "testChanges": {
+        "removed": [],
+        "added": [
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17
+        ]
+      },
+      "serversStopped": true,
+      "servers": [
+        {
+          "pid": 1708498,
+          "port": 33181,
+          "stopped": true
+        },
+        {
+          "pid": 1708511,
+          "port": 46383,
+          "stopped": true
+        },
+        {
+          "pid": 1708520,
+          "port": 45317,
+          "stopped": true
+        },
+        {
+          "pid": 1708530,
+          "port": 33135,
+          "stopped": true
+        },
+        {
+          "pid": 1708541,
+          "port": 34169,
+          "stopped": true
+        },
+        {
+          "pid": 1708557,
+          "port": 45209,
+          "stopped": true
+        },
+        {
+          "pid": 1708567,
+          "port": 37179,
+          "stopped": true
+        },
+        {
+          "pid": 1708597,
+          "port": 40141,
+          "stopped": true
+        },
+        {
+          "pid": 1708608,
+          "port": 36637,
+          "stopped": true
+        },
+        {
+          "pid": 1708616,
+          "port": 43543,
+          "stopped": true
+        },
+        {
+          "pid": 1708623,
+          "port": 46531,
+          "stopped": true
+        },
+        {
+          "pid": 1708630,
+          "port": 46815,
+          "stopped": true
+        },
+        {
+          "pid": 1708639,
+          "port": 37929,
+          "stopped": true
+        },
+        {
+          "pid": 1708737,
+          "port": null,
+          "stopped": true
+        },
+        {
+          "pid": 1708745,
+          "port": 45481,
+          "stopped": true
+        },
+        {
+          "pid": 1708792,
+          "port": 35045,
+          "stopped": true
+        },
+        {
+          "pid": 1709261,
+          "port": null,
+          "stopped": true
+        },
+        {
+          "pid": 1709268,
+          "port": 38629,
+          "stopped": true
+        },
+        {
+          "pid": 1709277,
+          "port": null,
+          "stopped": true
+        },
+        {
+          "pid": 1709284,
+          "port": null,
+          "stopped": true
+        },
+        {
+          "pid": 1709291,
+          "port": null,
+          "stopped": true
+        },
+        {
+          "pid": 1709298,
+          "port": null,
+          "stopped": true
+        },
+        {
+          "pid": 1709305,
+          "port": null,
+          "stopped": true
+        },
+        {
+          "pid": 1709514,
+          "port": 41143,
+          "stopped": true
+        },
+        {
+          "pid": 1709892,
+          "port": 36059,
+          "stopped": true
+        },
+        {
+          "pid": 1710169,
+          "port": 43383,
+          "stopped": true
+        },
+        {
+          "pid": 1710326,
+          "port": 43843,
+          "stopped": true
+        },
+        {
+          "pid": 1710338,
+          "port": 46421,
+          "stopped": true
+        },
+        {
+          "pid": 1710347,
+          "port": 40677,
+          "stopped": true
+        },
+        {
+          "pid": 1710356,
+          "port": 36095,
+          "stopped": true
+        },
+        {
+          "pid": 1710367,
+          "port": 46423,
+          "stopped": true
+        },
+        {
+          "pid": 1710378,
+          "port": 41781,
+          "stopped": true
+        },
+        {
+          "pid": 1710385,
+          "port": 41573,
+          "stopped": true
+        },
+        {
+          "pid": 1710392,
+          "port": 46425,
+          "stopped": true
+        },
+        {
+          "pid": 1710399,
+          "port": 46285,
+          "stopped": true
+        },
+        {
+          "pid": 1710417,
+          "port": 44865,
+          "stopped": true
+        },
+        {
+          "pid": 1710521,
+          "port": null,
+          "stopped": true
+        },
+        {
+          "pid": 1710528,
+          "port": 42455,
+          "stopped": true
+        },
+        {
+          "pid": 1710537,
+          "port": null,
+          "stopped": true
+        },
+        {
+          "pid": 1710544,
+          "port": null,
+          "stopped": true
+        },
+        {
+          "pid": 1710551,
+          "port": null,
+          "stopped": true
+        },
+        {
+          "pid": 1710558,
+          "port": null,
+          "stopped": true
+        },
+        {
+          "pid": 1710565,
+          "port": null,
+          "stopped": true
+        },
+        {
+          "pid": 1710572,
+          "port": 39539,
+          "stopped": true
+        }
+      ]
+    }
+  },
+  "commands": [
+    {
+      "name": "Vérification TypeScript",
+      "executable": "npm",
+      "args": [
+        "run",
+        "typecheck"
+      ],
+      "status": "passed",
+      "covers": [
+        0
+      ]
+    },
+    {
+      "name": "Compilation serveur et navigateur",
+      "executable": "npm",
+      "args": [
+        "run",
+        "build"
+      ],
+      "status": "passed",
+      "covers": [
+        0,
+        2
+      ]
+    },
+    {
+      "name": "Suite actuelle complète — 120 cas",
+      "executable": "npm",
+      "args": [
+        "test"
+      ],
+      "status": "passed",
+      "covers": [
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "name": "http-diagram-reference-svg-utf8-et-equivalence-service",
+      "executable": "node",
+      "args": [
+        "scripts/test.mjs",
+        "http-diagram-reference-svg-utf8-et-equivalence-service"
+      ],
+      "status": "passed",
+      "covers": [
+        0,
+        3
+      ]
+    },
+    {
+      "name": "http-json-mal-forme-et-reprise",
+      "executable": "node",
+      "args": [
+        "scripts/test.mjs",
+        "http-json-mal-forme-et-reprise"
+      ],
+      "status": "passed",
+      "covers": [
+        1
+      ]
+    },
+    {
+      "name": "http-reference-arc-invalide-et-reprise",
+      "executable": "node",
+      "args": [
+        "scripts/test.mjs",
+        "http-reference-arc-invalide-et-reprise"
+      ],
+      "status": "passed",
+      "covers": [
+        1
+      ]
+    },
+    {
+      "name": "http-structure-corps-et-refus-chemin-local",
+      "executable": "node",
+      "args": [
+        "scripts/test.mjs",
+        "http-structure-corps-et-refus-chemin-local"
+      ],
+      "status": "passed",
+      "covers": [
+        1
+      ]
+    },
+    {
+      "name": "http-limite-un-mio-octets-et-reprise",
+      "executable": "node",
+      "args": [
+        "scripts/test.mjs",
+        "http-limite-un-mio-octets-et-reprise"
+      ],
+      "status": "passed",
+      "covers": [
+        1
+      ]
+    },
+    {
+      "name": "http-format-contenu-charset-compression-et-reprise",
+      "executable": "node",
+      "args": [
+        "scripts/test.mjs",
+        "http-format-contenu-charset-compression-et-reprise"
+      ],
+      "status": "passed",
+      "covers": [
+        1
+      ]
+    },
+    {
+      "name": "http-erreur-interne-rendu-controlee-et-reprise",
+      "executable": "node",
+      "args": [
+        "scripts/test.mjs",
+        "http-erreur-interne-rendu-controlee-et-reprise"
+      ],
+      "status": "passed",
+      "covers": [
+        1
+      ]
+    },
+    {
+      "name": "http-erreur-interne-import-inattendue-et-reprise",
+      "executable": "node",
+      "args": [
+        "scripts/test.mjs",
+        "http-erreur-interne-import-inattendue-et-reprise"
+      ],
+      "status": "passed",
+      "covers": [
+        1
+      ]
+    },
+    {
+      "name": "http-verificateur-chemin-bloque-succes",
+      "executable": "node",
+      "args": [
+        "scripts/test.mjs",
+        "http-verificateur-chemin-bloque-succes"
+      ],
+      "status": "passed",
+      "covers": [
+        0,
+        1
+      ]
+    },
+    {
+      "name": "http-verificateur-placement-bloque-succes",
+      "executable": "node",
+      "args": [
+        "scripts/test.mjs",
+        "http-verificateur-placement-bloque-succes"
+      ],
+      "status": "passed",
+      "covers": [
+        0,
+        1
+      ]
+    },
+    {
+      "name": "http-verificateur-placement-chemin-bloque-succes",
+      "executable": "node",
+      "args": [
+        "scripts/test.mjs",
+        "http-verificateur-placement-chemin-bloque-succes"
+      ],
+      "status": "passed",
+      "covers": [
+        0,
+        1
+      ]
+    },
+    {
+      "name": "http-trois-verificateurs-avant-rendu",
+      "executable": "node",
+      "args": [
+        "scripts/test.mjs",
+        "http-trois-verificateurs-avant-rendu"
+      ],
+      "status": "passed",
+      "covers": [
+        0
+      ]
+    },
+    {
+      "name": "http-socle-statique-host-port-zero-et-navigateur",
+      "executable": "node",
+      "args": [
+        "scripts/test.mjs",
+        "http-socle-statique-host-port-zero-et-navigateur"
+      ],
+      "status": "passed",
+      "covers": [
+        2
+      ]
+    },
+    {
+      "name": "http-host-personnalise-port-fixe-et-diagnostics-demarrage",
+      "executable": "node",
+      "args": [
+        "scripts/test.mjs",
+        "http-host-personnalise-port-fixe-et-diagnostics-demarrage"
+      ],
+      "status": "passed",
+      "covers": [
+        2
+      ]
+    },
+    {
+      "name": "http-svg-consultation-et-enregistrement-navigateur",
+      "executable": "node",
+      "args": [
+        "scripts/test.mjs",
+        "http-svg-consultation-et-enregistrement-navigateur"
+      ],
+      "status": "passed",
+      "covers": [
+        0,
+        3
+      ]
+    }
+  ]
+}

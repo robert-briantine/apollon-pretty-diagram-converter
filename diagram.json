@@ -1,0 +1,647 @@
+{
+  "id": "388bd020-bda0-4c1c-a89f-011f9b16a3e7",
+  "version": "4.2.0",
+  "title": "",
+  "type": "ActivityDiagram",
+  "nodes": [
+    {
+      "id": "618ec9db-0b4b-43eb-be3b-f5dcf7a5adc1",
+      "width": 50,
+      "height": 50,
+      "type": "activityInitialNode",
+      "position": {
+        "x": 405,
+        "y": 245
+      },
+      "data": {
+        "name": "ActivityInitialNode"
+      },
+      "measured": {
+        "width": 50,
+        "height": 50
+      }
+    },
+    {
+      "id": "49950944-cc1c-403f-9fa2-a8a92c5afc0a",
+      "width": 160,
+      "height": 120,
+      "type": "activityActionNode",
+      "position": {
+        "x": 945,
+        "y": 235
+      },
+      "data": {
+        "name": "Observe\n"
+      },
+      "measured": {
+        "width": 160,
+        "height": 120
+      }
+    },
+    {
+      "id": "4567b73b-e269-4a39-851d-a81cddd9e4e3",
+      "width": 160,
+      "height": 120,
+      "type": "activityActionNode",
+      "position": {
+        "x": 570,
+        "y": 175
+      },
+      "data": {
+        "name": "Cherche un objectif"
+      },
+      "measured": {
+        "width": 160,
+        "height": 120
+      }
+    },
+    {
+      "id": "7fa714ee-c6b2-4795-bab1-3087eada86ae",
+      "width": 160,
+      "height": 120,
+      "type": "activityMergeNode",
+      "position": {
+        "x": 1330,
+        "y": 215
+      },
+      "data": {
+        "name": "objectif atteint ?"
+      },
+      "measured": {
+        "width": 160,
+        "height": 120
+      }
+    },
+    {
+      "id": "2026ec34-78d2-4d5c-88a3-94043b0bab6e",
+      "width": 160,
+      "height": 120,
+      "type": "activityActionNode",
+      "position": {
+        "x": 1315,
+        "y": 470
+      },
+      "data": {
+        "name": "choisir action"
+      },
+      "measured": {
+        "width": 160,
+        "height": 120
+      }
+    },
+    {
+      "id": "1c5ee04a-f4de-4c0d-95b0-34c83cd29d02",
+      "width": 160,
+      "height": 120,
+      "type": "activityActionNode",
+      "position": {
+        "x": 1315,
+        "y": 625
+      },
+      "data": {
+        "name": "Mémoriser"
+      },
+      "measured": {
+        "width": 160,
+        "height": 120
+      }
+    },
+    {
+      "id": "df79ec4e-44cd-41d8-b72c-d4ab5e8808db",
+      "width": 160,
+      "height": 120,
+      "type": "activityActionNode",
+      "position": {
+        "x": 570,
+        "y": 350
+      },
+      "data": {
+        "name": "Définir un budget"
+      },
+      "measured": {
+        "width": 160,
+        "height": 120
+      }
+    },
+    {
+      "id": "980d2b72-408c-44e7-b2c7-dfc2d9ad38cf",
+      "width": 160,
+      "height": 120,
+      "type": "activityMergeNode",
+      "position": {
+        "x": 1515,
+        "y": 335
+      },
+      "data": {
+        "name": "budget est dépassé ?"
+      },
+      "measured": {
+        "width": 160,
+        "height": 120
+      }
+    },
+    {
+      "id": "8e49e711-37ae-4241-a894-9fe0762b823d",
+      "width": 160,
+      "height": 120,
+      "type": "activityActionNode",
+      "position": {
+        "x": 925,
+        "y": -225
+      },
+      "data": {
+        "name": "chercher l'algorithme pour l'objectif et pour choisir l'action"
+      },
+      "measured": {
+        "width": 160,
+        "height": 120
+      }
+    },
+    {
+      "id": "a13d949b-cf09-483e-a8a1-c73829d1afe1",
+      "width": 160,
+      "height": 120,
+      "type": "activityMergeNode",
+      "position": {
+        "x": 925,
+        "y": 10
+      },
+      "data": {
+        "name": "l'objectif est il répétable"
+      },
+      "measured": {
+        "width": 160,
+        "height": 120
+      }
+    },
+    {
+      "id": "dcccbf36-9599-45a8-8c07-ea777457a222",
+      "width": 160,
+      "height": 120,
+      "type": "activityActionNode",
+      "position": {
+        "x": 1135,
+        "y": -225
+      },
+      "data": {
+        "name": "Définir un budget"
+      },
+      "measured": {
+        "width": 160,
+        "height": 120
+      }
+    },
+    {
+      "id": "5d8799b9-a093-415f-b626-0d5b01a40c21",
+      "width": 160,
+      "height": 120,
+      "type": "activityActionNode",
+      "position": {
+        "x": 1645,
+        "y": -215
+      },
+      "data": {
+        "name": "Observe\n"
+      },
+      "measured": {
+        "width": 160,
+        "height": 120
+      }
+    },
+    {
+      "id": "3aa94e1d-7200-4428-8ff9-541ba9d075ba",
+      "width": 260,
+      "height": 120,
+      "type": "activityMergeNode",
+      "position": {
+        "x": 2020,
+        "y": -210
+      },
+      "data": {
+        "name": "utiliser l'algorithme pour savoir si objectif atteint ?"
+      },
+      "measured": {
+        "width": 260,
+        "height": 120
+      }
+    },
+    {
+      "id": "90b4daac-95f6-497b-9cc9-392a75dfe0ce",
+      "width": 160,
+      "height": 120,
+      "type": "activityMergeNode",
+      "position": {
+        "x": 2070,
+        "y": 30
+      },
+      "data": {
+        "name": "budget est dépassé ?"
+      },
+      "measured": {
+        "width": 160,
+        "height": 120
+      }
+    },
+    {
+      "id": "a79841d6-bc45-4bab-8395-13d475b8d68b",
+      "width": 160,
+      "height": 120,
+      "type": "activityActionNode",
+      "position": {
+        "x": 1395,
+        "y": -220
+      },
+      "data": {
+        "name": "Définir un budget de reflexon"
+      },
+      "measured": {
+        "width": 160,
+        "height": 120
+      }
+    },
+    {
+      "id": "fa9d525e-cd39-4fae-a6ae-7dc9cc8293d6",
+      "width": 215,
+      "height": 120,
+      "type": "activityMergeNode",
+      "position": {
+        "x": 1495,
+        "y": 30
+      },
+      "data": {
+        "name": "budget de réflexion est dépassé ?"
+      },
+      "measured": {
+        "width": 215,
+        "height": 120
+      }
+    },
+    {
+      "id": "3d92d544-cc1a-44fa-a8ae-476f147622c9",
+      "width": 160,
+      "height": 120,
+      "type": "activityActionNode",
+      "position": {
+        "x": 1970,
+        "y": 290
+      },
+      "data": {
+        "name": "choisir action avec l'algorithme"
+      },
+      "measured": {
+        "width": 160,
+        "height": 120
+      }
+    },
+    {
+      "id": "9c8d3764-b90b-4376-9a9d-8d64a773a25c",
+      "width": 160,
+      "height": 120,
+      "type": "activityActionNode",
+      "position": {
+        "x": 1775,
+        "y": 290
+      },
+      "data": {
+        "name": "Mémoriser"
+      },
+      "measured": {
+        "width": 160,
+        "height": 120
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "55698e6e-4334-4ef5-b7b6-2e7251128321",
+      "source": "618ec9db-0b4b-43eb-be3b-f5dcf7a5adc1",
+      "target": "4567b73b-e269-4a39-851d-a81cddd9e4e3",
+      "type": "ActivityControlFlow",
+      "sourceHandle": "right",
+      "targetHandle": "left",
+      "data": {
+        "points": [],
+        "targetAnchor": {
+          "side": "left",
+          "ratio": 0.4166666666666667
+        }
+      }
+    },
+    {
+      "id": "b6911b27-e91e-419b-bc5b-37584ba29728",
+      "source": "df79ec4e-44cd-41d8-b72c-d4ab5e8808db",
+      "target": "49950944-cc1c-403f-9fa2-a8a92c5afc0a",
+      "type": "ActivityControlFlow",
+      "sourceHandle": "right",
+      "targetHandle": "left",
+      "data": {
+        "sourceAnchor": {
+          "side": "right",
+          "ratio": 0.5833333333333334
+        },
+        "points": []
+      }
+    },
+    {
+      "id": "c5d4b3c3-2535-4df6-9603-c8e3b45511e0",
+      "source": "49950944-cc1c-403f-9fa2-a8a92c5afc0a",
+      "target": "7fa714ee-c6b2-4795-bab1-3087eada86ae",
+      "type": "ActivityControlFlow",
+      "sourceHandle": "right",
+      "targetHandle": "left",
+      "data": {
+        "points": []
+      }
+    },
+    {
+      "id": "6d591824-cf41-45c2-b62d-8497f94348b7",
+      "source": "7fa714ee-c6b2-4795-bab1-3087eada86ae",
+      "target": "a13d949b-cf09-483e-a8a1-c73829d1afe1",
+      "type": "ActivityControlFlow",
+      "sourceHandle": "bottom",
+      "targetHandle": "right",
+      "data": {
+        "label": "oui",
+        "points": [
+          {
+            "x": 1410,
+            "y": 215
+          },
+          {
+            "x": 1410,
+            "y": 70
+          },
+          {
+            "x": 1085,
+            "y": 70
+          }
+        ],
+        "sourceAnchor": {
+          "side": "top",
+          "ratio": 0.5
+        },
+        "targetAnchor": {
+          "side": "right",
+          "ratio": 0.5
+        }
+      }
+    },
+    {
+      "id": "be9b89ba-4cc9-4795-a9ff-4a62ceccccae",
+      "source": "7fa714ee-c6b2-4795-bab1-3087eada86ae",
+      "target": "980d2b72-408c-44e7-b2c7-dfc2d9ad38cf",
+      "type": "ActivityControlFlow",
+      "sourceHandle": "bottom",
+      "targetHandle": "top",
+      "data": {
+        "points": [],
+        "label": "non",
+        "targetAnchor": {
+          "side": "top",
+          "ratio": 0.5
+        }
+      }
+    },
+    {
+      "id": "1b1d771c-42fa-4c12-b922-4888aa699343",
+      "source": "2026ec34-78d2-4d5c-88a3-94043b0bab6e",
+      "target": "1c5ee04a-f4de-4c0d-95b0-34c83cd29d02",
+      "type": "ActivityControlFlow",
+      "sourceHandle": "bottom",
+      "targetHandle": "top-between-mid-left-center",
+      "data": {
+        "points": []
+      }
+    },
+    {
+      "id": "8573e46a-44c6-484b-896c-5223253d9a87",
+      "source": "1c5ee04a-f4de-4c0d-95b0-34c83cd29d02",
+      "target": "49950944-cc1c-403f-9fa2-a8a92c5afc0a",
+      "type": "ActivityControlFlow",
+      "sourceHandle": "left",
+      "targetHandle": "bottom-mid-left",
+      "data": {
+        "points": []
+      }
+    },
+    {
+      "id": "60a90c1a-5c72-4e0c-a0ff-b7ffe01320a0",
+      "source": "4567b73b-e269-4a39-851d-a81cddd9e4e3",
+      "target": "df79ec4e-44cd-41d8-b72c-d4ab5e8808db",
+      "type": "ActivityControlFlow",
+      "sourceHandle": "bottom",
+      "targetHandle": "top-between-mid-left-center",
+      "data": {
+        "points": []
+      }
+    },
+    {
+      "id": "acf8bd44-6b17-4e24-a361-879d4595aa8a",
+      "source": "980d2b72-408c-44e7-b2c7-dfc2d9ad38cf",
+      "target": "2026ec34-78d2-4d5c-88a3-94043b0bab6e",
+      "type": "ActivityControlFlow",
+      "sourceHandle": "bottom",
+      "targetHandle": "right-between-mid-top-center",
+      "data": {
+        "label": "non",
+        "points": []
+      }
+    },
+    {
+      "id": "668a43d0-0df4-4f88-be1f-b028e8409e15",
+      "source": "980d2b72-408c-44e7-b2c7-dfc2d9ad38cf",
+      "target": "4567b73b-e269-4a39-851d-a81cddd9e4e3",
+      "type": "ActivityControlFlow",
+      "sourceHandle": "left",
+      "targetHandle": "bottom",
+      "data": {
+        "points": [],
+        "label": "oui"
+      }
+    },
+    {
+      "id": "40caa193-45c5-4100-a0ff-df748e9235c6",
+      "source": "a13d949b-cf09-483e-a8a1-c73829d1afe1",
+      "target": "4567b73b-e269-4a39-851d-a81cddd9e4e3",
+      "type": "ActivityControlFlow",
+      "sourceHandle": "left",
+      "targetHandle": "top-between-mid-left-center",
+      "data": {
+        "label": "non",
+        "points": []
+      }
+    },
+    {
+      "id": "dcfcb0db-13e5-4950-83b2-72a6ec7820a9",
+      "source": "a13d949b-cf09-483e-a8a1-c73829d1afe1",
+      "target": "8e49e711-37ae-4241-a894-9fe0762b823d",
+      "type": "ActivityControlFlow",
+      "sourceHandle": "top",
+      "targetHandle": "bottom-mid-left",
+      "data": {
+        "label": "oui",
+        "points": []
+      }
+    },
+    {
+      "id": "505e0baf-79d1-42eb-ada1-1b1e5214232b",
+      "source": "8e49e711-37ae-4241-a894-9fe0762b823d",
+      "target": "dcccbf36-9599-45a8-8c07-ea777457a222",
+      "type": "ActivityControlFlow",
+      "sourceHandle": "right",
+      "targetHandle": "left-mid-bottom",
+      "data": {
+        "points": []
+      }
+    },
+    {
+      "id": "d367d63b-1e5e-4fa8-b96f-bb1d97fee8d8",
+      "source": "dcccbf36-9599-45a8-8c07-ea777457a222",
+      "target": "a79841d6-bc45-4bab-8395-13d475b8d68b",
+      "type": "ActivityControlFlow",
+      "sourceHandle": "right",
+      "targetHandle": "left",
+      "data": {
+        "targetAnchor": {
+          "side": "left",
+          "ratio": 0.5833333333333334
+        },
+        "points": []
+      }
+    },
+    {
+      "id": "f0454c34-06e0-49b8-a818-cbf988eb1594",
+      "source": "5d8799b9-a093-415f-b626-0d5b01a40c21",
+      "target": "3aa94e1d-7200-4428-8ff9-541ba9d075ba",
+      "type": "ActivityControlFlow",
+      "sourceHandle": "right",
+      "targetHandle": "left",
+      "data": {
+        "points": []
+      }
+    },
+    {
+      "id": "45c836bd-6e25-4e25-a433-6dcf87944fe3",
+      "source": "3aa94e1d-7200-4428-8ff9-541ba9d075ba",
+      "target": "90b4daac-95f6-497b-9cc9-392a75dfe0ce",
+      "type": "ActivityControlFlow",
+      "sourceHandle": "bottom",
+      "targetHandle": "top",
+      "data": {
+        "label": "non",
+        "points": []
+      }
+    },
+    {
+      "id": "66591227-01c2-415b-b4f9-cfd6a5624fba",
+      "source": "a79841d6-bc45-4bab-8395-13d475b8d68b",
+      "target": "5d8799b9-a093-415f-b626-0d5b01a40c21",
+      "type": "ActivityControlFlow",
+      "sourceHandle": "right",
+      "targetHandle": "bottom-mid-right",
+      "data": {
+        "points": []
+      }
+    },
+    {
+      "id": "d6853afc-3ebe-4837-a4ec-c545a43402a6",
+      "source": "90b4daac-95f6-497b-9cc9-392a75dfe0ce",
+      "target": "fa9d525e-cd39-4fae-a6ae-7dc9cc8293d6",
+      "type": "ActivityControlFlow",
+      "sourceHandle": "left",
+      "targetHandle": "right",
+      "data": {
+        "label": "oui",
+        "points": [
+          {
+            "x": 2070,
+            "y": 90
+          },
+          {
+            "x": 1710,
+            "y": 90
+          }
+        ],
+        "sourceAnchor": {
+          "side": "left",
+          "ratio": 0.5
+        },
+        "targetAnchor": {
+          "side": "right",
+          "ratio": 0.5
+        }
+      }
+    },
+    {
+      "id": "336a5bf5-0087-42e0-b8f6-702142789c22",
+      "source": "fa9d525e-cd39-4fae-a6ae-7dc9cc8293d6",
+      "target": "4567b73b-e269-4a39-851d-a81cddd9e4e3",
+      "type": "ActivityControlFlow",
+      "sourceHandle": "left",
+      "targetHandle": "top-mid-left",
+      "data": {
+        "label": "oui",
+        "points": []
+      }
+    },
+    {
+      "id": "9edee012-cddd-41c7-8861-5c2076683fb4",
+      "source": "fa9d525e-cd39-4fae-a6ae-7dc9cc8293d6",
+      "target": "8e49e711-37ae-4241-a894-9fe0762b823d",
+      "type": "ActivityControlFlow",
+      "sourceHandle": "top",
+      "targetHandle": "bottom-right",
+      "data": {
+        "label": "non",
+        "points": []
+      }
+    },
+    {
+      "id": "1b50fe3d-764c-4dc3-964c-efe56fd154ac",
+      "source": "90b4daac-95f6-497b-9cc9-392a75dfe0ce",
+      "target": "3d92d544-cc1a-44fa-a8ae-476f147622c9",
+      "type": "ActivityControlFlow",
+      "sourceHandle": "bottom",
+      "targetHandle": "top-left",
+      "data": {
+        "points": [],
+        "label": "non"
+      }
+    },
+    {
+      "id": "737e85bb-0bf7-430a-8bed-05b1fd025e9c",
+      "source": "3d92d544-cc1a-44fa-a8ae-476f147622c9",
+      "target": "9c8d3764-b90b-4376-9a9d-8d64a773a25c",
+      "type": "ActivityControlFlow",
+      "sourceHandle": "bottom",
+      "targetHandle": "top-between-mid-left-center",
+      "data": {
+        "points": []
+      }
+    },
+    {
+      "id": "8d51fa78-51d9-49c5-a47f-143b986f5367",
+      "source": "9c8d3764-b90b-4376-9a9d-8d64a773a25c",
+      "target": "5d8799b9-a093-415f-b626-0d5b01a40c21",
+      "type": "ActivityControlFlow",
+      "sourceHandle": "right",
+      "targetHandle": "bottom-between-mid-right-center",
+      "data": {
+        "points": []
+      }
+    },
+    {
+      "id": "aaf86327-472d-49a1-a29d-65c755e6b0f3",
+      "source": "3aa94e1d-7200-4428-8ff9-541ba9d075ba",
+      "target": "4567b73b-e269-4a39-851d-a81cddd9e4e3",
+      "type": "ActivityControlFlow",
+      "sourceHandle": "right",
+      "targetHandle": "top-mid-left",
+      "data": {
+        "label": "oui",
+        "points": []
+      }
+    }
+  ],
+  "assessments": {}
+}

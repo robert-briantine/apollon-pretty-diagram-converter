@@ -1,0 +1,39 @@
+{
+  "name": "diagrams-codex",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Socle technique du convertisseur de diagrammes d’activité en SVG.",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "setup": "npm ci",
+    "dev": "npm run build && concurrently --kill-others --names serveur-ts,navigateur-ts,serveur \"tsc -p tsconfig.server.json --watch --preserveWatchOutput\" \"tsc -p tsconfig.client.json --watch --preserveWatchOutput\" \"node --watch dist/server/index.js\"",
+    "typecheck": "tsc -p tsconfig.server.json --noEmit && tsc -p tsconfig.client.json --noEmit && tsc -p tsconfig.desktop.json",
+    "test": "node scripts/test.mjs",
+    "build": "tsc -p tsconfig.server.json && tsc -p tsconfig.client.json",
+    "start": "node dist/server/index.js",
+    "convert": "node dist/server/convertir.js",
+    "tauri": "tauri",
+    "desktop:prepare": "npm run typecheck && node scripts/build-desktop.mjs",
+    "desktop:dev": "tauri dev",
+    "desktop:build:spark": "tauri build --target aarch64-unknown-linux-gnu --bundles deb -- --locked",
+    "desktop:build:windows": "tauri build --runner cargo-xwin --target x86_64-pc-windows-msvc --bundles nsis -- --locked",
+    "test:desktop": "npm run build && npm run desktop:build:spark && node scripts/test-desktop-native.mjs"
+  },
+  "dependencies": {
+    "@tauri-apps/api": "^2.12.4",
+    "express": "^5.3.0"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "^2.12.4",
+    "@types/express": "^5.0.6",
+    "@types/node": "^22.20.5",
+    "@xmldom/xmldom": "^0.9.12",
+    "concurrently": "^10.0.6",
+    "esbuild": "^0.28.2",
+    "playwright": "^1.64.1",
+    "typescript": "^7.0.2"
+  }
+}

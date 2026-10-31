@@ -1,0 +1,600 @@
+{
+  "version": 1,
+  "fingerprint": "a0a801bbc97da83f21ac80f67857e46ba4a14ec9e191ce7ff9ed8945aeae2851",
+  "execution": {
+    "current": "evolution7.md",
+    "kind": "adjust",
+    "status": "succeeded",
+    "error": null,
+    "summary": "Reprise après l’arrêt du serveur : travaux existants conservés, aucun défaut supplémentaire ni test obsolète identifié. Typecheck, build, 168 tests et parcours natif Linux réussis ; compilations Tauri ARM64 et Windows x64 réussies. Captures examinées, export autonome et trois listes de conflits vides vérifiés. Aucun test ajouté ou supprimé. Tous les processus de vérification sont arrêtés, ports fermés ; PID 83835 préservé. Parcours Windows non exécuté : nécessite Windows 10/11 x64, WebView2 et un opérateur. Prochaine action : installer le paquet NSIS puis lancer scripts/verify-windows.ps1.",
+    "tests": [
+      {
+        "name": "typecheck",
+        "command": "\"npm\" \"run\" \"typecheck\"",
+        "exitCode": 0,
+        "output": "\n> diagrams-codex@0.1.0 typecheck\n> tsc -p tsconfig.server.json --noEmit && tsc -p tsconfig.client.json --noEmit && tsc -p tsconfig.desktop.json\n\n"
+      },
+      {
+        "name": "build",
+        "command": "\"npm\" \"run\" \"build\"",
+        "exitCode": 0,
+        "output": "\n> diagrams-codex@0.1.0 build\n> tsc -p tsconfig.server.json && tsc -p tsconfig.client.json\n\n"
+      },
+      {
+        "name": "suite-actuelle-168-cas",
+        "command": "\"npm\" \"test\"",
+        "exitCode": 0,
+        "output": "\n> diagrams-codex@0.1.0 test\n> node scripts/test.mjs\n\nInterface Tauri et moteur de conversion hors ligne : dist/desktop/\n✔ conversion-service-memoire-equivalence-et-immuabilite (12.916373ms)\n✔ conversion-service-diagnostics-json-import-calcul (1.377974ms)\n✔ conversion-cli-commande-documentee-utf8-et-service (3240.84886ms)\n✔ conversion-cli-svg-ouverture-navigateur (2847.145965ms)\n✔ conversion-cli-lecture-inexistante (109.876407ms)\n✔ conversion-cli-json-invalide (109.71015ms)\n✔ conversion-cli-diagramme-invalide (124.186658ms)\n✔ conversion-cli-erreur-geometrique-controlee (132.630485ms)\n✔ conversion-cli-refus-chemin-invalide (149.480603ms)\n✔ conversion-cli-refus-placements-superposes (139.833555ms)\n✔ conversion-cli-refus-chemin-traversant-forme (127.577537ms)\n✔ conversion-cli-diagnostic-rendu (121.891497ms)\n✔ conversion-cli-ecriture-interrompue-atomique (148.283782ms)\n✔ conversion-cli-destination-inaccessible (135.833091ms)\n✔ conversion-cli-refus-destination-source (100.57952ms)\n✔ conversion-cli-refus-alias-source (103.785358ms)\n✔ conversion-cli-remplacement-destination-et-chemins-espaces (45.863806ms)\n✔ conversion-cli-arguments-invalides (186.966774ms)\n✔ conversion-disposition-compacte-reference-connexions-et-conflits (8326.609577ms)\nserveur-test {\"pid\":2233820,\"port\":44459,\"stopped\":true}\n✔ desktop-worker-hors-ligne-meme-svg-18-noeuds-24-arcs-et-remplacement (3756.456419ms)\nserveur-test {\"pid\":2233820,\"port\":45903,\"stopped\":true}\n✔ desktop-erreurs-json-metier-worker-expiration-et-reprise-sans-apercu-perime (1024.063168ms)\nserveur-test {\"pid\":2233820,\"port\":35783,\"stopped\":true}\n✔ desktop-dialogue-annule-erreur-ecriture-et-ouverture-native-du-bon-resultat (590.623373ms)\n✔ connexions-losange-absolues (2.099161ms)\n✔ connexions-ovale-absolues (0.115536ms)\n✔ connexions-rectangle-ancres-multiples (0.304338ms)\n✔ connexions-rectangle-incidents-et-handles (0.179984ms)\n✔ connexions-rectangle-coins-dedupliques (0.119168ms)\n✔ connexions-diagnostics-invalides (0.340738ms)\n✔ destination-pas-signes-et-immuabilite (0.140592ms)\n✔ chemin-connexion-source-et-arrivees (0.307186ms)\n✔ chemin-tolerance-distance-carree (0.257393ms)\n✔ placements-separes-tangents-superposes (0.610162ms)\n✔ segments-interieur-bords-contacts-deux-sens (0.810387ms)\n✔ placement-chemin-exclusions-paralleles-deduplication (0.187777ms)\n✔ geometrie-configuration-valide-et-vide (0.169185ms)\n✔ geometrie-diagnostics-references-et-indices (1.364005ms)\n✔ geometrie-diagnostics-nombres-et-pas (0.734291ms)\n✔ geometrie-identifiants-speciaux (0.099248ms)\n✔ connexions-integration-diagramme-reference (7.041565ms)\nserveur-test {\"pid\":2233991,\"port\":35991,\"stopped\":true}\n✔ http-diagram-reference-svg-utf8-et-equivalence-service (3402.990924ms)\nserveur-test {\"pid\":2234369,\"port\":44117,\"stopped\":true}\n✔ http-json-mal-forme-et-reprise (4235.331697ms)\nserveur-test {\"pid\":2235442,\"port\":35513,\"stopped\":true}\n✔ http-reference-arc-invalide-et-reprise (2932.198748ms)\nserveur-test {\"pid\":2235784,\"port\":39757,\"stopped\":true}\n✔ http-structure-corps-et-refus-chemin-local (4082.401958ms)\nserveur-test {\"pid\":2235973,\"port\":44631,\"stopped\":true}\n✔ http-limite-un-mio-octets-et-reprise (3429.059476ms)\nserveur-test {\"pid\":2236197,\"port\":39713,\"stopped\":true}\n✔ http-format-contenu-charset-compression-et-reprise (3273.677376ms)\nserveur-test {\"pid\":2236320,\"port\":43795,\"stopped\":true}\n✔ http-erreur-interne-rendu-controlee-et-reprise (5736.138944ms)\nserveur-test {\"pid\":2236696,\"port\":45181,\"stopped\":true}\n✔ http-erreur-interne-import-inattendue-et-reprise (3403.672455ms)\nserveur-test {\"pid\":2237010,\"port\":45115,\"stopped\":true}\n✔ http-verificateur-chemin-bloque-succes (134.141531ms)\nserveur-test {\"pid\":2237017,\"port\":35315,\"stopped\":true}\n✔ http-verificateur-placement-bloque-succes (125.891257ms)\nserveur-test {\"pid\":2237026,\"port\":40059,\"stopped\":true}\n✔ http-verificateur-placement-chemin-bloque-succes (125.900361ms)\nserveur-test {\"pid\":2237035,\"port\":45199,\"stopped\":true}\n✔ http-trois-verificateurs-avant-rendu (3155.786293ms)\nserveur-test {\"pid\":2237367,\"port\":41343,\"stopped\":true}\n✔ http-interface-finale-ressources-host-port-zero (336.841826ms)\nserveur-test {\"pid\":2237467,\"port\":null,\"stopped\":true}\nserveur-test {\"pid\":2237474,\"port\":37089,\"stopped\":true}\nserveur-test {\"pid\":2237481,\"port\":null,\"stopped\":true}\nserveur-test {\"pid\":2237488,\"port\":null,\"stopped\":true}\nserveur-test {\"pid\":2237495,\"port\":null,\"stopped\":true}\nserveur-test {\"pid\":2237504,\"port\":null,\"stopped\":true}\nserveur-test {\"pid\":2237513,\"port\":null,\"stopped\":true}\n✔ http-host-personnalise-port-fixe-et-diagnostics-demarrage (534.4609ms)\nserveur-test {\"pid\":2237520,\"port\":34883,\"stopped\":true}\n✔ http-svg-consultation-et-enregistrement-navigateur (4361.527298ms)\n✔ diagram-reference (6.982541ms)\n✔ formes-et-dimensions (0.318929ms)\n✔ arcs-paralleles (0.218561ms)\n✔ cycle-et-boucle (0.081073ms)\n✔ noeud-isole (0.092416ms)\n✔ tableaux-vides (0.052848ms)\n✔ libelles-unicode-multilignes (0.107808ms)\n✔ json-mal-forme (0.313169ms)\n✔ identifiants-invalides-et-dupliques (0.648995ms)\n✔ references-absentes (0.254305ms)\n✔ dimensions-invalides (0.842419ms)\n✔ types-non-pris-en-charge (0.360322ms)\n✔ structure-invalide (0.663538ms)\n✔ indications-spatiales (0.790643ms)\n✔ absence-mutation-et-alias (0.189937ms)\n✔ identifiants-et-metadonnees-speciaux (0.071376ms)\n✔ metadonnees-non-json (0.597635ms)\n✔ import-nom-initial-presentation-et-noms-personnalises (0.247841ms)\n✔ import-noeud-final-nom-par-defaut-personnalise-et-metadonnees (0.372161ms)\n✔ placements-diagram-reference (14.336539ms)\n✔ placements-chaine (0.913396ms)\n✔ placements-embranchement-convergence (0.400145ms)\n✔ placements-cycle-et-boucles (0.835011ms)\n✔ placements-sommet-isole (0.146881ms)\n✔ placements-composantes-deconnectees (0.582354ms)\n✔ placements-graphe-vide (0.065936ms)\n✔ placements-positions-superposees-negatives (0.292529ms)\n✔ placements-indications-compatibles (0.448226ms)\n✔ placements-libelles-longs-multilignes (1.913368ms)\n✔ texte-graphemes-et-coupures (0.241537ms)\n✔ placements-marges-limites-boites (0.176497ms)\n✔ placements-determinisme-et-immuabilite (1.106901ms)\n✔ placements-connexions-apres-deplacement-redimensionnement (0.932804ms)\n✔ placements-diagnostics-entrees-invalides (1.002772ms)\n✔ placements-identifiants-speciaux (0.427522ms)\n✔ placements-graphes-generes-reproductibles (123.001357ms)\n✔ placements-ports-libres-32px-texte-centre-et-ancres-fixes (1.837511ms)\n✔ placements-presentation-large-centres-alignes-et-connexions-regenerees (16.934934ms)\n✔ routage-diagram-reference (7234.082514ms)\n✔ routage-trajet-direct (0.680083ms)\n✔ routage-obstacle-interpose (5.65964ms)\n✔ routage-embranchement-convergence (4.939988ms)\n✔ routage-cycle-retour (1.713799ms)\n✔ routage-boucles-sur-soi (1.46655ms)\n✔ routage-arcs-paralleles (3.920833ms)\n✔ routage-paralleles-32px-hors-ports-communs-des-trois-formes (4.9197ms)\nespacement-routage {\"proche\":1174.8333333333333,\"tresProche\":144,\"longueur\":17463.833333333332}\n✔ routage-reference-proximite-32px-reduite-et-trajets-courts (1460.220142ms)\n✔ routage-rectangle-connexions-meme-cote (11.793777ms)\n✔ routage-preferences-ancres-handles (1.537719ms)\n✔ routage-points-importes-valides (0.395154ms)\n✔ routage-points-preferent-ports-lateraux (0.309553ms)\n✔ routage-indications-incoherentes-recalculees (15.04123ms)\n✔ routage-formes-cardinales-et-coins (3.976529ms)\n✔ routage-degagements-source-cible-tous-cotes (27.492002ms)\n✔ routage-echec-controle-budget (1.425526ms)\n✔ routage-repli-et-limite-essais (0.890916ms)\n✔ routage-determinisme-et-immuabilite (20285.500312ms)\n✔ routage-diagnostics-entrees (1.308581ms)\n✔ routage-vide-isoles-identifiants-speciaux (2.969453ms)\n✔ routage-graphes-generes-reproductibles (7605.209284ms)\n✔ routage-sans-demi-tour-degagements-et-points-importes (62.867412ms)\nqualite-routage {\"croisements\":9,\"contacts\":0,\"longueurCommune\":0}\n✔ routage-reference-croisements-reduits-et-absence-de-jonctions-ambigues (3400.76521ms)\nlongueur-routage {\"total\":17463.833333333332,\"maximum\":3148,\"longs\":5}\n✔ routage-presentation-large-coudes-reduits-longueur-bornee-et-ancres (1323.036452ms)\n✔ routage-compact-cycle-entrelace-court-deterministe-et-immuable (129.673992ms)\n✔ routage-reference-corps-hors-degagements-et-sans-auto-intersection (8110.554505ms)\n✔ svg-navigateur-croisements-couleurs-et-pointes-proches-preservees (568.640307ms)\n✔ svg-navigateur-diagram-taille-normale-et-double (6415.483445ms)\n✔ svg-navigateur-coordonnees-negatives-et-marges (109.588006ms)\n✔ svg-navigateur-texte-long-et-retours (143.365217ms)\n✔ svg-navigateur-xml-inerte-et-hors-ligne (152.562679ms)\n✔ svg-navigateur-theme-sombre-export-et-cadrage-compact (1584.312111ms)\n✔ svg-navigateur-debut-fleches-agrandies-et-export-autonome (1572.78792ms)\n✔ svg-croisements-halos-couleurs-et-geometrie-preservee (9.19111ms)\n✔ svg-croisements-excluent-ports-coudes-et-paralleles (9.294823ms)\n✔ svg-diagram-xml-complet-conditions-en-legende (7298.466862ms)\n✔ svg-formes-connexions-et-fleches (6923.465993ms)\n✔ svg-libelles-personnalises-sans-collision-et-legende-hors-geometrie (6728.608ms)\n✔ svg-texte-placement-multiligne (6.034569ms)\n✔ svg-viewbox-negatif-et-detours (0.561314ms)\n✔ svg-xml-echappement-et-autonomie (1.40767ms)\n✔ svg-branches-oui-non-casse-espaces-et-arcs-neutres (2.026793ms)\n✔ svg-xml-caracteres-invalides (0.446322ms)\n✔ svg-vide-et-labels-vides (0.485762ms)\n✔ svg-arcs-paralleles-boucles-identifiants (3.845088ms)\n✔ svg-immuabilite-et-determinisme (6529.566516ms)\n✔ svg-diagnostics-associations-manquantes (1.299558ms)\n✔ svg-libelles-denses-repli (16.405764ms)\n✔ svg-arrondis-ports-proches-et-coins (2.976684ms)\n✔ svg-croisements-six-pistes-distinctes-pointes-reperes-et-contraste (4.007729ms)\n✔ svg-croisements-couleurs-stables-conditions-prioritaires-et-arcs-isoles (3.534718ms)\n✔ svg-croisements-palette-saturee-reduit-les-collisions-sans-rouge-ni-vert (2.153561ms)\n✔ svg-noeud-final-quatre-ports-entrees-orientees-et-trois-verificateurs (25.640826ms)\nserveur-test {\"pid\":2233927,\"port\":46119,\"stopped\":true}\n✔ ui-presentation-large-trajets-simplifies-apercu-et-export-autonome (4177.604979ms)\nserveur-test {\"pid\":2234495,\"port\":44181,\"stopped\":true}\n✔ ui-parcours-diagram-selection-apercu-ouverture-et-enregistrement-autonome (4435.728558ms)\nserveur-test {\"pid\":2235510,\"port\":36147,\"stopped\":true}\n✔ ui-branches-rouges-vertes-apercu-remplacement-et-export-hors-ligne (4481.727244ms)\nserveur-test {\"pid\":2235860,\"port\":39255,\"stopped\":true}\n✔ ui-absence-selection-json-invalide-et-diagramme-invalide-puis-reprise (1806.710664ms)\nserveur-test {\"pid\":2235985,\"port\":44417,\"stopped\":true}\n✔ ui-fichier-illisible-et-nouvelle-selection-valide (488.315542ms)\nserveur-test {\"pid\":2236089,\"port\":38825,\"stopped\":true}\n✔ ui-erreur-conversion-api-reelle-et-reprise (4642.209602ms)\nserveur-test {\"pid\":2236220,\"port\":46695,\"stopped\":true}\n✔ ui-reponses-api-inexploitables-et-reprise-sans-apercu-perime (1495.710207ms)\nserveur-test {\"pid\":2236328,\"port\":44535,\"stopped\":true}\n✔ ui-coupure-reseau-et-reprise (590.608332ms)\nserveur-test {\"pid\":2236434,\"port\":33499,\"stopped\":true}\n✔ ui-delai-reseau-expire-et-reprise (560.034031ms)\nserveur-test {\"pid\":2236534,\"port\":43169,\"stopped\":true}\n✔ ui-deux-diagrammes-remplacement-telechargement-et-liberation-des-url (4475.328493ms)\nserveur-test {\"pid\":2236702,\"port\":37263,\"stopped\":true}\n✔ ui-verrouillage-lecture-requete-et-double-soumission (404.092969ms)\nserveur-test {\"pid\":2236798,\"port\":43291,\"stopped\":true}\n✔ ui-clavier-fenetre-etroite-et-etats-accessibles (370.879871ms)\nserveur-test {\"pid\":2236902,\"port\":36705,\"stopped\":true}\n✔ ui-plein-ecran-natif-zoom-retour-et-enregistrement (4781.44635ms)\nserveur-test {\"pid\":2237054,\"port\":40225,\"stopped\":true}\n✔ ui-plein-ecran-repli-api-absente-ou-refusee-et-echap (481.817658ms)\nserveur-test {\"pid\":2237160,\"port\":46773,\"stopped\":true}\n✔ ui-plein-ecran-nouvelle-selection-et-echec-liberent-la-vue (603.478242ms)\nserveur-test {\"pid\":2237264,\"port\":43271,\"stopped\":true}\n✔ ui-chemins-raccourcis-apercu-et-fichier-autonome-identiques (4410.033243ms)\nserveur-test {\"pid\":2237675,\"port\":44865,\"stopped\":true}\n✔ ui-croisements-halos-visibles-apercu-export-et-remplacement (4244.650238ms)\ncouleurs-croisements {\"fichier\":\"diagram.json\",\"croisements\":9,\"conditionsIdentiques\":2,\"ordinaires\":3,\"palette\":[\"rgb(148, 163, 184)\",\"rgb(96, 165, 250)\"]}\ncouleurs-croisements {\"fichier\":\"pistes.json\",\"croisements\":9,\"conditionsIdentiques\":0,\"ordinaires\":9,\"palette\":[\"rgb(148, 163, 184)\",\"rgb(96, 165, 250)\"]}\nserveur-test {\"pid\":2237876,\"port\":41385,\"stopped\":true}\n✔ ui-pistes-32px-croisements-couleurs-distinctes-export-et-remplacement (8148.085684ms)\nserveur-test {\"pid\":2238076,\"port\":32981,\"stopped\":true}\n✔ ui-zoom-boutons-clavier-bornes-et-export-inchange (3280.500357ms)\nserveur-test {\"pid\":2238251,\"port\":37739,\"stopped\":true}\n✔ ui-zoom-molette-ancrage-defilement-et-vue-ensemble (2914.379546ms)\nserveur-test {\"pid\":2238360,\"port\":32779,\"stopped\":true}\n✔ ui-zoom-fenetre-etroite-plein-ecran-remplacement-et-reprise (2278.046321ms)\nserveur-test {\"pid\":2238475,\"port\":34659,\"stopped\":true}\n✔ ui-noeuds-finaux-legende-reprise-remplacement-et-export-autonome (1122.758517ms)\nℹ tests 168\nℹ suites 0\nℹ pass 168\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 60575.151616\n"
+      },
+      {
+        "name": "compilation-tauri-dgx-spark-arm64",
+        "command": "\"npm\" \"run\" \"desktop:build:spark\"",
+        "exitCode": 0,
+        "output": "\n> diagrams-codex@0.1.0 desktop:build:spark\n> tauri build --target aarch64-unknown-linux-gnu --bundles deb -- --locked\n\n        Info Looking up installed tauri packages to check mismatched versions...\n     Running beforeBuildCommand `npm run desktop:prepare`\n\n> diagrams-codex@0.1.0 desktop:prepare\n> npm run typecheck && node scripts/build-desktop.mjs\n\n\n> diagrams-codex@0.1.0 typecheck\n> tsc -p tsconfig.server.json --noEmit && tsc -p tsconfig.client.json --noEmit && tsc -p tsconfig.desktop.json\n\nInterface Tauri et moteur de conversion hors ligne : dist/desktop/\n   Compiling diagrammes-activite v0.1.0 (/home/blockapicoder/qwen-generation/diagrams-codex/src-tauri)\n    Finished `release` profile [optimized] target(s) in 9.40s\n       Built application at: /home/blockapicoder/qwen-generation/diagrams-codex/src-tauri/target/aarch64-unknown-linux-gnu/release/diagrammes-activite\n        Info Patching /home/blockapicoder/qwen-generation/diagrams-codex/src-tauri/target/aarch64-unknown-linux-gnu/release/diagrammes-activite with bundle type information: deb\n    Bundling Diagrammes_0.1.0_arm64.deb (/home/blockapicoder/qwen-generation/diagrams-codex/src-tauri/target/aarch64-unknown-linux-gnu/release/bundle/deb/Diagrammes_0.1.0_arm64.deb)\n    Finished 1 bundle at:\n        /home/blockapicoder/qwen-generation/diagrams-codex/src-tauri/target/aarch64-unknown-linux-gnu/release/bundle/deb/Diagrammes_0.1.0_arm64.deb (2.84 MiB)\n\n"
+      },
+      {
+        "name": "compilation-tauri-windows-x64-cargo-xwin-nsis",
+        "command": "\"npm\" \"run\" \"desktop:build:windows\"",
+        "exitCode": 0,
+        "output": "\n> diagrams-codex@0.1.0 desktop:build:windows\n> tauri build --runner cargo-xwin --target x86_64-pc-windows-msvc --bundles nsis -- --locked\n\n        Info Looking up installed tauri packages to check mismatched versions...\n     Running beforeBuildCommand `npm run desktop:prepare`\n\n> diagrams-codex@0.1.0 desktop:prepare\n> npm run typecheck && node scripts/build-desktop.mjs\n\n\n> diagrams-codex@0.1.0 typecheck\n> tsc -p tsconfig.server.json --noEmit && tsc -p tsconfig.client.json --noEmit && tsc -p tsconfig.desktop.json\n\nInterface Tauri et moteur de conversion hors ligne : dist/desktop/\n   Compiling diagrammes-activite v0.1.0 (/home/blockapicoder/qwen-generation/diagrams-codex/src-tauri)\nwarning: linker stderr: lld-link: Cannot use debug info for 'libcmt.lib(new_scalar_nothrow.obj)' [LNK4099]\n         >>> failed to load reference 'D:\\a\\_work\\1\\s\\binaries\\amd64ret\\lib\\amd64\\libcmt.amd64.pdb': No such file or directory\n         \n         lld-link: Cannot use debug info for 'libcmt.lib(delete_scalar_size.obj)' [LNK4099]\n         >>> failed to load reference 'D:\\a\\_work\\1\\s\\binaries\\amd64ret\\lib\\amd64\\libcmt.amd64.pdb': No such file or directory\n         \n         lld-link: Cannot use debug info for 'libcmt.lib(std_type_info_static.obj)' [LNK4099]\n         >>> failed to load reference 'D:\\a\\_work\\1\\s\\binaries\\amd64ret\\lib\\amd64\\libcmt.amd64.pdb': No such file or directory\n         \n         lld-link: Cannot use debug info for 'libcmt.lib(new_array.obj)' [LNK4099]\n         >>> failed to load reference 'D:\\a\\_work\\1\\s\\binaries\\amd64ret\\lib\\amd64\\libcmt.amd64.pdb': No such file or directory\n         \n         lld-link: Cannot use debug info for 'libcmt.lib(delete_array.obj)' [LNK4099]\n         >>> failed to load reference 'D:\\a\\_work\\1\\s\\binaries\\amd64ret\\lib\\amd64\\libcmt.amd64.pdb': No such file or directory\n         \n         lld-link: Cannot use debug info for 'libcmt.lib(std_nothrow.obj)' [LNK4099]\n         >>> failed to load reference 'D:\\a\\_work\\1\\s\\binaries\\amd64ret\\lib\\amd64\\libcmt.amd64.pdb': No such file or directory\n         \n         lld-link: Cannot use debug info for 'libcmt.lib(thread_safe_statics.obj)' [LNK4099]\n         >>> failed to load reference 'D:\\a\\_work\\1\\s\\binaries\\amd64ret\\lib\\amd64\\libcmt.amd64.pdb': No such file or directory\n         \n         lld-link: Cannot use debug info for 'libcmt.lib(guard_support.obj)' [LNK4099]\n         >>> failed to load reference 'D:\\a\\_work\\1\\s\\binaries\\amd64ret\\lib\\amd64\\libcmt.amd64.pdb': No such file or directory\n         \n         lld-link: Cannot use debug info for 'libcmt.lib(gs_cookie.obj)' [LNK4099]\n         >>> failed to load reference 'D:\\a\\_work\\1\\s\\binaries\\amd64ret\\lib\\amd64\\libcmt.amd64.pdb': No such file or directory\n         \n         lld-link: Cannot use debug info for 'libcmt.lib(fltused.obj)' [LNK4099]\n         >>> failed to load reference 'D:\\a\\_work\\1\\s\\binaries\\amd64ret\\lib\\amd64\\libcmt.amd64.pdb': No such file or directory\n         \n         lld-link: Cannot use debug info for 'libcmt.lib(tlssup.obj)' [LNK4099]\n         >>> failed to load reference 'D:\\a\\_work\\1\\s\\binaries\\amd64ret\\lib\\amd64\\libcmt.amd64.pdb': No such file or directory\n         \n         lld-link: Cannot use debug info for 'libcmt.lib(utility.obj)' [LNK4099]\n         >>> failed to load reference 'D:\\a\\_work\\1\\s\\binaries\\amd64ret\\lib\\amd64\\libcmt.amd64.pdb': No such file or directory\n         \n         lld-link: Cannot use debug info for 'libvcruntime.lib(throw.obj)' [LNK4099]\n         >>> failed to load reference 'D:\\a\\_work\\1\\s\\binaries\\amd64ret\\lib\\amd64\\libvcruntime.amd64.pdb': No such file or directory\n         \n         lld-link: Cannot use debug info for 'libvcruntime.lib(risctrnsctrl.obj)' [LNK4099]\n         >>> failed to load reference 'D:\\a\\_work\\1\\s\\binaries\\amd64ret\\lib\\amd64\\libvcruntime.amd64.pdb': No such file or directory\n         \n         lld-link: Cannot use debug info for 'libvcruntime.lib(purevirt.obj)' [LNK4099]\n         >>> failed to load reference 'D:\\a\\_work\\1\\s\\binaries\\amd64ret\\lib\\amd64\\libvcruntime.amd64.pdb': No such file or directory\n         \n         lld-link: Cannot use debug info for 'libvcruntime.lib(wcsrchr.obj)' [LNK4099]\n         >>> failed to load reference 'D:\\a\\_work\\1\\s\\binaries\\amd64ret\\lib\\amd64\\libvcruntime.amd64.pdb': No such file or directory\n         \n         lld-link: Cannot use debug info for 'libcmt.lib(new_scalar.obj)' [LNK4099]\n         >>> failed to load reference 'D:\\a\\_work\\1\\s\\binaries\\amd64ret\\lib\\amd64\\libcmt.amd64.pdb': No such file or directory\n         \n         lld-link: Cannot use debug info for 'libcmt.lib(delete_scalar.obj)' [LNK4099]\n         >>> failed to load reference 'D:\\a\\_work\\1\\s\\binaries\\amd64ret\\lib\\amd64\\libcmt.amd64.pdb': No such file or directory\n         \n         lld-link: Cannot use debug info for 'libcmt.lib(gs_report.obj)' [LNK4099]\n         >>> failed to load reference 'D:\\a\\_work\\1\\s\\binaries\\amd64ret\\lib\\amd64\\libcmt.amd64.pdb': No such file or directory\n         \n         lld-link: Cannot use debug info for 'libvcruntime.lib(initialization.obj)' [LNK4099]\n         >>> failed to load reference 'D:\\a\\_work\\1\\s\\binaries\\amd64ret\\lib\\amd64\\libvcruntime.amd64.pdb': No such file or directory\n         \n         lld-link: Cannot use debug info for 'libcmt.lib(cpu_disp.obj)' [LNK4099]\n         >>> failed to load reference 'D:\\a\\_work\\1\\s\\binaries\\amd64ret\\lib\\amd64\\libcmt.amd64.pdb': No such file or directory\n         \n         lld-link: Cannot use debug info for 'libcmt.lib(argv_mode.obj)' [LNK4099]\n         >>> failed to load reference 'D:\\a\\_work\\1\\s\\binaries\\amd64ret\\lib\\amd64\\libcmt.amd64.pdb': No such file or directory\n         \n         lld-link: Cannot use debug info for 'libcmt.lib(ucrt_detection.obj)' [LNK4099]\n         >>> failed to load reference 'D:\\a\\_work\\1\\s\\binaries\\amd64ret\\lib\\amd64\\libcmt.amd64.pdb': No such file or directory\n         \n         lld-link: Cannot use debug info for 'libcmt.lib(utility_desktop.obj)' [LNK4099]\n         >>> failed to load reference 'D:\\a\\_work\\1\\s\\binaries\\amd64ret\\lib\\amd64\\libcmt.amd64.pdb': No such file or directory\n         \n         lld-link: Cannot use debug info for 'libvcruntime.lib(riscchandler.obj)' [LNK4099]\n         >>> failed to load reference 'D:\\a\\_work\\1\\s\\binaries\\amd64ret\\lib\\amd64\\libvcruntime.amd64.pdb': No such file or directory\n         \n         lld-link: Cannot use debug info for 'libvcruntime.lib(per_thread_data.obj)' [LNK4099]\n         >>> failed to load reference 'D:\\a\\_work\\1\\s\\binaries\\amd64ret\\lib\\amd64\\libvcruntime.amd64.pdb': No such file or directory\n         \n         lld-link: Cannot use debug info for 'libvcruntime.lib(ehstate.obj)' [LNK4099]\n         >>> failed to load reference 'D:\\a\\_work\\1\\s\\binaries\\amd64ret\\lib\\amd64\\libvcruntime.amd64.pdb': No such file or directory\n         \n         lld-link: Cannot use debug info for 'libvcruntime.lib(frame.obj)' [LNK4099]\n         >>> failed to load reference 'D:\\a\\_work\\1\\s\\binaries\\amd64ret\\lib\\amd64\\libvcruntime.amd64.pdb': No such file or directory\n         \n         lld-link: Cannot use debug info for 'libcmt.lib(gshandler.obj)' [LNK4099]\n         >>> failed to load reference 'D:\\a\\_work\\1\\s\\binaries\\amd64ret\\lib\\amd64\\libcmt.amd64.pdb': No such file or directory\n         \n         lld-link: Cannot use debug info for 'libvcruntime.lib(purevirt_data.obj)' [LNK4099]\n         >>> failed to load reference 'D:\\a\\_work\\1\\s\\binaries\\amd64ret\\lib\\amd64\\libvcruntime.amd64.pdb': No such file or directory\n         \n         lld-link: Cannot use debug info for 'libcmt.lib(throw_bad_alloc.obj)' [LNK4099]\n         >>> failed to load reference 'D:\\a\\_work\\1\\s\\binaries\\amd64ret\\lib\\amd64\\libcmt.amd64.pdb': No such file or directory\n         \n         lld-link: Cannot use debug info for 'libvcruntime.lib(locks.obj)' [LNK4099]\n         >>> failed to load reference 'D:\\a\\_work\\1\\s\\binaries\\amd64ret\\lib\\amd64\\libvcruntime.amd64.pdb': No such file or directory\n         \n         lld-link: Cannot use debug info for 'libvcruntime.lib(ehhelpers.obj)' [LNK4099]\n         >>> failed to load reference 'D:\\a\\_work\\1\\s\\binaries\\amd64ret\\lib\\amd64\\libvcruntime.amd64.pdb': No such file or directory\n         \n         lld-link: Cannot use debug info for 'libcmt.lib(pesect.obj)' [LNK4099]\n         >>> failed to load reference 'D:\\a\\_work\\1\\s\\binaries\\amd64ret\\lib\\amd64\\libcmt.amd64.pdb': No such file or directory\n         \n         lld-link: Cannot use debug info for 'libvcruntime.lib(jbcxrval.obj)' [LNK4099]\n         >>> failed to load reference 'D:\\a\\_work\\1\\s\\binaries\\amd64ret\\lib\\amd64\\libvcruntime.amd64.pdb': No such file or directory\n         \n         lld-link: Cannot use debug info for 'libvcruntime.lib(winapi_downlevel.obj)' [LNK4099]\n         >>> failed to load reference 'D:\\a\\_work\\1\\s\\binaries\\amd64ret\\lib\\amd64\\libvcruntime.amd64.pdb': No such file or directory\n         \n         lld-link: Cannot use debug info for 'libvcruntime.lib(std_exception.obj)' [LNK4099]\n         >>> failed to load reference 'D:\\a\\_work\\1\\s\\binaries\\amd64ret\\lib\\amd64\\libvcruntime.amd64.pdb': No such file or directory\n         \n         lld-link: Cannot use debug info for 'libvcruntime.lib(std_type_info.obj)' [LNK4099]\n         >>> failed to load reference 'D:\\a\\_work\\1\\s\\binaries\\amd64ret\\lib\\amd64\\libvcruntime.amd64.pdb': No such file or directory\n         \n         lld-link: Cannot use debug info for 'libcmt.lib(gshandlerseh.obj)' [LNK4099]\n         >>> failed to load reference 'D:\\a\\_work\\1\\s\\binaries\\amd64ret\\lib\\amd64\\libcmt.amd64.pdb': No such file or directory\n         \n         lld-link: Cannot use debug info for 'libvcruntime.lib(undname.obj)' [LNK4099]\n         >>> failed to load reference 'D:\\a\\_work\\1\\s\\binaries\\amd64ret\\lib\\amd64\\libvcruntime.amd64.pdb': No such file or directory\n         \n         lld-link: Cannot use debug info for 'libcmt.lib(exe_main.obj)' [LNK4099]\n         >>> failed to load reference 'D:\\a\\_work\\1\\s\\binaries\\amd64ret\\lib\\amd64\\libcmt.amd64.pdb': No such file or directory\n         \n         lld-link: Cannot use debug info for 'libcmt.lib(loadcfg.obj)' [LNK4099]\n         >>> failed to load reference 'D:\\a\\_work\\1\\s\\binaries\\amd64ret\\lib\\amd64\\libcmt.amd64.pdb': No such file or directory\n         \n         lld-link: Cannot use debug info for 'libcmt.lib(gs_support.obj)' [LNK4099]\n         >>> failed to load reference 'D:\\a\\_work\\1\\s\\binaries\\amd64ret\\lib\\amd64\\libcmt.amd64.pdb': No such file or directory\n         \n         lld-link: Cannot use debug info for 'libcmt.lib(matherr.obj)' [LNK4099]\n         >>> failed to load reference 'D:\\a\\_work\\1\\s\\binaries\\amd64ret\\lib\\amd64\\libcmt.amd64.pdb': No such file or directory\n         \n         lld-link: Cannot use debug info for 'libcmt.lib(commit_mode.obj)' [LNK4099]\n         >>> failed to load reference 'D:\\a\\_work\\1\\s\\binaries\\amd64ret\\lib\\amd64\\libcmt.amd64.pdb': No such file or directory\n         \n         lld-link: Cannot use debug info for 'libcmt.lib(file_mode.obj)' [LNK4099]\n         >>> failed to load reference 'D:\\a\\_work\\1\\s\\binaries\\amd64ret\\lib\\amd64\\libcmt.amd64.pdb': No such file or directory\n         \n         lld-link: Cannot use debug info for 'libcmt.lib(new_mode.obj)' [LNK4099]\n         >>> failed to load reference 'D:\\a\\_work\\1\\s\\binaries\\amd64ret\\lib\\amd64\\libcmt.amd64.pdb': No such file or directory\n         \n         lld-link: Cannot use debug info for 'libcmt.lib(thread_locale.obj)' [LNK4099]\n         >>> failed to load reference 'D:\\a\\_work\\1\\s\\binaries\\amd64ret\\lib\\amd64\\libcmt.amd64.pdb': No such file or directory\n         \n         lld-link: Cannot use debug info for 'libcmt.lib(tncleanup.obj)' [LNK4099]\n         >>> failed to load reference 'D:\\a\\_work\\1\\s\\binaries\\amd64ret\\lib\\amd64\\libcmt.amd64.pdb': No such file or directory\n         \n         lld-link: Cannot use debug info for 'libcmt.lib(env_mode.obj)' [LNK4099]\n         >>> failed to load reference 'D:\\a\\_work\\1\\s\\binaries\\amd64ret\\lib\\amd64\\libcmt.amd64.pdb': No such file or directory\n         \n         lld-link: Cannot use debug info for 'libcmt.lib(invalid_parameter_handler.obj)' [LNK4099]\n         >>> failed to load reference 'D:\\a\\_work\\1\\s\\binaries\\amd64ret\\lib\\amd64\\libcmt.amd64.pdb': No such file or directory\n         \n         lld-link: Cannot use debug info for 'libcmt.lib(denormal_control.obj)' [LNK4099]\n         >>> failed to load reference 'D:\\a\\_work\\1\\s\\binaries\\amd64ret\\lib\\amd64\\libcmt.amd64.pdb': No such file or directory\n         \n         lld-link: Cannot use debug info for 'libcmt.lib(default_local_stdio_options.obj)' [LNK4099]\n         >>> failed to load reference 'D:\\a\\_work\\1\\s\\binaries\\amd64ret\\lib\\amd64\\libcmt.amd64.pdb': No such file or directory\n         \n         lld-link: Cannot use debug info for 'libcmt.lib(matherr_detection.obj)' [LNK4099]\n         >>> failed to load reference 'D:\\a\\_work\\1\\s\\binaries\\amd64ret\\lib\\amd64\\libcmt.amd64.pdb': No such file or directory\n         \n         lld-link: Cannot use debug info for 'libcmt.lib(dyn_tls_init.obj)' [LNK4099]\n         >>> failed to load reference 'D:\\a\\_work\\1\\s\\binaries\\amd64ret\\lib\\amd64\\libcmt.amd64.pdb': No such file or directory\n         \n         lld-link: Cannot use debug info for 'libcmt.lib(dyn_tls_dtor.obj)' [LNK4099]\n         >>> failed to load reference 'D:\\a\\_work\\1\\s\\binaries\\amd64ret\\lib\\amd64\\libcmt.amd64.pdb': No such file or directory\n         \n         lld-link: Cannot use debug info for 'libcmt.lib(initsect.obj)' [LNK4099]\n         >>> failed to load reference 'D:\\a\\_work\\1\\s\\binaries\\amd64ret\\lib\\amd64\\libcmt.amd64.pdb': No such file or directory\n         \n         lld-link: Cannot use debug info for 'libcmt.lib(initializers.obj)' [LNK4099]\n         >>> failed to load reference 'D:\\a\\_work\\1\\s\\binaries\\amd64ret\\lib\\amd64\\libcmt.amd64.pdb': No such file or directory\n         \n         lld-link: Cannot use debug info for 'libvcruntime.lib(softmemtag.obj)' [LNK4099]\n         >>> failed to load reference 'D:\\a\\_work\\1\\s\\binaries\\amd64ret\\lib\\amd64\\libvcruntime.amd64.pdb': No such file or directory\n         \n         lld-link: Cannot use debug info for 'libcmt.lib(ucrt_stubs.obj)' [LNK4099]\n         >>> failed to load reference 'D:\\a\\_work\\1\\s\\binaries\\amd64ret\\lib\\amd64\\libcmt.amd64.pdb': No such file or directory\n  |\n  = note: `#[warn(linker_messages)]` on by default\n\nwarning: `diagrammes-activite` (bin \"diagrammes-activite\") generated 1 warning\n    Finished `release` profile [optimized] target(s) in 9.17s\n       Built application at: /home/blockapicoder/qwen-generation/diagrams-codex/src-tauri/target/x86_64-pc-windows-msvc/release/diagrammes-activite.exe\n        Warn Cross-platform compilation is experimental and does not support all features. Please use a matching host system for full compatibility.\n        Warn Signing, by default, is only supported on Windows hosts, but you can specify a custom signing command in `bundler > windows > sign_command`, for now, skipping signing the installer...\n        Info Patching /home/blockapicoder/qwen-generation/diagrams-codex/src-tauri/target/x86_64-pc-windows-msvc/release/diagrammes-activite.exe with bundle type information: nsis\n        Warn NSIS.exe is missing. Recreating it.\n        Info Verifying NSIS package\n Downloading https://github.com/tauri-apps/nsis-tauri-utils/releases/download/nsis_tauri_utils-v0.5.3/nsis_tauri_utils.dll\n        Info validating hash\n        Info Target: x64\n     Running makensis to produce /home/blockapicoder/qwen-generation/diagrams-codex/src-tauri/target/x86_64-pc-windows-msvc/release/bundle/nsis/Diagrammes_0.1.0_x64-setup.exe\nwarning 5202: -OUTPUTCHARSET is disabled for non Win32 platforms.\n        Warn Signing, by default, is only supported on Windows hosts, but you can specify a custom signing command in `bundler > windows > sign_command`, for now, skipping signing the installer...\n    Finished 1 bundle at:\n        /home/blockapicoder/qwen-generation/diagrams-codex/src-tauri/target/x86_64-pc-windows-msvc/release/bundle/nsis/Diagrammes_0.1.0_x64-setup.exe (1.93 MiB)\n\n"
+      },
+      {
+        "name": "desktop-natif-linux-selection-worker-dialogue-export-fenetre-et-reprise",
+        "command": "\"env\" \"WEBKIT_WEBDRIVER=/tmp/diagrammes-webdriver/unpacked/usr/bin/WebKitWebDriver\" \"XVFB=/tmp/diagrammes-xvfb/unpacked/usr/bin/Xvfb\" \"XDOTOOL=/tmp/diagrammes-xdotool/unpacked/usr/bin/xdotool\" \"LD_LIBRARY_PATH=/tmp/diagrammes-xdotool/unpacked/usr/lib/aarch64-linux-gnu\" \"node\" \"scripts/test-desktop-native.mjs\"",
+        "exitCode": 0,
+        "output": "captures-natives /home/blockapicoder/qwen-generation/diagrams-codex/dist/verification-desktop\nserveur-test {\"pid\":2239575,\"port\":null,\"stopped\":true}\nserveur-test {\"pid\":2239576,\"port\":null,\"stopped\":true}\nserveur-test {\"pid\":2239577,\"port\":40257,\"stopped\":true}\nserveur-test {\"pid\":2239578,\"port\":41053,\"stopped\":true}\nserveur-test {\"pid\":2239581,\"port\":null,\"stopped\":true}\nserveur-test {\"pid\":2239589,\"port\":null,\"stopped\":true}\nserveur-test {\"pid\":2239600,\"port\":null,\"stopped\":true}\nserveur-test {\"pid\":2239610,\"port\":null,\"stopped\":true}\nserveur-test {\"pid\":2239661,\"port\":null,\"stopped\":true}\nserveur-test {\"pid\":2239668,\"port\":null,\"stopped\":true}\nserveur-test {\"pid\":2239862,\"port\":null,\"stopped\":true}\nserveur-test {\"pid\":2239867,\"port\":null,\"stopped\":true}\nserveur-test {\"pid\":2239878,\"port\":null,\"stopped\":true}\nserveur-test {\"pid\":2239879,\"port\":null,\"stopped\":true}\nserveur-test {\"pid\":2239909,\"port\":null,\"stopped\":true}\nserveur-test {\"pid\":2239989,\"port\":null,\"stopped\":true}\nserveur-test {\"pid\":2239998,\"port\":null,\"stopped\":true}\nserveur-test {\"pid\":2240009,\"port\":null,\"stopped\":true}\nserveur-test {\"pid\":2240016,\"port\":null,\"stopped\":true}\nserveur-test {\"pid\":2240022,\"port\":null,\"stopped\":true}\nserveur-test {\"pid\":2240027,\"port\":null,\"stopped\":true}\nserveur-test {\"pid\":2240034,\"port\":null,\"stopped\":true}\nserveur-test {\"pid\":2240042,\"port\":null,\"stopped\":true}\nserveur-test {\"pid\":2239572,\"port\":null,\"stopped\":true}\n✔ desktop-natif-linux-selection-worker-dialogue-export-fenetre-et-reprise (36568.417893ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 36571.097616\n"
+      }
+    ],
+    "updatedAt": "2026-10-31T16:04:55.652Z",
+    "rawResponse": "{\n  \"current\": \"evolution7.md\",\n  \"workCompleted\": true,\n  \"summary\": \"Reprise après l’arrêt du serveur : travaux existants conservés, aucun défaut supplémentaire ni test obsolète identifié. Typecheck, build, 168 tests et parcours natif Linux réussis ; compilations Tauri ARM64 et Windows x64 réussies. Captures examinées, export autonome et trois listes de conflits vides vérifiés. Aucun test ajouté ou supprimé. Tous les processus de vérification sont arrêtés, ports fermés ; PID 83835 préservé. Parcours Windows non exécuté : nécessite Windows 10/11 x64, WebView2 et un opérateur. Prochaine action : installer le paquet NSIS puis lancer scripts/verify-windows.ps1.\",\n  \"tests\": [\n    {\n      \"name\": \"typecheck\",\n      \"executable\": \"npm\",\n      \"args\": [\"run\", \"typecheck\"],\n      \"status\": \"passed\",\n      \"covers\": [0]\n    },\n    {\n      \"name\": \"build\",\n      \"executable\": \"npm\",\n      \"args\": [\"run\", \"build\"],\n      \"status\": \"passed\",\n      \"covers\": [0]\n    },\n    {\n      \"name\": \"suite-actuelle-168-cas\",\n      \"executable\": \"npm\",\n      \"args\": [\"test\"],\n      \"status\": \"passed\",\n      \"covers\": [0, 1, 2, 3, 4]\n    },\n    {\n      \"name\": \"compilation-tauri-dgx-spark-arm64\",\n      \"executable\": \"npm\",\n      \"args\": [\"run\", \"desktop:build:spark\"],\n      \"status\": \"passed\",\n      \"covers\": [0]\n    },\n    {\n      \"name\": \"compilation-tauri-windows-x64-cargo-xwin-nsis\",\n      \"executable\": \"npm\",\n      \"args\": [\"run\", \"desktop:build:windows\"],\n      \"status\": \"passed\",\n      \"covers\": [0]\n    },\n    {\n      \"name\": \"desktop-natif-linux-selection-worker-dialogue-export-fenetre-et-reprise\",\n      \"executable\": \"env\",\n      \"args\": [\n        \"WEBKIT_WEBDRIVER=/tmp/diagrammes-webdriver/unpacked/usr/bin/WebKitWebDriver\",\n        \"XVFB=/tmp/diagrammes-xvfb/unpacked/usr/bin/Xvfb\",\n        \"XDOTOOL=/tmp/diagrammes-xdotool/unpacked/usr/bin/xdotool\",\n        \"LD_LIBRARY_PATH=/tmp/diagrammes-xdotool/unpacked/usr/lib/aarch64-linux-gnu\",\n        \"node\",\n        \"scripts/test-desktop-native.mjs\"\n      ],\n      \"status\": \"passed\",\n      \"covers\": [0, 1, 2, 3, 4]\n    },\n    {\n      \"name\": \"desktop-natif-windows-installation-webview2-et-export-autonome\",\n      \"executable\": \"powershell.exe\",\n      \"args\": [\"-NoProfile\", \"-File\", \"scripts/verify-windows.ps1\"],\n      \"status\": \"not-run\",\n      \"covers\": [0, 1, 2, 3, 4]\n    }\n  ],\n  \"testChanges\": {\n    \"removed\": [],\n    \"added\": []\n  },\n  \"serversStopped\": true,\n  \"servers\": [\n    {\"pid\":2226998,\"port\":33507,\"stopped\":true},\n    {\"pid\":2226998,\"port\":46369,\"stopped\":true},\n    {\"pid\":2226998,\"port\":45449,\"stopped\":true},\n    {\"pid\":2227216,\"port\":39255,\"stopped\":true},\n    {\"pid\":2227827,\"port\":39859,\"stopped\":true},\n    {\"pid\":2228539,\"port\":33541,\"stopped\":true},\n    {\"pid\":2229165,\"port\":43185,\"stopped\":true},\n    {\"pid\":2229433,\"port\":38941,\"stopped\":true},\n    {\"pid\":2229674,\"port\":33797,\"stopped\":true},\n    {\"pid\":2229698,\"port\":45193,\"stopped\":true},\n    {\"pid\":2230152,\"port\":35783,\"stopped\":true},\n    {\"pid\":2230488,\"port\":39977,\"stopped\":true},\n    {\"pid\":2230497,\"port\":39433,\"stopped\":true},\n    {\"pid\":2230506,\"port\":43721,\"stopped\":true},\n    {\"pid\":2230513,\"port\":36969,\"stopped\":true},\n    {\"pid\":2230553,\"port\":33909,\"stopped\":true},\n    {\"pid\":2230750,\"port\":null,\"stopped\":true},\n    {\"pid\":2230780,\"port\":34733,\"stopped\":true},\n    {\"pid\":2230821,\"port\":null,\"stopped\":true},\n    {\"pid\":2230843,\"port\":null,\"stopped\":true},\n    {\"pid\":2230954,\"port\":null,\"stopped\":true},\n    {\"pid\":2230976,\"port\":null,\"stopped\":true},\n    {\"pid\":2231002,\"port\":null,\"stopped\":true},\n    {\"pid\":2231028,\"port\":36415,\"stopped\":true},\n    {\"pid\":2227109,\"port\":37499,\"stopped\":true},\n    {\"pid\":2227963,\"port\":33355,\"stopped\":true},\n    {\"pid\":2228965,\"port\":45945,\"stopped\":true},\n    {\"pid\":2229331,\"port\":45399,\"stopped\":true},\n    {\"pid\":2229468,\"port\":41599,\"stopped\":true},\n    {\"pid\":2229567,\"port\":45451,\"stopped\":true},\n    {\"pid\":2229690,\"port\":43923,\"stopped\":true},\n    {\"pid\":2229834,\"port\":44599,\"stopped\":true},\n    {\"pid\":2229935,\"port\":45237,\"stopped\":true},\n    {\"pid\":2230042,\"port\":40941,\"stopped\":true},\n    {\"pid\":2230185,\"port\":33111,\"stopped\":true},\n    {\"pid\":2230288,\"port\":33831,\"stopped\":true},\n    {\"pid\":2230388,\"port\":35485,\"stopped\":true},\n    {\"pid\":2230555,\"port\":39509,\"stopped\":true},\n    {\"pid\":2230820,\"port\":40051,\"stopped\":true},\n    {\"pid\":2231159,\"port\":35381,\"stopped\":true},\n    {\"pid\":2231610,\"port\":45165,\"stopped\":true},\n    {\"pid\":2231834,\"port\":43557,\"stopped\":true},\n    {\"pid\":2232055,\"port\":33813,\"stopped\":true},\n    {\"pid\":2232206,\"port\":44417,\"stopped\":true},\n    {\"pid\":2232322,\"port\":36539,\"stopped\":true},\n    {\"pid\":2232535,\"port\":40769,\"stopped\":true},\n    {\"pid\":2231317,\"port\":null,\"stopped\":true},\n    {\"pid\":2231318,\"port\":null,\"stopped\":true},\n    {\"pid\":2231320,\"port\":41691,\"stopped\":true},\n    {\"pid\":2231322,\"port\":44537,\"stopped\":true},\n    {\"pid\":2231326,\"port\":null,\"stopped\":true},\n    {\"pid\":2231338,\"port\":null,\"stopped\":true},\n    {\"pid\":2231349,\"port\":null,\"stopped\":true},\n    {\"pid\":2231359,\"port\":null,\"stopped\":true},\n    {\"pid\":2231438,\"port\":null,\"stopped\":true},\n    {\"pid\":2231472,\"port\":null,\"stopped\":true},\n    {\"pid\":2232442,\"port\":null,\"stopped\":true},\n    {\"pid\":2232448,\"port\":null,\"stopped\":true},\n    {\"pid\":2232459,\"port\":null,\"stopped\":true},\n    {\"pid\":2232460,\"port\":null,\"stopped\":true},\n    {\"pid\":2232490,\"port\":null,\"stopped\":true},\n    {\"pid\":2232731,\"port\":null,\"stopped\":true},\n    {\"pid\":2232739,\"port\":null,\"stopped\":true},\n    {\"pid\":2232747,\"port\":null,\"stopped\":true},\n    {\"pid\":2232754,\"port\":null,\"stopped\":true},\n    {\"pid\":2232762,\"port\":null,\"stopped\":true},\n    {\"pid\":2232767,\"port\":null,\"stopped\":true},\n    {\"pid\":2232774,\"port\":null,\"stopped\":true},\n    {\"pid\":2232782,\"port\":null,\"stopped\":true},\n    {\"pid\":2231312,\"port\":null,\"stopped\":true}\n  ]\n}",
+    "report": {
+      "current": "evolution7.md",
+      "workCompleted": true,
+      "summary": "Reprise après l’arrêt du serveur : travaux existants conservés, aucun défaut supplémentaire ni test obsolète identifié. Typecheck, build, 168 tests et parcours natif Linux réussis ; compilations Tauri ARM64 et Windows x64 réussies. Captures examinées, export autonome et trois listes de conflits vides vérifiés. Aucun test ajouté ou supprimé. Tous les processus de vérification sont arrêtés, ports fermés ; PID 83835 préservé. Parcours Windows non exécuté : nécessite Windows 10/11 x64, WebView2 et un opérateur. Prochaine action : installer le paquet NSIS puis lancer scripts/verify-windows.ps1.",
+      "tests": [
+        {
+          "name": "typecheck",
+          "executable": "npm",
+          "args": [
+            "run",
+            "typecheck"
+          ],
+          "status": "passed",
+          "covers": [
+            0
+          ]
+        },
+        {
+          "name": "build",
+          "executable": "npm",
+          "args": [
+            "run",
+            "build"
+          ],
+          "status": "passed",
+          "covers": [
+            0
+          ]
+        },
+        {
+          "name": "suite-actuelle-168-cas",
+          "executable": "npm",
+          "args": [
+            "test"
+          ],
+          "status": "passed",
+          "covers": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ]
+        },
+        {
+          "name": "compilation-tauri-dgx-spark-arm64",
+          "executable": "npm",
+          "args": [
+            "run",
+            "desktop:build:spark"
+          ],
+          "status": "passed",
+          "covers": [
+            0
+          ]
+        },
+        {
+          "name": "compilation-tauri-windows-x64-cargo-xwin-nsis",
+          "executable": "npm",
+          "args": [
+            "run",
+            "desktop:build:windows"
+          ],
+          "status": "passed",
+          "covers": [
+            0
+          ]
+        },
+        {
+          "name": "desktop-natif-linux-selection-worker-dialogue-export-fenetre-et-reprise",
+          "executable": "env",
+          "args": [
+            "WEBKIT_WEBDRIVER=/tmp/diagrammes-webdriver/unpacked/usr/bin/WebKitWebDriver",
+            "XVFB=/tmp/diagrammes-xvfb/unpacked/usr/bin/Xvfb",
+            "XDOTOOL=/tmp/diagrammes-xdotool/unpacked/usr/bin/xdotool",
+            "LD_LIBRARY_PATH=/tmp/diagrammes-xdotool/unpacked/usr/lib/aarch64-linux-gnu",
+            "node",
+            "scripts/test-desktop-native.mjs"
+          ],
+          "status": "passed",
+          "covers": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ]
+        },
+        {
+          "name": "desktop-natif-windows-installation-webview2-et-export-autonome",
+          "executable": "powershell.exe",
+          "args": [
+            "-NoProfile",
+            "-File",
+            "scripts/verify-windows.ps1"
+          ],
+          "status": "not-run",
+          "covers": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ]
+        }
+      ],
+      "testChanges": {
+        "removed": [],
+        "added": []
+      },
+      "serversStopped": true,
+      "servers": [
+        {
+          "pid": 2226998,
+          "port": 33507,
+          "stopped": true
+        },
+        {
+          "pid": 2226998,
+          "port": 46369,
+          "stopped": true
+        },
+        {
+          "pid": 2226998,
+          "port": 45449,
+          "stopped": true
+        },
+        {
+          "pid": 2227216,
+          "port": 39255,
+          "stopped": true
+        },
+        {
+          "pid": 2227827,
+          "port": 39859,
+          "stopped": true
+        },
+        {
+          "pid": 2228539,
+          "port": 33541,
+          "stopped": true
+        },
+        {
+          "pid": 2229165,
+          "port": 43185,
+          "stopped": true
+        },
+        {
+          "pid": 2229433,
+          "port": 38941,
+          "stopped": true
+        },
+        {
+          "pid": 2229674,
+          "port": 33797,
+          "stopped": true
+        },
+        {
+          "pid": 2229698,
+          "port": 45193,
+          "stopped": true
+        },
+        {
+          "pid": 2230152,
+          "port": 35783,
+          "stopped": true
+        },
+        {
+          "pid": 2230488,
+          "port": 39977,
+          "stopped": true
+        },
+        {
+          "pid": 2230497,
+          "port": 39433,
+          "stopped": true
+        },
+        {
+          "pid": 2230506,
+          "port": 43721,
+          "stopped": true
+        },
+        {
+          "pid": 2230513,
+          "port": 36969,
+          "stopped": true
+        },
+        {
+          "pid": 2230553,
+          "port": 33909,
+          "stopped": true
+        },
+        {
+          "pid": 2230750,
+          "port": null,
+          "stopped": true
+        },
+        {
+          "pid": 2230780,
+          "port": 34733,
+          "stopped": true
+        },
+        {
+          "pid": 2230821,
+          "port": null,
+          "stopped": true
+        },
+        {
+          "pid": 2230843,
+          "port": null,
+          "stopped": true
+        },
+        {
+          "pid": 2230954,
+          "port": null,
+          "stopped": true
+        },
+        {
+          "pid": 2230976,
+          "port": null,
+          "stopped": true
+        },
+        {
+          "pid": 2231002,
+          "port": null,
+          "stopped": true
+        },
+        {
+          "pid": 2231028,
+          "port": 36415,
+          "stopped": true
+        },
+        {
+          "pid": 2227109,
+          "port": 37499,
+          "stopped": true
+        },
+        {
+          "pid": 2227963,
+          "port": 33355,
+          "stopped": true
+        },
+        {
+          "pid": 2228965,
+          "port": 45945,
+          "stopped": true
+        },
+        {
+          "pid": 2229331,
+          "port": 45399,
+          "stopped": true
+        },
+        {
+          "pid": 2229468,
+          "port": 41599,
+          "stopped": true
+        },
+        {
+          "pid": 2229567,
+          "port": 45451,
+          "stopped": true
+        },
+        {
+          "pid": 2229690,
+          "port": 43923,
+          "stopped": true
+        },
+        {
+          "pid": 2229834,
+          "port": 44599,
+          "stopped": true
+        },
+        {
+          "pid": 2229935,
+          "port": 45237,
+          "stopped": true
+        },
+        {
+          "pid": 2230042,
+          "port": 40941,
+          "stopped": true
+        },
+        {
+          "pid": 2230185,
+          "port": 33111,
+          "stopped": true
+        },
+        {
+          "pid": 2230288,
+          "port": 33831,
+          "stopped": true
+        },
+        {
+          "pid": 2230388,
+          "port": 35485,
+          "stopped": true
+        },
+        {
+          "pid": 2230555,
+          "port": 39509,
+          "stopped": true
+        },
+        {
+          "pid": 2230820,
+          "port": 40051,
+          "stopped": true
+        },
+        {
+          "pid": 2231159,
+          "port": 35381,
+          "stopped": true
+        },
+        {
+          "pid": 2231610,
+          "port": 45165,
+          "stopped": true
+        },
+        {
+          "pid": 2231834,
+          "port": 43557,
+          "stopped": true
+        },
+        {
+          "pid": 2232055,
+          "port": 33813,
+          "stopped": true
+        },
+        {
+          "pid": 2232206,
+          "port": 44417,
+          "stopped": true
+        },
+        {
+          "pid": 2232322,
+          "port": 36539,
+          "stopped": true
+        },
+        {
+          "pid": 2232535,
+          "port": 40769,
+          "stopped": true
+        },
+        {
+          "pid": 2231317,
+          "port": null,
+          "stopped": true
+        },
+        {
+          "pid": 2231318,
+          "port": null,
+          "stopped": true
+        },
+        {
+          "pid": 2231320,
+          "port": 41691,
+          "stopped": true
+        },
+        {
+          "pid": 2231322,
+          "port": 44537,
+          "stopped": true
+        },
+        {
+          "pid": 2231326,
+          "port": null,
+          "stopped": true
+        },
+        {
+          "pid": 2231338,
+          "port": null,
+          "stopped": true
+        },
+        {
+          "pid": 2231349,
+          "port": null,
+          "stopped": true
+        },
+        {
+          "pid": 2231359,
+          "port": null,
+          "stopped": true
+        },
+        {
+          "pid": 2231438,
+          "port": null,
+          "stopped": true
+        },
+        {
+          "pid": 2231472,
+          "port": null,
+          "stopped": true
+        },
+        {
+          "pid": 2232442,
+          "port": null,
+          "stopped": true
+        },
+        {
+          "pid": 2232448,
+          "port": null,
+          "stopped": true
+        },
+        {
+          "pid": 2232459,
+          "port": null,
+          "stopped": true
+        },
+        {
+          "pid": 2232460,
+          "port": null,
+          "stopped": true
+        },
+        {
+          "pid": 2232490,
+          "port": null,
+          "stopped": true
+        },
+        {
+          "pid": 2232731,
+          "port": null,
+          "stopped": true
+        },
+        {
+          "pid": 2232739,
+          "port": null,
+          "stopped": true
+        },
+        {
+          "pid": 2232747,
+          "port": null,
+          "stopped": true
+        },
+        {
+          "pid": 2232754,
+          "port": null,
+          "stopped": true
+        },
+        {
+          "pid": 2232762,
+          "port": null,
+          "stopped": true
+        },
+        {
+          "pid": 2232767,
+          "port": null,
+          "stopped": true
+        },
+        {
+          "pid": 2232774,
+          "port": null,
+          "stopped": true
+        },
+        {
+          "pid": 2232782,
+          "port": null,
+          "stopped": true
+        },
+        {
+          "pid": 2231312,
+          "port": null,
+          "stopped": true
+        }
+      ]
+    }
+  },
+  "commands": [
+    {
+      "name": "typecheck",
+      "executable": "npm",
+      "args": [
+        "run",
+        "typecheck"
+      ],
+      "status": "passed",
+      "covers": [
+        0
+      ]
+    },
+    {
+      "name": "build",
+      "executable": "npm",
+      "args": [
+        "run",
+        "build"
+      ],
+      "status": "passed",
+      "covers": [
+        0
+      ]
+    },
+    {
+      "name": "suite-actuelle-168-cas",
+      "executable": "npm",
+      "args": [
+        "test"
+      ],
+      "status": "passed",
+      "covers": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "name": "compilation-tauri-dgx-spark-arm64",
+      "executable": "npm",
+      "args": [
+        "run",
+        "desktop:build:spark"
+      ],
+      "status": "passed",
+      "covers": [
+        0
+      ]
+    },
+    {
+      "name": "compilation-tauri-windows-x64-cargo-xwin-nsis",
+      "executable": "npm",
+      "args": [
+        "run",
+        "desktop:build:windows"
+      ],
+      "status": "passed",
+      "covers": [
+        0
+      ]
+    },
+    {
+      "name": "desktop-natif-linux-selection-worker-dialogue-export-fenetre-et-reprise",
+      "executable": "env",
+      "args": [
+        "WEBKIT_WEBDRIVER=/tmp/diagrammes-webdriver/unpacked/usr/bin/WebKitWebDriver",
+        "XVFB=/tmp/diagrammes-xvfb/unpacked/usr/bin/Xvfb",
+        "XDOTOOL=/tmp/diagrammes-xdotool/unpacked/usr/bin/xdotool",
+        "LD_LIBRARY_PATH=/tmp/diagrammes-xdotool/unpacked/usr/lib/aarch64-linux-gnu",
+        "node",
+        "scripts/test-desktop-native.mjs"
+      ],
+      "status": "passed",
+      "covers": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    }
+  ]
+}
