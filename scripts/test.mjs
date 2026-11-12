@@ -26,6 +26,7 @@ function run(args) {
 }
 run(['node_modules/typescript/bin/tsc', '-p', 'tsconfig.server.json']);
 run(['node_modules/typescript/bin/tsc', '-p', 'tsconfig.client.json']);
+run(['scripts/build-jeu.mjs']);
 run(['scripts/build-desktop.mjs']);
 const filter = name ? [`--test-name-pattern=^${name.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}$`] : [];
 run(['--test', ...filter, ...(name ? [cases.get(name)] : files)]);

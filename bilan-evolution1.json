@@ -1,0 +1,1262 @@
+{
+  "version": 1,
+  "fingerprint": "5ab61c60f381e430f8b089e10eb53a5747f679514086390a61a4e1b0809d0bdb",
+  "execution": {
+    "current": "evolution1.md",
+    "kind": "realize",
+    "status": "succeeded",
+    "error": null,
+    "summary": "Vue rectangulaire réalisée dans /jeu-demo.html, isolée du convertisseur : planète circulaire, caméra et interactions cohérentes, bande droite adaptative, redimensionnement et DPR à chaud, limites exactes exposées. Aucun moteur de jeu n’existe dans le dépôt ; la démonstration utilise les scènes préparées. Suite complète : 180 cas réussis, dont 10 nouveaux ; quatre recettes de préparation et typecheck réussis. Aucun test supprimé. Contrôles natifs non exécutés : Linux nécessite WebKitWebDriver, Xvfb et xdotool ; Windows nécessite Windows 10/11 x64, WebView2, application installée, PowerShell et un opérateur. Les 118 instances de serveur sont arrêtées, leurs ports connus fermés et le pilotage PID 3397860 préservé. Fichiers de suivi préservés, aucun commit.",
+    "tests": [
+      {
+        "name": "suite-actuelle-180-cas",
+        "command": "\"npm\" \"test\"",
+        "exitCode": 0,
+        "output": "\n> diagrams-codex@0.1.0 test\n> node scripts/test.mjs\n\nInterface Tauri et moteur de conversion hors ligne : dist/desktop/\n✔ conversion-service-memoire-equivalence-et-immuabilite (7.711655ms)\n✔ conversion-service-diagnostics-json-import-calcul (0.804164ms)\n✔ conversion-cli-commande-documentee-utf8-et-service (2562.945594ms)\n✔ conversion-cli-svg-ouverture-navigateur (1514.267936ms)\n✔ conversion-cli-lecture-inexistante (76.129942ms)\n✔ conversion-cli-json-invalide (84.658369ms)\n✔ conversion-cli-diagramme-invalide (90.0871ms)\n✔ conversion-cli-erreur-geometrique-controlee (93.713247ms)\n✔ conversion-cli-refus-chemin-invalide (131.944211ms)\n✔ conversion-cli-refus-placements-superposes (103.874851ms)\n✔ conversion-cli-refus-chemin-traversant-forme (90.528047ms)\n✔ conversion-cli-diagnostic-rendu (114.876236ms)\n✔ conversion-cli-ecriture-interrompue-atomique (119.555043ms)\n✔ conversion-cli-destination-inaccessible (82.856455ms)\n✔ conversion-cli-refus-destination-source (68.481454ms)\n✔ conversion-cli-refus-alias-source (103.910068ms)\n✔ conversion-cli-remplacement-destination-et-chemins-espaces (48.10079ms)\n✔ conversion-cli-arguments-invalides (191.166434ms)\n✔ conversion-disposition-compacte-reference-connexions-et-conflits (6007.26203ms)\nserveur-test {\"pid\":3538582,\"port\":37221,\"stopped\":true}\n✔ desktop-worker-conversion-locale-remplacement-export-et-svg-autonome (2943.743429ms)\nserveur-test {\"pid\":3538582,\"port\":42145,\"stopped\":true}\n✔ desktop-plein-ecran-natif-echap-formulaire-cliquable-et-remplacement (2702.837692ms)\nserveur-test {\"pid\":3538582,\"port\":43671,\"stopped\":true}\n✔ desktop-plein-ecran-entree-retardee-apres-echap-libere-le-formulaire (447.084509ms)\nserveur-test {\"pid\":3538582,\"port\":41485,\"stopped\":true}\n✔ desktop-erreurs-json-metier-worker-expiration-et-reprise-sans-apercu-perime (811.819253ms)\nserveur-test {\"pid\":3538582,\"port\":33845,\"stopped\":true}\n✔ desktop-dialogue-annule-erreur-ecriture-et-ouverture-native-du-bon-resultat (466.012381ms)\n✔ connexions-losange-absolues (1.703817ms)\n✔ connexions-ovale-absolues (0.111856ms)\n✔ connexions-rectangle-ancres-multiples (0.296274ms)\n✔ connexions-rectangle-incidents-et-handles (0.151137ms)\n✔ connexions-rectangle-coins-dedupliques (0.1008ms)\n✔ connexions-diagnostics-invalides (0.307986ms)\n✔ destination-pas-signes-et-immuabilite (0.154209ms)\n✔ chemin-connexion-source-et-arrivees (0.306418ms)\n✔ chemin-tolerance-distance-carree (0.206369ms)\n✔ placements-separes-tangents-superposes (0.477074ms)\n✔ segments-interieur-bords-contacts-deux-sens (0.660883ms)\n✔ placement-chemin-exclusions-paralleles-deduplication (0.153361ms)\n✔ geometrie-configuration-valide-et-vide (0.184145ms)\n✔ geometrie-diagnostics-references-et-indices (1.320583ms)\n✔ geometrie-diagnostics-nombres-et-pas (0.618963ms)\n✔ geometrie-identifiants-speciaux (0.095601ms)\n✔ connexions-integration-diagramme-reference (5.18793ms)\nserveur-test {\"pid\":3538740,\"port\":36721,\"stopped\":true}\n✔ http-diagram-reference-svg-utf8-et-equivalence-service (2684.707593ms)\nserveur-test {\"pid\":3539761,\"port\":43309,\"stopped\":true}\n✔ http-json-mal-forme-et-reprise (2441.125555ms)\nserveur-test {\"pid\":3540716,\"port\":45059,\"stopped\":true}\n✔ http-reference-arc-invalide-et-reprise (2422.758382ms)\nserveur-test {\"pid\":3541327,\"port\":38347,\"stopped\":true}\n✔ http-structure-corps-et-refus-chemin-local (2448.780572ms)\nserveur-test {\"pid\":3541497,\"port\":44571,\"stopped\":true}\n✔ http-limite-un-mio-octets-et-reprise (2360.243617ms)\nserveur-test {\"pid\":3541716,\"port\":42253,\"stopped\":true}\n✔ http-format-contenu-charset-compression-et-reprise (2404.934991ms)\nserveur-test {\"pid\":3541831,\"port\":42421,\"stopped\":true}\n✔ http-erreur-interne-rendu-controlee-et-reprise (3386.240114ms)\nserveur-test {\"pid\":3542158,\"port\":44369,\"stopped\":true}\n✔ http-erreur-interne-import-inattendue-et-reprise (2324.920407ms)\nserveur-test {\"pid\":3542384,\"port\":38769,\"stopped\":true}\n✔ http-verificateur-chemin-bloque-succes (83.372409ms)\nserveur-test {\"pid\":3542400,\"port\":46583,\"stopped\":true}\n✔ http-verificateur-placement-bloque-succes (86.052295ms)\nserveur-test {\"pid\":3542498,\"port\":33781,\"stopped\":true}\n✔ http-verificateur-placement-chemin-bloque-succes (115.376956ms)\nserveur-test {\"pid\":3542509,\"port\":37763,\"stopped\":true}\n✔ http-trois-verificateurs-avant-rendu (2291.320565ms)\nserveur-test {\"pid\":3542521,\"port\":44671,\"stopped\":true}\n✔ http-interface-finale-ressources-host-port-zero (278.992796ms)\nserveur-test {\"pid\":3542618,\"port\":null,\"stopped\":true}\nserveur-test {\"pid\":3542635,\"port\":38111,\"stopped\":true}\nserveur-test {\"pid\":3542724,\"port\":null,\"stopped\":true}\nserveur-test {\"pid\":3542742,\"port\":null,\"stopped\":true}\nserveur-test {\"pid\":3542751,\"port\":null,\"stopped\":true}\nserveur-test {\"pid\":3542758,\"port\":null,\"stopped\":true}\nserveur-test {\"pid\":3542765,\"port\":null,\"stopped\":true}\n✔ http-host-personnalise-port-fixe-et-diagnostics-demarrage (432.167368ms)\nserveur-test {\"pid\":3542773,\"port\":34167,\"stopped\":true}\n✔ http-svg-consultation-et-enregistrement-navigateur (2708.098213ms)\n✔ diagram-reference (5.010665ms)\n✔ formes-et-dimensions (0.269266ms)\n✔ arcs-paralleles (0.14104ms)\n✔ cycle-et-boucle (0.089296ms)\n✔ noeud-isole (0.092961ms)\n✔ tableaux-vides (0.057952ms)\n✔ libelles-unicode-multilignes (0.125729ms)\n✔ json-mal-forme (0.241153ms)\n✔ identifiants-invalides-et-dupliques (0.424834ms)\n✔ references-absentes (0.170432ms)\n✔ dimensions-invalides (0.540882ms)\n✔ types-non-pris-en-charge (0.296338ms)\n✔ structure-invalide (0.369762ms)\n✔ indications-spatiales (0.42141ms)\n✔ absence-mutation-et-alias (0.102433ms)\n✔ identifiants-et-metadonnees-speciaux (0.071952ms)\n✔ metadonnees-non-json (0.43589ms)\n✔ import-nom-initial-presentation-et-noms-personnalises (0.187232ms)\n✔ import-noeud-final-nom-par-defaut-personnalise-et-metadonnees (0.246225ms)\nserveur-test {\"pid\":3538714,\"port\":41737,\"stopped\":true}\n✔ jeu-navigateur-formats-redimensionnement-et-hud (389.898108ms)\nserveur-test {\"pid\":3539204,\"port\":46297,\"stopped\":true}\n✔ jeu-navigateur-coins-centre-hors-champ-et-pixels (327.695805ms)\nserveur-test {\"pid\":3539307,\"port\":37179,\"stopped\":true}\n✔ jeu-navigateur-planete-circulaire-bords-et-proportions (298.267879ms)\nserveur-test {\"pid\":3539412,\"port\":45725,\"stopped\":true}\n✔ jeu-navigateur-interactions-suivi-et-coordonnees (782.615348ms)\nserveur-test {\"pid\":3539534,\"port\":38451,\"stopped\":true}\n✔ jeu-navigateur-dpr-un-deux-et-changement-a-chaud (371.054282ms)\nserveur-test {\"pid\":3539649,\"port\":32989,\"stopped\":true}\n✔ jeu-navigateur-scenarios-informations-et-retour-diagrammes (520.632295ms)\n✔ jeu-layout-rectangle-hud-et-sans-hud (0.871172ms)\n✔ jeu-conversions-oracles-zoom-decalage-et-redimensionnement (1.451704ms)\n✔ jeu-visibilite-quatre-coins-tangences-et-etats (0.295617ms)\n✔ jeu-scenes-reference-determinisme-et-visibilite-compatibles (4.793481ms)\n✔ placements-diagram-reference (9.081006ms)\n✔ placements-chaine (0.416834ms)\n✔ placements-embranchement-convergence (0.358225ms)\n✔ placements-cycle-et-boucles (0.34829ms)\n✔ placements-sommet-isole (0.124881ms)\n✔ placements-composantes-deconnectees (0.312882ms)\n✔ placements-graphe-vide (0.054576ms)\n✔ placements-positions-superposees-negatives (0.234945ms)\n✔ placements-indications-compatibles (0.233617ms)\n✔ placements-libelles-longs-multilignes (1.256758ms)\n✔ texte-graphemes-et-coupures (0.273313ms)\n✔ placements-marges-limites-boites (0.184289ms)\n✔ placements-determinisme-et-immuabilite (0.781476ms)\n✔ placements-connexions-apres-deplacement-redimensionnement (0.74514ms)\n✔ placements-diagnostics-entrees-invalides (0.767588ms)\n✔ placements-identifiants-speciaux (0.274433ms)\n✔ placements-graphes-generes-reproductibles (65.867362ms)\n✔ placements-ports-libres-32px-texte-centre-et-ancres-fixes (1.378615ms)\n✔ placements-presentation-large-centres-alignes-et-connexions-regenerees (11.342458ms)\n✔ routage-diagram-reference (4434.084828ms)\n✔ routage-trajet-direct (0.710484ms)\n✔ routage-obstacle-interpose (6.015151ms)\n✔ routage-embranchement-convergence (4.004389ms)\n✔ routage-cycle-retour (1.902794ms)\n✔ routage-boucles-sur-soi (1.596504ms)\n✔ routage-arcs-paralleles (4.873017ms)\n✔ routage-paralleles-32px-hors-ports-communs-des-trois-formes (3.738084ms)\nespacement-routage {\"proche\":1174.8333333333333,\"tresProche\":144,\"longueur\":17463.833333333332}\n✔ routage-reference-proximite-32px-reduite-et-trajets-courts (1226.602367ms)\n✔ routage-rectangle-connexions-meme-cote (7.796984ms)\n✔ routage-preferences-ancres-handles (1.380999ms)\n✔ routage-points-importes-valides (0.322754ms)\n✔ routage-points-preferent-ports-lateraux (0.268834ms)\n✔ routage-indications-incoherentes-recalculees (14.382377ms)\n✔ routage-formes-cardinales-et-coins (3.07104ms)\n✔ routage-degagements-source-cible-tous-cotes (25.050608ms)\n✔ routage-echec-controle-budget (0.833396ms)\n✔ routage-repli-et-limite-essais (0.579379ms)\n✔ routage-determinisme-et-immuabilite (11834.222233ms)\n✔ routage-diagnostics-entrees (0.728163ms)\n✔ routage-vide-isoles-identifiants-speciaux (1.350887ms)\n✔ routage-graphes-generes-reproductibles (4493.98621ms)\n✔ routage-sans-demi-tour-degagements-et-points-importes (24.017227ms)\nqualite-routage {\"croisements\":9,\"contacts\":0,\"longueurCommune\":0}\n✔ routage-reference-croisements-reduits-et-absence-de-jonctions-ambigues (2321.418506ms)\nlongueur-routage {\"total\":17463.833333333332,\"maximum\":3148,\"longs\":5}\n✔ routage-presentation-large-coudes-reduits-longueur-bornee-et-ancres (1165.14369ms)\n✔ routage-compact-cycle-entrelace-court-deterministe-et-immuable (109.373149ms)\n✔ routage-reference-corps-hors-degagements-et-sans-auto-intersection (5022.963944ms)\n✔ svg-navigateur-croisements-couleurs-et-pointes-proches-preservees (355.969118ms)\n✔ svg-navigateur-diagram-taille-normale-et-double (4200.642783ms)\n✔ svg-navigateur-coordonnees-negatives-et-marges (113.928134ms)\n✔ svg-navigateur-texte-long-et-retours (143.013451ms)\n✔ svg-navigateur-xml-inerte-et-hors-ligne (127.693741ms)\n✔ svg-navigateur-theme-sombre-export-et-cadrage-compact (1339.420222ms)\n✔ svg-navigateur-debut-fleches-agrandies-et-export-autonome (1287.907269ms)\n✔ svg-croisements-halos-couleurs-et-geometrie-preservee (7.026708ms)\n✔ svg-croisements-excluent-ports-coudes-et-paralleles (5.376987ms)\n✔ svg-diagram-xml-complet-conditions-en-legende (4397.761298ms)\n✔ svg-formes-connexions-et-fleches (4134.910796ms)\n✔ svg-libelles-personnalises-sans-collision-et-legende-hors-geometrie (4031.041734ms)\n✔ svg-texte-placement-multiligne (1.779097ms)\n✔ svg-viewbox-negatif-et-detours (0.46629ms)\n✔ svg-xml-echappement-et-autonomie (1.320326ms)\n✔ svg-branches-oui-non-casse-espaces-et-arcs-neutres (1.894185ms)\n✔ svg-xml-caracteres-invalides (0.451171ms)\n✔ svg-vide-et-labels-vides (0.476066ms)\n✔ svg-arcs-paralleles-boucles-identifiants (4.481575ms)\n✔ svg-immuabilite-et-determinisme (4115.652723ms)\n✔ svg-diagnostics-associations-manquantes (0.855892ms)\n✔ svg-libelles-denses-repli (8.794221ms)\n✔ svg-arrondis-ports-proches-et-coins (1.732361ms)\n✔ svg-croisements-six-pistes-distinctes-pointes-reperes-et-contraste (1.50948ms)\n✔ svg-croisements-couleurs-stables-conditions-prioritaires-et-arcs-isoles (2.455389ms)\n✔ svg-croisements-palette-saturee-reduit-les-collisions-sans-rouge-ni-vert (1.139014ms)\n✔ svg-noeud-final-quatre-ports-entrees-orientees-et-trois-verificateurs (23.496152ms)\nserveur-test {\"pid\":3538713,\"port\":37943,\"stopped\":true}\n✔ ui-presentation-large-trajets-simplifies-apercu-et-export-autonome (3159.174451ms)\nserveur-test {\"pid\":3539880,\"port\":34373,\"stopped\":true}\n✔ ui-parcours-diagram-selection-apercu-ouverture-et-enregistrement-autonome (3020.69554ms)\nserveur-test {\"pid\":3541021,\"port\":45891,\"stopped\":true}\n✔ ui-branches-rouges-vertes-apercu-remplacement-et-export-hors-ligne (3393.625002ms)\nserveur-test {\"pid\":3541394,\"port\":38657,\"stopped\":true}\n✔ ui-absence-selection-json-invalide-et-diagramme-invalide-puis-reprise (1615.373688ms)\nserveur-test {\"pid\":3541508,\"port\":35167,\"stopped\":true}\n✔ ui-fichier-illisible-et-nouvelle-selection-valide (480.863383ms)\nserveur-test {\"pid\":3541613,\"port\":34579,\"stopped\":true}\n✔ ui-erreur-conversion-api-reelle-et-reprise (2824.302683ms)\nserveur-test {\"pid\":3541729,\"port\":34303,\"stopped\":true}\n✔ ui-reponses-api-inexploitables-et-reprise-sans-apercu-perime (1510.352759ms)\nserveur-test {\"pid\":3541841,\"port\":38931,\"stopped\":true}\n✔ ui-coupure-reseau-et-reprise (480.999973ms)\nserveur-test {\"pid\":3541945,\"port\":41779,\"stopped\":true}\n✔ ui-delai-reseau-expire-et-reprise (439.65933ms)\nserveur-test {\"pid\":3542053,\"port\":45223,\"stopped\":true}\n✔ ui-deux-diagrammes-remplacement-telechargement-et-liberation-des-url (2835.764005ms)\nserveur-test {\"pid\":3542185,\"port\":45023,\"stopped\":true}\n✔ ui-verrouillage-lecture-requete-et-double-soumission (396.313795ms)\nserveur-test {\"pid\":3542287,\"port\":36151,\"stopped\":true}\n✔ ui-clavier-fenetre-etroite-et-etats-accessibles (355.916245ms)\nserveur-test {\"pid\":3542391,\"port\":36313,\"stopped\":true}\n✔ ui-plein-ecran-natif-zoom-retour-et-enregistrement (2878.064528ms)\nserveur-test {\"pid\":3542628,\"port\":35273,\"stopped\":true}\n✔ ui-plein-ecran-repli-api-absente-ou-refusee-et-echap (417.799679ms)\nserveur-test {\"pid\":3542780,\"port\":37905,\"stopped\":true}\n✔ ui-plein-ecran-nouvelle-selection-et-echec-liberent-la-vue (546.55819ms)\nserveur-test {\"pid\":3542966,\"port\":37337,\"stopped\":true}\n✔ ui-chemins-raccourcis-apercu-et-fichier-autonome-identiques (2657.532306ms)\nserveur-test {\"pid\":3543131,\"port\":42447,\"stopped\":true}\n✔ ui-croisements-halos-visibles-apercu-export-et-remplacement (3331.126282ms)\ncouleurs-croisements {\"fichier\":\"diagram.json\",\"croisements\":9,\"conditionsIdentiques\":2,\"ordinaires\":3,\"palette\":[\"rgb(148, 163, 184)\",\"rgb(96, 165, 250)\"]}\ncouleurs-croisements {\"fichier\":\"pistes.json\",\"croisements\":9,\"conditionsIdentiques\":0,\"ordinaires\":9,\"palette\":[\"rgb(148, 163, 184)\",\"rgb(96, 165, 250)\"]}\nserveur-test {\"pid\":3543318,\"port\":44913,\"stopped\":true}\n✔ ui-pistes-32px-croisements-couleurs-distinctes-export-et-remplacement (5413.106234ms)\nserveur-test {\"pid\":3543533,\"port\":43865,\"stopped\":true}\n✔ ui-zoom-boutons-clavier-bornes-et-export-inchange (2767.784431ms)\nserveur-test {\"pid\":3543663,\"port\":43587,\"stopped\":true}\n✔ ui-zoom-molette-ancrage-defilement-et-vue-ensemble (1650.919767ms)\nserveur-test {\"pid\":3543770,\"port\":33539,\"stopped\":true}\n✔ ui-zoom-fenetre-etroite-plein-ecran-remplacement-et-reprise (1970.489432ms)\nserveur-test {\"pid\":3543880,\"port\":46707,\"stopped\":true}\n✔ ui-noeuds-finaux-legende-reprise-remplacement-et-export-autonome (978.35648ms)\nℹ tests 180\nℹ suites 0\nℹ pass 180\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 43366.763597\n"
+      },
+      {
+        "name": "typecheck",
+        "command": "\"npm\" \"run\" \"typecheck\"",
+        "exitCode": 0,
+        "output": "\n> diagrams-codex@0.1.0 typecheck\n> tsc -p tsconfig.server.json --noEmit && tsc -p tsconfig.client.json --noEmit && tsc -p tsconfig.desktop.json\n\n"
+      },
+      {
+        "name": "jeu-layout-rectangle-hud-et-sans-hud",
+        "command": "\"node\" \"scripts/test.mjs\" \"jeu-layout-rectangle-hud-et-sans-hud\"",
+        "exitCode": 0,
+        "output": "Interface Tauri et moteur de conversion hors ligne : dist/desktop/\n✔ jeu-layout-rectangle-hud-et-sans-hud (0.835221ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 30.066712\n"
+      },
+      {
+        "name": "jeu-conversions-oracles-zoom-decalage-et-redimensionnement",
+        "command": "\"node\" \"scripts/test.mjs\" \"jeu-conversions-oracles-zoom-decalage-et-redimensionnement\"",
+        "exitCode": 0,
+        "output": "Interface Tauri et moteur de conversion hors ligne : dist/desktop/\n✔ jeu-conversions-oracles-zoom-decalage-et-redimensionnement (4.146213ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 55.389017\n"
+      },
+      {
+        "name": "jeu-visibilite-quatre-coins-tangences-et-etats",
+        "command": "\"node\" \"scripts/test.mjs\" \"jeu-visibilite-quatre-coins-tangences-et-etats\"",
+        "exitCode": 0,
+        "output": "Interface Tauri et moteur de conversion hors ligne : dist/desktop/\n✔ jeu-visibilite-quatre-coins-tangences-et-etats (0.628739ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 39.147207\n"
+      },
+      {
+        "name": "jeu-scenes-reference-determinisme-et-visibilite-compatibles",
+        "command": "\"node\" \"scripts/test.mjs\" \"jeu-scenes-reference-determinisme-et-visibilite-compatibles\"",
+        "exitCode": 0,
+        "output": "Interface Tauri et moteur de conversion hors ligne : dist/desktop/\n✔ jeu-scenes-reference-determinisme-et-visibilite-compatibles (6.721554ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 52.278601\n"
+      },
+      {
+        "name": "jeu-navigateur-formats-redimensionnement-et-hud",
+        "command": "\"node\" \"scripts/test.mjs\" \"jeu-navigateur-formats-redimensionnement-et-hud\"",
+        "exitCode": 0,
+        "output": "Interface Tauri et moteur de conversion hors ligne : dist/desktop/\nserveur-test {\"pid\":3544817,\"port\":39105,\"stopped\":true}\n✔ jeu-navigateur-formats-redimensionnement-et-hud (333.726874ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 539.058875\n"
+      },
+      {
+        "name": "jeu-navigateur-coins-centre-hors-champ-et-pixels",
+        "command": "\"node\" \"scripts/test.mjs\" \"jeu-navigateur-coins-centre-hors-champ-et-pixels\"",
+        "exitCode": 0,
+        "output": "Interface Tauri et moteur de conversion hors ligne : dist/desktop/\nserveur-test {\"pid\":3545057,\"port\":33661,\"stopped\":true}\n✔ jeu-navigateur-coins-centre-hors-champ-et-pixels (342.816904ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 522.296757\n"
+      },
+      {
+        "name": "jeu-navigateur-planete-circulaire-bords-et-proportions",
+        "command": "\"node\" \"scripts/test.mjs\" \"jeu-navigateur-planete-circulaire-bords-et-proportions\"",
+        "exitCode": 0,
+        "output": "Interface Tauri et moteur de conversion hors ligne : dist/desktop/\nserveur-test {\"pid\":3545286,\"port\":35879,\"stopped\":true}\n✔ jeu-navigateur-planete-circulaire-bords-et-proportions (345.309828ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 550.953381\n"
+      },
+      {
+        "name": "jeu-navigateur-interactions-suivi-et-coordonnees",
+        "command": "\"node\" \"scripts/test.mjs\" \"jeu-navigateur-interactions-suivi-et-coordonnees\"",
+        "exitCode": 0,
+        "output": "Interface Tauri et moteur de conversion hors ligne : dist/desktop/\nserveur-test {\"pid\":3545560,\"port\":39695,\"stopped\":true}\n✔ jeu-navigateur-interactions-suivi-et-coordonnees (793.880593ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 990.160563\n"
+      },
+      {
+        "name": "jeu-navigateur-dpr-un-deux-et-changement-a-chaud",
+        "command": "\"node\" \"scripts/test.mjs\" \"jeu-navigateur-dpr-un-deux-et-changement-a-chaud\"",
+        "exitCode": 0,
+        "output": "Interface Tauri et moteur de conversion hors ligne : dist/desktop/\nserveur-test {\"pid\":3545833,\"port\":41325,\"stopped\":true}\n✔ jeu-navigateur-dpr-un-deux-et-changement-a-chaud (349.286871ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 555.865004\n"
+      },
+      {
+        "name": "jeu-navigateur-scenarios-informations-et-retour-diagrammes",
+        "command": "\"node\" \"scripts/test.mjs\" \"jeu-navigateur-scenarios-informations-et-retour-diagrammes\"",
+        "exitCode": 0,
+        "output": "Interface Tauri et moteur de conversion hors ligne : dist/desktop/\nserveur-test {\"pid\":3546097,\"port\":37179,\"stopped\":true}\n✔ jeu-navigateur-scenarios-informations-et-retour-diagrammes (516.180499ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 699.539715\n"
+      },
+      {
+        "name": "preparation-scene-deux-chargements-identiques",
+        "command": "\"python3\" \"-c\" \"import json\\nfrom pathlib import Path\\np=Path('docs/jeu/scene-reference.json')\\na=json.loads(p.read_text()); b=json.loads(p.read_text())\\nassert a==b and a is not b\\nexpected=[\\n('joueur-01','joueur',0,0,'actif'),('decor-01','decor',-180,-80,'actif'),\\n('caisse-01','objet-destructible',120,60,'actif'),('caisse-detruite','objet-destructible',180,100,'detruit'),\\n('tir-ennemi-01','projectile',148,60,'actif'),('tir-joueur-01','projectile',40,-20,'actif'),\\n('boss-est','boss',1000,0,'actif'),('boss-ouest','boss',-900,100,'actif'),\\n('mere-nord','vaisseau-mere',0,-1200,'actif'),('mere-lointaine','vaisseau-mere',1800,1000,'actif'),\\n('decor-bord','decor',2380,0,'actif'),('caisse-bord','objet-destructible',0,2380,'actif'),\\n('tir-inactif','projectile',90,0,'inactif')]\\nsnapshot=lambda s:[(e['id'],e['category'],e['position']['x'],e['position']['y'],e['state']) for e in s['entities']]\\nassert snapshot(a)==snapshot(b)==expected\\nassert len({e['id'] for e in a['entities']})==13\\nassert a['playerId']=='joueur-01' and a['planet']=={'center':{'x':0,'y':0},'radius':2400}\\nprint('PASS : deux chargements, 13 entites, positions, categories et etats connus')\\n\"",
+        "exitCode": 0,
+        "output": "PASS : deux chargements, 13 entites, positions, categories et etats connus\n"
+      },
+      {
+        "name": "preparation-proprietes-independantes-des-sprites",
+        "command": "\"python3\" \"-c\" \"import json,math\\nfrom pathlib import Path\\nentities=json.loads(Path('docs/jeu/scene-reference.json').read_text())['entities']\\nby_id={e['id']:e for e in entities}\\nfor e in entities:\\n assert set(e)=={'id','category','position','dimensions','state','destructible','projectileOrigin'}\\n assert e['category'] in {'joueur','decor','objet-destructible','projectile','boss','vaisseau-mere'}\\n assert e['state'] in {'actif','inactif','detruit'} and type(e['destructible']) is bool\\n assert all(type(n) in (int,float) and math.isfinite(n) for n in e['position'].values())\\n assert set(e['position'])=={'x','y'} and set(e['dimensions'])=={'width','height'}\\n assert all(type(n) in (int,float) and math.isfinite(n) and n>0 for n in e['dimensions'].values())\\n o=e['projectileOrigin']\\n if e['category']=='projectile':\\n  assert set(o)=={'faction','emitterId'} and o['faction'] in {'ennemi','joueur','neutre'} and o['emitterId']\\n else: assert o is None\\ncrate,decor,shot=(by_id[k] for k in ['caisse-01','decor-01','tir-ennemi-01'])\\nassert crate['destructible'] and crate['projectileOrigin'] is None\\nassert not decor['destructible'] and decor['category']=='decor'\\nassert not shot['destructible'] and shot['category']=='projectile'\\nassert shot['projectileOrigin']=={'faction':'ennemi','emitterId':'boss-ouest'}\\nassert by_id['tir-joueur-01']['projectileOrigin']['faction']=='joueur'\\nassert {e['category'] for e in entities}=={'joueur','decor','objet-destructible','projectile','boss','vaisseau-mere'}\\nprint('PASS : contrat valide, destructibilite et origine explicites, aucune apparence requise')\\n\"",
+        "exitCode": 0,
+        "output": "PASS : contrat valide, destructibilite et origine explicites, aucune apparence requise\n"
+      },
+      {
+        "name": "preparation-conversions-monde-ecran-oracles",
+        "command": "\"python3\" \"-c\" \"import json,math\\nfrom pathlib import Path\\ncases=json.loads(Path('docs/jeu/conversions-reference.json').read_text())\\nassert {c['id'] for c in cases}=={'centre','negatifs','caisse','hors-champ','camera-deplacee','zoom-double','viewport-decale','petite-fenetre','bord-planete'}\\nfor c in cases:\\n cam,v,w,s=(c[k] for k in ['camera','viewport','world','screen'])\\n assert cam['zoom']>0 and v['width']>0 and v['height']>0\\n for axis,size in [('x','width'),('y','height')]:\\n  projected=v[axis]+v[size]/2+(w[axis]-cam[axis])*cam['zoom']\\n  inverse=cam[axis]+(s[axis]-v[axis]-v[size]/2)/cam['zoom']\\n  assert math.isclose(projected,s[axis],abs_tol=1e-9),(c['id'],axis,projected)\\n  assert math.isclose(inverse,w[axis],abs_tol=1e-9),(c['id'],axis,inverse)\\n  for dpr in (1,2):\\n   assert math.isclose(projected*dpr/dpr,s[axis],abs_tol=1e-9)\\nprint('PASS : 9 oracles, projection/inverse, axes, zoom et viewport CSS')\\n\"",
+        "exitCode": 0,
+        "output": "PASS : 9 oracles, projection/inverse, axes, zoom et viewport CSS\n"
+      },
+      {
+        "name": "preparation-scenarios-visibilite-distances-et-planete",
+        "command": "\"python3\" \"-c\" \"import json,copy,math\\nfrom pathlib import Path\\nroot=Path('docs/jeu')\\ndata=json.loads((root/'scenarios.json').read_text())\\nbase=json.loads((root/data['reference']).read_text())\\npristine=copy.deepcopy(base)\\nassert len(data['scenarios'])==12 and len({s['id'] for s in data['scenarios']})==12\\nassert data['windows']=={'large':{'width':1280,'height':720,'hudWidth':240},'etroite':{'width':360,'height':800,'hudWidth':72},'grande':{'width':1920,'height':1080,'hudWidth':240}}\\nfor s in data['scenarios']:\\n entities=copy.deepcopy(base['entities']); known={e['id'] for e in entities}\\n assert set(s['overrides'])<=known\\n if s['include']!='all':\\n  assert set(s['include'])<=known\\n  entities=[e for e in entities if e['id'] in s['include']]\\n for e in entities: e.update(copy.deepcopy(s['overrides'].get(e['id'],{})))\\n win=data['windows'][s['window']]; cam=s['camera']\\n width=win['width']-win['hudWidth']; height=win['height']\\n assert width>0 and height>0 and cam['zoom']>0\\n def visible(e):\\n  x=width/2+(e['position']['x']-cam['x'])*cam['zoom']\\n  y=height/2+(e['position']['y']-cam['y'])*cam['zoom']\\n  w=e['dimensions']['width']*cam['zoom']; h=e['dimensions']['height']*cam['zoom']\\n  return e['state']=='actif' and x+w/2>0 and x-w/2<width and y+h/2>0 and y-h/2<height\\n player=next(e for e in entities if e['id']==base['playerId'])\\n candidates=[e for e in entities if e['category'] in ('boss','vaisseau-mere') and e['state']=='actif']\\n shown=sorted(e['id'] for e in candidates if visible(e))\\n distance=lambda e:math.hypot(e['position']['x']-player['position']['x'],e['position']['y']-player['position']['y'])\\n target=None if shown or not candidates else min(candidates,key=lambda e:(distance(e),e['id']))['id']\\n assert shown==s['expected']['visibleMajorIds'],(s['id'],shown)\\n assert target==s['expected']['arrowTargetId'],(s['id'],target)\\n for point in s['expected'].get('planetPoints',[]):\\n  p=point['position']; center=base['planet']['center']\\n  assert ((p['x']-center['x'])**2+(p['y']-center['y'])**2<=base['planet']['radius']**2)==point['inside']\\n if s['id']=='catalogue':\\n  assert {e['category'] for e in entities if visible(e)}=={'joueur','decor','objet-destructible','projectile','boss','vaisseau-mere'}\\n if s['id']=='amas-dense':\\n  near=[e for e in entities if visible(e) and 120<=e['position']['x']<=160 and 45<=e['position']['y']<=80]\\n  assert sum(e['category']=='objet-destructible' for e in near)==2\\n  assert sum(e['category']=='projectile' for e in near)==3\\n assert base==pristine\\nprint('PASS : 12 scenarios, 3 fenetres, amas, cibles, tangence, distances et disque')\\n\"",
+        "exitCode": 0,
+        "output": "PASS : 12 scenarios, 3 fenetres, amas, cibles, tangence, distances et disque\n"
+      },
+      {
+        "name": "npm run build",
+        "command": "\"npm\" \"run\" \"build\"",
+        "exitCode": 0,
+        "output": "\n> diagrams-codex@0.1.0 build\n> tsc -p tsconfig.server.json && tsc -p tsconfig.client.json && node scripts/build-jeu.mjs\n\n"
+      }
+    ],
+    "updatedAt": "2026-11-12T17:13:15.759Z",
+    "rawResponse": "{\n  \"current\": \"evolution1.md\",\n  \"workCompleted\": true,\n  \"summary\": \"Vue rectangulaire réalisée dans /jeu-demo.html, isolée du convertisseur : planète circulaire, caméra et interactions cohérentes, bande droite adaptative, redimensionnement et DPR à chaud, limites exactes exposées. Aucun moteur de jeu n’existe dans le dépôt ; la démonstration utilise les scènes préparées. Suite complète : 180 cas réussis, dont 10 nouveaux ; quatre recettes de préparation et typecheck réussis. Aucun test supprimé. Contrôles natifs non exécutés : Linux nécessite WebKitWebDriver, Xvfb et xdotool ; Windows nécessite Windows 10/11 x64, WebView2, application installée, PowerShell et un opérateur. Les 118 instances de serveur sont arrêtées, leurs ports connus fermés et le pilotage PID 3397860 préservé. Fichiers de suivi préservés, aucun commit.\",\n  \"tests\": [\n    {\n      \"name\": \"suite-actuelle-180-cas\",\n      \"executable\": \"npm\",\n      \"args\": [\"test\"],\n      \"status\": \"passed\",\n      \"covers\": [0, 1, 2, 3, 4]\n    },\n    {\n      \"name\": \"typecheck\",\n      \"executable\": \"npm\",\n      \"args\": [\"run\", \"typecheck\"],\n      \"status\": \"passed\",\n      \"covers\": []\n    },\n    {\n      \"name\": \"jeu-layout-rectangle-hud-et-sans-hud\",\n      \"executable\": \"node\",\n      \"args\": [\"scripts/test.mjs\", \"jeu-layout-rectangle-hud-et-sans-hud\"],\n      \"status\": \"passed\",\n      \"covers\": [0, 4]\n    },\n    {\n      \"name\": \"jeu-conversions-oracles-zoom-decalage-et-redimensionnement\",\n      \"executable\": \"node\",\n      \"args\": [\"scripts/test.mjs\", \"jeu-conversions-oracles-zoom-decalage-et-redimensionnement\"],\n      \"status\": \"passed\",\n      \"covers\": [3]\n    },\n    {\n      \"name\": \"jeu-visibilite-quatre-coins-tangences-et-etats\",\n      \"executable\": \"node\",\n      \"args\": [\"scripts/test.mjs\", \"jeu-visibilite-quatre-coins-tangences-et-etats\"],\n      \"status\": \"passed\",\n      \"covers\": [1, 3]\n    },\n    {\n      \"name\": \"jeu-scenes-reference-determinisme-et-visibilite-compatibles\",\n      \"executable\": \"node\",\n      \"args\": [\"scripts/test.mjs\", \"jeu-scenes-reference-determinisme-et-visibilite-compatibles\"],\n      \"status\": \"passed\",\n      \"covers\": [1, 2, 3]\n    },\n    {\n      \"name\": \"jeu-navigateur-formats-redimensionnement-et-hud\",\n      \"executable\": \"node\",\n      \"args\": [\"scripts/test.mjs\", \"jeu-navigateur-formats-redimensionnement-et-hud\"],\n      \"status\": \"passed\",\n      \"covers\": [0, 4]\n    },\n    {\n      \"name\": \"jeu-navigateur-coins-centre-hors-champ-et-pixels\",\n      \"executable\": \"node\",\n      \"args\": [\"scripts/test.mjs\", \"jeu-navigateur-coins-centre-hors-champ-et-pixels\"],\n      \"status\": \"passed\",\n      \"covers\": [0, 1, 2, 4]\n    },\n    {\n      \"name\": \"jeu-navigateur-planete-circulaire-bords-et-proportions\",\n      \"executable\": \"node\",\n      \"args\": [\"scripts/test.mjs\", \"jeu-navigateur-planete-circulaire-bords-et-proportions\"],\n      \"status\": \"passed\",\n      \"covers\": [2]\n    },\n    {\n      \"name\": \"jeu-navigateur-interactions-suivi-et-coordonnees\",\n      \"executable\": \"node\",\n      \"args\": [\"scripts/test.mjs\", \"jeu-navigateur-interactions-suivi-et-coordonnees\"],\n      \"status\": \"passed\",\n      \"covers\": [0, 3]\n    },\n    {\n      \"name\": \"jeu-navigateur-dpr-un-deux-et-changement-a-chaud\",\n      \"executable\": \"node\",\n      \"args\": [\"scripts/test.mjs\", \"jeu-navigateur-dpr-un-deux-et-changement-a-chaud\"],\n      \"status\": \"passed\",\n      \"covers\": [0, 1, 3]\n    },\n    {\n      \"name\": \"jeu-navigateur-scenarios-informations-et-retour-diagrammes\",\n      \"executable\": \"node\",\n      \"args\": [\"scripts/test.mjs\", \"jeu-navigateur-scenarios-informations-et-retour-diagrammes\"],\n      \"status\": \"passed\",\n      \"covers\": [0, 4]\n    },\n    {\n      \"name\": \"preparation-scene-deux-chargements-identiques\",\n      \"executable\": \"python3\",\n      \"args\": [\n        \"-c\",\n        \"import json\\nfrom pathlib import Path\\np=Path('docs/jeu/scene-reference.json')\\na=json.loads(p.read_text()); b=json.loads(p.read_text())\\nassert a==b and a is not b\\nexpected=[\\n('joueur-01','joueur',0,0,'actif'),('decor-01','decor',-180,-80,'actif'),\\n('caisse-01','objet-destructible',120,60,'actif'),('caisse-detruite','objet-destructible',180,100,'detruit'),\\n('tir-ennemi-01','projectile',148,60,'actif'),('tir-joueur-01','projectile',40,-20,'actif'),\\n('boss-est','boss',1000,0,'actif'),('boss-ouest','boss',-900,100,'actif'),\\n('mere-nord','vaisseau-mere',0,-1200,'actif'),('mere-lointaine','vaisseau-mere',1800,1000,'actif'),\\n('decor-bord','decor',2380,0,'actif'),('caisse-bord','objet-destructible',0,2380,'actif'),\\n('tir-inactif','projectile',90,0,'inactif')]\\nsnapshot=lambda s:[(e['id'],e['category'],e['position']['x'],e['position']['y'],e['state']) for e in s['entities']]\\nassert snapshot(a)==snapshot(b)==expected\\nassert len({e['id'] for e in a['entities']})==13\\nassert a['playerId']=='joueur-01' and a['planet']=={'center':{'x':0,'y':0},'radius':2400}\\nprint('PASS : deux chargements, 13 entites, positions, categories et etats connus')\\n\"\n      ],\n      \"status\": \"passed\",\n      \"covers\": []\n    },\n    {\n      \"name\": \"preparation-proprietes-independantes-des-sprites\",\n      \"executable\": \"python3\",\n      \"args\": [\n        \"-c\",\n        \"import json,math\\nfrom pathlib import Path\\nentities=json.loads(Path('docs/jeu/scene-reference.json').read_text())['entities']\\nby_id={e['id']:e for e in entities}\\nfor e in entities:\\n assert set(e)=={'id','category','position','dimensions','state','destructible','projectileOrigin'}\\n assert e['category'] in {'joueur','decor','objet-destructible','projectile','boss','vaisseau-mere'}\\n assert e['state'] in {'actif','inactif','detruit'} and type(e['destructible']) is bool\\n assert all(type(n) in (int,float) and math.isfinite(n) for n in e['position'].values())\\n assert set(e['position'])=={'x','y'} and set(e['dimensions'])=={'width','height'}\\n assert all(type(n) in (int,float) and math.isfinite(n) and n>0 for n in e['dimensions'].values())\\n o=e['projectileOrigin']\\n if e['category']=='projectile':\\n  assert set(o)=={'faction','emitterId'} and o['faction'] in {'ennemi','joueur','neutre'} and o['emitterId']\\n else: assert o is None\\ncrate,decor,shot=(by_id[k] for k in ['caisse-01','decor-01','tir-ennemi-01'])\\nassert crate['destructible'] and crate['projectileOrigin'] is None\\nassert not decor['destructible'] and decor['category']=='decor'\\nassert not shot['destructible'] and shot['category']=='projectile'\\nassert shot['projectileOrigin']=={'faction':'ennemi','emitterId':'boss-ouest'}\\nassert by_id['tir-joueur-01']['projectileOrigin']['faction']=='joueur'\\nassert {e['category'] for e in entities}=={'joueur','decor','objet-destructible','projectile','boss','vaisseau-mere'}\\nprint('PASS : contrat valide, destructibilite et origine explicites, aucune apparence requise')\\n\"\n      ],\n      \"status\": \"passed\",\n      \"covers\": []\n    },\n    {\n      \"name\": \"preparation-conversions-monde-ecran-oracles\",\n      \"executable\": \"python3\",\n      \"args\": [\n        \"-c\",\n        \"import json,math\\nfrom pathlib import Path\\ncases=json.loads(Path('docs/jeu/conversions-reference.json').read_text())\\nassert {c['id'] for c in cases}=={'centre','negatifs','caisse','hors-champ','camera-deplacee','zoom-double','viewport-decale','petite-fenetre','bord-planete'}\\nfor c in cases:\\n cam,v,w,s=(c[k] for k in ['camera','viewport','world','screen'])\\n assert cam['zoom']>0 and v['width']>0 and v['height']>0\\n for axis,size in [('x','width'),('y','height')]:\\n  projected=v[axis]+v[size]/2+(w[axis]-cam[axis])*cam['zoom']\\n  inverse=cam[axis]+(s[axis]-v[axis]-v[size]/2)/cam['zoom']\\n  assert math.isclose(projected,s[axis],abs_tol=1e-9),(c['id'],axis,projected)\\n  assert math.isclose(inverse,w[axis],abs_tol=1e-9),(c['id'],axis,inverse)\\n  for dpr in (1,2):\\n   assert math.isclose(projected*dpr/dpr,s[axis],abs_tol=1e-9)\\nprint('PASS : 9 oracles, projection/inverse, axes, zoom et viewport CSS')\\n\"\n      ],\n      \"status\": \"passed\",\n      \"covers\": [3]\n    },\n    {\n      \"name\": \"preparation-scenarios-visibilite-distances-et-planete\",\n      \"executable\": \"python3\",\n      \"args\": [\n        \"-c\",\n        \"import json,copy,math\\nfrom pathlib import Path\\nroot=Path('docs/jeu')\\ndata=json.loads((root/'scenarios.json').read_text())\\nbase=json.loads((root/data['reference']).read_text())\\npristine=copy.deepcopy(base)\\nassert len(data['scenarios'])==12 and len({s['id'] for s in data['scenarios']})==12\\nassert data['windows']=={'large':{'width':1280,'height':720,'hudWidth':240},'etroite':{'width':360,'height':800,'hudWidth':72},'grande':{'width':1920,'height':1080,'hudWidth':240}}\\nfor s in data['scenarios']:\\n entities=copy.deepcopy(base['entities']); known={e['id'] for e in entities}\\n assert set(s['overrides'])<=known\\n if s['include']!='all':\\n  assert set(s['include'])<=known\\n  entities=[e for e in entities if e['id'] in s['include']]\\n for e in entities: e.update(copy.deepcopy(s['overrides'].get(e['id'],{})))\\n win=data['windows'][s['window']]; cam=s['camera']\\n width=win['width']-win['hudWidth']; height=win['height']\\n assert width>0 and height>0 and cam['zoom']>0\\n def visible(e):\\n  x=width/2+(e['position']['x']-cam['x'])*cam['zoom']\\n  y=height/2+(e['position']['y']-cam['y'])*cam['zoom']\\n  w=e['dimensions']['width']*cam['zoom']; h=e['dimensions']['height']*cam['zoom']\\n  return e['state']=='actif' and x+w/2>0 and x-w/2<width and y+h/2>0 and y-h/2<height\\n player=next(e for e in entities if e['id']==base['playerId'])\\n candidates=[e for e in entities if e['category'] in ('boss','vaisseau-mere') and e['state']=='actif']\\n shown=sorted(e['id'] for e in candidates if visible(e))\\n distance=lambda e:math.hypot(e['position']['x']-player['position']['x'],e['position']['y']-player['position']['y'])\\n target=None if shown or not candidates else min(candidates,key=lambda e:(distance(e),e['id']))['id']\\n assert shown==s['expected']['visibleMajorIds'],(s['id'],shown)\\n assert target==s['expected']['arrowTargetId'],(s['id'],target)\\n for point in s['expected'].get('planetPoints',[]):\\n  p=point['position']; center=base['planet']['center']\\n  assert ((p['x']-center['x'])**2+(p['y']-center['y'])**2<=base['planet']['radius']**2)==point['inside']\\n if s['id']=='catalogue':\\n  assert {e['category'] for e in entities if visible(e)}=={'joueur','decor','objet-destructible','projectile','boss','vaisseau-mere'}\\n if s['id']=='amas-dense':\\n  near=[e for e in entities if visible(e) and 120<=e['position']['x']<=160 and 45<=e['position']['y']<=80]\\n  assert sum(e['category']=='objet-destructible' for e in near)==2\\n  assert sum(e['category']=='projectile' for e in near)==3\\n assert base==pristine\\nprint('PASS : 12 scenarios, 3 fenetres, amas, cibles, tangence, distances et disque')\\n\"\n      ],\n      \"status\": \"passed\",\n      \"covers\": [1, 2]\n    },\n    {\n      \"name\": \"desktop-natif-linux-selection-worker-dialogue-export-fenetre-et-reprise\",\n      \"executable\": \"node\",\n      \"args\": [\"scripts/test-desktop-native.mjs\"],\n      \"status\": \"not-run\",\n      \"covers\": []\n    },\n    {\n      \"name\": \"desktop-natif-windows-installation-webview2-et-export-autonome\",\n      \"executable\": \"powershell\",\n      \"args\": [\"-ExecutionPolicy\", \"Bypass\", \"-File\", \"scripts/verify-windows.ps1\"],\n      \"status\": \"not-run\",\n      \"covers\": []\n    }\n  ],\n  \"testChanges\": {\n    \"removed\": [],\n    \"added\": [2, 3, 4, 5, 6, 7, 8, 9, 10, 11]\n  },\n  \"serversStopped\": true,\n  \"servers\": [\n    {\"pid\":3523584,\"port\":39551,\"stopped\":true},\n    {\"pid\":3523687,\"port\":41843,\"stopped\":true},\n    {\"pid\":3523794,\"port\":46649,\"stopped\":true},\n    {\"pid\":3523896,\"port\":39907,\"stopped\":true},\n    {\"pid\":3524002,\"port\":42677,\"stopped\":true},\n    {\"pid\":3524104,\"port\":35317,\"stopped\":true},\n    {\"pid\":3524969,\"port\":41229,\"stopped\":true},\n    {\"pid\":3526012,\"port\":40707,\"stopped\":true},\n    {\"pid\":3526477,\"port\":38917,\"stopped\":true},\n    {\"pid\":3526477,\"port\":34227,\"stopped\":true},\n    {\"pid\":3526477,\"port\":44043,\"stopped\":true},\n    {\"pid\":3526477,\"port\":42469,\"stopped\":true},\n    {\"pid\":3526477,\"port\":34263,\"stopped\":true},\n    {\"pid\":3526614,\"port\":39167,\"stopped\":true},\n    {\"pid\":3527569,\"port\":44703,\"stopped\":true},\n    {\"pid\":3528601,\"port\":42233,\"stopped\":true},\n    {\"pid\":3529145,\"port\":46747,\"stopped\":true},\n    {\"pid\":3529403,\"port\":34341,\"stopped\":true},\n    {\"pid\":3529614,\"port\":40993,\"stopped\":true},\n    {\"pid\":3529629,\"port\":34141,\"stopped\":true},\n    {\"pid\":3530060,\"port\":34219,\"stopped\":true},\n    {\"pid\":3530286,\"port\":37223,\"stopped\":true},\n    {\"pid\":3530294,\"port\":39783,\"stopped\":true},\n    {\"pid\":3530350,\"port\":36849,\"stopped\":true},\n    {\"pid\":3530437,\"port\":40763,\"stopped\":true},\n    {\"pid\":3530449,\"port\":44067,\"stopped\":true},\n    {\"pid\":3530551,\"port\":null,\"stopped\":true},\n    {\"pid\":3530558,\"port\":35477,\"stopped\":true},\n    {\"pid\":3530572,\"port\":null,\"stopped\":true},\n    {\"pid\":3530668,\"port\":null,\"stopped\":true},\n    {\"pid\":3530683,\"port\":null,\"stopped\":true},\n    {\"pid\":3530690,\"port\":null,\"stopped\":true},\n    {\"pid\":3530697,\"port\":null,\"stopped\":true},\n    {\"pid\":3530705,\"port\":42123,\"stopped\":true},\n    {\"pid\":3526594,\"port\":38731,\"stopped\":true},\n    {\"pid\":3527109,\"port\":40517,\"stopped\":true},\n    {\"pid\":3527215,\"port\":36357,\"stopped\":true},\n    {\"pid\":3527319,\"port\":33109,\"stopped\":true},\n    {\"pid\":3527439,\"port\":39871,\"stopped\":true},\n    {\"pid\":3527563,\"port\":44627,\"stopped\":true},\n    {\"pid\":3526636,\"port\":36307,\"stopped\":true},\n    {\"pid\":3527790,\"port\":41669,\"stopped\":true},\n    {\"pid\":3528773,\"port\":37237,\"stopped\":true},\n    {\"pid\":3529300,\"port\":37597,\"stopped\":true},\n    {\"pid\":3529413,\"port\":46313,\"stopped\":true},\n    {\"pid\":3529516,\"port\":46351,\"stopped\":true},\n    {\"pid\":3529637,\"port\":45753,\"stopped\":true},\n    {\"pid\":3529743,\"port\":39371,\"stopped\":true},\n    {\"pid\":3529850,\"port\":46831,\"stopped\":true},\n    {\"pid\":3529954,\"port\":34349,\"stopped\":true},\n    {\"pid\":3530091,\"port\":43619,\"stopped\":true},\n    {\"pid\":3530189,\"port\":34429,\"stopped\":true},\n    {\"pid\":3530301,\"port\":33787,\"stopped\":true},\n    {\"pid\":3530565,\"port\":38637,\"stopped\":true},\n    {\"pid\":3530712,\"port\":33213,\"stopped\":true},\n    {\"pid\":3530895,\"port\":40311,\"stopped\":true},\n    {\"pid\":3531061,\"port\":40921,\"stopped\":true},\n    {\"pid\":3531216,\"port\":38273,\"stopped\":true},\n    {\"pid\":3531388,\"port\":34447,\"stopped\":true},\n    {\"pid\":3531527,\"port\":38123,\"stopped\":true},\n    {\"pid\":3531632,\"port\":43199,\"stopped\":true},\n    {\"pid\":3531738,\"port\":41317,\"stopped\":true},\n    {\"pid\":3532200,\"port\":43779,\"stopped\":true},\n    {\"pid\":3532200,\"port\":46489,\"stopped\":true},\n    {\"pid\":3532200,\"port\":44625,\"stopped\":true},\n    {\"pid\":3532200,\"port\":40777,\"stopped\":true},\n    {\"pid\":3532200,\"port\":43657,\"stopped\":true},\n    {\"pid\":3532351,\"port\":42595,\"stopped\":true},\n    {\"pid\":3533370,\"port\":37057,\"stopped\":true},\n    {\"pid\":3534330,\"port\":37903,\"stopped\":true},\n    {\"pid\":3534972,\"port\":39083,\"stopped\":true},\n    {\"pid\":3535144,\"port\":42245,\"stopped\":true},\n    {\"pid\":3535356,\"port\":36253,\"stopped\":true},\n    {\"pid\":3535473,\"port\":45061,\"stopped\":true},\n    {\"pid\":3535794,\"port\":45059,\"stopped\":true},\n    {\"pid\":3536128,\"port\":39879,\"stopped\":true},\n    {\"pid\":3536135,\"port\":34881,\"stopped\":true},\n    {\"pid\":3536142,\"port\":40867,\"stopped\":true},\n    {\"pid\":3536149,\"port\":42371,\"stopped\":true},\n    {\"pid\":3536164,\"port\":40057,\"stopped\":true},\n    {\"pid\":3536363,\"port\":null,\"stopped\":true},\n    {\"pid\":3536372,\"port\":37281,\"stopped\":true},\n    {\"pid\":3536387,\"port\":null,\"stopped\":true},\n    {\"pid\":3536478,\"port\":null,\"stopped\":true},\n    {\"pid\":3536495,\"port\":null,\"stopped\":true},\n    {\"pid\":3536502,\"port\":null,\"stopped\":true},\n    {\"pid\":3536509,\"port\":null,\"stopped\":true},\n    {\"pid\":3536516,\"port\":45189,\"stopped\":true},\n    {\"pid\":3532317,\"port\":35369,\"stopped\":true},\n    {\"pid\":3532815,\"port\":46183,\"stopped\":true},\n    {\"pid\":3532911,\"port\":39785,\"stopped\":true},\n    {\"pid\":3533020,\"port\":45827,\"stopped\":true},\n    {\"pid\":3533140,\"port\":36979,\"stopped\":true},\n    {\"pid\":3533255,\"port\":43107,\"stopped\":true},\n    {\"pid\":3532360,\"port\":33751,\"stopped\":true},\n    {\"pid\":3533493,\"port\":33045,\"stopped\":true},\n    {\"pid\":3534492,\"port\":34313,\"stopped\":true},\n    {\"pid\":3535042,\"port\":44071,\"stopped\":true},\n    {\"pid\":3535154,\"port\":36495,\"stopped\":true},\n    {\"pid\":3535253,\"port\":46479,\"stopped\":true},\n    {\"pid\":3535368,\"port\":35569,\"stopped\":true},\n    {\"pid\":3535483,\"port\":35999,\"stopped\":true},\n    {\"pid\":3535583,\"port\":38131,\"stopped\":true},\n    {\"pid\":3535689,\"port\":42553,\"stopped\":true},\n    {\"pid\":3535820,\"port\":39737,\"stopped\":true},\n    {\"pid\":3535924,\"port\":35581,\"stopped\":true},\n    {\"pid\":3536028,\"port\":41091,\"stopped\":true},\n    {\"pid\":3536165,\"port\":44131,\"stopped\":true},\n    {\"pid\":3536380,\"port\":44389,\"stopped\":true},\n    {\"pid\":3536621,\"port\":41257,\"stopped\":true},\n    {\"pid\":3536790,\"port\":33521,\"stopped\":true},\n    {\"pid\":3536948,\"port\":39343,\"stopped\":true},\n    {\"pid\":3537155,\"port\":39825,\"stopped\":true},\n    {\"pid\":3537282,\"port\":40637,\"stopped\":true},\n    {\"pid\":3537388,\"port\":38131,\"stopped\":true},\n    {\"pid\":3537494,\"port\":46311,\"stopped\":true},\n    {\"pid\":3524391,\"port\":34415,\"stopped\":true},\n    {\"pid\":3524641,\"port\":37885,\"stopped\":true}\n  ]\n}",
+    "report": {
+      "current": "evolution1.md",
+      "workCompleted": true,
+      "summary": "Vue rectangulaire réalisée dans /jeu-demo.html, isolée du convertisseur : planète circulaire, caméra et interactions cohérentes, bande droite adaptative, redimensionnement et DPR à chaud, limites exactes exposées. Aucun moteur de jeu n’existe dans le dépôt ; la démonstration utilise les scènes préparées. Suite complète : 180 cas réussis, dont 10 nouveaux ; quatre recettes de préparation et typecheck réussis. Aucun test supprimé. Contrôles natifs non exécutés : Linux nécessite WebKitWebDriver, Xvfb et xdotool ; Windows nécessite Windows 10/11 x64, WebView2, application installée, PowerShell et un opérateur. Les 118 instances de serveur sont arrêtées, leurs ports connus fermés et le pilotage PID 3397860 préservé. Fichiers de suivi préservés, aucun commit.",
+      "tests": [
+        {
+          "name": "suite-actuelle-180-cas",
+          "executable": "npm",
+          "args": [
+            "test"
+          ],
+          "status": "passed",
+          "covers": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ]
+        },
+        {
+          "name": "typecheck",
+          "executable": "npm",
+          "args": [
+            "run",
+            "typecheck"
+          ],
+          "status": "passed",
+          "covers": []
+        },
+        {
+          "name": "jeu-layout-rectangle-hud-et-sans-hud",
+          "executable": "node",
+          "args": [
+            "scripts/test.mjs",
+            "jeu-layout-rectangle-hud-et-sans-hud"
+          ],
+          "status": "passed",
+          "covers": [
+            0,
+            4
+          ]
+        },
+        {
+          "name": "jeu-conversions-oracles-zoom-decalage-et-redimensionnement",
+          "executable": "node",
+          "args": [
+            "scripts/test.mjs",
+            "jeu-conversions-oracles-zoom-decalage-et-redimensionnement"
+          ],
+          "status": "passed",
+          "covers": [
+            3
+          ]
+        },
+        {
+          "name": "jeu-visibilite-quatre-coins-tangences-et-etats",
+          "executable": "node",
+          "args": [
+            "scripts/test.mjs",
+            "jeu-visibilite-quatre-coins-tangences-et-etats"
+          ],
+          "status": "passed",
+          "covers": [
+            1,
+            3
+          ]
+        },
+        {
+          "name": "jeu-scenes-reference-determinisme-et-visibilite-compatibles",
+          "executable": "node",
+          "args": [
+            "scripts/test.mjs",
+            "jeu-scenes-reference-determinisme-et-visibilite-compatibles"
+          ],
+          "status": "passed",
+          "covers": [
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "name": "jeu-navigateur-formats-redimensionnement-et-hud",
+          "executable": "node",
+          "args": [
+            "scripts/test.mjs",
+            "jeu-navigateur-formats-redimensionnement-et-hud"
+          ],
+          "status": "passed",
+          "covers": [
+            0,
+            4
+          ]
+        },
+        {
+          "name": "jeu-navigateur-coins-centre-hors-champ-et-pixels",
+          "executable": "node",
+          "args": [
+            "scripts/test.mjs",
+            "jeu-navigateur-coins-centre-hors-champ-et-pixels"
+          ],
+          "status": "passed",
+          "covers": [
+            0,
+            1,
+            2,
+            4
+          ]
+        },
+        {
+          "name": "jeu-navigateur-planete-circulaire-bords-et-proportions",
+          "executable": "node",
+          "args": [
+            "scripts/test.mjs",
+            "jeu-navigateur-planete-circulaire-bords-et-proportions"
+          ],
+          "status": "passed",
+          "covers": [
+            2
+          ]
+        },
+        {
+          "name": "jeu-navigateur-interactions-suivi-et-coordonnees",
+          "executable": "node",
+          "args": [
+            "scripts/test.mjs",
+            "jeu-navigateur-interactions-suivi-et-coordonnees"
+          ],
+          "status": "passed",
+          "covers": [
+            0,
+            3
+          ]
+        },
+        {
+          "name": "jeu-navigateur-dpr-un-deux-et-changement-a-chaud",
+          "executable": "node",
+          "args": [
+            "scripts/test.mjs",
+            "jeu-navigateur-dpr-un-deux-et-changement-a-chaud"
+          ],
+          "status": "passed",
+          "covers": [
+            0,
+            1,
+            3
+          ]
+        },
+        {
+          "name": "jeu-navigateur-scenarios-informations-et-retour-diagrammes",
+          "executable": "node",
+          "args": [
+            "scripts/test.mjs",
+            "jeu-navigateur-scenarios-informations-et-retour-diagrammes"
+          ],
+          "status": "passed",
+          "covers": [
+            0,
+            4
+          ]
+        },
+        {
+          "name": "preparation-scene-deux-chargements-identiques",
+          "executable": "python3",
+          "args": [
+            "-c",
+            "import json\nfrom pathlib import Path\np=Path('docs/jeu/scene-reference.json')\na=json.loads(p.read_text()); b=json.loads(p.read_text())\nassert a==b and a is not b\nexpected=[\n('joueur-01','joueur',0,0,'actif'),('decor-01','decor',-180,-80,'actif'),\n('caisse-01','objet-destructible',120,60,'actif'),('caisse-detruite','objet-destructible',180,100,'detruit'),\n('tir-ennemi-01','projectile',148,60,'actif'),('tir-joueur-01','projectile',40,-20,'actif'),\n('boss-est','boss',1000,0,'actif'),('boss-ouest','boss',-900,100,'actif'),\n('mere-nord','vaisseau-mere',0,-1200,'actif'),('mere-lointaine','vaisseau-mere',1800,1000,'actif'),\n('decor-bord','decor',2380,0,'actif'),('caisse-bord','objet-destructible',0,2380,'actif'),\n('tir-inactif','projectile',90,0,'inactif')]\nsnapshot=lambda s:[(e['id'],e['category'],e['position']['x'],e['position']['y'],e['state']) for e in s['entities']]\nassert snapshot(a)==snapshot(b)==expected\nassert len({e['id'] for e in a['entities']})==13\nassert a['playerId']=='joueur-01' and a['planet']=={'center':{'x':0,'y':0},'radius':2400}\nprint('PASS : deux chargements, 13 entites, positions, categories et etats connus')\n"
+          ],
+          "status": "passed",
+          "covers": []
+        },
+        {
+          "name": "preparation-proprietes-independantes-des-sprites",
+          "executable": "python3",
+          "args": [
+            "-c",
+            "import json,math\nfrom pathlib import Path\nentities=json.loads(Path('docs/jeu/scene-reference.json').read_text())['entities']\nby_id={e['id']:e for e in entities}\nfor e in entities:\n assert set(e)=={'id','category','position','dimensions','state','destructible','projectileOrigin'}\n assert e['category'] in {'joueur','decor','objet-destructible','projectile','boss','vaisseau-mere'}\n assert e['state'] in {'actif','inactif','detruit'} and type(e['destructible']) is bool\n assert all(type(n) in (int,float) and math.isfinite(n) for n in e['position'].values())\n assert set(e['position'])=={'x','y'} and set(e['dimensions'])=={'width','height'}\n assert all(type(n) in (int,float) and math.isfinite(n) and n>0 for n in e['dimensions'].values())\n o=e['projectileOrigin']\n if e['category']=='projectile':\n  assert set(o)=={'faction','emitterId'} and o['faction'] in {'ennemi','joueur','neutre'} and o['emitterId']\n else: assert o is None\ncrate,decor,shot=(by_id[k] for k in ['caisse-01','decor-01','tir-ennemi-01'])\nassert crate['destructible'] and crate['projectileOrigin'] is None\nassert not decor['destructible'] and decor['category']=='decor'\nassert not shot['destructible'] and shot['category']=='projectile'\nassert shot['projectileOrigin']=={'faction':'ennemi','emitterId':'boss-ouest'}\nassert by_id['tir-joueur-01']['projectileOrigin']['faction']=='joueur'\nassert {e['category'] for e in entities}=={'joueur','decor','objet-destructible','projectile','boss','vaisseau-mere'}\nprint('PASS : contrat valide, destructibilite et origine explicites, aucune apparence requise')\n"
+          ],
+          "status": "passed",
+          "covers": []
+        },
+        {
+          "name": "preparation-conversions-monde-ecran-oracles",
+          "executable": "python3",
+          "args": [
+            "-c",
+            "import json,math\nfrom pathlib import Path\ncases=json.loads(Path('docs/jeu/conversions-reference.json').read_text())\nassert {c['id'] for c in cases}=={'centre','negatifs','caisse','hors-champ','camera-deplacee','zoom-double','viewport-decale','petite-fenetre','bord-planete'}\nfor c in cases:\n cam,v,w,s=(c[k] for k in ['camera','viewport','world','screen'])\n assert cam['zoom']>0 and v['width']>0 and v['height']>0\n for axis,size in [('x','width'),('y','height')]:\n  projected=v[axis]+v[size]/2+(w[axis]-cam[axis])*cam['zoom']\n  inverse=cam[axis]+(s[axis]-v[axis]-v[size]/2)/cam['zoom']\n  assert math.isclose(projected,s[axis],abs_tol=1e-9),(c['id'],axis,projected)\n  assert math.isclose(inverse,w[axis],abs_tol=1e-9),(c['id'],axis,inverse)\n  for dpr in (1,2):\n   assert math.isclose(projected*dpr/dpr,s[axis],abs_tol=1e-9)\nprint('PASS : 9 oracles, projection/inverse, axes, zoom et viewport CSS')\n"
+          ],
+          "status": "passed",
+          "covers": [
+            3
+          ]
+        },
+        {
+          "name": "preparation-scenarios-visibilite-distances-et-planete",
+          "executable": "python3",
+          "args": [
+            "-c",
+            "import json,copy,math\nfrom pathlib import Path\nroot=Path('docs/jeu')\ndata=json.loads((root/'scenarios.json').read_text())\nbase=json.loads((root/data['reference']).read_text())\npristine=copy.deepcopy(base)\nassert len(data['scenarios'])==12 and len({s['id'] for s in data['scenarios']})==12\nassert data['windows']=={'large':{'width':1280,'height':720,'hudWidth':240},'etroite':{'width':360,'height':800,'hudWidth':72},'grande':{'width':1920,'height':1080,'hudWidth':240}}\nfor s in data['scenarios']:\n entities=copy.deepcopy(base['entities']); known={e['id'] for e in entities}\n assert set(s['overrides'])<=known\n if s['include']!='all':\n  assert set(s['include'])<=known\n  entities=[e for e in entities if e['id'] in s['include']]\n for e in entities: e.update(copy.deepcopy(s['overrides'].get(e['id'],{})))\n win=data['windows'][s['window']]; cam=s['camera']\n width=win['width']-win['hudWidth']; height=win['height']\n assert width>0 and height>0 and cam['zoom']>0\n def visible(e):\n  x=width/2+(e['position']['x']-cam['x'])*cam['zoom']\n  y=height/2+(e['position']['y']-cam['y'])*cam['zoom']\n  w=e['dimensions']['width']*cam['zoom']; h=e['dimensions']['height']*cam['zoom']\n  return e['state']=='actif' and x+w/2>0 and x-w/2<width and y+h/2>0 and y-h/2<height\n player=next(e for e in entities if e['id']==base['playerId'])\n candidates=[e for e in entities if e['category'] in ('boss','vaisseau-mere') and e['state']=='actif']\n shown=sorted(e['id'] for e in candidates if visible(e))\n distance=lambda e:math.hypot(e['position']['x']-player['position']['x'],e['position']['y']-player['position']['y'])\n target=None if shown or not candidates else min(candidates,key=lambda e:(distance(e),e['id']))['id']\n assert shown==s['expected']['visibleMajorIds'],(s['id'],shown)\n assert target==s['expected']['arrowTargetId'],(s['id'],target)\n for point in s['expected'].get('planetPoints',[]):\n  p=point['position']; center=base['planet']['center']\n  assert ((p['x']-center['x'])**2+(p['y']-center['y'])**2<=base['planet']['radius']**2)==point['inside']\n if s['id']=='catalogue':\n  assert {e['category'] for e in entities if visible(e)}=={'joueur','decor','objet-destructible','projectile','boss','vaisseau-mere'}\n if s['id']=='amas-dense':\n  near=[e for e in entities if visible(e) and 120<=e['position']['x']<=160 and 45<=e['position']['y']<=80]\n  assert sum(e['category']=='objet-destructible' for e in near)==2\n  assert sum(e['category']=='projectile' for e in near)==3\n assert base==pristine\nprint('PASS : 12 scenarios, 3 fenetres, amas, cibles, tangence, distances et disque')\n"
+          ],
+          "status": "passed",
+          "covers": [
+            1,
+            2
+          ]
+        },
+        {
+          "name": "desktop-natif-linux-selection-worker-dialogue-export-fenetre-et-reprise",
+          "executable": "node",
+          "args": [
+            "scripts/test-desktop-native.mjs"
+          ],
+          "status": "not-run",
+          "covers": []
+        },
+        {
+          "name": "desktop-natif-windows-installation-webview2-et-export-autonome",
+          "executable": "powershell",
+          "args": [
+            "-ExecutionPolicy",
+            "Bypass",
+            "-File",
+            "scripts/verify-windows.ps1"
+          ],
+          "status": "not-run",
+          "covers": []
+        }
+      ],
+      "testChanges": {
+        "removed": [],
+        "added": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11
+        ]
+      },
+      "serversStopped": true,
+      "servers": [
+        {
+          "pid": 3523584,
+          "port": 39551,
+          "stopped": true
+        },
+        {
+          "pid": 3523687,
+          "port": 41843,
+          "stopped": true
+        },
+        {
+          "pid": 3523794,
+          "port": 46649,
+          "stopped": true
+        },
+        {
+          "pid": 3523896,
+          "port": 39907,
+          "stopped": true
+        },
+        {
+          "pid": 3524002,
+          "port": 42677,
+          "stopped": true
+        },
+        {
+          "pid": 3524104,
+          "port": 35317,
+          "stopped": true
+        },
+        {
+          "pid": 3524969,
+          "port": 41229,
+          "stopped": true
+        },
+        {
+          "pid": 3526012,
+          "port": 40707,
+          "stopped": true
+        },
+        {
+          "pid": 3526477,
+          "port": 38917,
+          "stopped": true
+        },
+        {
+          "pid": 3526477,
+          "port": 34227,
+          "stopped": true
+        },
+        {
+          "pid": 3526477,
+          "port": 44043,
+          "stopped": true
+        },
+        {
+          "pid": 3526477,
+          "port": 42469,
+          "stopped": true
+        },
+        {
+          "pid": 3526477,
+          "port": 34263,
+          "stopped": true
+        },
+        {
+          "pid": 3526614,
+          "port": 39167,
+          "stopped": true
+        },
+        {
+          "pid": 3527569,
+          "port": 44703,
+          "stopped": true
+        },
+        {
+          "pid": 3528601,
+          "port": 42233,
+          "stopped": true
+        },
+        {
+          "pid": 3529145,
+          "port": 46747,
+          "stopped": true
+        },
+        {
+          "pid": 3529403,
+          "port": 34341,
+          "stopped": true
+        },
+        {
+          "pid": 3529614,
+          "port": 40993,
+          "stopped": true
+        },
+        {
+          "pid": 3529629,
+          "port": 34141,
+          "stopped": true
+        },
+        {
+          "pid": 3530060,
+          "port": 34219,
+          "stopped": true
+        },
+        {
+          "pid": 3530286,
+          "port": 37223,
+          "stopped": true
+        },
+        {
+          "pid": 3530294,
+          "port": 39783,
+          "stopped": true
+        },
+        {
+          "pid": 3530350,
+          "port": 36849,
+          "stopped": true
+        },
+        {
+          "pid": 3530437,
+          "port": 40763,
+          "stopped": true
+        },
+        {
+          "pid": 3530449,
+          "port": 44067,
+          "stopped": true
+        },
+        {
+          "pid": 3530551,
+          "port": null,
+          "stopped": true
+        },
+        {
+          "pid": 3530558,
+          "port": 35477,
+          "stopped": true
+        },
+        {
+          "pid": 3530572,
+          "port": null,
+          "stopped": true
+        },
+        {
+          "pid": 3530668,
+          "port": null,
+          "stopped": true
+        },
+        {
+          "pid": 3530683,
+          "port": null,
+          "stopped": true
+        },
+        {
+          "pid": 3530690,
+          "port": null,
+          "stopped": true
+        },
+        {
+          "pid": 3530697,
+          "port": null,
+          "stopped": true
+        },
+        {
+          "pid": 3530705,
+          "port": 42123,
+          "stopped": true
+        },
+        {
+          "pid": 3526594,
+          "port": 38731,
+          "stopped": true
+        },
+        {
+          "pid": 3527109,
+          "port": 40517,
+          "stopped": true
+        },
+        {
+          "pid": 3527215,
+          "port": 36357,
+          "stopped": true
+        },
+        {
+          "pid": 3527319,
+          "port": 33109,
+          "stopped": true
+        },
+        {
+          "pid": 3527439,
+          "port": 39871,
+          "stopped": true
+        },
+        {
+          "pid": 3527563,
+          "port": 44627,
+          "stopped": true
+        },
+        {
+          "pid": 3526636,
+          "port": 36307,
+          "stopped": true
+        },
+        {
+          "pid": 3527790,
+          "port": 41669,
+          "stopped": true
+        },
+        {
+          "pid": 3528773,
+          "port": 37237,
+          "stopped": true
+        },
+        {
+          "pid": 3529300,
+          "port": 37597,
+          "stopped": true
+        },
+        {
+          "pid": 3529413,
+          "port": 46313,
+          "stopped": true
+        },
+        {
+          "pid": 3529516,
+          "port": 46351,
+          "stopped": true
+        },
+        {
+          "pid": 3529637,
+          "port": 45753,
+          "stopped": true
+        },
+        {
+          "pid": 3529743,
+          "port": 39371,
+          "stopped": true
+        },
+        {
+          "pid": 3529850,
+          "port": 46831,
+          "stopped": true
+        },
+        {
+          "pid": 3529954,
+          "port": 34349,
+          "stopped": true
+        },
+        {
+          "pid": 3530091,
+          "port": 43619,
+          "stopped": true
+        },
+        {
+          "pid": 3530189,
+          "port": 34429,
+          "stopped": true
+        },
+        {
+          "pid": 3530301,
+          "port": 33787,
+          "stopped": true
+        },
+        {
+          "pid": 3530565,
+          "port": 38637,
+          "stopped": true
+        },
+        {
+          "pid": 3530712,
+          "port": 33213,
+          "stopped": true
+        },
+        {
+          "pid": 3530895,
+          "port": 40311,
+          "stopped": true
+        },
+        {
+          "pid": 3531061,
+          "port": 40921,
+          "stopped": true
+        },
+        {
+          "pid": 3531216,
+          "port": 38273,
+          "stopped": true
+        },
+        {
+          "pid": 3531388,
+          "port": 34447,
+          "stopped": true
+        },
+        {
+          "pid": 3531527,
+          "port": 38123,
+          "stopped": true
+        },
+        {
+          "pid": 3531632,
+          "port": 43199,
+          "stopped": true
+        },
+        {
+          "pid": 3531738,
+          "port": 41317,
+          "stopped": true
+        },
+        {
+          "pid": 3532200,
+          "port": 43779,
+          "stopped": true
+        },
+        {
+          "pid": 3532200,
+          "port": 46489,
+          "stopped": true
+        },
+        {
+          "pid": 3532200,
+          "port": 44625,
+          "stopped": true
+        },
+        {
+          "pid": 3532200,
+          "port": 40777,
+          "stopped": true
+        },
+        {
+          "pid": 3532200,
+          "port": 43657,
+          "stopped": true
+        },
+        {
+          "pid": 3532351,
+          "port": 42595,
+          "stopped": true
+        },
+        {
+          "pid": 3533370,
+          "port": 37057,
+          "stopped": true
+        },
+        {
+          "pid": 3534330,
+          "port": 37903,
+          "stopped": true
+        },
+        {
+          "pid": 3534972,
+          "port": 39083,
+          "stopped": true
+        },
+        {
+          "pid": 3535144,
+          "port": 42245,
+          "stopped": true
+        },
+        {
+          "pid": 3535356,
+          "port": 36253,
+          "stopped": true
+        },
+        {
+          "pid": 3535473,
+          "port": 45061,
+          "stopped": true
+        },
+        {
+          "pid": 3535794,
+          "port": 45059,
+          "stopped": true
+        },
+        {
+          "pid": 3536128,
+          "port": 39879,
+          "stopped": true
+        },
+        {
+          "pid": 3536135,
+          "port": 34881,
+          "stopped": true
+        },
+        {
+          "pid": 3536142,
+          "port": 40867,
+          "stopped": true
+        },
+        {
+          "pid": 3536149,
+          "port": 42371,
+          "stopped": true
+        },
+        {
+          "pid": 3536164,
+          "port": 40057,
+          "stopped": true
+        },
+        {
+          "pid": 3536363,
+          "port": null,
+          "stopped": true
+        },
+        {
+          "pid": 3536372,
+          "port": 37281,
+          "stopped": true
+        },
+        {
+          "pid": 3536387,
+          "port": null,
+          "stopped": true
+        },
+        {
+          "pid": 3536478,
+          "port": null,
+          "stopped": true
+        },
+        {
+          "pid": 3536495,
+          "port": null,
+          "stopped": true
+        },
+        {
+          "pid": 3536502,
+          "port": null,
+          "stopped": true
+        },
+        {
+          "pid": 3536509,
+          "port": null,
+          "stopped": true
+        },
+        {
+          "pid": 3536516,
+          "port": 45189,
+          "stopped": true
+        },
+        {
+          "pid": 3532317,
+          "port": 35369,
+          "stopped": true
+        },
+        {
+          "pid": 3532815,
+          "port": 46183,
+          "stopped": true
+        },
+        {
+          "pid": 3532911,
+          "port": 39785,
+          "stopped": true
+        },
+        {
+          "pid": 3533020,
+          "port": 45827,
+          "stopped": true
+        },
+        {
+          "pid": 3533140,
+          "port": 36979,
+          "stopped": true
+        },
+        {
+          "pid": 3533255,
+          "port": 43107,
+          "stopped": true
+        },
+        {
+          "pid": 3532360,
+          "port": 33751,
+          "stopped": true
+        },
+        {
+          "pid": 3533493,
+          "port": 33045,
+          "stopped": true
+        },
+        {
+          "pid": 3534492,
+          "port": 34313,
+          "stopped": true
+        },
+        {
+          "pid": 3535042,
+          "port": 44071,
+          "stopped": true
+        },
+        {
+          "pid": 3535154,
+          "port": 36495,
+          "stopped": true
+        },
+        {
+          "pid": 3535253,
+          "port": 46479,
+          "stopped": true
+        },
+        {
+          "pid": 3535368,
+          "port": 35569,
+          "stopped": true
+        },
+        {
+          "pid": 3535483,
+          "port": 35999,
+          "stopped": true
+        },
+        {
+          "pid": 3535583,
+          "port": 38131,
+          "stopped": true
+        },
+        {
+          "pid": 3535689,
+          "port": 42553,
+          "stopped": true
+        },
+        {
+          "pid": 3535820,
+          "port": 39737,
+          "stopped": true
+        },
+        {
+          "pid": 3535924,
+          "port": 35581,
+          "stopped": true
+        },
+        {
+          "pid": 3536028,
+          "port": 41091,
+          "stopped": true
+        },
+        {
+          "pid": 3536165,
+          "port": 44131,
+          "stopped": true
+        },
+        {
+          "pid": 3536380,
+          "port": 44389,
+          "stopped": true
+        },
+        {
+          "pid": 3536621,
+          "port": 41257,
+          "stopped": true
+        },
+        {
+          "pid": 3536790,
+          "port": 33521,
+          "stopped": true
+        },
+        {
+          "pid": 3536948,
+          "port": 39343,
+          "stopped": true
+        },
+        {
+          "pid": 3537155,
+          "port": 39825,
+          "stopped": true
+        },
+        {
+          "pid": 3537282,
+          "port": 40637,
+          "stopped": true
+        },
+        {
+          "pid": 3537388,
+          "port": 38131,
+          "stopped": true
+        },
+        {
+          "pid": 3537494,
+          "port": 46311,
+          "stopped": true
+        },
+        {
+          "pid": 3524391,
+          "port": 34415,
+          "stopped": true
+        },
+        {
+          "pid": 3524641,
+          "port": 37885,
+          "stopped": true
+        }
+      ]
+    }
+  },
+  "gitScope": {
+    "root": "/home/blockapicoder/qwen-generation/diagrams-codex",
+    "base": "fe7229c26ac95de72c222d9e36dc11f6d9065f95",
+    "before": [
+      {
+        "path": "evolution.json",
+        "status": " M",
+        "digest": "b1b31dd1743f4c46dfe465155d91b122dbd6083a212fa9f53f291b7d2da0a894"
+      }
+    ],
+    "after": [
+      {
+        "path": "README.md",
+        "status": " M",
+        "digest": "269c1665e36e49243c604530814cc3815d9faa4927a2036f9590b21ed96644a9"
+      },
+      {
+        "path": "docs/jeu/README.md",
+        "status": " M",
+        "digest": "3a45ee3028c5d90ef632d803c870925d40e736c3792c85d226ccdc3e947dc6e6"
+      },
+      {
+        "path": "evolution.json",
+        "status": " M",
+        "digest": "b1b31dd1743f4c46dfe465155d91b122dbd6083a212fa9f53f291b7d2da0a894"
+      },
+      {
+        "path": "package.json",
+        "status": " M",
+        "digest": "8e7779f9c05e08e5f25be2ed3817f21a0b966b0c82d1414f6ab61c93b8acb4df"
+      },
+      {
+        "path": "scripts/test.mjs",
+        "status": " M",
+        "digest": "77850105a6eae9bb37b0f6edfcec40faceca1739b4d893a614e4c25e12b3e224"
+      },
+      {
+        "path": "bilan-evolution1.json",
+        "status": "??",
+        "digest": "4d41683b1573fd85202b70fc336da9af44c13a71b5cb512051919cbe322ac136"
+      },
+      {
+        "path": "docs/jeu/vue-rectangulaire.md",
+        "status": "??",
+        "digest": "779e194f048a8106b45c5b7f41de6caec4a469f9176d5e1502cbd9e1e8130caf"
+      },
+      {
+        "path": "public/jeu-demo.css",
+        "status": "??",
+        "digest": "3ff750a79de097fea85f5048b94ac9f0b7cc9ef743db473296a31b5db51e25c1"
+      },
+      {
+        "path": "public/jeu-demo.html",
+        "status": "??",
+        "digest": "cf924f05b43950a9706006a3e2bdad8119188179c6bdaf1f1ad943eeb05960aa"
+      },
+      {
+        "path": "scripts/build-jeu.mjs",
+        "status": "??",
+        "digest": "02d5bb2e01be7fa7b0b129f033bfa78493553b1db979f7f429440a6dce08e916"
+      },
+      {
+        "path": "src/client/jeu/camera.ts",
+        "status": "??",
+        "digest": "466907aa3f3cc6b3df16a139a3265e5b1a7560c5eb2a3bc279dab84dc26e4b92"
+      },
+      {
+        "path": "src/client/jeu/demo.ts",
+        "status": "??",
+        "digest": "a30994c9e6590fde50305c35e245a3fa668917de7b10e0f88a35bf9dfcdb8442"
+      },
+      {
+        "path": "src/client/jeu/renderer.ts",
+        "status": "??",
+        "digest": "385d5bcb3ecbd95a60e3436939097c0a634c735ab3455d6062768ef93164e7e9"
+      },
+      {
+        "path": "src/client/jeu/scenarios.ts",
+        "status": "??",
+        "digest": "996517bcf127aca9d576b8651eeb5085d09dd4c8be61a9f76e10d14c7be6c6a5"
+      },
+      {
+        "path": "tests/jeu-browser.test.mjs",
+        "status": "??",
+        "digest": "0c1438326aa9ff5a7a4b8b71d2f80e596adfbda735b35ae4beb1a14d0b2b4de3"
+      },
+      {
+        "path": "tests/jeu-camera.test.mjs",
+        "status": "??",
+        "digest": "e8a96d843f983acb1de2d9bcb997fc64d17c29bb74a45172cf42eb0fd25c0f3f"
+      }
+    ]
+  },
+  "commands": [
+    {
+      "name": "suite-actuelle-180-cas",
+      "executable": "npm",
+      "args": [
+        "test"
+      ],
+      "status": "passed",
+      "covers": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "name": "typecheck",
+      "executable": "npm",
+      "args": [
+        "run",
+        "typecheck"
+      ],
+      "status": "passed",
+      "covers": []
+    },
+    {
+      "name": "jeu-layout-rectangle-hud-et-sans-hud",
+      "executable": "node",
+      "args": [
+        "scripts/test.mjs",
+        "jeu-layout-rectangle-hud-et-sans-hud"
+      ],
+      "status": "passed",
+      "covers": [
+        0,
+        4
+      ]
+    },
+    {
+      "name": "jeu-conversions-oracles-zoom-decalage-et-redimensionnement",
+      "executable": "node",
+      "args": [
+        "scripts/test.mjs",
+        "jeu-conversions-oracles-zoom-decalage-et-redimensionnement"
+      ],
+      "status": "passed",
+      "covers": [
+        3
+      ]
+    },
+    {
+      "name": "jeu-visibilite-quatre-coins-tangences-et-etats",
+      "executable": "node",
+      "args": [
+        "scripts/test.mjs",
+        "jeu-visibilite-quatre-coins-tangences-et-etats"
+      ],
+      "status": "passed",
+      "covers": [
+        1,
+        3
+      ]
+    },
+    {
+      "name": "jeu-scenes-reference-determinisme-et-visibilite-compatibles",
+      "executable": "node",
+      "args": [
+        "scripts/test.mjs",
+        "jeu-scenes-reference-determinisme-et-visibilite-compatibles"
+      ],
+      "status": "passed",
+      "covers": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "name": "jeu-navigateur-formats-redimensionnement-et-hud",
+      "executable": "node",
+      "args": [
+        "scripts/test.mjs",
+        "jeu-navigateur-formats-redimensionnement-et-hud"
+      ],
+      "status": "passed",
+      "covers": [
+        0,
+        4
+      ]
+    },
+    {
+      "name": "jeu-navigateur-coins-centre-hors-champ-et-pixels",
+      "executable": "node",
+      "args": [
+        "scripts/test.mjs",
+        "jeu-navigateur-coins-centre-hors-champ-et-pixels"
+      ],
+      "status": "passed",
+      "covers": [
+        0,
+        1,
+        2,
+        4
+      ]
+    },
+    {
+      "name": "jeu-navigateur-planete-circulaire-bords-et-proportions",
+      "executable": "node",
+      "args": [
+        "scripts/test.mjs",
+        "jeu-navigateur-planete-circulaire-bords-et-proportions"
+      ],
+      "status": "passed",
+      "covers": [
+        2
+      ]
+    },
+    {
+      "name": "jeu-navigateur-interactions-suivi-et-coordonnees",
+      "executable": "node",
+      "args": [
+        "scripts/test.mjs",
+        "jeu-navigateur-interactions-suivi-et-coordonnees"
+      ],
+      "status": "passed",
+      "covers": [
+        0,
+        3
+      ]
+    },
+    {
+      "name": "jeu-navigateur-dpr-un-deux-et-changement-a-chaud",
+      "executable": "node",
+      "args": [
+        "scripts/test.mjs",
+        "jeu-navigateur-dpr-un-deux-et-changement-a-chaud"
+      ],
+      "status": "passed",
+      "covers": [
+        0,
+        1,
+        3
+      ]
+    },
+    {
+      "name": "jeu-navigateur-scenarios-informations-et-retour-diagrammes",
+      "executable": "node",
+      "args": [
+        "scripts/test.mjs",
+        "jeu-navigateur-scenarios-informations-et-retour-diagrammes"
+      ],
+      "status": "passed",
+      "covers": [
+        0,
+        4
+      ]
+    },
+    {
+      "name": "preparation-scene-deux-chargements-identiques",
+      "executable": "python3",
+      "args": [
+        "-c",
+        "import json\nfrom pathlib import Path\np=Path('docs/jeu/scene-reference.json')\na=json.loads(p.read_text()); b=json.loads(p.read_text())\nassert a==b and a is not b\nexpected=[\n('joueur-01','joueur',0,0,'actif'),('decor-01','decor',-180,-80,'actif'),\n('caisse-01','objet-destructible',120,60,'actif'),('caisse-detruite','objet-destructible',180,100,'detruit'),\n('tir-ennemi-01','projectile',148,60,'actif'),('tir-joueur-01','projectile',40,-20,'actif'),\n('boss-est','boss',1000,0,'actif'),('boss-ouest','boss',-900,100,'actif'),\n('mere-nord','vaisseau-mere',0,-1200,'actif'),('mere-lointaine','vaisseau-mere',1800,1000,'actif'),\n('decor-bord','decor',2380,0,'actif'),('caisse-bord','objet-destructible',0,2380,'actif'),\n('tir-inactif','projectile',90,0,'inactif')]\nsnapshot=lambda s:[(e['id'],e['category'],e['position']['x'],e['position']['y'],e['state']) for e in s['entities']]\nassert snapshot(a)==snapshot(b)==expected\nassert len({e['id'] for e in a['entities']})==13\nassert a['playerId']=='joueur-01' and a['planet']=={'center':{'x':0,'y':0},'radius':2400}\nprint('PASS : deux chargements, 13 entites, positions, categories et etats connus')\n"
+      ],
+      "status": "passed",
+      "covers": []
+    },
+    {
+      "name": "preparation-proprietes-independantes-des-sprites",
+      "executable": "python3",
+      "args": [
+        "-c",
+        "import json,math\nfrom pathlib import Path\nentities=json.loads(Path('docs/jeu/scene-reference.json').read_text())['entities']\nby_id={e['id']:e for e in entities}\nfor e in entities:\n assert set(e)=={'id','category','position','dimensions','state','destructible','projectileOrigin'}\n assert e['category'] in {'joueur','decor','objet-destructible','projectile','boss','vaisseau-mere'}\n assert e['state'] in {'actif','inactif','detruit'} and type(e['destructible']) is bool\n assert all(type(n) in (int,float) and math.isfinite(n) for n in e['position'].values())\n assert set(e['position'])=={'x','y'} and set(e['dimensions'])=={'width','height'}\n assert all(type(n) in (int,float) and math.isfinite(n) and n>0 for n in e['dimensions'].values())\n o=e['projectileOrigin']\n if e['category']=='projectile':\n  assert set(o)=={'faction','emitterId'} and o['faction'] in {'ennemi','joueur','neutre'} and o['emitterId']\n else: assert o is None\ncrate,decor,shot=(by_id[k] for k in ['caisse-01','decor-01','tir-ennemi-01'])\nassert crate['destructible'] and crate['projectileOrigin'] is None\nassert not decor['destructible'] and decor['category']=='decor'\nassert not shot['destructible'] and shot['category']=='projectile'\nassert shot['projectileOrigin']=={'faction':'ennemi','emitterId':'boss-ouest'}\nassert by_id['tir-joueur-01']['projectileOrigin']['faction']=='joueur'\nassert {e['category'] for e in entities}=={'joueur','decor','objet-destructible','projectile','boss','vaisseau-mere'}\nprint('PASS : contrat valide, destructibilite et origine explicites, aucune apparence requise')\n"
+      ],
+      "status": "passed",
+      "covers": []
+    },
+    {
+      "name": "preparation-conversions-monde-ecran-oracles",
+      "executable": "python3",
+      "args": [
+        "-c",
+        "import json,math\nfrom pathlib import Path\ncases=json.loads(Path('docs/jeu/conversions-reference.json').read_text())\nassert {c['id'] for c in cases}=={'centre','negatifs','caisse','hors-champ','camera-deplacee','zoom-double','viewport-decale','petite-fenetre','bord-planete'}\nfor c in cases:\n cam,v,w,s=(c[k] for k in ['camera','viewport','world','screen'])\n assert cam['zoom']>0 and v['width']>0 and v['height']>0\n for axis,size in [('x','width'),('y','height')]:\n  projected=v[axis]+v[size]/2+(w[axis]-cam[axis])*cam['zoom']\n  inverse=cam[axis]+(s[axis]-v[axis]-v[size]/2)/cam['zoom']\n  assert math.isclose(projected,s[axis],abs_tol=1e-9),(c['id'],axis,projected)\n  assert math.isclose(inverse,w[axis],abs_tol=1e-9),(c['id'],axis,inverse)\n  for dpr in (1,2):\n   assert math.isclose(projected*dpr/dpr,s[axis],abs_tol=1e-9)\nprint('PASS : 9 oracles, projection/inverse, axes, zoom et viewport CSS')\n"
+      ],
+      "status": "passed",
+      "covers": [
+        3
+      ]
+    },
+    {
+      "name": "preparation-scenarios-visibilite-distances-et-planete",
+      "executable": "python3",
+      "args": [
+        "-c",
+        "import json,copy,math\nfrom pathlib import Path\nroot=Path('docs/jeu')\ndata=json.loads((root/'scenarios.json').read_text())\nbase=json.loads((root/data['reference']).read_text())\npristine=copy.deepcopy(base)\nassert len(data['scenarios'])==12 and len({s['id'] for s in data['scenarios']})==12\nassert data['windows']=={'large':{'width':1280,'height':720,'hudWidth':240},'etroite':{'width':360,'height':800,'hudWidth':72},'grande':{'width':1920,'height':1080,'hudWidth':240}}\nfor s in data['scenarios']:\n entities=copy.deepcopy(base['entities']); known={e['id'] for e in entities}\n assert set(s['overrides'])<=known\n if s['include']!='all':\n  assert set(s['include'])<=known\n  entities=[e for e in entities if e['id'] in s['include']]\n for e in entities: e.update(copy.deepcopy(s['overrides'].get(e['id'],{})))\n win=data['windows'][s['window']]; cam=s['camera']\n width=win['width']-win['hudWidth']; height=win['height']\n assert width>0 and height>0 and cam['zoom']>0\n def visible(e):\n  x=width/2+(e['position']['x']-cam['x'])*cam['zoom']\n  y=height/2+(e['position']['y']-cam['y'])*cam['zoom']\n  w=e['dimensions']['width']*cam['zoom']; h=e['dimensions']['height']*cam['zoom']\n  return e['state']=='actif' and x+w/2>0 and x-w/2<width and y+h/2>0 and y-h/2<height\n player=next(e for e in entities if e['id']==base['playerId'])\n candidates=[e for e in entities if e['category'] in ('boss','vaisseau-mere') and e['state']=='actif']\n shown=sorted(e['id'] for e in candidates if visible(e))\n distance=lambda e:math.hypot(e['position']['x']-player['position']['x'],e['position']['y']-player['position']['y'])\n target=None if shown or not candidates else min(candidates,key=lambda e:(distance(e),e['id']))['id']\n assert shown==s['expected']['visibleMajorIds'],(s['id'],shown)\n assert target==s['expected']['arrowTargetId'],(s['id'],target)\n for point in s['expected'].get('planetPoints',[]):\n  p=point['position']; center=base['planet']['center']\n  assert ((p['x']-center['x'])**2+(p['y']-center['y'])**2<=base['planet']['radius']**2)==point['inside']\n if s['id']=='catalogue':\n  assert {e['category'] for e in entities if visible(e)}=={'joueur','decor','objet-destructible','projectile','boss','vaisseau-mere'}\n if s['id']=='amas-dense':\n  near=[e for e in entities if visible(e) and 120<=e['position']['x']<=160 and 45<=e['position']['y']<=80]\n  assert sum(e['category']=='objet-destructible' for e in near)==2\n  assert sum(e['category']=='projectile' for e in near)==3\n assert base==pristine\nprint('PASS : 12 scenarios, 3 fenetres, amas, cibles, tangence, distances et disque')\n"
+      ],
+      "status": "passed",
+      "covers": [
+        1,
+        2
+      ]
+    },
+    {
+      "name": "npm run build",
+      "executable": "npm",
+      "args": [
+        "run",
+        "build"
+      ],
+      "status": "passed",
+      "covers": []
+    }
+  ]
+}

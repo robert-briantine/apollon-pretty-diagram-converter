@@ -1,5 +1,10 @@
 # Préparation du rendu — évolution 0
 
+Ce document conserve l'inventaire et le contrat préparés lors de l'évolution 0.
+La vue rectangulaire est maintenant implémentée par l'évolution 1 : consulter
+[le guide actuel et les recettes de vérification](vue-rectangulaire.md).
+Les mentions « futur » ci-dessous décrivent l'état de cette préparation.
+
 Livrable de préparation, sans moteur, module de rendu, sprite ni installation.
 Les fichiers JSON voisins sont des données de référence, pas une simulation.
 Les chemins proposés ci-dessous n'existent pas encore. Les archives `init/`

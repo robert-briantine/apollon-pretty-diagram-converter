@@ -6,9 +6,12 @@ et npm.
 
 Le besoin actuellement enregistré dans `evolution.md` concerne un jeu. Cette
 intervention conserve l’application de diagrammes préexistante et réutilise son
-socle technique. Les sprites, la vue rectangulaire, la distinction des éléments
-destructibles et les indicateurs de boss/vaisseau mère restent à réaliser dans
-les évolutions ultérieures. `evolution.md` est conservé sans modification et
+socle technique. La vue rectangulaire de l'évolution 1 est accessible à
+[/jeu-demo.html](http://127.0.0.1:3000/jeu-demo.html) après compilation et démarrage.
+Cette démonstration isolée consomme les scènes de référence sans moteur de jeu.
+Son [guide de rendu](docs/jeu/vue-rectangulaire.md) décrit les commandes,
+le contrat de caméra et les tests. Les sprites et les indicateurs de boss/vaisseau
+mère restent à réaliser dans les évolutions ultérieures. `evolution.md` est conservé sans modification et
 aucun nouveau découpage du besoin n’est créé.
 
 ## Commandes

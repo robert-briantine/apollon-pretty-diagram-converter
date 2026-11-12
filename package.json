@@ -13,7 +13,7 @@
     "typecheck": "tsc -p tsconfig.server.json --noEmit && tsc -p tsconfig.client.json --noEmit && tsc -p tsconfig.desktop.json",
     "check:static": "npm run build && node --test --test-name-pattern=^http-interface-finale-ressources-host-port-zero$ tests/http.test.mjs",
     "test": "node scripts/test.mjs",
-    "build": "tsc -p tsconfig.server.json && tsc -p tsconfig.client.json",
+    "build": "tsc -p tsconfig.server.json && tsc -p tsconfig.client.json && node scripts/build-jeu.mjs",
     "start": "node dist/server/index.js",
     "convert": "node dist/server/convertir.js",
     "tauri": "tauri",

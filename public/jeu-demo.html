@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Démonstration de rendu — vue rectangulaire</title>
+  <link rel="stylesheet" href="/jeu-demo.css">
+  <script type="module" src="/assets/jeu/demo.js"></script>
+</head>
+<body>
+  <main aria-label="Démonstration de rendu — sans moteur de jeu">
+    <canvas id="world" tabindex="0" aria-label="Vue du monde : glisser pour déplacer la caméra, cliquer pour inspecter" aria-describedby="help"></canvas>
+    <aside id="hud" aria-label="Informations de la démonstration">
+      <h1>Vue monde</h1>
+      <p>Démo de rendu. Sans moteur de jeu.</p>
+      <p id="status" role="status">Chargement…</p>
+      <label for="scenario">Scène</label>
+      <select id="scenario" disabled></select>
+      <button id="reset" type="button">Recadrer</button>
+      <button id="follow" type="button" aria-pressed="false">Suivre le joueur</button>
+      <button id="planet" type="button">Planète entière</button>
+      <div class="zoom" aria-label="Zoom de la caméra">
+        <button id="zoom-out" type="button" aria-label="Réduire le zoom">−</button>
+        <button id="zoom-in" type="button" aria-label="Augmenter le zoom">+</button>
+      </div>
+      <output id="camera" aria-label="Position et zoom de la caméra"></output>
+      <h2>Entité</h2>
+      <output id="inspection" aria-live="polite">Cliquer une entité.</output>
+      <p id="help">Glisser la vue ou utiliser les flèches. + / − : zoom. Les rectangles sont les enveloppes de référence.</p>
+      <a href="/">Retour aux diagrammes</a>
+    </aside>
+  </main>
+</body>
+</html>
