@@ -4,13 +4,21 @@ Application Node.js, TypeScript et Express, avec une interface HTML/CSS et
 TypeScript natif, sans framework frontend. Prérequis : Node.js 22 ou supérieur
 et npm.
 
+Le besoin actuellement enregistré dans `evolution.md` concerne un jeu. Cette
+intervention conserve l’application de diagrammes préexistante et réutilise son
+socle technique. Les sprites, la vue rectangulaire, la distinction des éléments
+destructibles et les indicateurs de boss/vaisseau mère restent à réaliser dans
+les évolutions ultérieures. `evolution.md` est conservé sans modification et
+aucun nouveau découpage du besoin n’est créé.
+
 ## Commandes
 
 Depuis la racine du projet :
 
 ```sh
 npm run setup       # Installation reproductible des dépendances (npm ci)
-npm run typecheck   # Vérification des types serveur et navigateur, sans émission
+npm run typecheck   # Vérification des types serveur, navigateur et bureau, sans émission
+npm run check:static # Compilation et vérification HTTP/navigateur des fichiers statiques
 npm test            # Compilation et tests métier, SVG, conversion Node.js et HTTP
 npm run dev         # Compilation initiale, surveillance TS et redémarrage serveur
 ```
@@ -40,6 +48,14 @@ HOST=0.0.0.0 PORT=8080 npm start
 
 `HOST` vaut `127.0.0.1` par défaut et `PORT` vaut `3000`. `PORT=0` demande
 un port libre au système ; l’adresse effective est affichée au démarrage.
+
+`npm run check:static` réutilise le contrôle HTTP existant : il démarre un
+serveur temporaire avec `HOST=127.0.0.1` et `PORT=0`, depuis un autre répertoire,
+vérifie le contenu et les types MIME du HTML, du CSS et des deux modules
+JavaScript compilés, puis charge l’interface dans Chromium. Le navigateur et
+le serveur temporaire sont arrêtés en fin de contrôle, même en cas d’échec.
+Si Chromium est absent, installer le navigateur de test avec
+`npx playwright install chromium` avant de relancer cette commande.
 
 ## Organisation
 

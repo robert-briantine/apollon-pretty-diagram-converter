@@ -202,6 +202,7 @@ test('http-interface-finale-ressources-host-port-zero', { timeout: 30000 }, asyn
   for (const [path, type, file] of [
     ['/', /text\/html/, 'public/index.html'], ['/styles.css', /text\/css/, 'public/styles.css'],
     ['/assets/main.js', /(?:text|application)\/javascript/, 'dist/client/main.js'],
+    ['/assets/generation.js', /(?:text|application)\/javascript/, 'dist/client/generation.js'],
   ]) {
     const response = await fetch(url + path);
     assert.equal(response.status, 200); assert.match(response.headers.get('content-type'), type);

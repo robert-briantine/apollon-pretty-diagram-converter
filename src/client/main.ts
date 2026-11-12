@@ -43,7 +43,16 @@ fullscreen.addEventListener('click', async () => {
   expanded(true);
   // La vue couvre aussi la fenêtre si l'API est absente ou refusée.
   if (result.requestFullscreen) {
-    try { await result.requestFullscreen(); nativeFullscreen = true; }
+    try {
+      await result.requestFullscreen();
+      // Échap ou une nouvelle sélection peut annuler la vue avant que
+      // l'entrée native aboutisse. Ne pas laisser le formulaire derrière elle.
+      if (!result.classList.contains('expanded')) {
+        if (document.fullscreenElement === result) await document.exitFullscreen().catch(() => {});
+        return;
+      }
+      nativeFullscreen = true;
+    }
     catch { nativeFullscreen = false; }
   }
 });

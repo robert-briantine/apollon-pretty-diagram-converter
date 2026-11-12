@@ -1,33 +1,36 @@
-# Évolution 2 — Calculer des placements lisibles sans chevauchement
+# Évolution 2 — Réaliser et intégrer des sprites soignés
 
 ## Objectif
 
-Construire la partie placement du futur `computeSpatialGraphe`, avec des formes dimensionnées pour leurs textes et un espace suffisant pour le routage.
+Améliorer significativement la qualité visuelle du jeu grâce à des sprites travaillés et cohérents, lisibles dans la nouvelle vue rectangulaire.
 
 ## Dépendances
 
-- `evolution0.md` : graphe importé et libellés.
-- `evolution1.md` : connexions et `verifierPlacement`.
+- `evolution0.md` : direction artistique, catégories d'entités et scènes de référence.
+- `evolution1.md` : caméra rectangulaire et échelle d'affichage.
 
 ## Instructions de réalisation
 
-- Créer une fonction de calcul des placements réutilisable par `computeSpatialGraphe`, sans prétendre fournir les chemins à cette étape.
-- Définir une orientation de lecture et des marges cohérentes. Utiliser les positions importées comme indications lorsqu’elles restent compatibles avec un résultat lisible ; résoudre les chevauchements sans changer les relations du graphe.
-- Dimensionner les formes à partir des dimensions importées et des besoins des libellés : retours à la ligne, espacement interne et texte contenu dans la zone utile du losange ou de l’ovale. Partager les règles de texte avec le futur rendu afin de ne pas déplacer les connexions après routage.
-- Traiter les embranchements, convergences, cycles et composantes déconnectées sans supposer que le graphe est un arbre. Prévoir des espaces entre formes et autour des groupes pour les chemins de retour.
-- Après toute modification de position ou de dimensions, recalculer les connexions. Stabiliser l’ordre de traitement pour que deux calculs sur la même entrée donnent le même résultat.
-- Appeler `verifierPlacement` sur le résultat et résoudre tous les conflits avant de le déclarer valide ; retourner un diagnostic si le calcul échoue.
+- Créer ou retravailler les sprites des catégories présentes : joueur, ennemis, boss, vaisseaux mères, objets destructibles, projectiles et décor de planète. Prévoir des silhouettes distinctes pour les boss et les vaisseaux mères.
+- Appliquer la palette, les contours, les volumes, l'ombrage et les détails définis à l'étape 0. Fournir des fonds transparents pour les sprites qui se superposent au monde et éviter les bordures opaques parasites.
+- Intégrer les ressources dans le rendu du jeu avec des pivots, dimensions et orientations explicites. Conserver la correspondance entre position logique et position dessinée, ainsi que les zones de collision et règles de dégâts existantes.
+- Préserver et harmoniser les animations existantes ; améliorer les retours visuels de déplacement, tir, impact et destruction lorsqu'ils correspondent à des actions du jeu. Si aucun moteur n'est disponible, montrer ces états dans la scène dédiée sans créer de nouvelles règles de combat.
+- Travailler le fond et les effets pour soutenir les sprites : conserver une hiérarchie visuelle qui laisse les menaces et les objets interactifs lisibles, y compris en scène chargée.
+- Utiliser des ressources locales correctement référencées et documenter leur origine ainsi que leurs droits d'utilisation. Éviter le chargement de ressources externes indispensable à l'affichage.
+- Produire des comparaisons de scènes identiques avant/après lorsqu'une référence existe ; sinon présenter une planche des sprites et leurs captures intégrées à l'échelle réelle.
 
 ## Critères d'acceptation
 
-- Chaque sommet possède exactement un placement avec coordonnées finies, dimensions positives et connexions cohérentes avec sa forme finale.
-- `verifierPlacement` ne renvoie aucun conflit pour `diagram.json` et les cas représentatifs.
-- Les libellés longs et multilignes disposent d’une zone adaptée ; les formes restent espacées, y compris aux limites des boîtes englobantes.
-- Le calcul termine sur les cycles et conserve tous les sommets des composantes déconnectées. L’entrée reste inchangée et le résultat est déterministe.
+- Chaque catégorie présente possède un sprite final cohérent avec la direction artistique ; aucun élément central ne reste un substitut provisoire sans traitement graphique.
+- Les boss, vaisseaux mères, ennemis et joueur restent identifiables par leur silhouette à l'échelle de jeu, sans dépendre d'un libellé.
+- Les captures montrent des contours propres, des volumes et des détails visibles à l'échelle réelle ; aucune ressource ne présente de fond opaque indésirable ou de coupure accidentelle.
+- Les sprites restent proportionnés et lisibles dans les formats de fenêtre de l'étape 1.
+- Les changements visuels ne modifient ni les positions logiques, ni les collisions, ni les valeurs de dégâts existantes ; les ressources se chargent sans erreur.
 
 ## Tests à effectuer
 
-- Calculer les placements de `diagram.json`, vérifier leur nombre et leurs coordonnées, puis exiger une liste vide de `verifierPlacement`.
-- Tester une chaîne, un embranchement suivi d’une convergence, un cycle, un sommet isolé et plusieurs composantes.
-- Tester des positions initiales superposées ou négatives, ainsi que des libellés longs, accentués et multilignes ; vérifier les marges et dimensions calculées.
-- Comparer deux résultats successifs et vérifier que les connexions suivent toute modification de position ou de taille. Exécuter `npm run typecheck`.
+- Afficher une planche de toutes les catégories puis la scène de référence aux différentes tailles prévues ; examiner silhouettes, transparence, netteté et cohérence de style.
+- Comparer avant/après sur la même scène, le même cadrage et la même échelle, ou contrôler la planche intégrée en l'absence de rendu antérieur.
+- Observer les orientations et états animés disponibles, notamment impact et destruction : vérifier les pivots, l'absence de saut de position et les transitions.
+- Charger la scène sans accès aux ressources distantes ; vérifier l'absence de sprite manquant et d'erreur de chargement.
+- Avec le moteur réel, rejouer les cas de déplacement, tir et collision préexistants pour confirmer l'identité des résultats logiques.

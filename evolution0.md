@@ -1,10 +1,10 @@
-# Évolution 0 — Importer le diagramme Appolon JS et définir le graphe métier
+# Évolution 0 — Préparer le rendu du jeu et sa direction graphique
 
 ## Objectif
 
-Reformulation du besoin global : réaliser un programme Node.js en TypeScript qui convertit un diagramme d’activité Appolon JS, notamment `diagram.json`, en fichier SVG soigné et prêt pour une présentation. Le programme doit s’appuyer sur `graphe.ts`, implémenter `computeSpatialGraphe`, vérifier les chemins et les placements avec les trois vérificateurs demandés, puis proposer une sélection de diagramme et une consultation du SVG dans une interface servie par Express. Les évolutions 0 à 7 réalisent progressivement ce besoin.
+Préparer une amélioration significative des graphismes du jeu : de beaux sprites cohérents, des objets destructibles immédiatement reconnaissables face aux projectiles ennemis, une vue rectangulaire occupant la fenêtre et une indication de la cible majeure la plus proche lorsqu'aucun boss ni vaisseau mère n'est visible.
 
-Cette première étape fournit l’import et le contrat métier, en réutilisant le socle TypeScript et Express existant.
+Le dépôt inspecté contient actuellement un convertisseur de diagrammes, sans moteur de jeu identifié. Préparer une intégration isolée et vérifiable sans transformer cette application ni inventer des règles de jeu étrangères au besoin.
 
 ## Dépendances
 
@@ -12,22 +12,25 @@ Aucune
 
 ## Instructions de réalisation
 
-- Étudier `graphe.ts` comme référence et créer les modules métier sous `src/server/`, compatibles avec la compilation existante. Définir les contrats `Graphe`, `Forme`, `Placement`, `Chemin`, `Pas` et `Point`. Utiliser `SpaceGraphe`, nom présent dans la référence, pour le graphe spatial appelé « SpatialGraphe » dans le besoin ; documenter cette correspondance.
-- Importer les tableaux `nodes` et `edges` du JSON Appolon JS. Transformer les actions en rectangles, les décisions/fusions en losanges et le nœud initial en ovale. Documenter cette table de correspondance et traiter explicitement les types non pris en charge.
-- Conserver les identifiants, les orientations source/cible, tous les arcs, y compris les arcs parallèles, les libellés des nœuds et les libellés d’arcs tels que « oui » et « non ». Prévoir leur association aux futurs chemins sans confondre l’indice de connexion `Chemin.idx` avec l’identité d’un arc.
-- Exploiter les dimensions du fichier ; conserver les positions, handles, ancres et points intermédiaires utiles comme indications pour les étapes spatiales. Leur éventuelle réorganisation doit préserver la topologie et les libellés.
-- Valider le JSON, les identifiants uniques, les références des arcs et les dimensions finies strictement positives. Produire des erreurs explicites pour les entrées invalides, sans perdre silencieusement des éléments. Ne pas modifier le fichier d’entrée.
+- Identifier les éventuels points d'entrée, ressources et systèmes de jeu disponibles au moment de la réalisation. Consigner les chemins réels et les fonctions conservées : commandes, déplacements, collisions, dégâts, progression et informations affichées lorsqu'ils existent.
+- Si aucun moteur n'est disponible, préparer un module de rendu isolé, par exemple sous `src/client/jeu/`, et une scène de démonstration dédiée accessible sans remplacer l'interface de diagrammes. Cette scène sert à valider les exigences visuelles ; elle ne doit pas être présentée comme un jeu complet. Documenter le raccordement restant au moteur réel.
+- Définir un contrat de scène indépendant du dessin : identifiant stable, catégorie, position et dimensions dans le monde, état actif/détruit, caractère destructible et origine des projectiles. Distinguer explicitement joueur, décor, objet destructible, projectile ennemi, boss et vaisseau mère. Conserver les règles de collision du moteur lorsqu'il existe.
+- Définir les coordonnées du monde, celles de la caméra et celles de l'écran, ainsi que les limites circulaires de la planète. La forme du monde et celle de la fenêtre de vision sont deux notions distinctes.
+- Établir une direction artistique concrète : palette, silhouettes par catégorie, échelle des sprites, contours, ombrages, effets et niveaux de contraste avec le fond. Prévoir une différenciation par forme, en complément de la couleur.
+- Préparer des scènes reproductibles couvrant chaque catégorie, un regroupement dense d'objets et de tirs, plusieurs boss/vaisseaux mères, l'absence de cible, les bords de planète et différentes tailles de fenêtre. Conserver une référence visuelle avant amélioration lorsqu'un rendu de jeu existe.
+- Ces fichiers décrivent des travaux futurs : pendant le présent découpage, ne produire aucun code, sprite ou installation. Lors de leur réalisation, préserver `evolution.md`, les fichiers de pilotage et les fonctions préexistantes sans rapport avec le jeu ; ne pas réutiliser les anciennes évolutions conservées sous `init/` comme spécification du jeu.
 
 ## Critères d'acceptation
 
-- `diagram.json` produit un `Graphe` contenant ses 18 nœuds et ses 24 arcs, avec les correspondances de formes décrites et tous ses libellés.
-- Les cycles du diagramme sont conservés. Les informations d’ancrage restent accessibles pour le calcul spatial.
-- Un JSON incorrect, une référence absente ou un type non pris en charge donne un diagnostic identifiable.
-- Les modules métier sont compilables en TypeScript strict avec le socle existant.
+- Les points d'intégration et l'éventuelle absence de moteur sont documentés sans supposer des fichiers de jeu inexistants.
+- Une scène de référence reproductible expose toutes les catégories nécessaires aux évolutions suivantes, avec des identifiants et positions connus.
+- Le contrat permet de déterminer séparément la destructibilité d'un objet, l'origine d'un tir, la visibilité d'une entité et sa distance au joueur.
+- La direction artistique indique un traitement concret pour chaque catégorie et une règle de lisibilité indépendante de la seule couleur.
+- L'application de diagrammes conserve son accès et son comportement ; aucune mécanique de jeu existante n'est remplacée par le banc de démonstration.
 
 ## Tests à effectuer
 
-- Exécuter `npm run typecheck` après l’implémentation de cette étape.
-- Importer `diagram.json` et comparer les identifiants, nombres de nœuds et d’arcs, formes, libellés et métadonnées avec l’entrée.
-- Tester de petites entrées avec arcs parallèles, cycle, nœud isolé, tableaux vides et libellés accentués ou multilignes ; aucun élément valide ne doit disparaître.
-- Tester un JSON mal formé, un identifiant dupliqué, une cible absente, une dimension invalide et un type inconnu ; vérifier les diagnostics et l’absence de mutation de l’entrée.
+- Charger la scène de référence deux fois et vérifier les mêmes entités, positions, catégories et états.
+- Contrôler des exemples séparés d'objet destructible, de décor indestructible et de projectile ennemi : leurs propriétés ne doivent pas être déduites uniquement de leur apparence.
+- Vérifier la cohérence des conversions monde/écran avec quelques positions connues avant d'introduire la nouvelle caméra.
+- Ouvrir l'application préexistante et vérifier son parcours de conversion. Lors de la future réalisation, exécuter les contrôles existants pertinents, notamment `npm run typecheck` si du TypeScript est ajouté.

@@ -1,0 +1,11 @@
+[
+  { "id": "centre", "camera": { "x": 0, "y": 0, "zoom": 1 }, "viewport": { "x": 0, "y": 0, "width": 1040, "height": 720 }, "world": { "x": 0, "y": 0 }, "screen": { "x": 520, "y": 360 } },
+  { "id": "negatifs", "camera": { "x": 0, "y": 0, "zoom": 1 }, "viewport": { "x": 0, "y": 0, "width": 1040, "height": 720 }, "world": { "x": -180, "y": -80 }, "screen": { "x": 340, "y": 280 } },
+  { "id": "caisse", "camera": { "x": 0, "y": 0, "zoom": 1 }, "viewport": { "x": 0, "y": 0, "width": 1040, "height": 720 }, "world": { "x": 120, "y": 60 }, "screen": { "x": 640, "y": 420 } },
+  { "id": "hors-champ", "camera": { "x": 0, "y": 0, "zoom": 1 }, "viewport": { "x": 0, "y": 0, "width": 1040, "height": 720 }, "world": { "x": -900, "y": 100 }, "screen": { "x": -380, "y": 460 } },
+  { "id": "camera-deplacee", "camera": { "x": 100, "y": -50, "zoom": 1 }, "viewport": { "x": 0, "y": 0, "width": 1040, "height": 720 }, "world": { "x": 120, "y": 60 }, "screen": { "x": 540, "y": 470 } },
+  { "id": "zoom-double", "camera": { "x": 100, "y": -50, "zoom": 2 }, "viewport": { "x": 0, "y": 0, "width": 1040, "height": 720 }, "world": { "x": 120, "y": 60 }, "screen": { "x": 560, "y": 580 } },
+  { "id": "viewport-decale", "camera": { "x": 100, "y": -50, "zoom": 0.5 }, "viewport": { "x": 20, "y": 30, "width": 400, "height": 300 }, "world": { "x": 120, "y": 60 }, "screen": { "x": 230, "y": 235 } },
+  { "id": "petite-fenetre", "camera": { "x": 0, "y": 0, "zoom": 1 }, "viewport": { "x": 0, "y": 0, "width": 288, "height": 800 }, "world": { "x": 0, "y": 0 }, "screen": { "x": 144, "y": 400 } },
+  { "id": "bord-planete", "camera": { "x": 2380, "y": 0, "zoom": 1 }, "viewport": { "x": 0, "y": 0, "width": 1040, "height": 720 }, "world": { "x": 2400, "y": 0 }, "screen": { "x": 540, "y": 360 } }
+]

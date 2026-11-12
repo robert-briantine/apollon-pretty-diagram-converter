@@ -1,8 +1,3 @@
-Créer un programme pour node js en typescript pour Transformer `diagram.json` (diagramme d'activité Appolon JS) en un fichier SVG soigné, prêt pour une présentation.
-utilise graphe.ts comme guider implemente computeSpatialGraphe et il faut vérifier verifierChemin ,  verifierPlacement et verifierPlacementChemin
-il faut que tu ajoute donc les connexions au Placement , pour un losange et un ovale il y a 4 au sommets  pour un rectangle il peut en avoir plusieurs sur les cotés
-enduite transforme SpatialGraphe en svg
-ajoute un server express node js qui propose une interface pour selectionne le diagram et consuler le svg apres géneration
-
-
-
+je voudrais que tu améliore de façon significative les graphismes et faire de beaux sprite ,
+il faut bien differentier les éléments qu'on peut detruoire avec les projectile envoyer par les enemis ,
+je voudrais que supprimer aussi la vue spherique par une par une vue rectangulaire a l'interieur de la vue en forme de cerlce de la planette ,  pour le cercle de vision  tu prend un rectangle qui sera affiche dans toute la fenetre tu peux laisser une bande sur le coté droit pour les informations du jeux ,  quand  on a pas de vaisseau mere ou bosse a l'écran il faut afficher une fleche qui indique le bosse ou le vaisseau mere le plus proche

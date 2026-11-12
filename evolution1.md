@@ -1,32 +1,35 @@
-# Évolution 1 — Définir les connexions et fiabiliser les vérificateurs géométriques
+# Évolution 1 — Remplacer le champ de vision circulaire par une vue rectangulaire
 
 ## Objectif
 
-Disposer de connexions explicites dans chaque `Placement` et de vérifications géométriques fiables avant de calculer le placement et les chemins.
+Afficher le jeu dans une vue rectangulaire utilisant toute la fenêtre disponible, avec éventuellement une bande à droite pour les informations de jeu. Supprimer la présentation sphérique ou le masque circulaire du champ de vision tout en conservant la géométrie circulaire de la planète.
 
 ## Dépendances
 
-- `evolution0.md` : contrats métier et informations importées.
+- `evolution0.md` : contrat de scène, coordonnées et scènes de référence.
 
 ## Instructions de réalisation
 
-- Reprendre les principes de `graphe.ts` dans les modules métier et définir `Placement.connexions: Point[]` en coordonnées absolues. Conserver `p` comme origine de la boîte englobante et `dx`/`dy` comme dimensions.
-- Générer exactement quatre connexions pour un losange : ses sommets haut, droite, bas et gauche. Pour un ovale, générer exactement quatre connexions à ses extrémités haut, droite, bas et gauche. Fixer et documenter un ordre stable.
-- Pour un rectangle, permettre plusieurs connexions distinctes sur un même côté, réparties selon les arcs incidents et leurs indications d’ancrage. Garantir que chaque connexion appartient au contour et dédupliquer les positions identiques.
-- Implémenter et vérifier `calculerDestination`, `verifierChemin`, `verifierPlacement` et `verifierPlacementChemin`, en s’appuyant sur la référence. Préserver leurs résultats sous forme de listes de conflits ; identifier suffisamment les arcs pour diagnostiquer des arcs parallèles.
-- Documenter la tolérance de `verifierChemin` : la référence compare une distance au carré au paramètre de tolérance. Définir les cas de contact : `verifierPlacement` considère les boîtes qui se touchent comme en conflit ; `verifierPlacementChemin` détecte la traversée de l’intérieur d’une boîte tierce et exclut source et destination.
-- Contrôler les références de sommets, indices de connexion et nombres non finis avant les vérifications, pour obtenir des diagnostics explicites plutôt que des exceptions accidentelles.
+- Définir un rectangle de jeu couvrant la largeur et la hauteur de la fenêtre. Si une bande d'informations est retenue, la placer à droite et soustraire sa largeur du rectangle de jeu ; sans bande, utiliser toute la fenêtre.
+- Remplacer le cadrage sphérique et le découpage circulaire du champ de vision par une caméra rectangulaire en coordonnées du monde. Utiliser ce même rectangle pour le dessin et le calcul de visibilité.
+- Conserver le cercle de la planète comme géométrie du monde, sans étirer la planète ni la remplacer par un monde rectangulaire. Aux limites du monde, afficher le fond prévu plutôt que déformer les entités.
+- Préserver le comportement de suivi du joueur et les limites de déplacement lorsqu'ils existent. Appliquer une transformation commune aux sprites, effets et coordonnées d'interaction ; les commandes et les collisions doivent continuer à utiliser les coordonnées du monde.
+- Recalculer dimensions, cadrage et transformations lors d'un redimensionnement ou d'un changement de densité de pixels. Conserver les proportions des sprites et éviter les zones vides dues à l'ancien masque circulaire.
+- Garder les informations de jeu lisibles et hors du rectangle réservé au jeu si la bande droite est utilisée. Adapter cette bande aux fenêtres étroites sans annuler la surface de jeu.
+- Exposer les limites exactes du rectangle de jeu aux évolutions suivantes, notamment pour placer la flèche hors écran sans recouvrir la bande d'informations.
 
 ## Critères d'acceptation
 
-- Losanges et ovales possèdent exactement quatre connexions aux positions attendues. Un rectangle peut en présenter plusieurs sur un côté sans connexion intérieure.
-- Un chemin part de `connexions[idx]` et son extrémité est comparée aux connexions de sa destination.
-- Les trois vérificateurs détectent respectivement une mauvaise arrivée, un chevauchement de placements et la traversée d’un placement tiers ; une configuration correcte renvoie trois listes vides.
-- Les comportements aux limites et la convention de tolérance sont documentés et reproductibles.
+- Les quatre coins du rectangle de jeu peuvent afficher le monde ou son fond ; aucun masque circulaire ne limite la vision.
+- À toute taille testée, le rectangle de jeu et l'éventuelle bande droite occupent ensemble la fenêtre sans débordement ni marge héritée de l'ancienne vue.
+- La planète reste circulaire dans les coordonnées du monde ; une même entité conserve ses proportions à l'écran.
+- Les éléments affichés, leur visibilité et les interactions utilisent une transformation cohérente après déplacement et redimensionnement.
+- Les informations de jeu existantes restent accessibles, avec ou sans bande droite.
 
 ## Tests à effectuer
 
-- Vérifier les coordonnées des connexions pour chaque forme, avec une origine non nulle et des dimensions différentes ; tester un rectangle avec plusieurs arcs sur un même côté.
-- Tester des pas horizontaux et verticaux positifs et négatifs, une bonne et une mauvaise destination, puis les valeurs juste en dessous, égale et juste au-dessus du seuil de tolérance.
-- Tester des boîtes séparées, tangentes et superposées ; tester un segment traversant, longeant et touchant une boîte tierce, dans les deux sens.
-- Vérifier l’exclusion de la source et de la cible, ainsi que les diagnostics pour un indice hors limites ou un sommet absent. Exécuter `npm run typecheck`.
+- Examiner la scène aux formats 1280 × 720, 1920 × 1080, 800 × 800 et 360 × 640, puis redimensionner pendant l'affichage.
+- Placer des entités dans chacun des quatre coins visibles, au centre et juste hors du rectangle ; vérifier le dessin et le résultat du calcul de visibilité.
+- Déplacer la caméra jusqu'aux limites de la planète : contrôler la conservation du cercle du monde, l'absence de masque circulaire et l'absence de déformation.
+- Vérifier les conversions monde/écran aller-retour sur des points connus et les interactions disponibles avant et après redimensionnement.
+- Si la bande droite est utilisée, vérifier son absence de chevauchement avec le jeu et la conservation d'une surface de jeu positive sur fenêtre étroite.

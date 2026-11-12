@@ -1,0 +1,22 @@
+{
+  "reference": "scene-reference.json",
+  "windows": {
+    "large": { "width": 1280, "height": 720, "hudWidth": 240 },
+    "etroite": { "width": 360, "height": 800, "hudWidth": 72 },
+    "grande": { "width": 1920, "height": 1080, "hudWidth": 240 }
+  },
+  "scenarios": [
+    { "id": "catalogue", "window": "large", "camera": { "x": 0, "y": 0, "zoom": 1 }, "include": "all", "overrides": { "boss-est": { "position": { "x": 300, "y": -150 } }, "mere-nord": { "position": { "x": -300, "y": -180 } } }, "expected": { "visibleMajorIds": ["boss-est", "mere-nord"], "arrowTargetId": null } },
+    { "id": "reference-hors-champ", "window": "large", "camera": { "x": 0, "y": 0, "zoom": 1 }, "include": "all", "overrides": {}, "expected": { "visibleMajorIds": [], "arrowTargetId": "boss-ouest" } },
+    { "id": "amas-dense", "window": "large", "camera": { "x": 0, "y": 0, "zoom": 1 }, "include": "all", "overrides": { "decor-01": { "position": { "x": 80, "y": 35 } }, "caisse-01": { "position": { "x": 120, "y": 60 } }, "caisse-bord": { "position": { "x": 152, "y": 60 } }, "tir-ennemi-01": { "position": { "x": 138, "y": 60 } }, "tir-inactif": { "state": "actif", "position": { "x": 145, "y": 50 } }, "tir-joueur-01": { "position": { "x": 132, "y": 74 } } }, "expected": { "visibleMajorIds": [], "arrowTargetId": "boss-ouest" } },
+    { "id": "partiellement-visible", "window": "large", "camera": { "x": 0, "y": 0, "zoom": 1 }, "include": "all", "overrides": { "boss-est": { "position": { "x": 560, "y": 0 } } }, "expected": { "visibleMajorIds": ["boss-est"], "arrowTargetId": null } },
+    { "id": "tangence-hors-champ", "window": "large", "camera": { "x": 0, "y": 0, "zoom": 1 }, "include": "all", "overrides": { "boss-est": { "position": { "x": 568, "y": 0 } } }, "expected": { "visibleMajorIds": [], "arrowTargetId": "boss-est" } },
+    { "id": "aucune-cible", "window": "large", "camera": { "x": 0, "y": 0, "zoom": 1 }, "include": ["joueur-01", "decor-01", "caisse-01", "tir-ennemi-01"], "overrides": {}, "expected": { "visibleMajorIds": [], "arrowTargetId": null } },
+    { "id": "cibles-detruites-inactives", "window": "large", "camera": { "x": 0, "y": 0, "zoom": 1 }, "include": "all", "overrides": { "boss-est": { "state": "detruit", "position": { "x": 100, "y": 0 } }, "boss-ouest": { "state": "inactif" }, "mere-nord": { "state": "detruit" }, "mere-lointaine": { "state": "inactif" } }, "expected": { "visibleMajorIds": [], "arrowTargetId": null } },
+    { "id": "egalite-distance", "window": "large", "camera": { "x": 0, "y": 0, "zoom": 1 }, "include": "all", "overrides": { "boss-est": { "position": { "x": 900, "y": 0 } }, "boss-ouest": { "position": { "x": -900, "y": 0 } } }, "expected": { "visibleMajorIds": [], "arrowTargetId": "boss-est" } },
+    { "id": "mere-la-plus-proche", "window": "large", "camera": { "x": 0, "y": 0, "zoom": 1 }, "include": "all", "overrides": { "mere-nord": { "position": { "x": 0, "y": -500 } } }, "expected": { "visibleMajorIds": [], "arrowTargetId": "mere-nord" } },
+    { "id": "bord-planete", "window": "large", "camera": { "x": 2380, "y": 0, "zoom": 1 }, "include": "all", "overrides": { "joueur-01": { "position": { "x": 2380, "y": 0 } } }, "expected": { "visibleMajorIds": [], "arrowTargetId": "mere-lointaine", "planetPoints": [ { "position": { "x": 2400, "y": 0 }, "inside": true }, { "position": { "x": 2401, "y": 0 }, "inside": false }, { "position": { "x": 2380, "y": 0 }, "inside": true } ] } },
+    { "id": "fenetre-etroite", "window": "etroite", "camera": { "x": 0, "y": 0, "zoom": 1 }, "include": "all", "overrides": {}, "expected": { "visibleMajorIds": [], "arrowTargetId": "boss-ouest" } },
+    { "id": "fenetre-grande", "window": "grande", "camera": { "x": 0, "y": 0, "zoom": 1 }, "include": "all", "overrides": {}, "expected": { "visibleMajorIds": [], "arrowTargetId": "boss-ouest" } }
+  ]
+}

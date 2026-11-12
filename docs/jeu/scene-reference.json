@@ -1,0 +1,21 @@
+{
+  "version": 1,
+  "id": "reference-v1",
+  "planet": { "center": { "x": 0, "y": 0 }, "radius": 2400 },
+  "playerId": "joueur-01",
+  "entities": [
+    { "id": "joueur-01", "category": "joueur", "position": { "x": 0, "y": 0 }, "dimensions": { "width": 32, "height": 32 }, "state": "actif", "destructible": false, "projectileOrigin": null },
+    { "id": "decor-01", "category": "decor", "position": { "x": -180, "y": -80 }, "dimensions": { "width": 48, "height": 48 }, "state": "actif", "destructible": false, "projectileOrigin": null },
+    { "id": "caisse-01", "category": "objet-destructible", "position": { "x": 120, "y": 60 }, "dimensions": { "width": 32, "height": 32 }, "state": "actif", "destructible": true, "projectileOrigin": null },
+    { "id": "caisse-detruite", "category": "objet-destructible", "position": { "x": 180, "y": 100 }, "dimensions": { "width": 32, "height": 32 }, "state": "detruit", "destructible": true, "projectileOrigin": null },
+    { "id": "tir-ennemi-01", "category": "projectile", "position": { "x": 148, "y": 60 }, "dimensions": { "width": 10, "height": 20 }, "state": "actif", "destructible": false, "projectileOrigin": { "faction": "ennemi", "emitterId": "boss-ouest" } },
+    { "id": "tir-joueur-01", "category": "projectile", "position": { "x": 40, "y": -20 }, "dimensions": { "width": 6, "height": 14 }, "state": "actif", "destructible": false, "projectileOrigin": { "faction": "joueur", "emitterId": "joueur-01" } },
+    { "id": "boss-est", "category": "boss", "position": { "x": 1000, "y": 0 }, "dimensions": { "width": 96, "height": 80 }, "state": "actif", "destructible": true, "projectileOrigin": null },
+    { "id": "boss-ouest", "category": "boss", "position": { "x": -900, "y": 100 }, "dimensions": { "width": 96, "height": 80 }, "state": "actif", "destructible": true, "projectileOrigin": null },
+    { "id": "mere-nord", "category": "vaisseau-mere", "position": { "x": 0, "y": -1200 }, "dimensions": { "width": 200, "height": 120 }, "state": "actif", "destructible": true, "projectileOrigin": null },
+    { "id": "mere-lointaine", "category": "vaisseau-mere", "position": { "x": 1800, "y": 1000 }, "dimensions": { "width": 200, "height": 120 }, "state": "actif", "destructible": true, "projectileOrigin": null },
+    { "id": "decor-bord", "category": "decor", "position": { "x": 2380, "y": 0 }, "dimensions": { "width": 32, "height": 32 }, "state": "actif", "destructible": false, "projectileOrigin": null },
+    { "id": "caisse-bord", "category": "objet-destructible", "position": { "x": 0, "y": 2380 }, "dimensions": { "width": 32, "height": 32 }, "state": "actif", "destructible": true, "projectileOrigin": null },
+    { "id": "tir-inactif", "category": "projectile", "position": { "x": 90, "y": 0 }, "dimensions": { "width": 10, "height": 20 }, "state": "inactif", "destructible": false, "projectileOrigin": { "faction": "ennemi", "emitterId": "boss-est" } }
+  ]
+}

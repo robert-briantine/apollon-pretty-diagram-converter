@@ -1,35 +1,36 @@
-# Évolution 3 — Router les arcs et implémenter computeSpatialGraphe
+# Évolution 3 — Distinguer les objets destructibles des projectiles ennemis
 
 ## Objectif
 
-Implémenter `computeSpatialGraphe(g: Graphe): SpaceGraphe` pour produire un graphe spatial complet dont les chemins relient les connexions et évitent les autres placements.
+Permettre au joueur de reconnaître immédiatement les éléments qu'il peut détruire et de les différencier des projectiles envoyés par les ennemis, même dans une scène dense.
 
 ## Dépendances
 
-- `evolution0.md` : arcs, libellés et indications d’ancrage importés.
-- `evolution1.md` : connexions et trois vérificateurs géométriques.
-- `evolution2.md` : calcul de placements sans chevauchement.
+- `evolution0.md` : propriétés de destructibilité et d'origine des projectiles.
+- `evolution1.md` : espace de jeu rectangulaire.
+- `evolution2.md` : sprites et effets graphiques intégrés.
 
 ## Instructions de réalisation
 
-- Assembler les placements et le routage dans une implémentation effective de `computeSpatialGraphe`, conformément aux contrats inspirés de `graphe.ts`.
-- Pour chaque arc, choisir une connexion source et une connexion cible. Renseigner `Chemin.idx` avec l’indice de connexion source et produire une `listeDePas` composée exclusivement de déplacements horizontaux ou verticaux finis.
-- Utiliser les handles, ancres et points importés comme préférences lorsque leur géométrie reste valide. En cas d’incohérence, recalculer un trajet valide ; les losanges et ovales restent limités à leurs quatre connexions.
-- Router autour des boîtes des placements tiers avec une marge. Gérer embranchements, retours, cycles et arcs parallèles sans perdre d’arc ni de libellé. Éviter autant que possible les superpositions de chemins et les détours inutiles, sans imposer l’absence de croisements entre arcs.
-- Préserver une association stable entre chaque arc, son chemin et son libellé. Garder les dégagements nécessaires au départ et à l’arrivée afin de ne pas traverser sa propre forme source ou cible.
-- Exécuter `verifierChemin`, `verifierPlacement` et `verifierPlacementChemin` avant de retourner un résultat valide. Si nécessaire, ajuster placements, connexions et routage avec une limite explicite d’essais ; fournir un diagnostic en cas d’échec plutôt qu’un résultat invalide.
+- Associer aux objets destructibles un langage visuel stable : silhouette ou contour caractéristique, matière et retour d'impact cohérents. Ne pas appliquer ces signes au décor indestructible.
+- Donner aux projectiles ennemis une forme, une orientation et, si utile, une traînée propres, clairement différentes des objets destructibles et des tirs du joueur. Utiliser la couleur comme renfort et conserver au moins un indice de forme ou de mouvement distinctif.
+- Déduire ces traitements des propriétés de scène et de l'origine réelle du tir. Un tir conserve son identité visuelle pendant toute sa trajectoire et un objet conserve sa lisibilité dans ses états endommagés.
+- Ajuster taille apparente, contours et ordre de dessin pour éviter que les tirs ennemis disparaissent derrière des effets ou que les objets destructibles se confondent avec le fond.
+- Préserver les règles de combat : cette distinction visuelle ne rend pas automatiquement les projectiles destructibles et ne change pas les cibles que les tirs ennemis peuvent endommager.
+- Si un projectile est lui-même destructible selon le moteur, conserver simultanément son identité de tir ennemi et un signe secondaire de destructibilité ; documenter cette combinaison pour éviter une catégorie ambiguë.
 
 ## Critères d'acceptation
 
-- `computeSpatialGraphe` contient une implémentation exécutable et retourne un placement par sommet et un chemin par arc, y compris les arcs parallèles.
-- Pour `diagram.json`, les 18 placements et les 24 chemins sont présents, et les trois vérificateurs renvoient des listes vides.
-- Chaque `idx` est valide et chaque extrémité calculée atteint une connexion de destination dans la tolérance documentée.
-- Les chemins respectent les formes source et cible ainsi que les obstacles tiers. Les libellés d’arcs restent disponibles pour le SVG.
-- Le calcul est déterministe et termine par un résultat ou une erreur explicite.
+- Dans une scène mêlant décor, objets destructibles, tirs du joueur et projectiles ennemis, chaque catégorie reste identifiable sans sélectionner l'entité ni lire un identifiant technique.
+- Un objet destructible et un projectile ennemi possèdent au moins un signe distinctif autre que la couleur ; cette différence reste perceptible en niveaux de gris.
+- Les traitements correspondent aux propriétés réelles, y compris après dégâts, déplacement et changement de scène.
+- Les effets d'impact et de destruction ne masquent pas durablement les projectiles ennemis à proximité.
+- Les possibilités de destruction, les collisions et les dégâts restent conformes aux règles antérieures lorsqu'un moteur est présent.
 
 ## Tests à effectuer
 
-- Exécuter la conversion spatiale de `diagram.json` et vérifier automatiquement les nombres d’éléments, les associations d’arcs et les trois listes de conflits vides.
-- Tester un trajet direct, un obstacle interposé, une convergence, une boucle de retour, des arcs parallèles et un rectangle recevant plusieurs connexions sur le même côté.
-- Reconstruire les polylignes avec `calculerDestination` et vérifier leurs points de départ et d’arrivée, ainsi que leur dégagement de la source et de la cible.
-- Tester un échec de routage contrôlé et vérifier l’arrêt du calcul avec diagnostic ; comparer deux résultats identiques et exécuter `npm run typecheck`.
+- Construire une scène dense contenant au moins un exemplaire de chaque catégorie, avec des projectiles passant près d'objets destructibles et du décor ; vérifier l'identification à l'échelle réelle.
+- Examiner les mêmes captures en couleur et en niveaux de gris, sur fond clair puis sombre, pour contrôler les indices autres que la couleur.
+- Comparer l'apparence aux données de scène : destructible ou non, projectile ennemi ou joueur, état intact ou endommagé.
+- Observer les tirs pendant les effets d'impact et de destruction, puis après redimensionnement ; vérifier leur visibilité et la continuité de leur apparence.
+- Rejouer les cas existants de destruction et de collisions, ainsi que celui d'un projectile destructible si cette mécanique existe ; vérifier qu'aucune règle n'a changé.

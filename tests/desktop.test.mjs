@@ -47,7 +47,7 @@ async function svg(page) {
   return page.locator('#svg-preview').evaluate(async img => (await fetch(img.src)).text());
 }
 
-test('desktop-worker-hors-ligne-meme-svg-18-noeuds-24-arcs-et-remplacement', { timeout: 60000 }, async t => {
+test('desktop-worker-conversion-locale-remplacement-export-et-svg-autonome', { timeout: 60000 }, async t => {
   const { page, context } = await desktop(t);
   // Les assets et le worker sont embarqués ; aucun réseau de conversion.
   await page.route('**/api/**', route => route.abort());
@@ -58,7 +58,6 @@ test('desktop-worker-hors-ligne-meme-svg-18-noeuds-24-arcs-et-remplacement', { t
   assert.equal((first.match(/class="chemin(?:\s[^"]*)?"/g) ?? []).length, 24);
   await page.locator('#zoom-in').focus(); await page.keyboard.press('Enter');
   assert.equal(await page.locator('#zoom-value').textContent(), '125 %');
-  await page.locator('#fullscreen').click(); await page.keyboard.press('Escape');
   const old = await page.locator('#svg-preview').getAttribute('src');
   await generation(page, 'été.json', petit);
   const second = await svg(page);
@@ -74,6 +73,55 @@ test('desktop-worker-hors-ligne-meme-svg-18-noeuds-24-arcs-et-remplacement', { t
   assert.equal(await standalone.locator('svg').count(), 1);
   assert.equal(await standalone.locator('parsererror').count(), 0);
   assert.equal(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), true);
+});
+
+test('desktop-plein-ecran-natif-echap-formulaire-cliquable-et-remplacement', { timeout: 30000 }, async t => {
+  const { page } = await desktop(t);
+  await generation(page, 'premier.json', petit);
+  await page.locator('#fullscreen').click();
+  // L'entrée native est asynchrone : la classe CSS seule ne suffit pas.
+  await page.waitForFunction(() => document.fullscreenElement?.id === 'result');
+  assert.equal(await page.locator('#fullscreen').getAttribute('aria-pressed'), 'true');
+  assert.equal(await page.locator('#generate-form').evaluate(e => e.closest('section').inert), true);
+  await page.keyboard.press('Escape');
+  await page.waitForFunction(() => document.fullscreenElement === null &&
+    !document.querySelector('#result').classList.contains('expanded'));
+  assert.equal(await page.locator('#fullscreen').getAttribute('aria-pressed'), 'false');
+  assert.equal(await page.locator('#generate-form').evaluate(e => e.closest('section').inert), false);
+  assert.equal(await page.evaluate(() => document.body.classList.contains('viewer-open')), false);
+  await generation(page, 'deuxième.json', reference);
+  assert.equal(await svg(page), convertirJson(reference));
+  assert.equal(await page.locator('#result-name').textContent(), 'Résultat de : deuxième.json');
+});
+
+test('desktop-plein-ecran-entree-retardee-apres-echap-libere-le-formulaire', { timeout: 30000 }, async t => {
+  const { page } = await desktop(t);
+  await generation(page, 'avant.json', petit);
+  await page.evaluate(() => {
+    const result = document.querySelector('#result');
+    const request = result.requestFullscreen.bind(result);
+    // Barrière explicite, sans délai arbitraire : reproduit une entrée native
+    // qui aboutit après l'annulation de la vue par Échap.
+    result.requestFullscreen = () => new Promise((resolve, reject) => {
+      window.finishFullscreenEntry = () => request().then(resolve, reject);
+    });
+    window.fullscreenEntries = 0;
+    document.addEventListener('fullscreenchange', () => {
+      if (document.fullscreenElement === result) window.fullscreenEntries++;
+    });
+  });
+  await page.locator('#fullscreen').click();
+  assert.equal(await page.locator('#fullscreen').getAttribute('aria-pressed'), 'true');
+  await page.keyboard.press('Escape');
+  assert.equal(await page.locator('#fullscreen').getAttribute('aria-pressed'), 'false');
+  await page.evaluate(() => window.finishFullscreenEntry());
+  await page.waitForFunction(() => window.fullscreenEntries === 1 && document.fullscreenElement === null,
+    undefined, { timeout: 5000 });
+  assert.equal(await page.locator('#generate-form').evaluate(e => e.closest('section').inert), false);
+  assert.equal(await page.evaluate(() => document.body.classList.contains('viewer-open')), false);
+  await generation(page, 'après.json', petit);
+  assert.equal(await svg(page), convertirJson(petit));
+  assert.equal(await page.locator('#result-name').textContent(), 'Résultat de : après.json');
 });
 
 test('desktop-erreurs-json-metier-worker-expiration-et-reprise-sans-apercu-perime', { timeout: 60000 }, async t => {
