@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 32 32" fill="none">
+<!-- Création originale pour diagrams-codex, CC0-1.0. Axe avant : -Y. Pivot : centre. -->
+<defs></defs>
+<g stroke="#060a12" stroke-width="2" stroke-linejoin="round" stroke-linecap="round">
+<path d="M3 26 5 17 16 3 27 17 29 26 20 23 16 28 12 23Z" fill="#060a12" opacity=".3" stroke="none"/>
+<path d="M2 24 5 15 12 8 10 21 5 27Z" fill="#36869e"/>
+<path d="M30 24 27 15 20 8 22 21 27 27Z" fill="#216078"/>
+<path d="M16 2 22 20 19 25 16 22 13 25 10 20Z" fill="#70e1f5"/>
+<path d="m16 4-3 14 3-3 3 3Z" fill="#d6fcff" stroke="none"/>
+<path d="m16 10-3 7 3 3 3-3Z" fill="#123b53" stroke-width="1"/>
+<path d="m5 18-1 5 5-3M23 20l5 3-1-5" stroke="#bdf6ff" stroke-width="1"/>
+<path d="M13 26v3M19 26v3" stroke="#70e1f5" stroke-width="2"/>
+<path d="M13 26v1M19 26v1" stroke="#eeffff" stroke-width="1"/>
+</g>
+</svg>

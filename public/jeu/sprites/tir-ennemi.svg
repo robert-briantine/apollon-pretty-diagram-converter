@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="20" height="40" viewBox="0 0 10 20" fill="none">
+<!-- Création originale pour diagrams-codex, CC0-1.0. Axe avant : -Y. Pivot : centre. -->
+<defs></defs>
+<g transform="translate(1 1) scale(0.8 0.9)"><g stroke="#060a12" stroke-width="2" stroke-linejoin="round" stroke-linecap="round">
+<path d="m5 1 4 11-1 7-3-4-3 4-1-7Z" fill="#ff738f" stroke-width="1.5"/>
+<path d="m5 4 1.5 8L5 15l-1.5-3Z" fill="#fff0ef" stroke="none"/>
+</g></g>
+</svg>

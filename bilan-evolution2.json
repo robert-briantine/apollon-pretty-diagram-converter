@@ -1,0 +1,1265 @@
+{
+  "version": 1,
+  "fingerprint": "3f43ce4fc336c4f0ba815ff2b08488cb7ab518ed2f2ffb0b39a37db9d7810181",
+  "execution": {
+    "current": "evolution2.md",
+    "kind": "realize",
+    "status": "succeeded",
+    "error": null,
+    "summary": "L’échec provenait d’une vérification du formulaire avant la fin du chargement de son module JavaScript. Le cas fragile est supprimé et remplacé par deux tests : scénarios et commandes mobiles ; retour aux diagrammes avec chargement volontairement retardé, attente de disponibilité réelle et conversion de 18 nœuds et 24 arcs. Les deux réussissent séparément. Suite complète : 192 tests réussis, aucun échec ni cas ignoré. Typecheck réussi. Sprites, intégration et changements préexistants préservés ; cumul des remplacements conservé. Rejeu moteur réel not-run : fournir moteur, adaptateur et replays avant/après, puis définir JEU_ENGINE_VERIFICATION et lancer la recette. Recette native Linux not-run : installer WebKitWebDriver, Xvfb et xdotool, préparer le binaire ARM64 puis la relancer. Recette Windows not-run : utiliser Windows 10/11 x64 avec WebView2, application installée, PowerShell et opérateur. Les 64 instances démarrées pendant cette correction sont arrêtées ; pilotage PID 3397860 préservé. Aucun commit ni modification des fichiers de suivi.",
+    "tests": [
+      {
+        "name": "suite-actuelle-192-cas",
+        "command": "\"npm\" \"test\"",
+        "exitCode": 0,
+        "output": "\n> diagrams-codex@0.1.0 test\n> node scripts/test.mjs\n\nInterface Tauri et moteur de conversion hors ligne : dist/desktop/\n✔ conversion-service-memoire-equivalence-et-immuabilite (9.562906ms)\n✔ conversion-service-diagnostics-json-import-calcul (0.93007ms)\n✔ conversion-cli-commande-documentee-utf8-et-service (3478.285903ms)\n✔ conversion-cli-svg-ouverture-navigateur (2043.944946ms)\n✔ conversion-cli-lecture-inexistante (147.966496ms)\n✔ conversion-cli-json-invalide (108.363952ms)\n✔ conversion-cli-diagramme-invalide (74.657908ms)\n✔ conversion-cli-erreur-geometrique-controlee (99.108329ms)\n✔ conversion-cli-refus-chemin-invalide (133.438184ms)\n✔ conversion-cli-refus-placements-superposes (177.289218ms)\n✔ conversion-cli-refus-chemin-traversant-forme (136.880701ms)\n✔ conversion-cli-diagnostic-rendu (133.40916ms)\n✔ conversion-cli-ecriture-interrompue-atomique (131.766126ms)\n✔ conversion-cli-destination-inaccessible (135.50226ms)\n✔ conversion-cli-refus-destination-source (131.511116ms)\n✔ conversion-cli-refus-alias-source (96.047461ms)\n✔ conversion-cli-remplacement-destination-et-chemins-espaces (44.636654ms)\n✔ conversion-cli-arguments-invalides (196.878072ms)\n✔ conversion-disposition-compacte-reference-connexions-et-conflits (7517.690697ms)\nserveur-test {\"pid\":3587544,\"port\":43835,\"stopped\":true}\n✔ desktop-worker-conversion-locale-remplacement-export-et-svg-autonome (3754.671355ms)\nserveur-test {\"pid\":3587544,\"port\":41481,\"stopped\":true}\n✔ desktop-plein-ecran-natif-echap-formulaire-cliquable-et-remplacement (3410.629732ms)\nserveur-test {\"pid\":3587544,\"port\":40009,\"stopped\":true}\n✔ desktop-plein-ecran-entree-retardee-apres-echap-libere-le-formulaire (527.852746ms)\nserveur-test {\"pid\":3587544,\"port\":38745,\"stopped\":true}\n✔ desktop-erreurs-json-metier-worker-expiration-et-reprise-sans-apercu-perime (834.30492ms)\nserveur-test {\"pid\":3587544,\"port\":46729,\"stopped\":true}\n✔ desktop-dialogue-annule-erreur-ecriture-et-ouverture-native-du-bon-resultat (499.963776ms)\n✔ connexions-losange-absolues (3.211524ms)\n✔ connexions-ovale-absolues (0.479811ms)\n✔ connexions-rectangle-ancres-multiples (1.294839ms)\n✔ connexions-rectangle-incidents-et-handles (0.671716ms)\n✔ connexions-rectangle-coins-dedupliques (0.455363ms)\n✔ connexions-diagnostics-invalides (0.846645ms)\n✔ destination-pas-signes-et-immuabilite (0.576196ms)\n✔ chemin-connexion-source-et-arrivees (0.934838ms)\n✔ chemin-tolerance-distance-carree (0.577252ms)\n✔ placements-separes-tangents-superposes (1.110519ms)\n✔ segments-interieur-bords-contacts-deux-sens (1.90958ms)\n✔ placement-chemin-exclusions-paralleles-deduplication (0.426866ms)\n✔ geometrie-configuration-valide-et-vide (0.423619ms)\n✔ geometrie-diagnostics-references-et-indices (2.27451ms)\n✔ geometrie-diagnostics-nombres-et-pas (1.544074ms)\n✔ geometrie-identifiants-speciaux (0.30461ms)\n✔ connexions-integration-diagramme-reference (9.520266ms)\nserveur-test {\"pid\":3587715,\"port\":35781,\"stopped\":true}\n✔ http-diagram-reference-svg-utf8-et-equivalence-service (3444.044384ms)\nserveur-test {\"pid\":3589138,\"port\":46777,\"stopped\":true}\n✔ http-json-mal-forme-et-reprise (3216.661856ms)\nserveur-test {\"pid\":3590350,\"port\":42241,\"stopped\":true}\n✔ http-reference-arc-invalide-et-reprise (3158.298677ms)\nserveur-test {\"pid\":3591042,\"port\":43897,\"stopped\":true}\n✔ http-structure-corps-et-refus-chemin-local (3162.909592ms)\nserveur-test {\"pid\":3591342,\"port\":35569,\"stopped\":true}\n✔ http-limite-un-mio-octets-et-reprise (3204.757195ms)\nserveur-test {\"pid\":3591558,\"port\":43413,\"stopped\":true}\n✔ http-format-contenu-charset-compression-et-reprise (3059.318374ms)\nserveur-test {\"pid\":3591669,\"port\":36705,\"stopped\":true}\n✔ http-erreur-interne-rendu-controlee-et-reprise (4389.062828ms)\nserveur-test {\"pid\":3592037,\"port\":36439,\"stopped\":true}\n✔ http-erreur-interne-import-inattendue-et-reprise (2971.424014ms)\nserveur-test {\"pid\":3592370,\"port\":34553,\"stopped\":true}\n✔ http-verificateur-chemin-bloque-succes (109.756195ms)\nserveur-test {\"pid\":3592377,\"port\":43033,\"stopped\":true}\n✔ http-verificateur-placement-bloque-succes (134.997162ms)\nserveur-test {\"pid\":3592384,\"port\":44857,\"stopped\":true}\n✔ http-verificateur-placement-chemin-bloque-succes (108.001624ms)\nserveur-test {\"pid\":3592393,\"port\":45081,\"stopped\":true}\n✔ http-trois-verificateurs-avant-rendu (3000.908134ms)\nserveur-test {\"pid\":3592657,\"port\":40089,\"stopped\":true}\n✔ http-interface-finale-ressources-host-port-zero (324.638091ms)\nserveur-test {\"pid\":3592847,\"port\":null,\"stopped\":true}\nserveur-test {\"pid\":3592854,\"port\":33579,\"stopped\":true}\nserveur-test {\"pid\":3592861,\"port\":null,\"stopped\":true}\nserveur-test {\"pid\":3592868,\"port\":null,\"stopped\":true}\nserveur-test {\"pid\":3592875,\"port\":null,\"stopped\":true}\nserveur-test {\"pid\":3592882,\"port\":null,\"stopped\":true}\nserveur-test {\"pid\":3592889,\"port\":null,\"stopped\":true}\n✔ http-host-personnalise-port-fixe-et-diagnostics-demarrage (569.529926ms)\nserveur-test {\"pid\":3592896,\"port\":36859,\"stopped\":true}\n✔ http-svg-consultation-et-enregistrement-navigateur (3442.17486ms)\n✔ diagram-reference (5.708467ms)\n✔ formes-et-dimensions (0.324658ms)\n✔ arcs-paralleles (0.172113ms)\n✔ cycle-et-boucle (0.096017ms)\n✔ noeud-isole (0.093073ms)\n✔ tableaux-vides (0.060512ms)\n✔ libelles-unicode-multilignes (0.130529ms)\n✔ json-mal-forme (0.297986ms)\n✔ identifiants-invalides-et-dupliques (0.475555ms)\n✔ references-absentes (0.186241ms)\n✔ dimensions-invalides (1.900923ms)\n✔ types-non-pris-en-charge (0.34461ms)\n✔ structure-invalide (0.505827ms)\n✔ indications-spatiales (0.458995ms)\n✔ absence-mutation-et-alias (0.134545ms)\n✔ identifiants-et-metadonnees-speciaux (0.089152ms)\n✔ metadonnees-non-json (0.720117ms)\n✔ import-nom-initial-presentation-et-noms-personnalises (0.212241ms)\n✔ import-noeud-final-nom-par-defaut-personnalise-et-metadonnees (0.33349ms)\nserveur-test {\"pid\":3587740,\"port\":35075,\"stopped\":true}\n✔ jeu-navigateur-formats-redimensionnement-et-hud (540.026862ms)\nserveur-test {\"pid\":3588407,\"port\":33043,\"stopped\":true}\n✔ jeu-sprites-coins-centre-hors-champ-et-fond (404.173813ms)\nserveur-test {\"pid\":3588585,\"port\":33317,\"stopped\":true}\n✔ jeu-sprites-planete-circulaire-bords-et-proportions (394.683675ms)\nserveur-test {\"pid\":3588694,\"port\":35489,\"stopped\":true}\n✔ jeu-navigateur-interactions-suivi-et-coordonnees (937.323015ms)\nserveur-test {\"pid\":3588807,\"port\":40391,\"stopped\":true}\n✔ jeu-sprites-dpr-nettete-selection-et-changement-a-chaud (412.124675ms)\nserveur-test {\"pid\":3588910,\"port\":44343,\"stopped\":true}\n✔ jeu-sprites-scenarios-hud-mobile-et-commandes (627.062474ms)\nserveur-test {\"pid\":3589113,\"port\":45953,\"stopped\":true}\n✔ jeu-sprites-retour-diagrammes-initialisation-retardee-et-conversion (2451.620824ms)\n✔ jeu-layout-rectangle-hud-et-sans-hud (0.965126ms)\n✔ jeu-conversions-oracles-zoom-decalage-et-redimensionnement (1.657866ms)\n✔ jeu-visibilite-quatre-coins-tangences-et-etats (0.314946ms)\n✔ jeu-scenes-reference-determinisme-et-visibilite-compatibles (4.733404ms)\n✔ preparation-scene-deux-chargements-identiques (22.738122ms)\n✔ preparation-proprietes-independantes-des-sprites (31.961186ms)\n✔ preparation-conversions-monde-ecran-oracles (37.837414ms)\n✔ preparation-scenarios-visibilite-distances-et-planete (51.786698ms)\nserveur-test {\"pid\":3587701,\"port\":44161,\"stopped\":true}\n✔ jeu-sprites-succession-instantanes-figes-suivi-tirs-et-etats (485.538036ms)\nserveur-test {\"pid\":3587690,\"port\":42579,\"stopped\":true}\n✔ jeu-sprites-assets-transparents-silhouettes-et-palette (454.934874ms)\nserveur-test {\"pid\":3588386,\"port\":45115,\"stopped\":true}\n✔ jeu-sprites-planche-scenes-quatre-formats-et-densite (2570.823678ms)\nserveur-test {\"pid\":3589013,\"port\":43183,\"stopped\":true}\n✔ jeu-sprites-comparaison-reference-meme-cadrage-et-echelle (510.061413ms)\nserveur-test {\"pid\":3589224,\"port\":35955,\"stopped\":true}\n✔ jeu-sprites-orientations-transitions-pivots-et-instantanes-immuables (989.817247ms)\nserveur-test {\"pid\":3589550,\"port\":41895,\"stopped\":true}\n✔ jeu-sprites-chargement-local-sans-reseau-distant-et-diagnostic-manquant (548.858718ms)\nserveur-test {\"pid\":3589656,\"port\":37719,\"stopped\":true}\n✔ jeu-sprites-orientations-toutes-categories-enveloppes-et-disparition (1199.498834ms)\n✔ placements-diagram-reference (23.263582ms)\n✔ placements-chaine (1.112631ms)\n✔ placements-embranchement-convergence (0.800484ms)\n✔ placements-cycle-et-boucles (1.512905ms)\n✔ placements-sommet-isole (0.407842ms)\n✔ placements-composantes-deconnectees (0.966054ms)\n✔ placements-graphe-vide (0.218209ms)\n✔ placements-positions-superposees-negatives (0.729413ms)\n✔ placements-indications-compatibles (0.821925ms)\n✔ placements-libelles-longs-multilignes (2.864465ms)\n✔ texte-graphemes-et-coupures (0.548707ms)\n✔ placements-marges-limites-boites (0.6045ms)\n✔ placements-determinisme-et-immuabilite (1.835723ms)\n✔ placements-connexions-apres-deplacement-redimensionnement (1.453064ms)\n✔ placements-diagnostics-entrees-invalides (2.213917ms)\n✔ placements-identifiants-speciaux (0.411026ms)\n✔ placements-graphes-generes-reproductibles (141.014025ms)\n✔ placements-ports-libres-32px-texte-centre-et-ancres-fixes (2.57208ms)\n✔ placements-presentation-large-centres-alignes-et-connexions-regenerees (8.450755ms)\n✔ routage-diagram-reference (6143.913434ms)\n✔ routage-trajet-direct (0.731733ms)\n✔ routage-obstacle-interpose (5.821123ms)\n✔ routage-embranchement-convergence (4.005017ms)\n✔ routage-cycle-retour (1.808875ms)\n✔ routage-boucles-sur-soi (1.624778ms)\n✔ routage-arcs-paralleles (5.181024ms)\n✔ routage-paralleles-32px-hors-ports-communs-des-trois-formes (4.332106ms)\nespacement-routage {\"proche\":1174.8333333333333,\"tresProche\":144,\"longueur\":17463.833333333332}\n✔ routage-reference-proximite-32px-reduite-et-trajets-courts (1605.982699ms)\n✔ routage-rectangle-connexions-meme-cote (9.580314ms)\n✔ routage-preferences-ancres-handles (1.778203ms)\n✔ routage-points-importes-valides (0.539091ms)\n✔ routage-points-preferent-ports-lateraux (0.448387ms)\n✔ routage-indications-incoherentes-recalculees (37.22677ms)\n✔ routage-formes-cardinales-et-coins (4.328842ms)\n✔ routage-degagements-source-cible-tous-cotes (39.43491ms)\n✔ routage-echec-controle-budget (1.142007ms)\n✔ routage-repli-et-limite-essais (0.687652ms)\n✔ routage-determinisme-et-immuabilite (16613.315689ms)\n✔ routage-diagnostics-entrees (0.848134ms)\n✔ routage-vide-isoles-identifiants-speciaux (1.505353ms)\n✔ routage-graphes-generes-reproductibles (5938.879926ms)\n✔ routage-sans-demi-tour-degagements-et-points-importes (26.410991ms)\nqualite-routage {\"croisements\":9,\"contacts\":0,\"longueurCommune\":0}\n✔ routage-reference-croisements-reduits-et-absence-de-jonctions-ambigues (2891.403759ms)\nlongueur-routage {\"total\":17463.833333333332,\"maximum\":3148,\"longs\":5}\n✔ routage-presentation-large-coudes-reduits-longueur-bornee-et-ancres (1495.196312ms)\n✔ routage-compact-cycle-entrelace-court-deterministe-et-immuable (131.201025ms)\n✔ routage-reference-corps-hors-degagements-et-sans-auto-intersection (6668.647989ms)\n✔ svg-navigateur-croisements-couleurs-et-pointes-proches-preservees (517.533686ms)\n✔ svg-navigateur-diagram-taille-normale-et-double (5823.497706ms)\n✔ svg-navigateur-coordonnees-negatives-et-marges (137.591441ms)\n✔ svg-navigateur-texte-long-et-retours (169.771828ms)\n✔ svg-navigateur-xml-inerte-et-hors-ligne (178.180679ms)\n✔ svg-navigateur-theme-sombre-export-et-cadrage-compact (1657.973106ms)\n✔ svg-navigateur-debut-fleches-agrandies-et-export-autonome (1650.978977ms)\n✔ svg-croisements-halos-couleurs-et-geometrie-preservee (9.181112ms)\n✔ svg-croisements-excluent-ports-coudes-et-paralleles (8.741093ms)\n✔ svg-diagram-xml-complet-conditions-en-legende (6132.122946ms)\n✔ svg-formes-connexions-et-fleches (5678.03478ms)\n✔ svg-libelles-personnalises-sans-collision-et-legende-hors-geometrie (5511.570159ms)\n✔ svg-texte-placement-multiligne (2.269358ms)\n✔ svg-viewbox-negatif-et-detours (0.6297ms)\n✔ svg-xml-echappement-et-autonomie (12.379627ms)\n✔ svg-branches-oui-non-casse-espaces-et-arcs-neutres (2.365854ms)\n✔ svg-xml-caracteres-invalides (0.515076ms)\n✔ svg-vide-et-labels-vides (0.486179ms)\n✔ svg-arcs-paralleles-boucles-identifiants (4.110617ms)\n✔ svg-immuabilite-et-determinisme (5461.710696ms)\n✔ svg-diagnostics-associations-manquantes (0.936614ms)\n✔ svg-libelles-denses-repli (10.42027ms)\n✔ svg-arrondis-ports-proches-et-coins (1.971964ms)\n✔ svg-croisements-six-pistes-distinctes-pointes-reperes-et-contraste (1.700682ms)\n✔ svg-croisements-couleurs-stables-conditions-prioritaires-et-arcs-isoles (2.5864ms)\n✔ svg-croisements-palette-saturee-reduit-les-collisions-sans-rouge-ni-vert (1.212135ms)\n✔ svg-noeud-final-quatre-ports-entrees-orientees-et-trois-verificateurs (26.891378ms)\nserveur-test {\"pid\":3587716,\"port\":41437,\"stopped\":true}\n✔ ui-presentation-large-trajets-simplifies-apercu-et-export-autonome (4067.893589ms)\nserveur-test {\"pid\":3589449,\"port\":44717,\"stopped\":true}\n✔ ui-parcours-diagram-selection-apercu-ouverture-et-enregistrement-autonome (3919.721034ms)\nserveur-test {\"pid\":3590731,\"port\":34693,\"stopped\":true}\n✔ ui-branches-rouges-vertes-apercu-remplacement-et-export-hors-ligne (4080.992098ms)\nserveur-test {\"pid\":3591242,\"port\":45465,\"stopped\":true}\n✔ ui-absence-selection-json-invalide-et-diagramme-invalide-puis-reprise (1703.326846ms)\nserveur-test {\"pid\":3591350,\"port\":46485,\"stopped\":true}\n✔ ui-fichier-illisible-et-nouvelle-selection-valide (527.77693ms)\nserveur-test {\"pid\":3591453,\"port\":40183,\"stopped\":true}\n✔ ui-erreur-conversion-api-reelle-et-reprise (3774.0086ms)\nserveur-test {\"pid\":3591570,\"port\":40531,\"stopped\":true}\n✔ ui-reponses-api-inexploitables-et-reprise-sans-apercu-perime (1522.230002ms)\nserveur-test {\"pid\":3591678,\"port\":42305,\"stopped\":true}\n✔ ui-coupure-reseau-et-reprise (570.253674ms)\nserveur-test {\"pid\":3591782,\"port\":37343,\"stopped\":true}\n✔ ui-delai-reseau-expire-et-reprise (478.411184ms)\nserveur-test {\"pid\":3591884,\"port\":39317,\"stopped\":true}\n✔ ui-deux-diagrammes-remplacement-telechargement-et-liberation-des-url (3622.629454ms)\nserveur-test {\"pid\":3592060,\"port\":34363,\"stopped\":true}\n✔ ui-verrouillage-lecture-requete-et-double-soumission (501.807992ms)\nserveur-test {\"pid\":3592162,\"port\":33189,\"stopped\":true}\n✔ ui-clavier-fenetre-etroite-et-etats-accessibles (418.06808ms)\nserveur-test {\"pid\":3592264,\"port\":46727,\"stopped\":true}\n✔ ui-plein-ecran-natif-zoom-retour-et-enregistrement (3528.734099ms)\nserveur-test {\"pid\":3592437,\"port\":39047,\"stopped\":true}\n✔ ui-plein-ecran-repli-api-absente-ou-refusee-et-echap (531.886551ms)\nserveur-test {\"pid\":3592545,\"port\":45287,\"stopped\":true}\n✔ ui-plein-ecran-nouvelle-selection-et-echec-liberent-la-vue (677.538031ms)\nserveur-test {\"pid\":3592648,\"port\":45441,\"stopped\":true}\n✔ ui-chemins-raccourcis-apercu-et-fichier-autonome-identiques (3467.0074ms)\nserveur-test {\"pid\":3593049,\"port\":39341,\"stopped\":true}\n✔ ui-croisements-halos-visibles-apercu-export-et-remplacement (4118.555204ms)\ncouleurs-croisements {\"fichier\":\"diagram.json\",\"croisements\":9,\"conditionsIdentiques\":2,\"ordinaires\":3,\"palette\":[\"rgb(148, 163, 184)\",\"rgb(96, 165, 250)\"]}\ncouleurs-croisements {\"fichier\":\"pistes.json\",\"croisements\":9,\"conditionsIdentiques\":0,\"ordinaires\":9,\"palette\":[\"rgb(148, 163, 184)\",\"rgb(96, 165, 250)\"]}\nserveur-test {\"pid\":3593250,\"port\":43285,\"stopped\":true}\n✔ ui-pistes-32px-croisements-couleurs-distinctes-export-et-remplacement (6521.890861ms)\nserveur-test {\"pid\":3593421,\"port\":37683,\"stopped\":true}\n✔ ui-zoom-boutons-clavier-bornes-et-export-inchange (3233.275252ms)\nserveur-test {\"pid\":3593596,\"port\":46383,\"stopped\":true}\n✔ ui-zoom-molette-ancrage-defilement-et-vue-ensemble (1988.319244ms)\nserveur-test {\"pid\":3593700,\"port\":41701,\"stopped\":true}\n✔ ui-zoom-fenetre-etroite-plein-ecran-remplacement-et-reprise (2226.836637ms)\nserveur-test {\"pid\":3593804,\"port\":43607,\"stopped\":true}\n✔ ui-noeuds-finaux-legende-reprise-remplacement-et-export-autonome (1131.983161ms)\nℹ tests 192\nℹ suites 0\nℹ pass 192\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 52991.411146\n"
+      },
+      {
+        "name": "typecheck",
+        "command": "\"npm\" \"run\" \"typecheck\"",
+        "exitCode": 0,
+        "output": "\n> diagrams-codex@0.1.0 typecheck\n> tsc -p tsconfig.server.json --noEmit && tsc -p tsconfig.client.json --noEmit && tsc -p tsconfig.desktop.json\n\n"
+      },
+      {
+        "name": "jeu-sprites-coins-centre-hors-champ-et-fond",
+        "command": "\"node\" \"scripts/test.mjs\" \"jeu-sprites-coins-centre-hors-champ-et-fond\"",
+        "exitCode": 0,
+        "output": "Interface Tauri et moteur de conversion hors ligne : dist/desktop/\nserveur-test {\"pid\":3594196,\"port\":42169,\"stopped\":true}\n✔ jeu-sprites-coins-centre-hors-champ-et-fond (414.644495ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 641.582211\n"
+      },
+      {
+        "name": "jeu-sprites-planete-circulaire-bords-et-proportions",
+        "command": "\"node\" \"scripts/test.mjs\" \"jeu-sprites-planete-circulaire-bords-et-proportions\"",
+        "exitCode": 0,
+        "output": "Interface Tauri et moteur de conversion hors ligne : dist/desktop/\nserveur-test {\"pid\":3594425,\"port\":44551,\"stopped\":true}\n✔ jeu-sprites-planete-circulaire-bords-et-proportions (432.067829ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 685.016258\n"
+      },
+      {
+        "name": "jeu-sprites-dpr-nettete-selection-et-changement-a-chaud",
+        "command": "\"node\" \"scripts/test.mjs\" \"jeu-sprites-dpr-nettete-selection-et-changement-a-chaud\"",
+        "exitCode": 0,
+        "output": "Interface Tauri et moteur de conversion hors ligne : dist/desktop/\nserveur-test {\"pid\":3594654,\"port\":42695,\"stopped\":true}\n✔ jeu-sprites-dpr-nettete-selection-et-changement-a-chaud (407.970836ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 666.531955\n"
+      },
+      {
+        "name": "jeu-sprites-assets-transparents-silhouettes-et-palette",
+        "command": "\"node\" \"scripts/test.mjs\" \"jeu-sprites-assets-transparents-silhouettes-et-palette\"",
+        "exitCode": 0,
+        "output": "Interface Tauri et moteur de conversion hors ligne : dist/desktop/\nserveur-test {\"pid\":3594880,\"port\":35963,\"stopped\":true}\n✔ jeu-sprites-assets-transparents-silhouettes-et-palette (363.563004ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 559.241653\n"
+      },
+      {
+        "name": "jeu-sprites-planche-scenes-quatre-formats-et-densite",
+        "command": "\"node\" \"scripts/test.mjs\" \"jeu-sprites-planche-scenes-quatre-formats-et-densite\"",
+        "exitCode": 0,
+        "output": "Interface Tauri et moteur de conversion hors ligne : dist/desktop/\nserveur-test {\"pid\":3595103,\"port\":39169,\"stopped\":true}\n✔ jeu-sprites-planche-scenes-quatre-formats-et-densite (2428.211332ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 2644.354421\n"
+      },
+      {
+        "name": "jeu-sprites-comparaison-reference-meme-cadrage-et-echelle",
+        "command": "\"node\" \"scripts/test.mjs\" \"jeu-sprites-comparaison-reference-meme-cadrage-et-echelle\"",
+        "exitCode": 0,
+        "output": "Interface Tauri et moteur de conversion hors ligne : dist/desktop/\nserveur-test {\"pid\":3595343,\"port\":37921,\"stopped\":true}\n✔ jeu-sprites-comparaison-reference-meme-cadrage-et-echelle (519.342994ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 758.768508\n"
+      },
+      {
+        "name": "jeu-sprites-orientations-transitions-pivots-et-instantanes-immuables",
+        "command": "\"node\" \"scripts/test.mjs\" \"jeu-sprites-orientations-transitions-pivots-et-instantanes-immuables\"",
+        "exitCode": 0,
+        "output": "Interface Tauri et moteur de conversion hors ligne : dist/desktop/\nserveur-test {\"pid\":3595567,\"port\":34537,\"stopped\":true}\n✔ jeu-sprites-orientations-transitions-pivots-et-instantanes-immuables (976.247936ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 1206.33733\n"
+      },
+      {
+        "name": "jeu-sprites-chargement-local-sans-reseau-distant-et-diagnostic-manquant",
+        "command": "\"node\" \"scripts/test.mjs\" \"jeu-sprites-chargement-local-sans-reseau-distant-et-diagnostic-manquant\"",
+        "exitCode": 0,
+        "output": "Interface Tauri et moteur de conversion hors ligne : dist/desktop/\nserveur-test {\"pid\":3595795,\"port\":35435,\"stopped\":true}\n✔ jeu-sprites-chargement-local-sans-reseau-distant-et-diagnostic-manquant (491.194217ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 701.590069\n"
+      },
+      {
+        "name": "jeu-sprites-orientations-toutes-categories-enveloppes-et-disparition",
+        "command": "\"node\" \"scripts/test.mjs\" \"jeu-sprites-orientations-toutes-categories-enveloppes-et-disparition\"",
+        "exitCode": 0,
+        "output": "Interface Tauri et moteur de conversion hors ligne : dist/desktop/\nserveur-test {\"pid\":3596020,\"port\":33099,\"stopped\":true}\n✔ jeu-sprites-orientations-toutes-categories-enveloppes-et-disparition (1117.863695ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 1350.489581\n"
+      },
+      {
+        "name": "preparation-scene-deux-chargements-identiques",
+        "command": "\"node\" \"scripts/test.mjs\" \"preparation-scene-deux-chargements-identiques\"",
+        "exitCode": 0,
+        "output": "Interface Tauri et moteur de conversion hors ligne : dist/desktop/\n✔ preparation-scene-deux-chargements-identiques (27.573107ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 73.268193\n"
+      },
+      {
+        "name": "preparation-proprietes-independantes-des-sprites",
+        "command": "\"node\" \"scripts/test.mjs\" \"preparation-proprietes-independantes-des-sprites\"",
+        "exitCode": 0,
+        "output": "Interface Tauri et moteur de conversion hors ligne : dist/desktop/\n✔ preparation-proprietes-independantes-des-sprites (27.568658ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 62.683138\n"
+      },
+      {
+        "name": "preparation-conversions-monde-ecran-oracles",
+        "command": "\"node\" \"scripts/test.mjs\" \"preparation-conversions-monde-ecran-oracles\"",
+        "exitCode": 0,
+        "output": "Interface Tauri et moteur de conversion hors ligne : dist/desktop/\n✔ preparation-conversions-monde-ecran-oracles (32.406208ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 77.434713\n"
+      },
+      {
+        "name": "preparation-scenarios-visibilite-distances-et-planete",
+        "command": "\"node\" \"scripts/test.mjs\" \"preparation-scenarios-visibilite-distances-et-planete\"",
+        "exitCode": 0,
+        "output": "Interface Tauri et moteur de conversion hors ligne : dist/desktop/\n✔ preparation-scenarios-visibilite-distances-et-planete (31.909197ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 71.611062\n"
+      },
+      {
+        "name": "jeu-sprites-succession-instantanes-figes-suivi-tirs-et-etats",
+        "command": "\"node\" \"scripts/test.mjs\" \"jeu-sprites-succession-instantanes-figes-suivi-tirs-et-etats\"",
+        "exitCode": 0,
+        "output": "Interface Tauri et moteur de conversion hors ligne : dist/desktop/\nserveur-test {\"pid\":3596751,\"port\":34039,\"stopped\":true}\n✔ jeu-sprites-succession-instantanes-figes-suivi-tirs-et-etats (361.247092ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 586.012738\n"
+      },
+      {
+        "name": "jeu-sprites-scenarios-hud-mobile-et-commandes",
+        "command": "\"node\" \"scripts/test.mjs\" \"jeu-sprites-scenarios-hud-mobile-et-commandes\"",
+        "exitCode": 0,
+        "output": "Interface Tauri et moteur de conversion hors ligne : dist/desktop/\nserveur-test {\"pid\":3596972,\"port\":43075,\"stopped\":true}\n✔ jeu-sprites-scenarios-hud-mobile-et-commandes (630.800744ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 821.301292\n"
+      },
+      {
+        "name": "jeu-sprites-retour-diagrammes-initialisation-retardee-et-conversion",
+        "command": "\"node\" \"scripts/test.mjs\" \"jeu-sprites-retour-diagrammes-initialisation-retardee-et-conversion\"",
+        "exitCode": 0,
+        "output": "Interface Tauri et moteur de conversion hors ligne : dist/desktop/\nserveur-test {\"pid\":3597204,\"port\":43043,\"stopped\":true}\n✔ jeu-sprites-retour-diagrammes-initialisation-retardee-et-conversion (1910.089865ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 2146.830669\n"
+      },
+      {
+        "name": "npm run build",
+        "command": "\"npm\" \"run\" \"build\"",
+        "exitCode": 0,
+        "output": "\n> diagrams-codex@0.1.0 build\n> tsc -p tsconfig.server.json && tsc -p tsconfig.client.json && node scripts/build-jeu.mjs\n\n"
+      }
+    ],
+    "updatedAt": "2026-11-12T17:38:57.859Z",
+    "rawResponse": "{\n  \"current\": \"evolution2.md\",\n  \"workCompleted\": true,\n  \"summary\": \"L’échec provenait d’une vérification du formulaire avant la fin du chargement de son module JavaScript. Le cas fragile est supprimé et remplacé par deux tests : scénarios et commandes mobiles ; retour aux diagrammes avec chargement volontairement retardé, attente de disponibilité réelle et conversion de 18 nœuds et 24 arcs. Les deux réussissent séparément. Suite complète : 192 tests réussis, aucun échec ni cas ignoré. Typecheck réussi. Sprites, intégration et changements préexistants préservés ; cumul des remplacements conservé. Rejeu moteur réel not-run : fournir moteur, adaptateur et replays avant/après, puis définir JEU_ENGINE_VERIFICATION et lancer la recette. Recette native Linux not-run : installer WebKitWebDriver, Xvfb et xdotool, préparer le binaire ARM64 puis la relancer. Recette Windows not-run : utiliser Windows 10/11 x64 avec WebView2, application installée, PowerShell et opérateur. Les 64 instances démarrées pendant cette correction sont arrêtées ; pilotage PID 3397860 préservé. Aucun commit ni modification des fichiers de suivi.\",\n  \"tests\": [\n    {\n      \"name\": \"suite-actuelle-192-cas\",\n      \"executable\": \"npm\",\n      \"args\": [\"test\"],\n      \"status\": \"passed\",\n      \"covers\": [0, 1, 2, 3]\n    },\n    {\n      \"name\": \"typecheck\",\n      \"executable\": \"npm\",\n      \"args\": [\"run\", \"typecheck\"],\n      \"status\": \"passed\",\n      \"covers\": []\n    },\n    {\n      \"name\": \"jeu-sprites-coins-centre-hors-champ-et-fond\",\n      \"executable\": \"node\",\n      \"args\": [\"scripts/test.mjs\", \"jeu-sprites-coins-centre-hors-champ-et-fond\"],\n      \"status\": \"passed\",\n      \"covers\": [0]\n    },\n    {\n      \"name\": \"jeu-sprites-planete-circulaire-bords-et-proportions\",\n      \"executable\": \"node\",\n      \"args\": [\"scripts/test.mjs\", \"jeu-sprites-planete-circulaire-bords-et-proportions\"],\n      \"status\": \"passed\",\n      \"covers\": [0]\n    },\n    {\n      \"name\": \"jeu-sprites-dpr-nettete-selection-et-changement-a-chaud\",\n      \"executable\": \"node\",\n      \"args\": [\"scripts/test.mjs\", \"jeu-sprites-dpr-nettete-selection-et-changement-a-chaud\"],\n      \"status\": \"passed\",\n      \"covers\": [0]\n    },\n    {\n      \"name\": \"jeu-sprites-assets-transparents-silhouettes-et-palette\",\n      \"executable\": \"node\",\n      \"args\": [\"scripts/test.mjs\", \"jeu-sprites-assets-transparents-silhouettes-et-palette\"],\n      \"status\": \"passed\",\n      \"covers\": [0, 3]\n    },\n    {\n      \"name\": \"jeu-sprites-planche-scenes-quatre-formats-et-densite\",\n      \"executable\": \"node\",\n      \"args\": [\"scripts/test.mjs\", \"jeu-sprites-planche-scenes-quatre-formats-et-densite\"],\n      \"status\": \"passed\",\n      \"covers\": [0, 1]\n    },\n    {\n      \"name\": \"jeu-sprites-comparaison-reference-meme-cadrage-et-echelle\",\n      \"executable\": \"node\",\n      \"args\": [\"scripts/test.mjs\", \"jeu-sprites-comparaison-reference-meme-cadrage-et-echelle\"],\n      \"status\": \"passed\",\n      \"covers\": [1]\n    },\n    {\n      \"name\": \"jeu-sprites-orientations-transitions-pivots-et-instantanes-immuables\",\n      \"executable\": \"node\",\n      \"args\": [\"scripts/test.mjs\", \"jeu-sprites-orientations-transitions-pivots-et-instantanes-immuables\"],\n      \"status\": \"passed\",\n      \"covers\": [2]\n    },\n    {\n      \"name\": \"jeu-sprites-chargement-local-sans-reseau-distant-et-diagnostic-manquant\",\n      \"executable\": \"node\",\n      \"args\": [\"scripts/test.mjs\", \"jeu-sprites-chargement-local-sans-reseau-distant-et-diagnostic-manquant\"],\n      \"status\": \"passed\",\n      \"covers\": [3]\n    },\n    {\n      \"name\": \"jeu-sprites-orientations-toutes-categories-enveloppes-et-disparition\",\n      \"executable\": \"node\",\n      \"args\": [\"scripts/test.mjs\", \"jeu-sprites-orientations-toutes-categories-enveloppes-et-disparition\"],\n      \"status\": \"passed\",\n      \"covers\": [0, 2]\n    },\n    {\n      \"name\": \"preparation-scene-deux-chargements-identiques\",\n      \"executable\": \"node\",\n      \"args\": [\"scripts/test.mjs\", \"preparation-scene-deux-chargements-identiques\"],\n      \"status\": \"passed\",\n      \"covers\": []\n    },\n    {\n      \"name\": \"preparation-proprietes-independantes-des-sprites\",\n      \"executable\": \"node\",\n      \"args\": [\"scripts/test.mjs\", \"preparation-proprietes-independantes-des-sprites\"],\n      \"status\": \"passed\",\n      \"covers\": []\n    },\n    {\n      \"name\": \"preparation-conversions-monde-ecran-oracles\",\n      \"executable\": \"node\",\n      \"args\": [\"scripts/test.mjs\", \"preparation-conversions-monde-ecran-oracles\"],\n      \"status\": \"passed\",\n      \"covers\": []\n    },\n    {\n      \"name\": \"preparation-scenarios-visibilite-distances-et-planete\",\n      \"executable\": \"node\",\n      \"args\": [\"scripts/test.mjs\", \"preparation-scenarios-visibilite-distances-et-planete\"],\n      \"status\": \"passed\",\n      \"covers\": []\n    },\n    {\n      \"name\": \"jeu-sprites-succession-instantanes-figes-suivi-tirs-et-etats\",\n      \"executable\": \"node\",\n      \"args\": [\"scripts/test.mjs\", \"jeu-sprites-succession-instantanes-figes-suivi-tirs-et-etats\"],\n      \"status\": \"passed\",\n      \"covers\": [2]\n    },\n    {\n      \"name\": \"rejeu-moteur-reel-avant-apres\",\n      \"executable\": \"node\",\n      \"args\": [\"scripts/verify-jeu-engine.mjs\"],\n      \"status\": \"not-run\",\n      \"covers\": [4]\n    },\n    {\n      \"name\": \"desktop-natif-linux-selection-worker-dialogue-export-fenetre-et-reprise\",\n      \"executable\": \"node\",\n      \"args\": [\"scripts/test-desktop-native.mjs\"],\n      \"status\": \"not-run\",\n      \"covers\": []\n    },\n    {\n      \"name\": \"desktop-natif-windows-installation-webview2-et-export-autonome\",\n      \"executable\": \"pwsh\",\n      \"args\": [\"-File\", \"scripts/verify-windows.ps1\"],\n      \"status\": \"not-run\",\n      \"covers\": []\n    },\n    {\n      \"name\": \"jeu-sprites-scenarios-hud-mobile-et-commandes\",\n      \"executable\": \"node\",\n      \"args\": [\"scripts/test.mjs\", \"jeu-sprites-scenarios-hud-mobile-et-commandes\"],\n      \"status\": \"passed\",\n      \"covers\": [0]\n    },\n    {\n      \"name\": \"jeu-sprites-retour-diagrammes-initialisation-retardee-et-conversion\",\n      \"executable\": \"node\",\n      \"args\": [\"scripts/test.mjs\", \"jeu-sprites-retour-diagrammes-initialisation-retardee-et-conversion\"],\n      \"status\": \"passed\",\n      \"covers\": []\n    }\n  ],\n  \"testChanges\": {\n    \"removed\": [\n      {\n        \"name\": \"jeu-navigateur-coins-centre-hors-champ-et-pixels\",\n        \"reason\": \"L’aplat doré uniforme des enveloppes provisoires est remplacé par un sprite détaillé et transparent. Les contrôles des coins, du centre, de visibilité et du fond sont conservés.\",\n        \"covers\": [0, 1, 2, 4],\n        \"replacements\": [2, 6, 10]\n      },\n      {\n        \"name\": \"jeu-navigateur-planete-circulaire-bords-et-proportions\",\n        \"reason\": \"L’attente d’un rectangle étiré de 30×18 pixels est obsolète. Le remplacement mesure le sprite proportionné et conserve les contrôles du disque et des bords.\",\n        \"covers\": [2],\n        \"replacements\": [3, 10]\n      },\n      {\n        \"name\": \"jeu-navigateur-dpr-un-deux-et-changement-a-chaud\",\n        \"reason\": \"Le pixel central exactement égal à l’ancien aplat est obsolète. Le remplacement conserve backing store, DPR à chaud et sélection, puis contrôle le sprite intégré.\",\n        \"covers\": [0, 1, 3],\n        \"replacements\": [4]\n      },\n      {\n        \"name\": \"jeu-moteur-reel-deplacement-tir-et-collisions\",\n        \"reason\": \"Cas vide sans assertion, ignoré inconditionnellement. Remplacé par un contrôle exécuté de succession d’instantanés figés sans mutation logique. Le rejeu du véritable moteur reste une recette externe not-run.\",\n        \"covers\": [4],\n        \"replacements\": [15]\n      },\n      {\n        \"name\": \"jeu-navigateur-scenarios-informations-et-retour-diagrammes\",\n        \"reason\": \"Supposait le formulaire immédiatement disponible après navigation, avant l’exécution de son module. Supprimé effectivement et remplacé par deux cas conservant les scénarios et commandes, puis reproduisant déterministement le chargement retardé avec attente de disponibilité et conversion réelle.\",\n        \"covers\": [0, 4],\n        \"replacements\": [19, 20]\n      }\n    ],\n    \"added\": [2, 3, 4, 5, 6, 7, 8, 9, 10, 15, 19, 20]\n  },\n  \"serversStopped\": true,\n  \"servers\": [\n    {\"pid\":3580180,\"port\":42831,\"stopped\":true},\n    {\"pid\":3580463,\"port\":37487,\"stopped\":true},\n    {\"pid\":3580809,\"port\":36411,\"stopped\":true},\n    {\"pid\":3580809,\"port\":39909,\"stopped\":true},\n    {\"pid\":3580809,\"port\":43635,\"stopped\":true},\n    {\"pid\":3580809,\"port\":45775,\"stopped\":true},\n    {\"pid\":3580809,\"port\":41343,\"stopped\":true},\n    {\"pid\":3580981,\"port\":45067,\"stopped\":true},\n    {\"pid\":3582392,\"port\":41075,\"stopped\":true},\n    {\"pid\":3583549,\"port\":45971,\"stopped\":true},\n    {\"pid\":3584280,\"port\":41411,\"stopped\":true},\n    {\"pid\":3584537,\"port\":40649,\"stopped\":true},\n    {\"pid\":3584747,\"port\":43381,\"stopped\":true},\n    {\"pid\":3584856,\"port\":43895,\"stopped\":true},\n    {\"pid\":3585165,\"port\":40023,\"stopped\":true},\n    {\"pid\":3585481,\"port\":40737,\"stopped\":true},\n    {\"pid\":3585488,\"port\":37599,\"stopped\":true},\n    {\"pid\":3585495,\"port\":46863,\"stopped\":true},\n    {\"pid\":3585502,\"port\":37703,\"stopped\":true},\n    {\"pid\":3585730,\"port\":34115,\"stopped\":true},\n    {\"pid\":3585924,\"port\":null,\"stopped\":true},\n    {\"pid\":3585931,\"port\":46283,\"stopped\":true},\n    {\"pid\":3585938,\"port\":null,\"stopped\":true},\n    {\"pid\":3585945,\"port\":null,\"stopped\":true},\n    {\"pid\":3585952,\"port\":null,\"stopped\":true},\n    {\"pid\":3585961,\"port\":null,\"stopped\":true},\n    {\"pid\":3585968,\"port\":null,\"stopped\":true},\n    {\"pid\":3585975,\"port\":33107,\"stopped\":true},\n    {\"pid\":3580958,\"port\":39441,\"stopped\":true},\n    {\"pid\":3581670,\"port\":32983,\"stopped\":true},\n    {\"pid\":3581858,\"port\":34567,\"stopped\":true},\n    {\"pid\":3581980,\"port\":37901,\"stopped\":true},\n    {\"pid\":3582095,\"port\":34831,\"stopped\":true},\n    {\"pid\":3582192,\"port\":43011,\"stopped\":true},\n    {\"pid\":3582398,\"port\":45329,\"stopped\":true},\n    {\"pid\":3580957,\"port\":45619,\"stopped\":true},\n    {\"pid\":3580982,\"port\":36651,\"stopped\":true},\n    {\"pid\":3581662,\"port\":42611,\"stopped\":true},\n    {\"pid\":3582286,\"port\":37407,\"stopped\":true},\n    {\"pid\":3582448,\"port\":42171,\"stopped\":true},\n    {\"pid\":3582829,\"port\":34107,\"stopped\":true},\n    {\"pid\":3582928,\"port\":39283,\"stopped\":true},\n    {\"pid\":3581006,\"port\":43481,\"stopped\":true},\n    {\"pid\":3582724,\"port\":44777,\"stopped\":true},\n    {\"pid\":3583989,\"port\":38527,\"stopped\":true},\n    {\"pid\":3584439,\"port\":45359,\"stopped\":true},\n    {\"pid\":3584548,\"port\":41509,\"stopped\":true},\n    {\"pid\":3584646,\"port\":42081,\"stopped\":true},\n    {\"pid\":3584759,\"port\":46875,\"stopped\":true},\n    {\"pid\":3584868,\"port\":37537,\"stopped\":true},\n    {\"pid\":3584967,\"port\":41519,\"stopped\":true},\n    {\"pid\":3585062,\"port\":34431,\"stopped\":true},\n    {\"pid\":3585186,\"port\":43133,\"stopped\":true},\n    {\"pid\":3585284,\"port\":38881,\"stopped\":true},\n    {\"pid\":3585381,\"port\":39715,\"stopped\":true},\n    {\"pid\":3585525,\"port\":40717,\"stopped\":true},\n    {\"pid\":3585627,\"port\":46817,\"stopped\":true},\n    {\"pid\":3585741,\"port\":40201,\"stopped\":true},\n    {\"pid\":3586118,\"port\":46027,\"stopped\":true},\n    {\"pid\":3586287,\"port\":42829,\"stopped\":true},\n    {\"pid\":3586455,\"port\":39177,\"stopped\":true},\n    {\"pid\":3586599,\"port\":37617,\"stopped\":true},\n    {\"pid\":3586701,\"port\":34231,\"stopped\":true},\n    {\"pid\":3586814,\"port\":41833,\"stopped\":true}\n  ]\n}",
+    "report": {
+      "current": "evolution2.md",
+      "workCompleted": true,
+      "summary": "L’échec provenait d’une vérification du formulaire avant la fin du chargement de son module JavaScript. Le cas fragile est supprimé et remplacé par deux tests : scénarios et commandes mobiles ; retour aux diagrammes avec chargement volontairement retardé, attente de disponibilité réelle et conversion de 18 nœuds et 24 arcs. Les deux réussissent séparément. Suite complète : 192 tests réussis, aucun échec ni cas ignoré. Typecheck réussi. Sprites, intégration et changements préexistants préservés ; cumul des remplacements conservé. Rejeu moteur réel not-run : fournir moteur, adaptateur et replays avant/après, puis définir JEU_ENGINE_VERIFICATION et lancer la recette. Recette native Linux not-run : installer WebKitWebDriver, Xvfb et xdotool, préparer le binaire ARM64 puis la relancer. Recette Windows not-run : utiliser Windows 10/11 x64 avec WebView2, application installée, PowerShell et opérateur. Les 64 instances démarrées pendant cette correction sont arrêtées ; pilotage PID 3397860 préservé. Aucun commit ni modification des fichiers de suivi.",
+      "tests": [
+        {
+          "name": "suite-actuelle-192-cas",
+          "executable": "npm",
+          "args": [
+            "test"
+          ],
+          "status": "passed",
+          "covers": [
+            0,
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "name": "typecheck",
+          "executable": "npm",
+          "args": [
+            "run",
+            "typecheck"
+          ],
+          "status": "passed",
+          "covers": []
+        },
+        {
+          "name": "jeu-sprites-coins-centre-hors-champ-et-fond",
+          "executable": "node",
+          "args": [
+            "scripts/test.mjs",
+            "jeu-sprites-coins-centre-hors-champ-et-fond"
+          ],
+          "status": "passed",
+          "covers": [
+            0
+          ]
+        },
+        {
+          "name": "jeu-sprites-planete-circulaire-bords-et-proportions",
+          "executable": "node",
+          "args": [
+            "scripts/test.mjs",
+            "jeu-sprites-planete-circulaire-bords-et-proportions"
+          ],
+          "status": "passed",
+          "covers": [
+            0
+          ]
+        },
+        {
+          "name": "jeu-sprites-dpr-nettete-selection-et-changement-a-chaud",
+          "executable": "node",
+          "args": [
+            "scripts/test.mjs",
+            "jeu-sprites-dpr-nettete-selection-et-changement-a-chaud"
+          ],
+          "status": "passed",
+          "covers": [
+            0
+          ]
+        },
+        {
+          "name": "jeu-sprites-assets-transparents-silhouettes-et-palette",
+          "executable": "node",
+          "args": [
+            "scripts/test.mjs",
+            "jeu-sprites-assets-transparents-silhouettes-et-palette"
+          ],
+          "status": "passed",
+          "covers": [
+            0,
+            3
+          ]
+        },
+        {
+          "name": "jeu-sprites-planche-scenes-quatre-formats-et-densite",
+          "executable": "node",
+          "args": [
+            "scripts/test.mjs",
+            "jeu-sprites-planche-scenes-quatre-formats-et-densite"
+          ],
+          "status": "passed",
+          "covers": [
+            0,
+            1
+          ]
+        },
+        {
+          "name": "jeu-sprites-comparaison-reference-meme-cadrage-et-echelle",
+          "executable": "node",
+          "args": [
+            "scripts/test.mjs",
+            "jeu-sprites-comparaison-reference-meme-cadrage-et-echelle"
+          ],
+          "status": "passed",
+          "covers": [
+            1
+          ]
+        },
+        {
+          "name": "jeu-sprites-orientations-transitions-pivots-et-instantanes-immuables",
+          "executable": "node",
+          "args": [
+            "scripts/test.mjs",
+            "jeu-sprites-orientations-transitions-pivots-et-instantanes-immuables"
+          ],
+          "status": "passed",
+          "covers": [
+            2
+          ]
+        },
+        {
+          "name": "jeu-sprites-chargement-local-sans-reseau-distant-et-diagnostic-manquant",
+          "executable": "node",
+          "args": [
+            "scripts/test.mjs",
+            "jeu-sprites-chargement-local-sans-reseau-distant-et-diagnostic-manquant"
+          ],
+          "status": "passed",
+          "covers": [
+            3
+          ]
+        },
+        {
+          "name": "jeu-sprites-orientations-toutes-categories-enveloppes-et-disparition",
+          "executable": "node",
+          "args": [
+            "scripts/test.mjs",
+            "jeu-sprites-orientations-toutes-categories-enveloppes-et-disparition"
+          ],
+          "status": "passed",
+          "covers": [
+            0,
+            2
+          ]
+        },
+        {
+          "name": "preparation-scene-deux-chargements-identiques",
+          "executable": "node",
+          "args": [
+            "scripts/test.mjs",
+            "preparation-scene-deux-chargements-identiques"
+          ],
+          "status": "passed",
+          "covers": []
+        },
+        {
+          "name": "preparation-proprietes-independantes-des-sprites",
+          "executable": "node",
+          "args": [
+            "scripts/test.mjs",
+            "preparation-proprietes-independantes-des-sprites"
+          ],
+          "status": "passed",
+          "covers": []
+        },
+        {
+          "name": "preparation-conversions-monde-ecran-oracles",
+          "executable": "node",
+          "args": [
+            "scripts/test.mjs",
+            "preparation-conversions-monde-ecran-oracles"
+          ],
+          "status": "passed",
+          "covers": []
+        },
+        {
+          "name": "preparation-scenarios-visibilite-distances-et-planete",
+          "executable": "node",
+          "args": [
+            "scripts/test.mjs",
+            "preparation-scenarios-visibilite-distances-et-planete"
+          ],
+          "status": "passed",
+          "covers": []
+        },
+        {
+          "name": "jeu-sprites-succession-instantanes-figes-suivi-tirs-et-etats",
+          "executable": "node",
+          "args": [
+            "scripts/test.mjs",
+            "jeu-sprites-succession-instantanes-figes-suivi-tirs-et-etats"
+          ],
+          "status": "passed",
+          "covers": [
+            2
+          ]
+        },
+        {
+          "name": "rejeu-moteur-reel-avant-apres",
+          "executable": "node",
+          "args": [
+            "scripts/verify-jeu-engine.mjs"
+          ],
+          "status": "not-run",
+          "covers": [
+            4
+          ]
+        },
+        {
+          "name": "desktop-natif-linux-selection-worker-dialogue-export-fenetre-et-reprise",
+          "executable": "node",
+          "args": [
+            "scripts/test-desktop-native.mjs"
+          ],
+          "status": "not-run",
+          "covers": []
+        },
+        {
+          "name": "desktop-natif-windows-installation-webview2-et-export-autonome",
+          "executable": "pwsh",
+          "args": [
+            "-File",
+            "scripts/verify-windows.ps1"
+          ],
+          "status": "not-run",
+          "covers": []
+        },
+        {
+          "name": "jeu-sprites-scenarios-hud-mobile-et-commandes",
+          "executable": "node",
+          "args": [
+            "scripts/test.mjs",
+            "jeu-sprites-scenarios-hud-mobile-et-commandes"
+          ],
+          "status": "passed",
+          "covers": [
+            0
+          ]
+        },
+        {
+          "name": "jeu-sprites-retour-diagrammes-initialisation-retardee-et-conversion",
+          "executable": "node",
+          "args": [
+            "scripts/test.mjs",
+            "jeu-sprites-retour-diagrammes-initialisation-retardee-et-conversion"
+          ],
+          "status": "passed",
+          "covers": []
+        }
+      ],
+      "testChanges": {
+        "removed": [
+          {
+            "name": "jeu-navigateur-coins-centre-hors-champ-et-pixels",
+            "reason": "L’aplat doré uniforme des enveloppes provisoires est remplacé par un sprite détaillé et transparent. Les contrôles des coins, du centre, de visibilité et du fond sont conservés.",
+            "covers": [
+              0,
+              1,
+              2,
+              4
+            ],
+            "replacements": [
+              2,
+              6,
+              10
+            ]
+          },
+          {
+            "name": "jeu-navigateur-planete-circulaire-bords-et-proportions",
+            "reason": "L’attente d’un rectangle étiré de 30×18 pixels est obsolète. Le remplacement mesure le sprite proportionné et conserve les contrôles du disque et des bords.",
+            "covers": [
+              2
+            ],
+            "replacements": [
+              3,
+              10
+            ]
+          },
+          {
+            "name": "jeu-navigateur-dpr-un-deux-et-changement-a-chaud",
+            "reason": "Le pixel central exactement égal à l’ancien aplat est obsolète. Le remplacement conserve backing store, DPR à chaud et sélection, puis contrôle le sprite intégré.",
+            "covers": [
+              0,
+              1,
+              3
+            ],
+            "replacements": [
+              4
+            ]
+          },
+          {
+            "name": "jeu-moteur-reel-deplacement-tir-et-collisions",
+            "reason": "Cas vide sans assertion, ignoré inconditionnellement. Remplacé par un contrôle exécuté de succession d’instantanés figés sans mutation logique. Le rejeu du véritable moteur reste une recette externe not-run.",
+            "covers": [
+              4
+            ],
+            "replacements": [
+              15
+            ]
+          },
+          {
+            "name": "jeu-navigateur-scenarios-informations-et-retour-diagrammes",
+            "reason": "Supposait le formulaire immédiatement disponible après navigation, avant l’exécution de son module. Supprimé effectivement et remplacé par deux cas conservant les scénarios et commandes, puis reproduisant déterministement le chargement retardé avec attente de disponibilité et conversion réelle.",
+            "covers": [
+              0,
+              4
+            ],
+            "replacements": [
+              19,
+              20
+            ]
+          }
+        ],
+        "added": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          15,
+          19,
+          20
+        ]
+      },
+      "serversStopped": true,
+      "servers": [
+        {
+          "pid": 3580180,
+          "port": 42831,
+          "stopped": true
+        },
+        {
+          "pid": 3580463,
+          "port": 37487,
+          "stopped": true
+        },
+        {
+          "pid": 3580809,
+          "port": 36411,
+          "stopped": true
+        },
+        {
+          "pid": 3580809,
+          "port": 39909,
+          "stopped": true
+        },
+        {
+          "pid": 3580809,
+          "port": 43635,
+          "stopped": true
+        },
+        {
+          "pid": 3580809,
+          "port": 45775,
+          "stopped": true
+        },
+        {
+          "pid": 3580809,
+          "port": 41343,
+          "stopped": true
+        },
+        {
+          "pid": 3580981,
+          "port": 45067,
+          "stopped": true
+        },
+        {
+          "pid": 3582392,
+          "port": 41075,
+          "stopped": true
+        },
+        {
+          "pid": 3583549,
+          "port": 45971,
+          "stopped": true
+        },
+        {
+          "pid": 3584280,
+          "port": 41411,
+          "stopped": true
+        },
+        {
+          "pid": 3584537,
+          "port": 40649,
+          "stopped": true
+        },
+        {
+          "pid": 3584747,
+          "port": 43381,
+          "stopped": true
+        },
+        {
+          "pid": 3584856,
+          "port": 43895,
+          "stopped": true
+        },
+        {
+          "pid": 3585165,
+          "port": 40023,
+          "stopped": true
+        },
+        {
+          "pid": 3585481,
+          "port": 40737,
+          "stopped": true
+        },
+        {
+          "pid": 3585488,
+          "port": 37599,
+          "stopped": true
+        },
+        {
+          "pid": 3585495,
+          "port": 46863,
+          "stopped": true
+        },
+        {
+          "pid": 3585502,
+          "port": 37703,
+          "stopped": true
+        },
+        {
+          "pid": 3585730,
+          "port": 34115,
+          "stopped": true
+        },
+        {
+          "pid": 3585924,
+          "port": null,
+          "stopped": true
+        },
+        {
+          "pid": 3585931,
+          "port": 46283,
+          "stopped": true
+        },
+        {
+          "pid": 3585938,
+          "port": null,
+          "stopped": true
+        },
+        {
+          "pid": 3585945,
+          "port": null,
+          "stopped": true
+        },
+        {
+          "pid": 3585952,
+          "port": null,
+          "stopped": true
+        },
+        {
+          "pid": 3585961,
+          "port": null,
+          "stopped": true
+        },
+        {
+          "pid": 3585968,
+          "port": null,
+          "stopped": true
+        },
+        {
+          "pid": 3585975,
+          "port": 33107,
+          "stopped": true
+        },
+        {
+          "pid": 3580958,
+          "port": 39441,
+          "stopped": true
+        },
+        {
+          "pid": 3581670,
+          "port": 32983,
+          "stopped": true
+        },
+        {
+          "pid": 3581858,
+          "port": 34567,
+          "stopped": true
+        },
+        {
+          "pid": 3581980,
+          "port": 37901,
+          "stopped": true
+        },
+        {
+          "pid": 3582095,
+          "port": 34831,
+          "stopped": true
+        },
+        {
+          "pid": 3582192,
+          "port": 43011,
+          "stopped": true
+        },
+        {
+          "pid": 3582398,
+          "port": 45329,
+          "stopped": true
+        },
+        {
+          "pid": 3580957,
+          "port": 45619,
+          "stopped": true
+        },
+        {
+          "pid": 3580982,
+          "port": 36651,
+          "stopped": true
+        },
+        {
+          "pid": 3581662,
+          "port": 42611,
+          "stopped": true
+        },
+        {
+          "pid": 3582286,
+          "port": 37407,
+          "stopped": true
+        },
+        {
+          "pid": 3582448,
+          "port": 42171,
+          "stopped": true
+        },
+        {
+          "pid": 3582829,
+          "port": 34107,
+          "stopped": true
+        },
+        {
+          "pid": 3582928,
+          "port": 39283,
+          "stopped": true
+        },
+        {
+          "pid": 3581006,
+          "port": 43481,
+          "stopped": true
+        },
+        {
+          "pid": 3582724,
+          "port": 44777,
+          "stopped": true
+        },
+        {
+          "pid": 3583989,
+          "port": 38527,
+          "stopped": true
+        },
+        {
+          "pid": 3584439,
+          "port": 45359,
+          "stopped": true
+        },
+        {
+          "pid": 3584548,
+          "port": 41509,
+          "stopped": true
+        },
+        {
+          "pid": 3584646,
+          "port": 42081,
+          "stopped": true
+        },
+        {
+          "pid": 3584759,
+          "port": 46875,
+          "stopped": true
+        },
+        {
+          "pid": 3584868,
+          "port": 37537,
+          "stopped": true
+        },
+        {
+          "pid": 3584967,
+          "port": 41519,
+          "stopped": true
+        },
+        {
+          "pid": 3585062,
+          "port": 34431,
+          "stopped": true
+        },
+        {
+          "pid": 3585186,
+          "port": 43133,
+          "stopped": true
+        },
+        {
+          "pid": 3585284,
+          "port": 38881,
+          "stopped": true
+        },
+        {
+          "pid": 3585381,
+          "port": 39715,
+          "stopped": true
+        },
+        {
+          "pid": 3585525,
+          "port": 40717,
+          "stopped": true
+        },
+        {
+          "pid": 3585627,
+          "port": 46817,
+          "stopped": true
+        },
+        {
+          "pid": 3585741,
+          "port": 40201,
+          "stopped": true
+        },
+        {
+          "pid": 3586118,
+          "port": 46027,
+          "stopped": true
+        },
+        {
+          "pid": 3586287,
+          "port": 42829,
+          "stopped": true
+        },
+        {
+          "pid": 3586455,
+          "port": 39177,
+          "stopped": true
+        },
+        {
+          "pid": 3586599,
+          "port": 37617,
+          "stopped": true
+        },
+        {
+          "pid": 3586701,
+          "port": 34231,
+          "stopped": true
+        },
+        {
+          "pid": 3586814,
+          "port": 41833,
+          "stopped": true
+        }
+      ]
+    }
+  },
+  "gitScope": {
+    "root": "/home/blockapicoder/qwen-generation/diagrams-codex",
+    "base": "72f272d9f6f2ca13a2c4eea52e06252978fb6e2b",
+    "before": [
+      {
+        "path": "evolution.json",
+        "status": " M",
+        "digest": "c780ab20f2b98883b98021c6fa71ad2fd2ee19c9cd577782dad22ff6b7ffb3b0"
+      }
+    ],
+    "after": [
+      {
+        "path": "docs/jeu/README.md",
+        "status": " M",
+        "digest": "09bce91c80f5456b89909a6a083aa8e6b5570ec78e5f9906b060b7accaffbd6c"
+      },
+      {
+        "path": "docs/jeu/vue-rectangulaire.md",
+        "status": " M",
+        "digest": "16e073ba2494a5cbb16071c38510acad1a8ce1b3e991d1793958758f3abf318a"
+      },
+      {
+        "path": "evolution.json",
+        "status": " M",
+        "digest": "c780ab20f2b98883b98021c6fa71ad2fd2ee19c9cd577782dad22ff6b7ffb3b0"
+      },
+      {
+        "path": "public/jeu-demo.css",
+        "status": " M",
+        "digest": "e966c0b1b96623574988932c685dc05141c611bc60feda071ed8f818cc15c882"
+      },
+      {
+        "path": "public/jeu-demo.html",
+        "status": " M",
+        "digest": "584150ab4267c5f129e4354da13cb80ee97e93e42697cb420c037d71a0a112af"
+      },
+      {
+        "path": "src/client/jeu/camera.ts",
+        "status": " M",
+        "digest": "99b439c5dc946d4ae1b7d39788d433899f2609afaafc789021effdbc7acd9288"
+      },
+      {
+        "path": "src/client/jeu/demo.ts",
+        "status": " M",
+        "digest": "5de48e05db916badb11ff925df3e7a014c938157222967c5ceba30b0447f5ffe"
+      },
+      {
+        "path": "src/client/jeu/renderer.ts",
+        "status": " M",
+        "digest": "0f8ff221e9af7ff6d639d115704433cd2bba4252ac27a91e055e648456c9352a"
+      },
+      {
+        "path": "tests/jeu-browser.test.mjs",
+        "status": " M",
+        "digest": "562e6dc1836c255ad7cfba7e8fa8207398307128b47201f58fd385269105e766"
+      },
+      {
+        "path": "bilan-evolution2.json",
+        "status": "??",
+        "digest": "23c0f459993c99f8380558ae9cbdba5f8ea01d4b06971b93ba96d89b06ddadf1"
+      },
+      {
+        "path": "docs/jeu/captures/apres-amas-dense-1280x720.png",
+        "status": "??",
+        "digest": "478493a44ab85f4154a3dc72b4a70ce111233b870236fa91123fb134524b7af3"
+      },
+      {
+        "path": "docs/jeu/captures/apres-amas-dense-1920x1080.png",
+        "status": "??",
+        "digest": "74660cef974a6dcad84732fad3dad80bfc674294c4b63cff5d00b9822e91812d"
+      },
+      {
+        "path": "docs/jeu/captures/apres-amas-dense-360x640.png",
+        "status": "??",
+        "digest": "40d9d2f693165c55eddae5497c814ab18e21b60fd928bfffebbbdefa659b2320"
+      },
+      {
+        "path": "docs/jeu/captures/apres-amas-dense-800x800.png",
+        "status": "??",
+        "digest": "7c0dbc003a0327459fc955e438226f8ed1fd9e7422e64ee3c04dea8724af0831"
+      },
+      {
+        "path": "docs/jeu/captures/apres-catalogue-1280x720.png",
+        "status": "??",
+        "digest": "ac25f800f1132ab4fb57f0ff166bbbf5ee1158b9bfcddb56d56a1d2a93041518"
+      },
+      {
+        "path": "docs/jeu/captures/apres-catalogue-1920x1080.png",
+        "status": "??",
+        "digest": "3da4433c8c60943c3a84c468d9d00966dc5dbffc1b679614a23aab59e6800b68"
+      },
+      {
+        "path": "docs/jeu/captures/apres-catalogue-360x640.png",
+        "status": "??",
+        "digest": "9a4dd9ae31fb9036ef82b66799dc51bc067257f285de09003667e6e9f07a4d4b"
+      },
+      {
+        "path": "docs/jeu/captures/apres-catalogue-800x800.png",
+        "status": "??",
+        "digest": "a3c152533a06afe26bb160e473cbc16f1dc9428d04ef8222334c62bf2000d232"
+      },
+      {
+        "path": "docs/jeu/captures/avant-amas-dense-1280x720.png",
+        "status": "??",
+        "digest": "98c6462928cc64aaf6aa7257ef3933311832f7bd942900c6178506f9d5b40d69"
+      },
+      {
+        "path": "docs/jeu/captures/avant-catalogue-1280x720.png",
+        "status": "??",
+        "digest": "b4e880f4a03a97dc834834056187c709e164a8901863bc3f83b74accf7a936ca"
+      },
+      {
+        "path": "docs/jeu/captures/avant.json",
+        "status": "??",
+        "digest": "a187dbc0b9e50bdbc1a7489d83961a6d3a24c1f9be6ab4941478c3217eab1a27"
+      },
+      {
+        "path": "docs/jeu/captures/etat-deplacement-90.png",
+        "status": "??",
+        "digest": "69a27bd97d813bebd98b838157f1313e17dbed4b08a8ddd0be7354f7db494316"
+      },
+      {
+        "path": "docs/jeu/captures/etat-destruction-0.png",
+        "status": "??",
+        "digest": "aebf42509c97a6d313fab2eca21116d747c37bb108407c635d90fae30a8f5eb7"
+      },
+      {
+        "path": "docs/jeu/captures/etat-impact-270.png",
+        "status": "??",
+        "digest": "1bf7795a4de6eb5a7651ecdeb7fef90fadf3f99ec947a713b04779b424f3f7b8"
+      },
+      {
+        "path": "docs/jeu/captures/etat-tir-180.png",
+        "status": "??",
+        "digest": "2479a3678a19cc5240f9af7bc1462c1f51fcfa618697dcb250b34f46dcbb7841"
+      },
+      {
+        "path": "docs/jeu/captures/gris-amas-dense-1280x720.png",
+        "status": "??",
+        "digest": "42a3920db915dd03ac6ef9186b07bc8f24e399cb024170d237663f94289bee3d"
+      },
+      {
+        "path": "docs/jeu/captures/gris-amas-dense-1920x1080.png",
+        "status": "??",
+        "digest": "10dbca298be9a9d896e47c2891dbdd54067ae67288c026220fe5bc8057ab697b"
+      },
+      {
+        "path": "docs/jeu/captures/gris-amas-dense-360x640.png",
+        "status": "??",
+        "digest": "8f73f4401827cbb8868acef5cb58465c62ccb1241e93e1046d6b94fb0ce46ff5"
+      },
+      {
+        "path": "docs/jeu/captures/gris-amas-dense-800x800.png",
+        "status": "??",
+        "digest": "8938c32e7321088d004a5644837153c8f74e63933ddc6c1770e123e851575531"
+      },
+      {
+        "path": "docs/jeu/captures/planche-1280x720.png",
+        "status": "??",
+        "digest": "5e52708ae45f0b22294589132933c942984aaf90757000bb43a9300ec572ee86"
+      },
+      {
+        "path": "docs/jeu/captures/planche-1920x1080.png",
+        "status": "??",
+        "digest": "dc4887e76df64aada4301ed558c94833f50433582464b6f892ea4d83942584be"
+      },
+      {
+        "path": "docs/jeu/captures/planche-360x640.png",
+        "status": "??",
+        "digest": "545e4404da17ee5173816622efec9ae5bc40cbe65344207d71c1fe346a28c908"
+      },
+      {
+        "path": "docs/jeu/captures/planche-800x800.png",
+        "status": "??",
+        "digest": "ab6cf0f076fa7f3541396938970177d7b0de5a47f8180f8f0aee5017ac4e7b27"
+      },
+      {
+        "path": "docs/jeu/sprites.md",
+        "status": "??",
+        "digest": "4dfdf45e9b7760360d2f4dde91ceeb30cdeb091c858c1b93dae43b3d2ffb9d7b"
+      },
+      {
+        "path": "public/jeu/sprites/README.md",
+        "status": "??",
+        "digest": "5513676703b19e665ccf3e21ef63b709b82faab4627d8a40ecffbe74d2a53f9a"
+      },
+      {
+        "path": "public/jeu/sprites/boss.svg",
+        "status": "??",
+        "digest": "d7f51fa744b9178f2a91f6b98fac5cd8a4862f1a5082ee072e842374c241f202"
+      },
+      {
+        "path": "public/jeu/sprites/caisse.svg",
+        "status": "??",
+        "digest": "699b744f035c41254ca9038f6d21c4686949f0da5484325cb99a5147ee7dc2cc"
+      },
+      {
+        "path": "public/jeu/sprites/ennemi.svg",
+        "status": "??",
+        "digest": "412d49bff81a4143c5a7ba8736d394de412a4da4d8d98ebabf9bd1e6171075be"
+      },
+      {
+        "path": "public/jeu/sprites/joueur.svg",
+        "status": "??",
+        "digest": "367b849e7f8cb145eb404b34f0af9f88ad792e7af28f3dc434cfd01527d6b9a9"
+      },
+      {
+        "path": "public/jeu/sprites/rocher.svg",
+        "status": "??",
+        "digest": "d574f7be0a6bfe904e7cb131276ed0828155260f2935c742ec9a0ebcde52b4d1"
+      },
+      {
+        "path": "public/jeu/sprites/sol.svg",
+        "status": "??",
+        "digest": "65a4efbee2298033703169ea41c20972cd5c7f93361f0874b779944d6a68d961"
+      },
+      {
+        "path": "public/jeu/sprites/tir-ennemi.svg",
+        "status": "??",
+        "digest": "008587c448c087605a6b54920f30546fe300a6502d3dafcd5da2cfe7b0ed42fc"
+      },
+      {
+        "path": "public/jeu/sprites/tir-joueur.svg",
+        "status": "??",
+        "digest": "1af4e2adf10198a41ee2a088f6c05ac5956f002322f566de6f6d33bcf450441b"
+      },
+      {
+        "path": "public/jeu/sprites/tir-neutre.svg",
+        "status": "??",
+        "digest": "c43db70a2d455094cc03d9c82ec3745bb6132c18c0c5d49db9d4776bde9bed82"
+      },
+      {
+        "path": "public/jeu/sprites/vaisseau-mere.svg",
+        "status": "??",
+        "digest": "d62d55dde3823e80d7e51e70d768d204b9ab04afee9b2288a476b5920ac8769c"
+      },
+      {
+        "path": "scripts/verify-jeu-engine.mjs",
+        "status": "??",
+        "digest": "8da69eb61f5eedfa6c478bb5de2799f1a88b995177cb9b2340a69816178557b2"
+      },
+      {
+        "path": "src/client/jeu/sheet.ts",
+        "status": "??",
+        "digest": "be42bac797738d5e9c5a9f315c7cfc3b273e3a6b89d7a686866a255fcf6d8cd1"
+      },
+      {
+        "path": "src/client/jeu/sprites.ts",
+        "status": "??",
+        "digest": "42b20e76fd55b4a4fbf5d4911ffe7db53f73aed52c8961260aa2418f53e57ef9"
+      },
+      {
+        "path": "tests/jeu-preparation.test.mjs",
+        "status": "??",
+        "digest": "5903a6c1f799b9312a93075f9666e1d8af7ddba9e93decec6666744824a7fcea"
+      },
+      {
+        "path": "tests/jeu-snapshots.test.mjs",
+        "status": "??",
+        "digest": "015a49d3f17c40a2a6751c6a6b7e5ecf4d6411f8ebc8baeb2edc96daa50207d8"
+      },
+      {
+        "path": "tests/jeu-sprites.test.mjs",
+        "status": "??",
+        "digest": "2eac6eb40ffd3be55c5f1456d2a95ddac76c83387d7c451fa555ddf1a133c6c5"
+      }
+    ]
+  },
+  "commands": [
+    {
+      "name": "suite-actuelle-192-cas",
+      "executable": "npm",
+      "args": [
+        "test"
+      ],
+      "status": "passed",
+      "covers": [
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "name": "typecheck",
+      "executable": "npm",
+      "args": [
+        "run",
+        "typecheck"
+      ],
+      "status": "passed",
+      "covers": []
+    },
+    {
+      "name": "jeu-sprites-coins-centre-hors-champ-et-fond",
+      "executable": "node",
+      "args": [
+        "scripts/test.mjs",
+        "jeu-sprites-coins-centre-hors-champ-et-fond"
+      ],
+      "status": "passed",
+      "covers": [
+        0
+      ]
+    },
+    {
+      "name": "jeu-sprites-planete-circulaire-bords-et-proportions",
+      "executable": "node",
+      "args": [
+        "scripts/test.mjs",
+        "jeu-sprites-planete-circulaire-bords-et-proportions"
+      ],
+      "status": "passed",
+      "covers": [
+        0
+      ]
+    },
+    {
+      "name": "jeu-sprites-dpr-nettete-selection-et-changement-a-chaud",
+      "executable": "node",
+      "args": [
+        "scripts/test.mjs",
+        "jeu-sprites-dpr-nettete-selection-et-changement-a-chaud"
+      ],
+      "status": "passed",
+      "covers": [
+        0
+      ]
+    },
+    {
+      "name": "jeu-sprites-assets-transparents-silhouettes-et-palette",
+      "executable": "node",
+      "args": [
+        "scripts/test.mjs",
+        "jeu-sprites-assets-transparents-silhouettes-et-palette"
+      ],
+      "status": "passed",
+      "covers": [
+        0,
+        3
+      ]
+    },
+    {
+      "name": "jeu-sprites-planche-scenes-quatre-formats-et-densite",
+      "executable": "node",
+      "args": [
+        "scripts/test.mjs",
+        "jeu-sprites-planche-scenes-quatre-formats-et-densite"
+      ],
+      "status": "passed",
+      "covers": [
+        0,
+        1
+      ]
+    },
+    {
+      "name": "jeu-sprites-comparaison-reference-meme-cadrage-et-echelle",
+      "executable": "node",
+      "args": [
+        "scripts/test.mjs",
+        "jeu-sprites-comparaison-reference-meme-cadrage-et-echelle"
+      ],
+      "status": "passed",
+      "covers": [
+        1
+      ]
+    },
+    {
+      "name": "jeu-sprites-orientations-transitions-pivots-et-instantanes-immuables",
+      "executable": "node",
+      "args": [
+        "scripts/test.mjs",
+        "jeu-sprites-orientations-transitions-pivots-et-instantanes-immuables"
+      ],
+      "status": "passed",
+      "covers": [
+        2
+      ]
+    },
+    {
+      "name": "jeu-sprites-chargement-local-sans-reseau-distant-et-diagnostic-manquant",
+      "executable": "node",
+      "args": [
+        "scripts/test.mjs",
+        "jeu-sprites-chargement-local-sans-reseau-distant-et-diagnostic-manquant"
+      ],
+      "status": "passed",
+      "covers": [
+        3
+      ]
+    },
+    {
+      "name": "jeu-sprites-orientations-toutes-categories-enveloppes-et-disparition",
+      "executable": "node",
+      "args": [
+        "scripts/test.mjs",
+        "jeu-sprites-orientations-toutes-categories-enveloppes-et-disparition"
+      ],
+      "status": "passed",
+      "covers": [
+        0,
+        2
+      ]
+    },
+    {
+      "name": "preparation-scene-deux-chargements-identiques",
+      "executable": "node",
+      "args": [
+        "scripts/test.mjs",
+        "preparation-scene-deux-chargements-identiques"
+      ],
+      "status": "passed",
+      "covers": []
+    },
+    {
+      "name": "preparation-proprietes-independantes-des-sprites",
+      "executable": "node",
+      "args": [
+        "scripts/test.mjs",
+        "preparation-proprietes-independantes-des-sprites"
+      ],
+      "status": "passed",
+      "covers": []
+    },
+    {
+      "name": "preparation-conversions-monde-ecran-oracles",
+      "executable": "node",
+      "args": [
+        "scripts/test.mjs",
+        "preparation-conversions-monde-ecran-oracles"
+      ],
+      "status": "passed",
+      "covers": []
+    },
+    {
+      "name": "preparation-scenarios-visibilite-distances-et-planete",
+      "executable": "node",
+      "args": [
+        "scripts/test.mjs",
+        "preparation-scenarios-visibilite-distances-et-planete"
+      ],
+      "status": "passed",
+      "covers": []
+    },
+    {
+      "name": "jeu-sprites-succession-instantanes-figes-suivi-tirs-et-etats",
+      "executable": "node",
+      "args": [
+        "scripts/test.mjs",
+        "jeu-sprites-succession-instantanes-figes-suivi-tirs-et-etats"
+      ],
+      "status": "passed",
+      "covers": [
+        2
+      ]
+    },
+    {
+      "name": "jeu-sprites-scenarios-hud-mobile-et-commandes",
+      "executable": "node",
+      "args": [
+        "scripts/test.mjs",
+        "jeu-sprites-scenarios-hud-mobile-et-commandes"
+      ],
+      "status": "passed",
+      "covers": [
+        0
+      ]
+    },
+    {
+      "name": "jeu-sprites-retour-diagrammes-initialisation-retardee-et-conversion",
+      "executable": "node",
+      "args": [
+        "scripts/test.mjs",
+        "jeu-sprites-retour-diagrammes-initialisation-retardee-et-conversion"
+      ],
+      "status": "passed",
+      "covers": []
+    },
+    {
+      "name": "npm run build",
+      "executable": "npm",
+      "args": [
+        "run",
+        "build"
+      ],
+      "status": "passed",
+      "covers": []
+    }
+  ]
+}

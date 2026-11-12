@@ -27,3 +27,8 @@ a { color: #9deafa; line-height: 1.5; }
   button, select { padding: 5px 2px; font-size: 11px; }
   .zoom { gap: 2px; }
 }
+
+.eyebrow { color: #70e1f5; font-size: 10px; letter-spacing: .12em; }
+h1 { font-weight: 650; letter-spacing: -.03em; }
+input[type="range"] { display: block; width: 100%; min-width: 0; margin: 8px 0 14px; accent-color: #70e1f5; }
+#sheet { border-color: #70e1f5; }

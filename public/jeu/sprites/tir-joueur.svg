@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="12" height="28" viewBox="0 0 6 14" fill="none">
+<!-- Création originale pour diagrams-codex, CC0-1.0. Axe avant : -Y. Pivot : centre. -->
+<defs></defs>
+<g transform="translate(1 1) scale(0.6666666666666666 0.8571428571428571)"><g stroke="#060a12" stroke-width="2" stroke-linejoin="round" stroke-linecap="round">
+<path d="M3 1c2 0 2 3 2 6l-2 6L1 7c0-3 0-6 2-6Z" fill="#70e1f5" stroke-width="1.5"/>
+<path d="M3 3v5" stroke="#efffff" stroke-width="1"/>
+</g></g>
+</svg>

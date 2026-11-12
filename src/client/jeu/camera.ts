@@ -5,11 +5,13 @@ export interface Rectangle extends Point { width: number; height: number }
 export interface Camera extends Point { zoom: number }
 export interface Entity {
   id: string;
-  category: 'joueur' | 'decor' | 'objet-destructible' | 'projectile' | 'boss' | 'vaisseau-mere';
+  category: 'ennemi' | 'joueur' | 'decor' | 'objet-destructible' | 'projectile' | 'boss' | 'vaisseau-mere';
   position: Point;
   dimensions: { width: number; height: number };
   state: 'actif' | 'inactif' | 'detruit';
   destructible: boolean;
+  /** État persistant fourni par l'adaptateur moteur, indépendant d'un flash d'impact. */
+  damageState?: 'intact' | 'endommage';
   projectileOrigin: { faction: 'ennemi' | 'joueur' | 'neutre'; emitterId: string } | null;
 }
 export interface Scene {

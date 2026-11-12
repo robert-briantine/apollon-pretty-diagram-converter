@@ -1,0 +1,1741 @@
+{
+  "version": 1,
+  "fingerprint": "9062e484bbe3eece8753aa31629d0f357a23c147d2b41bca6e218b13ff687000",
+  "execution": {
+    "current": "evolution4.md",
+    "kind": "realize",
+    "status": "succeeded",
+    "error": null,
+    "summary": "Guidage conditionnel réalisé : cible majeure la plus proche, égalités stables, masquage dès visibilité partielle, recalcul sans référence périmée et flèche contenue hors HUD. Recette dense et 20 captures ajoutées ; documentation dans docs/jeu/guidage.md. Suite complète : 207 cas réussis, dont 11 nouveaux ; aucun test supprimé. TypeScript vérifié. Validation moteur réelle indisponible sans moteur, adaptateur et JEU_ENGINE_VERIFICATION ; bouclage non applicable au monde cartésien fourni. Recettes natives indisponibles : Linux nécessite WebKitWebDriver, Xvfb, xdotool et le binaire ARM64 ; Windows nécessite Windows, WebView2, application installée, PowerShell et opérateur. Les 74 instances de serveur lancées sont arrêtées ; pilotage PID 3397860 préservé. Aucun commit.",
+    "tests": [
+      {
+        "name": "suite-actuelle-207-cas",
+        "command": "\"npm\" \"test\"",
+        "exitCode": 0,
+        "output": "\n> diagrams-codex@0.1.0 test\n> node scripts/test.mjs\n\nInterface Tauri et moteur de conversion hors ligne : dist/desktop/\n✔ conversion-service-memoire-equivalence-et-immuabilite (14.229285ms)\n✔ conversion-service-diagnostics-json-import-calcul (3.033455ms)\n✔ conversion-cli-commande-documentee-utf8-et-service (5183.553625ms)\n✔ conversion-cli-svg-ouverture-navigateur (3095.641653ms)\n✔ conversion-cli-lecture-inexistante (145.883228ms)\n✔ conversion-cli-json-invalide (165.504122ms)\n✔ conversion-cli-diagramme-invalide (147.859206ms)\n✔ conversion-cli-erreur-geometrique-controlee (144.702151ms)\n✔ conversion-cli-refus-chemin-invalide (157.962262ms)\n✔ conversion-cli-refus-placements-superposes (174.588134ms)\n✔ conversion-cli-refus-chemin-traversant-forme (200.243249ms)\n✔ conversion-cli-diagnostic-rendu (198.320759ms)\n✔ conversion-cli-ecriture-interrompue-atomique (185.332761ms)\n✔ conversion-cli-destination-inaccessible (183.538256ms)\n✔ conversion-cli-refus-destination-source (147.608276ms)\n✔ conversion-cli-refus-alias-source (126.773073ms)\n✔ conversion-cli-remplacement-destination-et-chemins-espaces (81.809208ms)\n✔ conversion-cli-arguments-invalides (295.412201ms)\n✔ conversion-disposition-compacte-reference-connexions-et-conflits (7573.163499ms)\nserveur-test {\"pid\":3691906,\"port\":37431,\"stopped\":true}\n✔ desktop-worker-conversion-locale-remplacement-export-et-svg-autonome (5476.236981ms)\nserveur-test {\"pid\":3691906,\"port\":41285,\"stopped\":true}\n✔ desktop-plein-ecran-natif-echap-formulaire-cliquable-et-remplacement (4874.916316ms)\nserveur-test {\"pid\":3691906,\"port\":38795,\"stopped\":true}\n✔ desktop-plein-ecran-entree-retardee-apres-echap-libere-le-formulaire (627.089425ms)\nserveur-test {\"pid\":3691906,\"port\":45061,\"stopped\":true}\n✔ desktop-erreurs-json-metier-worker-expiration-et-reprise-sans-apercu-perime (1050.968578ms)\nserveur-test {\"pid\":3691906,\"port\":43165,\"stopped\":true}\n✔ desktop-dialogue-annule-erreur-ecriture-et-ouverture-native-du-bon-resultat (693.859137ms)\n✔ connexions-losange-absolues (3.451648ms)\n✔ connexions-ovale-absolues (0.260513ms)\n✔ connexions-rectangle-ancres-multiples (1.006853ms)\n✔ connexions-rectangle-incidents-et-handles (0.309522ms)\n✔ connexions-rectangle-coins-dedupliques (0.198721ms)\n✔ connexions-diagnostics-invalides (0.510707ms)\n✔ destination-pas-signes-et-immuabilite (0.214881ms)\n✔ chemin-connexion-source-et-arrivees (1.601064ms)\n✔ chemin-tolerance-distance-carree (0.931109ms)\n✔ placements-separes-tangents-superposes (1.174469ms)\n✔ segments-interieur-bords-contacts-deux-sens (0.823572ms)\n✔ placement-chemin-exclusions-paralleles-deduplication (0.323057ms)\n✔ geometrie-configuration-valide-et-vide (3.235151ms)\n✔ geometrie-diagnostics-references-et-indices (4.194244ms)\n✔ geometrie-diagnostics-nombres-et-pas (2.462892ms)\n✔ geometrie-identifiants-speciaux (0.537555ms)\n✔ connexions-integration-diagramme-reference (13.313728ms)\nserveur-test {\"pid\":3692158,\"port\":45549,\"stopped\":true}\n✔ http-diagram-reference-svg-utf8-et-equivalence-service (5292.811188ms)\nserveur-test {\"pid\":3694314,\"port\":44131,\"stopped\":true}\n✔ http-json-mal-forme-et-reprise (4821.631214ms)\nserveur-test {\"pid\":3695674,\"port\":36105,\"stopped\":true}\n✔ http-reference-arc-invalide-et-reprise (4331.844814ms)\nserveur-test {\"pid\":3696311,\"port\":34535,\"stopped\":true}\n✔ http-structure-corps-et-refus-chemin-local (2526.683625ms)\nserveur-test {\"pid\":3696480,\"port\":45521,\"stopped\":true}\n✔ http-limite-un-mio-octets-et-reprise (2885.630066ms)\nserveur-test {\"pid\":3696703,\"port\":45053,\"stopped\":true}\n✔ http-format-contenu-charset-compression-et-reprise (3757.536024ms)\nserveur-test {\"pid\":3696825,\"port\":34795,\"stopped\":true}\n✔ http-erreur-interne-rendu-controlee-et-reprise (4324.362053ms)\nserveur-test {\"pid\":3697146,\"port\":32873,\"stopped\":true}\n✔ http-erreur-interne-import-inattendue-et-reprise (2965.838001ms)\nserveur-test {\"pid\":3697479,\"port\":39923,\"stopped\":true}\n✔ http-verificateur-chemin-bloque-succes (87.203298ms)\nserveur-test {\"pid\":3697486,\"port\":32791,\"stopped\":true}\n✔ http-verificateur-placement-bloque-succes (100.607906ms)\nserveur-test {\"pid\":3697495,\"port\":38107,\"stopped\":true}\n✔ http-verificateur-placement-chemin-bloque-succes (125.175112ms)\nserveur-test {\"pid\":3697502,\"port\":38957,\"stopped\":true}\n✔ http-trois-verificateurs-avant-rendu (2693.512694ms)\nserveur-test {\"pid\":3697522,\"port\":41147,\"stopped\":true}\n✔ http-interface-finale-ressources-host-port-zero (335.960187ms)\nserveur-test {\"pid\":3697712,\"port\":null,\"stopped\":true}\nserveur-test {\"pid\":3697720,\"port\":37615,\"stopped\":true}\nserveur-test {\"pid\":3697734,\"port\":null,\"stopped\":true}\nserveur-test {\"pid\":3697829,\"port\":null,\"stopped\":true}\nserveur-test {\"pid\":3697838,\"port\":null,\"stopped\":true}\nserveur-test {\"pid\":3697845,\"port\":null,\"stopped\":true}\nserveur-test {\"pid\":3697852,\"port\":null,\"stopped\":true}\n✔ http-host-personnalise-port-fixe-et-diagnostics-demarrage (569.039353ms)\nserveur-test {\"pid\":3697859,\"port\":46657,\"stopped\":true}\n✔ http-svg-consultation-et-enregistrement-navigateur (3456.849073ms)\n✔ diagram-reference (22.632157ms)\n✔ formes-et-dimensions (0.725332ms)\n✔ arcs-paralleles (0.242305ms)\n✔ cycle-et-boucle (0.217825ms)\n✔ noeud-isole (0.139712ms)\n✔ tableaux-vides (0.079777ms)\n✔ libelles-unicode-multilignes (0.151473ms)\n✔ json-mal-forme (0.273457ms)\n✔ identifiants-invalides-et-dupliques (2.770621ms)\n✔ references-absentes (4.321653ms)\n✔ dimensions-invalides (3.126767ms)\n✔ types-non-pris-en-charge (2.306475ms)\n✔ structure-invalide (0.998437ms)\n✔ indications-spatiales (5.498234ms)\n✔ absence-mutation-et-alias (0.40221ms)\n✔ identifiants-et-metadonnees-speciaux (0.307394ms)\n✔ metadonnees-non-json (1.374455ms)\n✔ import-nom-initial-presentation-et-noms-personnalises (0.405922ms)\n✔ import-noeud-final-nom-par-defaut-personnalise-et-metadonnees (0.34853ms)\nserveur-test {\"pid\":3692081,\"port\":39227,\"stopped\":true}\n✔ jeu-navigateur-formats-redimensionnement-et-hud (934.745862ms)\nserveur-test {\"pid\":3692998,\"port\":46063,\"stopped\":true}\n✔ jeu-sprites-coins-centre-hors-champ-et-fond (692.519899ms)\nserveur-test {\"pid\":3693306,\"port\":36315,\"stopped\":true}\n✔ jeu-sprites-planete-circulaire-bords-et-proportions (616.276813ms)\nserveur-test {\"pid\":3693439,\"port\":45411,\"stopped\":true}\n✔ jeu-navigateur-interactions-suivi-et-coordonnees (1296.781422ms)\nserveur-test {\"pid\":3693592,\"port\":42535,\"stopped\":true}\n✔ jeu-sprites-dpr-nettete-selection-et-changement-a-chaud (646.862032ms)\nserveur-test {\"pid\":3693805,\"port\":40635,\"stopped\":true}\n✔ jeu-sprites-scenarios-hud-mobile-et-commandes (869.16145ms)\nserveur-test {\"pid\":3694115,\"port\":42189,\"stopped\":true}\n✔ jeu-sprites-retour-diagrammes-initialisation-retardee-et-conversion (3610.43801ms)\n✔ jeu-layout-rectangle-hud-et-sans-hud (5.948509ms)\n✔ jeu-conversions-oracles-zoom-decalage-et-redimensionnement (7.955302ms)\n✔ jeu-visibilite-quatre-coins-tangences-et-etats (1.835945ms)\n✔ jeu-scenes-reference-determinisme-et-visibilite-compatibles (13.890419ms)\nserveur-test {\"pid\":3692122,\"port\":46143,\"stopped\":true}\n✔ jeu-guidage-instantanes-deplacements-destructions-camera-et-nettoyage (892.087609ms)\nserveur-test {\"pid\":3693004,\"port\":33779,\"stopped\":true}\n✔ jeu-guidage-rendu-unique-huit-caps-redimensionnement-dpr-et-hud (2587.391919ms)\nserveur-test {\"pid\":3693593,\"port\":34935,\"stopped\":true}\n✔ jeu-guidage-parcours-visuel-complet-scenes-effets-et-diagrammes (7153.114912ms)\n✔ jeu-guidage-aucune-cible-active-ni-reference (1.867752ms)\n✔ jeu-guidage-boss-seul-hors-ecran (1.091477ms)\n✔ jeu-guidage-vaisseau-mere-seul-hors-ecran (0.284466ms)\n✔ jeu-guidage-plus-proche-toutes-categories-distance-monde (1.280774ms)\n✔ jeu-guidage-egalites-identifiants-stables-sans-mutation (0.80218ms)\n✔ jeu-guidage-visibilite-croisee-partielle-tangence-et-hud (1.009669ms)\n✔ jeu-guidage-huit-directions-marges-formats-camera-et-sans-hud (9.1347ms)\n✔ jeu-guidage-douze-scenarios-oracles-evolution-zero (7.943542ms)\n✔ preparation-scene-deux-chargements-identiques (51.382295ms)\n✔ preparation-proprietes-independantes-des-sprites (45.537306ms)\n✔ preparation-conversions-monde-ecran-oracles (28.00519ms)\n✔ preparation-scenarios-visibilite-distances-et-planete (112.212123ms)\nserveur-test {\"pid\":3692101,\"port\":35757,\"stopped\":true}\n✔ jeu-lisibilite-scene-dense-couleur-gris-fonds-et-quatre-formats (4492.107187ms)\nserveur-test {\"pid\":3693999,\"port\":39959,\"stopped\":true}\n✔ jeu-lisibilite-proprietes-reelles-degats-origines-et-double-identite (2129.953995ms)\nserveur-test {\"pid\":3694587,\"port\":42481,\"stopped\":true}\n✔ jeu-lisibilite-tirs-prioritaires-effets-trajectoire-redimensionnement-et-zoom (1661.389027ms)\nserveur-test {\"pid\":3694872,\"port\":36533,\"stopped\":true}\n✔ jeu-lisibilite-instantanes-geles-changement-scene-et-metadonnees-combat (887.625586ms)\nserveur-test {\"pid\":3695189,\"port\":45213,\"stopped\":true}\n✔ jeu-lisibilite-orientations-limites-visuelles-selection-et-disparition (1596.035226ms)\nserveur-test {\"pid\":3692159,\"port\":41425,\"stopped\":true}\n✔ jeu-sprites-succession-instantanes-figes-suivi-tirs-et-etats (805.272568ms)\nserveur-test {\"pid\":3692123,\"port\":40293,\"stopped\":true}\n✔ jeu-sprites-assets-transparents-silhouettes-et-palette (742.307578ms)\nserveur-test {\"pid\":3692989,\"port\":37243,\"stopped\":true}\n✔ jeu-sprites-planche-scenes-quatre-formats-et-densite (3433.885645ms)\nserveur-test {\"pid\":3693812,\"port\":34527,\"stopped\":true}\n✔ jeu-sprites-comparaison-reference-meme-cadrage-et-echelle (735.650745ms)\nserveur-test {\"pid\":3694108,\"port\":45079,\"stopped\":true}\n✔ jeu-sprites-orientations-transitions-pivots-et-instantanes-immuables (1385.697481ms)\nserveur-test {\"pid\":3694449,\"port\":39717,\"stopped\":true}\n✔ jeu-sprites-chargement-local-sans-reseau-distant-et-diagnostic-manquant (765.838042ms)\n✔ placements-diagram-reference (19.198461ms)\n✔ placements-chaine (4.696982ms)\n✔ placements-embranchement-convergence (0.818596ms)\n✔ placements-cycle-et-boucles (3.851954ms)\n✔ placements-sommet-isole (0.813268ms)\n✔ placements-composantes-deconnectees (1.462743ms)\n✔ placements-graphe-vide (0.40997ms)\n✔ placements-positions-superposees-negatives (0.738356ms)\n✔ placements-indications-compatibles (2.186794ms)\n✔ placements-libelles-longs-multilignes (4.087412ms)\n✔ texte-graphemes-et-coupures (0.752484ms)\n✔ placements-marges-limites-boites (0.515811ms)\n✔ placements-determinisme-et-immuabilite (2.703437ms)\n✔ placements-connexions-apres-deplacement-redimensionnement (3.845907ms)\n✔ placements-diagnostics-entrees-invalides (2.137194ms)\n✔ placements-identifiants-speciaux (0.995444ms)\n✔ placements-graphes-generes-reproductibles (182.649404ms)\n✔ placements-ports-libres-32px-texte-centre-et-ancres-fixes (2.701821ms)\n✔ placements-presentation-large-centres-alignes-et-connexions-regenerees (36.504752ms)\n✔ routage-diagram-reference (9587.581234ms)\n✔ routage-trajet-direct (1.703496ms)\n✔ routage-obstacle-interpose (13.035406ms)\n✔ routage-embranchement-convergence (8.671289ms)\n✔ routage-cycle-retour (2.779405ms)\n✔ routage-boucles-sur-soi (2.067114ms)\n✔ routage-arcs-paralleles (11.233206ms)\n✔ routage-paralleles-32px-hors-ports-communs-des-trois-formes (10.406642ms)\nespacement-routage {\"proche\":1174.8333333333333,\"tresProche\":144,\"longueur\":17463.833333333332}\n✔ routage-reference-proximite-32px-reduite-et-trajets-courts (2436.250072ms)\n✔ routage-rectangle-connexions-meme-cote (14.503893ms)\n✔ routage-preferences-ancres-handles (4.464085ms)\n✔ routage-points-importes-valides (1.217846ms)\n✔ routage-points-preferent-ports-lateraux (1.158501ms)\n✔ routage-indications-incoherentes-recalculees (32.575277ms)\n✔ routage-formes-cardinales-et-coins (10.158481ms)\n✔ routage-degagements-source-cible-tous-cotes (52.405435ms)\n✔ routage-echec-controle-budget (1.541416ms)\n✔ routage-repli-et-limite-essais (0.54869ms)\n✔ routage-determinisme-et-immuabilite (17289.208309ms)\n✔ routage-diagnostics-entrees (0.821556ms)\n✔ routage-vide-isoles-identifiants-speciaux (1.511783ms)\n✔ routage-graphes-generes-reproductibles (5849.066308ms)\n✔ routage-sans-demi-tour-degagements-et-points-importes (24.650998ms)\nqualite-routage {\"croisements\":9,\"contacts\":0,\"longueurCommune\":0}\n✔ routage-reference-croisements-reduits-et-absence-de-jonctions-ambigues (2945.221068ms)\nlongueur-routage {\"total\":17463.833333333332,\"maximum\":3148,\"longs\":5}\n✔ routage-presentation-large-coudes-reduits-longueur-bornee-et-ancres (1548.410753ms)\n✔ routage-compact-cycle-entrelace-court-deterministe-et-immuable (133.779521ms)\n✔ routage-reference-corps-hors-degagements-et-sans-auto-intersection (6899.076538ms)\n✔ svg-navigateur-croisements-couleurs-et-pointes-proches-preservees (864.562709ms)\n✔ svg-navigateur-diagram-taille-normale-et-double (8404.841367ms)\n✔ svg-navigateur-coordonnees-negatives-et-marges (233.00715ms)\n✔ svg-navigateur-texte-long-et-retours (280.51589ms)\n✔ svg-navigateur-xml-inerte-et-hors-ligne (234.922263ms)\n✔ svg-navigateur-theme-sombre-export-et-cadrage-compact (2188.034866ms)\n✔ svg-navigateur-debut-fleches-agrandies-et-export-autonome (1897.858753ms)\n✔ svg-croisements-halos-couleurs-et-geometrie-preservee (24.911208ms)\n✔ svg-croisements-excluent-ports-coudes-et-paralleles (32.375291ms)\n✔ svg-diagram-xml-complet-conditions-en-legende (9591.73143ms)\n✔ svg-formes-connexions-et-fleches (6819.683052ms)\n✔ svg-libelles-personnalises-sans-collision-et-legende-hors-geometrie (6137.456497ms)\n✔ svg-texte-placement-multiligne (3.172719ms)\n✔ svg-viewbox-negatif-et-detours (0.556162ms)\n✔ svg-xml-echappement-et-autonomie (1.546039ms)\n✔ svg-branches-oui-non-casse-espaces-et-arcs-neutres (2.071706ms)\n✔ svg-xml-caracteres-invalides (0.533875ms)\n✔ svg-vide-et-labels-vides (0.48829ms)\n✔ svg-arcs-paralleles-boucles-identifiants (3.925939ms)\n✔ svg-immuabilite-et-determinisme (5267.855172ms)\n✔ svg-diagnostics-associations-manquantes (1.065445ms)\n✔ svg-libelles-denses-repli (13.38016ms)\n✔ svg-arrondis-ports-proches-et-coins (1.995625ms)\n✔ svg-croisements-six-pistes-distinctes-pointes-reperes-et-contraste (1.629384ms)\n✔ svg-croisements-couleurs-stables-conditions-prioritaires-et-arcs-isoles (2.504524ms)\n✔ svg-croisements-palette-saturee-reduit-les-collisions-sans-rouge-ni-vert (1.135846ms)\n✔ svg-noeud-final-quatre-ports-entrees-orientees-et-trois-verificateurs (26.305886ms)\nserveur-test {\"pid\":3692268,\"port\":42197,\"stopped\":true}\n✔ ui-presentation-large-trajets-simplifies-apercu-et-export-autonome (6275.752592ms)\nserveur-test {\"pid\":3694459,\"port\":42139,\"stopped\":true}\n✔ ui-parcours-diagram-selection-apercu-ouverture-et-enregistrement-autonome (5339.232224ms)\nserveur-test {\"pid\":3695936,\"port\":46779,\"stopped\":true}\n✔ ui-branches-rouges-vertes-apercu-remplacement-et-export-hors-ligne (4528.069819ms)\nserveur-test {\"pid\":3696378,\"port\":36675,\"stopped\":true}\n✔ ui-absence-selection-json-invalide-et-diagramme-invalide-puis-reprise (1561.704979ms)\nserveur-test {\"pid\":3696492,\"port\":40671,\"stopped\":true}\n✔ ui-fichier-illisible-et-nouvelle-selection-valide (469.58774ms)\nserveur-test {\"pid\":3696597,\"port\":36097,\"stopped\":true}\n✔ ui-erreur-conversion-api-reelle-et-reprise (4930.409954ms)\nserveur-test {\"pid\":3696723,\"port\":43469,\"stopped\":true}\n✔ ui-reponses-api-inexploitables-et-reprise-sans-apercu-perime (1534.875506ms)\nserveur-test {\"pid\":3696835,\"port\":34779,\"stopped\":true}\n✔ ui-coupure-reseau-et-reprise (603.025756ms)\nserveur-test {\"pid\":3696942,\"port\":38179,\"stopped\":true}\n✔ ui-delai-reseau-expire-et-reprise (485.393944ms)\nserveur-test {\"pid\":3697045,\"port\":40201,\"stopped\":true}\n✔ ui-deux-diagrammes-remplacement-telechargement-et-liberation-des-url (3487.060213ms)\nserveur-test {\"pid\":3697172,\"port\":39527,\"stopped\":true}\n✔ ui-verrouillage-lecture-requete-et-double-soumission (466.860943ms)\nserveur-test {\"pid\":3697274,\"port\":33329,\"stopped\":true}\n✔ ui-clavier-fenetre-etroite-et-etats-accessibles (421.027891ms)\nserveur-test {\"pid\":3697378,\"port\":40707,\"stopped\":true}\n✔ ui-plein-ecran-natif-zoom-retour-et-enregistrement (3694.638551ms)\nserveur-test {\"pid\":3697515,\"port\":45709,\"stopped\":true}\n✔ ui-plein-ecran-repli-api-absente-ou-refusee-et-echap (498.174533ms)\nserveur-test {\"pid\":3697727,\"port\":32937,\"stopped\":true}\n✔ ui-plein-ecran-nouvelle-selection-et-echec-liberent-la-vue (603.823567ms)\nserveur-test {\"pid\":3697943,\"port\":33717,\"stopped\":true}\n✔ ui-chemins-raccourcis-apercu-et-fichier-autonome-identiques (3463.054447ms)\nserveur-test {\"pid\":3698118,\"port\":39599,\"stopped\":true}\n✔ ui-croisements-halos-visibles-apercu-export-et-remplacement (4326.035081ms)\ncouleurs-croisements {\"fichier\":\"diagram.json\",\"croisements\":9,\"conditionsIdentiques\":2,\"ordinaires\":3,\"palette\":[\"rgb(148, 163, 184)\",\"rgb(96, 165, 250)\"]}\ncouleurs-croisements {\"fichier\":\"pistes.json\",\"croisements\":9,\"conditionsIdentiques\":0,\"ordinaires\":9,\"palette\":[\"rgb(148, 163, 184)\",\"rgb(96, 165, 250)\"]}\nserveur-test {\"pid\":3698295,\"port\":35919,\"stopped\":true}\n✔ ui-pistes-32px-croisements-couleurs-distinctes-export-et-remplacement (6791.815926ms)\nserveur-test {\"pid\":3698465,\"port\":45911,\"stopped\":true}\n✔ ui-zoom-boutons-clavier-bornes-et-export-inchange (3321.084131ms)\nserveur-test {\"pid\":3698604,\"port\":40003,\"stopped\":true}\n✔ ui-zoom-molette-ancrage-defilement-et-vue-ensemble (2040.401382ms)\nserveur-test {\"pid\":3698712,\"port\":36199,\"stopped\":true}\n✔ ui-zoom-fenetre-etroite-plein-ecran-remplacement-et-reprise (2277.303782ms)\nserveur-test {\"pid\":3698823,\"port\":46259,\"stopped\":true}\n✔ ui-noeuds-finaux-legende-reprise-remplacement-et-export-autonome (1107.61699ms)\nℹ tests 207\nℹ suites 0\nℹ pass 207\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 58837.250435\n"
+      },
+      {
+        "name": "jeu-guidage-aucune-cible-active-ni-reference",
+        "command": "\"node\" \"scripts/test.mjs\" \"jeu-guidage-aucune-cible-active-ni-reference\"",
+        "exitCode": 0,
+        "output": "Interface Tauri et moteur de conversion hors ligne : dist/desktop/\n✔ jeu-guidage-aucune-cible-active-ni-reference (0.548067ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 53.028814\n"
+      },
+      {
+        "name": "jeu-guidage-boss-seul-hors-ecran",
+        "command": "\"node\" \"scripts/test.mjs\" \"jeu-guidage-boss-seul-hors-ecran\"",
+        "exitCode": 0,
+        "output": "Interface Tauri et moteur de conversion hors ligne : dist/desktop/\n✔ jeu-guidage-boss-seul-hors-ecran (1.721ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 52.492075\n"
+      },
+      {
+        "name": "jeu-guidage-vaisseau-mere-seul-hors-ecran",
+        "command": "\"node\" \"scripts/test.mjs\" \"jeu-guidage-vaisseau-mere-seul-hors-ecran\"",
+        "exitCode": 0,
+        "output": "Interface Tauri et moteur de conversion hors ligne : dist/desktop/\n✔ jeu-guidage-vaisseau-mere-seul-hors-ecran (0.8645ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 40.57877\n"
+      },
+      {
+        "name": "jeu-guidage-plus-proche-toutes-categories-distance-monde",
+        "command": "\"node\" \"scripts/test.mjs\" \"jeu-guidage-plus-proche-toutes-categories-distance-monde\"",
+        "exitCode": 0,
+        "output": "Interface Tauri et moteur de conversion hors ligne : dist/desktop/\n✔ jeu-guidage-plus-proche-toutes-categories-distance-monde (0.627843ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 32.24153\n"
+      },
+      {
+        "name": "jeu-guidage-egalites-identifiants-stables-sans-mutation",
+        "command": "\"node\" \"scripts/test.mjs\" \"jeu-guidage-egalites-identifiants-stables-sans-mutation\"",
+        "exitCode": 0,
+        "output": "Interface Tauri et moteur de conversion hors ligne : dist/desktop/\n✔ jeu-guidage-egalites-identifiants-stables-sans-mutation (0.654051ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 29.909519\n"
+      },
+      {
+        "name": "jeu-guidage-visibilite-croisee-partielle-tangence-et-hud",
+        "command": "\"node\" \"scripts/test.mjs\" \"jeu-guidage-visibilite-croisee-partielle-tangence-et-hud\"",
+        "exitCode": 0,
+        "output": "Interface Tauri et moteur de conversion hors ligne : dist/desktop/\n✔ jeu-guidage-visibilite-croisee-partielle-tangence-et-hud (0.889717ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 35.852908\n"
+      },
+      {
+        "name": "jeu-guidage-huit-directions-marges-formats-camera-et-sans-hud",
+        "command": "\"node\" \"scripts/test.mjs\" \"jeu-guidage-huit-directions-marges-formats-camera-et-sans-hud\"",
+        "exitCode": 0,
+        "output": "Interface Tauri et moteur de conversion hors ligne : dist/desktop/\n✔ jeu-guidage-huit-directions-marges-formats-camera-et-sans-hud (3.976321ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 33.462503\n"
+      },
+      {
+        "name": "jeu-guidage-douze-scenarios-oracles-evolution-zero",
+        "command": "\"node\" \"scripts/test.mjs\" \"jeu-guidage-douze-scenarios-oracles-evolution-zero\"",
+        "exitCode": 0,
+        "output": "Interface Tauri et moteur de conversion hors ligne : dist/desktop/\n✔ jeu-guidage-douze-scenarios-oracles-evolution-zero (2.205985ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 33.908007\n"
+      },
+      {
+        "name": "jeu-guidage-instantanes-deplacements-destructions-camera-et-nettoyage",
+        "command": "\"node\" \"scripts/test.mjs\" \"jeu-guidage-instantanes-deplacements-destructions-camera-et-nettoyage\"",
+        "exitCode": 0,
+        "output": "Interface Tauri et moteur de conversion hors ligne : dist/desktop/\nserveur-test {\"pid\":3700152,\"port\":33973,\"stopped\":true}\n✔ jeu-guidage-instantanes-deplacements-destructions-camera-et-nettoyage (390.409462ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 646.020047\n"
+      },
+      {
+        "name": "jeu-guidage-rendu-unique-huit-caps-redimensionnement-dpr-et-hud",
+        "command": "\"node\" \"scripts/test.mjs\" \"jeu-guidage-rendu-unique-huit-caps-redimensionnement-dpr-et-hud\"",
+        "exitCode": 0,
+        "output": "Interface Tauri et moteur de conversion hors ligne : dist/desktop/\nserveur-test {\"pid\":3700371,\"port\":38103,\"stopped\":true}\n✔ jeu-guidage-rendu-unique-huit-caps-redimensionnement-dpr-et-hud (1713.962376ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 1977.366531\n"
+      },
+      {
+        "name": "jeu-guidage-parcours-visuel-complet-scenes-effets-et-diagrammes",
+        "command": "\"node\" \"scripts/test.mjs\" \"jeu-guidage-parcours-visuel-complet-scenes-effets-et-diagrammes\"",
+        "exitCode": 0,
+        "output": "Interface Tauri et moteur de conversion hors ligne : dist/desktop/\nserveur-test {\"pid\":3700608,\"port\":45089,\"stopped\":true}\n✔ jeu-guidage-parcours-visuel-complet-scenes-effets-et-diagrammes (5096.460944ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 5316.594136\n"
+      },
+      {
+        "name": "verification-types-trois-cibles",
+        "command": "\"npm\" \"run\" \"typecheck\"",
+        "exitCode": 0,
+        "output": "\n> diagrams-codex@0.1.0 typecheck\n> tsc -p tsconfig.server.json --noEmit && tsc -p tsconfig.client.json --noEmit && tsc -p tsconfig.desktop.json\n\n"
+      },
+      {
+        "name": "npm run build",
+        "command": "\"npm\" \"run\" \"build\"",
+        "exitCode": 0,
+        "output": "\n> diagrams-codex@0.1.0 build\n> tsc -p tsconfig.server.json && tsc -p tsconfig.client.json && node scripts/build-jeu.mjs\n\n"
+      }
+    ],
+    "updatedAt": "2026-11-12T18:08:24.959Z",
+    "rawResponse": "{\n  \"current\": \"evolution4.md\",\n  \"workCompleted\": true,\n  \"summary\": \"Guidage conditionnel réalisé : cible majeure la plus proche, égalités stables, masquage dès visibilité partielle, recalcul sans référence périmée et flèche contenue hors HUD. Recette dense et 20 captures ajoutées ; documentation dans docs/jeu/guidage.md. Suite complète : 207 cas réussis, dont 11 nouveaux ; aucun test supprimé. TypeScript vérifié. Validation moteur réelle indisponible sans moteur, adaptateur et JEU_ENGINE_VERIFICATION ; bouclage non applicable au monde cartésien fourni. Recettes natives indisponibles : Linux nécessite WebKitWebDriver, Xvfb, xdotool et le binaire ARM64 ; Windows nécessite Windows, WebView2, application installée, PowerShell et opérateur. Les 74 instances de serveur lancées sont arrêtées ; pilotage PID 3397860 préservé. Aucun commit.\",\n  \"tests\": [\n    {\n      \"name\": \"suite-actuelle-207-cas\",\n      \"executable\": \"npm\",\n      \"args\": [\"test\"],\n      \"status\": \"passed\",\n      \"covers\": [0, 1, 2, 3, 4, 5]\n    },\n    {\n      \"name\": \"jeu-guidage-aucune-cible-active-ni-reference\",\n      \"executable\": \"node\",\n      \"args\": [\"scripts/test.mjs\", \"jeu-guidage-aucune-cible-active-ni-reference\"],\n      \"status\": \"passed\",\n      \"covers\": [0, 3]\n    },\n    {\n      \"name\": \"jeu-guidage-boss-seul-hors-ecran\",\n      \"executable\": \"node\",\n      \"args\": [\"scripts/test.mjs\", \"jeu-guidage-boss-seul-hors-ecran\"],\n      \"status\": \"passed\",\n      \"covers\": [0]\n    },\n    {\n      \"name\": \"jeu-guidage-vaisseau-mere-seul-hors-ecran\",\n      \"executable\": \"node\",\n      \"args\": [\"scripts/test.mjs\", \"jeu-guidage-vaisseau-mere-seul-hors-ecran\"],\n      \"status\": \"passed\",\n      \"covers\": [0]\n    },\n    {\n      \"name\": \"jeu-guidage-plus-proche-toutes-categories-distance-monde\",\n      \"executable\": \"node\",\n      \"args\": [\"scripts/test.mjs\", \"jeu-guidage-plus-proche-toutes-categories-distance-monde\"],\n      \"status\": \"passed\",\n      \"covers\": [0]\n    },\n    {\n      \"name\": \"jeu-guidage-egalites-identifiants-stables-sans-mutation\",\n      \"executable\": \"node\",\n      \"args\": [\"scripts/test.mjs\", \"jeu-guidage-egalites-identifiants-stables-sans-mutation\"],\n      \"status\": \"passed\",\n      \"covers\": [0]\n    },\n    {\n      \"name\": \"jeu-guidage-visibilite-croisee-partielle-tangence-et-hud\",\n      \"executable\": \"node\",\n      \"args\": [\"scripts/test.mjs\", \"jeu-guidage-visibilite-croisee-partielle-tangence-et-hud\"],\n      \"status\": \"passed\",\n      \"covers\": [1]\n    },\n    {\n      \"name\": \"jeu-guidage-huit-directions-marges-formats-camera-et-sans-hud\",\n      \"executable\": \"node\",\n      \"args\": [\"scripts/test.mjs\", \"jeu-guidage-huit-directions-marges-formats-camera-et-sans-hud\"],\n      \"status\": \"passed\",\n      \"covers\": [2, 4]\n    },\n    {\n      \"name\": \"jeu-guidage-douze-scenarios-oracles-evolution-zero\",\n      \"executable\": \"node\",\n      \"args\": [\"scripts/test.mjs\", \"jeu-guidage-douze-scenarios-oracles-evolution-zero\"],\n      \"status\": \"passed\",\n      \"covers\": [0, 1]\n    },\n    {\n      \"name\": \"jeu-guidage-instantanes-deplacements-destructions-camera-et-nettoyage\",\n      \"executable\": \"node\",\n      \"args\": [\"scripts/test.mjs\", \"jeu-guidage-instantanes-deplacements-destructions-camera-et-nettoyage\"],\n      \"status\": \"passed\",\n      \"covers\": [1, 3]\n    },\n    {\n      \"name\": \"jeu-guidage-rendu-unique-huit-caps-redimensionnement-dpr-et-hud\",\n      \"executable\": \"node\",\n      \"args\": [\"scripts/test.mjs\", \"jeu-guidage-rendu-unique-huit-caps-redimensionnement-dpr-et-hud\"],\n      \"status\": \"passed\",\n      \"covers\": [0, 2, 4]\n    },\n    {\n      \"name\": \"jeu-guidage-parcours-visuel-complet-scenes-effets-et-diagrammes\",\n      \"executable\": \"node\",\n      \"args\": [\"scripts/test.mjs\", \"jeu-guidage-parcours-visuel-complet-scenes-effets-et-diagrammes\"],\n      \"status\": \"passed\",\n      \"covers\": [0, 1, 4, 5]\n    },\n    {\n      \"name\": \"verification-types-trois-cibles\",\n      \"executable\": \"npm\",\n      \"args\": [\"run\", \"typecheck\"],\n      \"status\": \"passed\",\n      \"covers\": [5]\n    },\n    {\n      \"name\": \"rejeu-moteur-reel-avant-apres\",\n      \"executable\": \"node\",\n      \"args\": [\"scripts/verify-jeu-engine.mjs\"],\n      \"status\": \"not-run\",\n      \"covers\": [3, 5]\n    },\n    {\n      \"name\": \"desktop-natif-linux-selection-worker-dialogue-export-fenetre-et-reprise\",\n      \"executable\": \"node\",\n      \"args\": [\"scripts/test-desktop-native.mjs\"],\n      \"status\": \"not-run\",\n      \"covers\": [5]\n    },\n    {\n      \"name\": \"desktop-natif-windows-installation-webview2-et-export-autonome\",\n      \"executable\": \"powershell\",\n      \"args\": [\"-NoProfile\", \"-ExecutionPolicy\", \"Bypass\", \"-File\", \"scripts/verify-windows.ps1\"],\n      \"status\": \"not-run\",\n      \"covers\": [5]\n    }\n  ],\n  \"testChanges\": {\n    \"removed\": [],\n    \"added\": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]\n  },\n  \"serversStopped\": true,\n  \"servers\": [\n    {\"pid\": 3681709, \"port\": 37167, \"stopped\": true},\n    {\"pid\": 3681807, \"port\": 46345, \"stopped\": true},\n    {\"pid\": 3681929, \"port\": 45691, \"stopped\": true},\n    {\"pid\": 3682408, \"port\": 41215, \"stopped\": true},\n    {\"pid\": 3682812, \"port\": 34867, \"stopped\": true},\n    {\"pid\": 3682812, \"port\": 37637, \"stopped\": true},\n    {\"pid\": 3682812, \"port\": 39801, \"stopped\": true},\n    {\"pid\": 3682812, \"port\": 42357, \"stopped\": true},\n    {\"pid\": 3682812, \"port\": 42649, \"stopped\": true},\n    {\"pid\": 3682997, \"port\": 42809, \"stopped\": true},\n    {\"pid\": 3683004, \"port\": 36433, \"stopped\": true},\n    {\"pid\": 3683054, \"port\": 43137, \"stopped\": true},\n    {\"pid\": 3683119, \"port\": 32887, \"stopped\": true},\n    {\"pid\": 3683143, \"port\": 38151, \"stopped\": true},\n    {\"pid\": 3683185, \"port\": 38469, \"stopped\": true},\n    {\"pid\": 3683212, \"port\": 42171, \"stopped\": true},\n    {\"pid\": 3683895, \"port\": 44467, \"stopped\": true},\n    {\"pid\": 3683902, \"port\": 42375, \"stopped\": true},\n    {\"pid\": 3683911, \"port\": 34663, \"stopped\": true},\n    {\"pid\": 3684209, \"port\": 45621, \"stopped\": true},\n    {\"pid\": 3684326, \"port\": 40989, \"stopped\": true},\n    {\"pid\": 3684442, \"port\": 32883, \"stopped\": true},\n    {\"pid\": 3684479, \"port\": 40723, \"stopped\": true},\n    {\"pid\": 3684647, \"port\": 45747, \"stopped\": true},\n    {\"pid\": 3684744, \"port\": 45701, \"stopped\": true},\n    {\"pid\": 3684853, \"port\": 35793, \"stopped\": true},\n    {\"pid\": 3684865, \"port\": 43009, \"stopped\": true},\n    {\"pid\": 3684916, \"port\": 45707, \"stopped\": true},\n    {\"pid\": 3684972, \"port\": 44429, \"stopped\": true},\n    {\"pid\": 3685271, \"port\": 41881, \"stopped\": true},\n    {\"pid\": 3685381, \"port\": 46381, \"stopped\": true},\n    {\"pid\": 3685478, \"port\": 34465, \"stopped\": true},\n    {\"pid\": 3686017, \"port\": 44139, \"stopped\": true},\n    {\"pid\": 3686382, \"port\": 39013, \"stopped\": true},\n    {\"pid\": 3686400, \"port\": 35127, \"stopped\": true},\n    {\"pid\": 3686838, \"port\": 41869, \"stopped\": true},\n    {\"pid\": 3687149, \"port\": 39841, \"stopped\": true},\n    {\"pid\": 3687245, \"port\": 33273, \"stopped\": true},\n    {\"pid\": 3687347, \"port\": 40581, \"stopped\": true},\n    {\"pid\": 3687357, \"port\": 44923, \"stopped\": true},\n    {\"pid\": 3687454, \"port\": 43317, \"stopped\": true},\n    {\"pid\": 3687560, \"port\": 45449, \"stopped\": true},\n    {\"pid\": 3687572, \"port\": 39965, \"stopped\": true},\n    {\"pid\": 3687676, \"port\": 33803, \"stopped\": true},\n    {\"pid\": 3687686, \"port\": 39119, \"stopped\": true},\n    {\"pid\": 3687785, \"port\": 45551, \"stopped\": true},\n    {\"pid\": 3687884, \"port\": 38535, \"stopped\": true},\n    {\"pid\": 3688029, \"port\": 37637, \"stopped\": true},\n    {\"pid\": 3688052, \"port\": 46351, \"stopped\": true},\n    {\"pid\": 3688156, \"port\": 38959, \"stopped\": true},\n    {\"pid\": 3688255, \"port\": 35733, \"stopped\": true},\n    {\"pid\": 3688357, \"port\": 37767, \"stopped\": true},\n    {\"pid\": 3688364, \"port\": 45947, \"stopped\": true},\n    {\"pid\": 3688371, \"port\": 38039, \"stopped\": true},\n    {\"pid\": 3688378, \"port\": 44469, \"stopped\": true},\n    {\"pid\": 3688393, \"port\": 37011, \"stopped\": true},\n    {\"pid\": 3688493, \"port\": 38553, \"stopped\": true},\n    {\"pid\": 3688593, \"port\": 41715, \"stopped\": true},\n    {\"pid\": 3688695, \"port\": 45631, \"stopped\": true},\n    {\"pid\": 3688704, \"port\": null, \"stopped\": true},\n    {\"pid\": 3688712, \"port\": 46015, \"stopped\": true},\n    {\"pid\": 3688810, \"port\": null, \"stopped\": true},\n    {\"pid\": 3688820, \"port\": null, \"stopped\": true},\n    {\"pid\": 3688829, \"port\": null, \"stopped\": true},\n    {\"pid\": 3688836, \"port\": null, \"stopped\": true},\n    {\"pid\": 3688843, \"port\": null, \"stopped\": true},\n    {\"pid\": 3688850, \"port\": 45311, \"stopped\": true},\n    {\"pid\": 3688998, \"port\": 35763, \"stopped\": true},\n    {\"pid\": 3689161, \"port\": 36187, \"stopped\": true},\n    {\"pid\": 3689350, \"port\": 37407, \"stopped\": true},\n    {\"pid\": 3689488, \"port\": 33849, \"stopped\": true},\n    {\"pid\": 3689602, \"port\": 42703, \"stopped\": true},\n    {\"pid\": 3689711, \"port\": 40313, \"stopped\": true},\n    {\"pid\": 3690068, \"port\": 35809, \"stopped\": true}\n  ]\n}",
+    "report": {
+      "current": "evolution4.md",
+      "workCompleted": true,
+      "summary": "Guidage conditionnel réalisé : cible majeure la plus proche, égalités stables, masquage dès visibilité partielle, recalcul sans référence périmée et flèche contenue hors HUD. Recette dense et 20 captures ajoutées ; documentation dans docs/jeu/guidage.md. Suite complète : 207 cas réussis, dont 11 nouveaux ; aucun test supprimé. TypeScript vérifié. Validation moteur réelle indisponible sans moteur, adaptateur et JEU_ENGINE_VERIFICATION ; bouclage non applicable au monde cartésien fourni. Recettes natives indisponibles : Linux nécessite WebKitWebDriver, Xvfb, xdotool et le binaire ARM64 ; Windows nécessite Windows, WebView2, application installée, PowerShell et opérateur. Les 74 instances de serveur lancées sont arrêtées ; pilotage PID 3397860 préservé. Aucun commit.",
+      "tests": [
+        {
+          "name": "suite-actuelle-207-cas",
+          "executable": "npm",
+          "args": [
+            "test"
+          ],
+          "status": "passed",
+          "covers": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        },
+        {
+          "name": "jeu-guidage-aucune-cible-active-ni-reference",
+          "executable": "node",
+          "args": [
+            "scripts/test.mjs",
+            "jeu-guidage-aucune-cible-active-ni-reference"
+          ],
+          "status": "passed",
+          "covers": [
+            0,
+            3
+          ]
+        },
+        {
+          "name": "jeu-guidage-boss-seul-hors-ecran",
+          "executable": "node",
+          "args": [
+            "scripts/test.mjs",
+            "jeu-guidage-boss-seul-hors-ecran"
+          ],
+          "status": "passed",
+          "covers": [
+            0
+          ]
+        },
+        {
+          "name": "jeu-guidage-vaisseau-mere-seul-hors-ecran",
+          "executable": "node",
+          "args": [
+            "scripts/test.mjs",
+            "jeu-guidage-vaisseau-mere-seul-hors-ecran"
+          ],
+          "status": "passed",
+          "covers": [
+            0
+          ]
+        },
+        {
+          "name": "jeu-guidage-plus-proche-toutes-categories-distance-monde",
+          "executable": "node",
+          "args": [
+            "scripts/test.mjs",
+            "jeu-guidage-plus-proche-toutes-categories-distance-monde"
+          ],
+          "status": "passed",
+          "covers": [
+            0
+          ]
+        },
+        {
+          "name": "jeu-guidage-egalites-identifiants-stables-sans-mutation",
+          "executable": "node",
+          "args": [
+            "scripts/test.mjs",
+            "jeu-guidage-egalites-identifiants-stables-sans-mutation"
+          ],
+          "status": "passed",
+          "covers": [
+            0
+          ]
+        },
+        {
+          "name": "jeu-guidage-visibilite-croisee-partielle-tangence-et-hud",
+          "executable": "node",
+          "args": [
+            "scripts/test.mjs",
+            "jeu-guidage-visibilite-croisee-partielle-tangence-et-hud"
+          ],
+          "status": "passed",
+          "covers": [
+            1
+          ]
+        },
+        {
+          "name": "jeu-guidage-huit-directions-marges-formats-camera-et-sans-hud",
+          "executable": "node",
+          "args": [
+            "scripts/test.mjs",
+            "jeu-guidage-huit-directions-marges-formats-camera-et-sans-hud"
+          ],
+          "status": "passed",
+          "covers": [
+            2,
+            4
+          ]
+        },
+        {
+          "name": "jeu-guidage-douze-scenarios-oracles-evolution-zero",
+          "executable": "node",
+          "args": [
+            "scripts/test.mjs",
+            "jeu-guidage-douze-scenarios-oracles-evolution-zero"
+          ],
+          "status": "passed",
+          "covers": [
+            0,
+            1
+          ]
+        },
+        {
+          "name": "jeu-guidage-instantanes-deplacements-destructions-camera-et-nettoyage",
+          "executable": "node",
+          "args": [
+            "scripts/test.mjs",
+            "jeu-guidage-instantanes-deplacements-destructions-camera-et-nettoyage"
+          ],
+          "status": "passed",
+          "covers": [
+            1,
+            3
+          ]
+        },
+        {
+          "name": "jeu-guidage-rendu-unique-huit-caps-redimensionnement-dpr-et-hud",
+          "executable": "node",
+          "args": [
+            "scripts/test.mjs",
+            "jeu-guidage-rendu-unique-huit-caps-redimensionnement-dpr-et-hud"
+          ],
+          "status": "passed",
+          "covers": [
+            0,
+            2,
+            4
+          ]
+        },
+        {
+          "name": "jeu-guidage-parcours-visuel-complet-scenes-effets-et-diagrammes",
+          "executable": "node",
+          "args": [
+            "scripts/test.mjs",
+            "jeu-guidage-parcours-visuel-complet-scenes-effets-et-diagrammes"
+          ],
+          "status": "passed",
+          "covers": [
+            0,
+            1,
+            4,
+            5
+          ]
+        },
+        {
+          "name": "verification-types-trois-cibles",
+          "executable": "npm",
+          "args": [
+            "run",
+            "typecheck"
+          ],
+          "status": "passed",
+          "covers": [
+            5
+          ]
+        },
+        {
+          "name": "rejeu-moteur-reel-avant-apres",
+          "executable": "node",
+          "args": [
+            "scripts/verify-jeu-engine.mjs"
+          ],
+          "status": "not-run",
+          "covers": [
+            3,
+            5
+          ]
+        },
+        {
+          "name": "desktop-natif-linux-selection-worker-dialogue-export-fenetre-et-reprise",
+          "executable": "node",
+          "args": [
+            "scripts/test-desktop-native.mjs"
+          ],
+          "status": "not-run",
+          "covers": [
+            5
+          ]
+        },
+        {
+          "name": "desktop-natif-windows-installation-webview2-et-export-autonome",
+          "executable": "powershell",
+          "args": [
+            "-NoProfile",
+            "-ExecutionPolicy",
+            "Bypass",
+            "-File",
+            "scripts/verify-windows.ps1"
+          ],
+          "status": "not-run",
+          "covers": [
+            5
+          ]
+        }
+      ],
+      "testChanges": {
+        "removed": [],
+        "added": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11
+        ]
+      },
+      "serversStopped": true,
+      "servers": [
+        {
+          "pid": 3681709,
+          "port": 37167,
+          "stopped": true
+        },
+        {
+          "pid": 3681807,
+          "port": 46345,
+          "stopped": true
+        },
+        {
+          "pid": 3681929,
+          "port": 45691,
+          "stopped": true
+        },
+        {
+          "pid": 3682408,
+          "port": 41215,
+          "stopped": true
+        },
+        {
+          "pid": 3682812,
+          "port": 34867,
+          "stopped": true
+        },
+        {
+          "pid": 3682812,
+          "port": 37637,
+          "stopped": true
+        },
+        {
+          "pid": 3682812,
+          "port": 39801,
+          "stopped": true
+        },
+        {
+          "pid": 3682812,
+          "port": 42357,
+          "stopped": true
+        },
+        {
+          "pid": 3682812,
+          "port": 42649,
+          "stopped": true
+        },
+        {
+          "pid": 3682997,
+          "port": 42809,
+          "stopped": true
+        },
+        {
+          "pid": 3683004,
+          "port": 36433,
+          "stopped": true
+        },
+        {
+          "pid": 3683054,
+          "port": 43137,
+          "stopped": true
+        },
+        {
+          "pid": 3683119,
+          "port": 32887,
+          "stopped": true
+        },
+        {
+          "pid": 3683143,
+          "port": 38151,
+          "stopped": true
+        },
+        {
+          "pid": 3683185,
+          "port": 38469,
+          "stopped": true
+        },
+        {
+          "pid": 3683212,
+          "port": 42171,
+          "stopped": true
+        },
+        {
+          "pid": 3683895,
+          "port": 44467,
+          "stopped": true
+        },
+        {
+          "pid": 3683902,
+          "port": 42375,
+          "stopped": true
+        },
+        {
+          "pid": 3683911,
+          "port": 34663,
+          "stopped": true
+        },
+        {
+          "pid": 3684209,
+          "port": 45621,
+          "stopped": true
+        },
+        {
+          "pid": 3684326,
+          "port": 40989,
+          "stopped": true
+        },
+        {
+          "pid": 3684442,
+          "port": 32883,
+          "stopped": true
+        },
+        {
+          "pid": 3684479,
+          "port": 40723,
+          "stopped": true
+        },
+        {
+          "pid": 3684647,
+          "port": 45747,
+          "stopped": true
+        },
+        {
+          "pid": 3684744,
+          "port": 45701,
+          "stopped": true
+        },
+        {
+          "pid": 3684853,
+          "port": 35793,
+          "stopped": true
+        },
+        {
+          "pid": 3684865,
+          "port": 43009,
+          "stopped": true
+        },
+        {
+          "pid": 3684916,
+          "port": 45707,
+          "stopped": true
+        },
+        {
+          "pid": 3684972,
+          "port": 44429,
+          "stopped": true
+        },
+        {
+          "pid": 3685271,
+          "port": 41881,
+          "stopped": true
+        },
+        {
+          "pid": 3685381,
+          "port": 46381,
+          "stopped": true
+        },
+        {
+          "pid": 3685478,
+          "port": 34465,
+          "stopped": true
+        },
+        {
+          "pid": 3686017,
+          "port": 44139,
+          "stopped": true
+        },
+        {
+          "pid": 3686382,
+          "port": 39013,
+          "stopped": true
+        },
+        {
+          "pid": 3686400,
+          "port": 35127,
+          "stopped": true
+        },
+        {
+          "pid": 3686838,
+          "port": 41869,
+          "stopped": true
+        },
+        {
+          "pid": 3687149,
+          "port": 39841,
+          "stopped": true
+        },
+        {
+          "pid": 3687245,
+          "port": 33273,
+          "stopped": true
+        },
+        {
+          "pid": 3687347,
+          "port": 40581,
+          "stopped": true
+        },
+        {
+          "pid": 3687357,
+          "port": 44923,
+          "stopped": true
+        },
+        {
+          "pid": 3687454,
+          "port": 43317,
+          "stopped": true
+        },
+        {
+          "pid": 3687560,
+          "port": 45449,
+          "stopped": true
+        },
+        {
+          "pid": 3687572,
+          "port": 39965,
+          "stopped": true
+        },
+        {
+          "pid": 3687676,
+          "port": 33803,
+          "stopped": true
+        },
+        {
+          "pid": 3687686,
+          "port": 39119,
+          "stopped": true
+        },
+        {
+          "pid": 3687785,
+          "port": 45551,
+          "stopped": true
+        },
+        {
+          "pid": 3687884,
+          "port": 38535,
+          "stopped": true
+        },
+        {
+          "pid": 3688029,
+          "port": 37637,
+          "stopped": true
+        },
+        {
+          "pid": 3688052,
+          "port": 46351,
+          "stopped": true
+        },
+        {
+          "pid": 3688156,
+          "port": 38959,
+          "stopped": true
+        },
+        {
+          "pid": 3688255,
+          "port": 35733,
+          "stopped": true
+        },
+        {
+          "pid": 3688357,
+          "port": 37767,
+          "stopped": true
+        },
+        {
+          "pid": 3688364,
+          "port": 45947,
+          "stopped": true
+        },
+        {
+          "pid": 3688371,
+          "port": 38039,
+          "stopped": true
+        },
+        {
+          "pid": 3688378,
+          "port": 44469,
+          "stopped": true
+        },
+        {
+          "pid": 3688393,
+          "port": 37011,
+          "stopped": true
+        },
+        {
+          "pid": 3688493,
+          "port": 38553,
+          "stopped": true
+        },
+        {
+          "pid": 3688593,
+          "port": 41715,
+          "stopped": true
+        },
+        {
+          "pid": 3688695,
+          "port": 45631,
+          "stopped": true
+        },
+        {
+          "pid": 3688704,
+          "port": null,
+          "stopped": true
+        },
+        {
+          "pid": 3688712,
+          "port": 46015,
+          "stopped": true
+        },
+        {
+          "pid": 3688810,
+          "port": null,
+          "stopped": true
+        },
+        {
+          "pid": 3688820,
+          "port": null,
+          "stopped": true
+        },
+        {
+          "pid": 3688829,
+          "port": null,
+          "stopped": true
+        },
+        {
+          "pid": 3688836,
+          "port": null,
+          "stopped": true
+        },
+        {
+          "pid": 3688843,
+          "port": null,
+          "stopped": true
+        },
+        {
+          "pid": 3688850,
+          "port": 45311,
+          "stopped": true
+        },
+        {
+          "pid": 3688998,
+          "port": 35763,
+          "stopped": true
+        },
+        {
+          "pid": 3689161,
+          "port": 36187,
+          "stopped": true
+        },
+        {
+          "pid": 3689350,
+          "port": 37407,
+          "stopped": true
+        },
+        {
+          "pid": 3689488,
+          "port": 33849,
+          "stopped": true
+        },
+        {
+          "pid": 3689602,
+          "port": 42703,
+          "stopped": true
+        },
+        {
+          "pid": 3689711,
+          "port": 40313,
+          "stopped": true
+        },
+        {
+          "pid": 3690068,
+          "port": 35809,
+          "stopped": true
+        }
+      ]
+    }
+  },
+  "gitScope": {
+    "root": "/home/blockapicoder/qwen-generation/diagrams-codex",
+    "base": "72f272d9f6f2ca13a2c4eea52e06252978fb6e2b",
+    "before": [
+      {
+        "path": "docs/jeu/README.md",
+        "status": " M",
+        "digest": "15ea9063ecf878a118e8108254bd3efdb2dcd3494cdf5faffbafb541c1fea210"
+      },
+      {
+        "path": "docs/jeu/vue-rectangulaire.md",
+        "status": " M",
+        "digest": "16e073ba2494a5cbb16071c38510acad1a8ce1b3e991d1793958758f3abf318a"
+      },
+      {
+        "path": "evolution.json",
+        "status": " M",
+        "digest": "73f08e1235184e3a1d748bed0ff168d674fbd7d078ee78346bce87dc8c3dd1e9"
+      },
+      {
+        "path": "public/jeu-demo.css",
+        "status": " M",
+        "digest": "e966c0b1b96623574988932c685dc05141c611bc60feda071ed8f818cc15c882"
+      },
+      {
+        "path": "public/jeu-demo.html",
+        "status": " M",
+        "digest": "13289172863eb1a0f2ec066bc10591f43edc6c0d435b712ff5c90448a26c1966"
+      },
+      {
+        "path": "src/client/jeu/camera.ts",
+        "status": " M",
+        "digest": "91d50facef91542f181a75fd74cee82a5d0585fb47094fa00b2d5c08bb548e92"
+      },
+      {
+        "path": "src/client/jeu/demo.ts",
+        "status": " M",
+        "digest": "f7fe7187ca9b1ff841d64be527e2d7a975e60a2d4afb43655d94d09349fc3262"
+      },
+      {
+        "path": "src/client/jeu/renderer.ts",
+        "status": " M",
+        "digest": "6081e145c71bf39777c7d0fba09b4685233097971a9668ae4ffdad32ff8abfe2"
+      },
+      {
+        "path": "tests/jeu-browser.test.mjs",
+        "status": " M",
+        "digest": "562e6dc1836c255ad7cfba7e8fa8207398307128b47201f58fd385269105e766"
+      },
+      {
+        "path": "bilan-evolution2.json",
+        "status": "??",
+        "digest": "de31609e2874b90675f2e6fdd1c19643edd81ffcb6c4e831317becdd07feebed"
+      },
+      {
+        "path": "bilan-evolution3.json",
+        "status": "??",
+        "digest": "c73d525f7f356afee0f19044990817912a262dc4719e3b7fdab84b2b96d17302"
+      },
+      {
+        "path": "docs/jeu/captures/apres-amas-dense-1280x720.png",
+        "status": "??",
+        "digest": "81315db5ee32e5c3e24bc8acbc0532b6bad4c50b7107fe874c348e57c3fb322f"
+      },
+      {
+        "path": "docs/jeu/captures/apres-amas-dense-1920x1080.png",
+        "status": "??",
+        "digest": "e55cecf93797eaf0030302a1eee63aa746f8397367c29a273eb0ee659fb2b469"
+      },
+      {
+        "path": "docs/jeu/captures/apres-amas-dense-360x640.png",
+        "status": "??",
+        "digest": "64dbee4ee0e063256689060e197a951410250f6073db5174a337c07787e715e6"
+      },
+      {
+        "path": "docs/jeu/captures/apres-amas-dense-800x800.png",
+        "status": "??",
+        "digest": "8352f9464a4739a6807f03b0bb8b4e64ed1eef4269f748e76e033ebc09684d8b"
+      },
+      {
+        "path": "docs/jeu/captures/apres-catalogue-1280x720.png",
+        "status": "??",
+        "digest": "6569bcbe3273728a70463ecf562cf035f09a33d8d1fdd43861a82b54e2065e8b"
+      },
+      {
+        "path": "docs/jeu/captures/apres-catalogue-1920x1080.png",
+        "status": "??",
+        "digest": "56a8126ca8142c02ba3644d6e5524293c9cc7a78a03b3ec6d38efca661863517"
+      },
+      {
+        "path": "docs/jeu/captures/apres-catalogue-360x640.png",
+        "status": "??",
+        "digest": "e961570f6cb7de0fd1cbbe3d6e9760d4432dc4d58d912e1075d577347521236e"
+      },
+      {
+        "path": "docs/jeu/captures/apres-catalogue-800x800.png",
+        "status": "??",
+        "digest": "eb1cb537d2daf40823ccd1431128b1a2d492ef595bf2ff0903fdcd45266e0c6f"
+      },
+      {
+        "path": "docs/jeu/captures/avant-amas-dense-1280x720.png",
+        "status": "??",
+        "digest": "98c6462928cc64aaf6aa7257ef3933311832f7bd942900c6178506f9d5b40d69"
+      },
+      {
+        "path": "docs/jeu/captures/avant-catalogue-1280x720.png",
+        "status": "??",
+        "digest": "b4e880f4a03a97dc834834056187c709e164a8901863bc3f83b74accf7a936ca"
+      },
+      {
+        "path": "docs/jeu/captures/avant.json",
+        "status": "??",
+        "digest": "a187dbc0b9e50bdbc1a7489d83961a6d3a24c1f9be6ab4941478c3217eab1a27"
+      },
+      {
+        "path": "docs/jeu/captures/etat-deplacement-90.png",
+        "status": "??",
+        "digest": "077419fbe2853aba2ebb9149d2a5f38865fe1e70e3cbb27ac7648f90f50bda01"
+      },
+      {
+        "path": "docs/jeu/captures/etat-destruction-0.png",
+        "status": "??",
+        "digest": "feb68e50ed83131f46f191e3ec77b4156f5940bec67ce5b664fd9645b4fe80c9"
+      },
+      {
+        "path": "docs/jeu/captures/etat-impact-270.png",
+        "status": "??",
+        "digest": "998bfe19801d1cce518bf8656c666cef752a6c881a8d85e354938d2e31671f94"
+      },
+      {
+        "path": "docs/jeu/captures/etat-tir-180.png",
+        "status": "??",
+        "digest": "83f2bdd4fa00698dbb8d6ac786f40d80687e7e4dabe6747848bb289a67f74062"
+      },
+      {
+        "path": "docs/jeu/captures/evolution3/dense-1280x720-clair-couleur.png",
+        "status": "??",
+        "digest": "dbfd05fe1dc78faffa3c534c1197322330e67389d9e93f25ad79d51ac7036986"
+      },
+      {
+        "path": "docs/jeu/captures/evolution3/dense-1280x720-clair-gris.png",
+        "status": "??",
+        "digest": "c2b650be2af256d5f25e599c1f33bb15648cb844fc074b43053634625551f296"
+      },
+      {
+        "path": "docs/jeu/captures/evolution3/dense-1280x720-sombre-couleur.png",
+        "status": "??",
+        "digest": "019cc3c368d3eaa4fa7b0c2a75b094e45a19b08a72357bcbdef2a29e9bc4a4ea"
+      },
+      {
+        "path": "docs/jeu/captures/evolution3/dense-1280x720-sombre-gris.png",
+        "status": "??",
+        "digest": "3ea6e6b0ac96f70029960edeb6f7a0443eac6fe00d47d51acbc6e2095fa115cf"
+      },
+      {
+        "path": "docs/jeu/captures/evolution3/dense-1920x1080-clair-couleur.png",
+        "status": "??",
+        "digest": "a59d0336c1cefb54bdf04d70da9900c9e698c179a72c1671c5f898529208b110"
+      },
+      {
+        "path": "docs/jeu/captures/evolution3/dense-1920x1080-clair-gris.png",
+        "status": "??",
+        "digest": "a4e03963855072043111b0ff504bf6bf8ff159240c2bb9213fe57e4d2b06d576"
+      },
+      {
+        "path": "docs/jeu/captures/evolution3/dense-1920x1080-sombre-couleur.png",
+        "status": "??",
+        "digest": "7f7b40720a3c4630352214224cdb4b9b739613249d8c172f74583eb76fd4fbe7"
+      },
+      {
+        "path": "docs/jeu/captures/evolution3/dense-1920x1080-sombre-gris.png",
+        "status": "??",
+        "digest": "b1535ac7b97eb6ea1057dd78d78775e364b52aaf1ac550698c2693587fe2680d"
+      },
+      {
+        "path": "docs/jeu/captures/evolution3/dense-360x640-clair-couleur.png",
+        "status": "??",
+        "digest": "1ad49ab7eae93ff59c57b97955750e296b95b5e913a246f088d3bdd07b7dee01"
+      },
+      {
+        "path": "docs/jeu/captures/evolution3/dense-360x640-clair-gris.png",
+        "status": "??",
+        "digest": "eb80f5082ce339cef4b5e1b64b4f269bc7fde30a31eb967a7124a5efefb03b75"
+      },
+      {
+        "path": "docs/jeu/captures/evolution3/dense-360x640-sombre-couleur.png",
+        "status": "??",
+        "digest": "c7590696c16352b125d6c2e3b4121c7f973ddf1c6b48c047ad60c446de737daf"
+      },
+      {
+        "path": "docs/jeu/captures/evolution3/dense-360x640-sombre-gris.png",
+        "status": "??",
+        "digest": "17601d5f06715624a71e35129fff1dd255b618301e943a54b9e7dd3ab3667bd9"
+      },
+      {
+        "path": "docs/jeu/captures/evolution3/dense-800x800-clair-couleur.png",
+        "status": "??",
+        "digest": "cd277e239f5e1ed1a48ca3f9e76bab6d218477cd0cba9f8217ac8ce564aca4fb"
+      },
+      {
+        "path": "docs/jeu/captures/evolution3/dense-800x800-clair-gris.png",
+        "status": "??",
+        "digest": "7a7afd20e1784574cce92969aebd5af0e33941e7f4d6286136a534f070fac327"
+      },
+      {
+        "path": "docs/jeu/captures/evolution3/dense-800x800-sombre-couleur.png",
+        "status": "??",
+        "digest": "30d3391a3004e85693403dfa99ea974202e860b9aa8b05bbb6bace03824913b9"
+      },
+      {
+        "path": "docs/jeu/captures/evolution3/dense-800x800-sombre-gris.png",
+        "status": "??",
+        "digest": "f0caab1b7a9cbdd1b6e3e21dd979806abae9e0b05ada6e037bc5d2cf6f741f56"
+      },
+      {
+        "path": "docs/jeu/captures/evolution3/tirs-apres-destruction.png",
+        "status": "??",
+        "digest": "72ca35fcf03c53d131a23de90f2e1eccf16888bc320e7d4b830e3d820f5b8e95"
+      },
+      {
+        "path": "docs/jeu/captures/gris-amas-dense-1280x720.png",
+        "status": "??",
+        "digest": "56003acae475a973bcc0c8bdc1f1abe0e96c9a330b22bb9df14289f9c35be2b3"
+      },
+      {
+        "path": "docs/jeu/captures/gris-amas-dense-1920x1080.png",
+        "status": "??",
+        "digest": "927b4f75c6f5f6c69cecf7b579b10e9b3662d1fa5ef0ad318b49399b97018f06"
+      },
+      {
+        "path": "docs/jeu/captures/gris-amas-dense-360x640.png",
+        "status": "??",
+        "digest": "b923b234c1879341df60dac364de1120878248ecdee1fa7074ca5672765fa3a3"
+      },
+      {
+        "path": "docs/jeu/captures/gris-amas-dense-800x800.png",
+        "status": "??",
+        "digest": "34700bf58dfe464a7859770ccdce46a0320e85302a5968c97e0acfae21b02a0f"
+      },
+      {
+        "path": "docs/jeu/captures/planche-1280x720.png",
+        "status": "??",
+        "digest": "65a6299220db8c208c16b1151a10f462cc8edc0caca1895ccf203c63f51b3d4e"
+      },
+      {
+        "path": "docs/jeu/captures/planche-1920x1080.png",
+        "status": "??",
+        "digest": "1ae7c77edf834b75160b599fa8fb42ae92bc29948882d677417e78cc2a373b03"
+      },
+      {
+        "path": "docs/jeu/captures/planche-360x640.png",
+        "status": "??",
+        "digest": "a27903bb0004f163edf87d9420bbb5ca41bbf5d8dcd12083735c0ffe39a965da"
+      },
+      {
+        "path": "docs/jeu/captures/planche-800x800.png",
+        "status": "??",
+        "digest": "9907fedb7edd84bd8d0afb8c0a097b14b53db9e58f74a7fc414ea784965f1f26"
+      },
+      {
+        "path": "docs/jeu/lisibilite.md",
+        "status": "??",
+        "digest": "9290592098a514b9ce54526d3fe24673d987cf18030fc0cde3e18d6759768c2d"
+      },
+      {
+        "path": "docs/jeu/sprites.md",
+        "status": "??",
+        "digest": "4dfdf45e9b7760360d2f4dde91ceeb30cdeb091c858c1b93dae43b3d2ffb9d7b"
+      },
+      {
+        "path": "public/jeu/sprites/README.md",
+        "status": "??",
+        "digest": "5513676703b19e665ccf3e21ef63b709b82faab4627d8a40ecffbe74d2a53f9a"
+      },
+      {
+        "path": "public/jeu/sprites/boss.svg",
+        "status": "??",
+        "digest": "d7f51fa744b9178f2a91f6b98fac5cd8a4862f1a5082ee072e842374c241f202"
+      },
+      {
+        "path": "public/jeu/sprites/caisse.svg",
+        "status": "??",
+        "digest": "699b744f035c41254ca9038f6d21c4686949f0da5484325cb99a5147ee7dc2cc"
+      },
+      {
+        "path": "public/jeu/sprites/ennemi.svg",
+        "status": "??",
+        "digest": "412d49bff81a4143c5a7ba8736d394de412a4da4d8d98ebabf9bd1e6171075be"
+      },
+      {
+        "path": "public/jeu/sprites/joueur.svg",
+        "status": "??",
+        "digest": "367b849e7f8cb145eb404b34f0af9f88ad792e7af28f3dc434cfd01527d6b9a9"
+      },
+      {
+        "path": "public/jeu/sprites/rocher.svg",
+        "status": "??",
+        "digest": "d574f7be0a6bfe904e7cb131276ed0828155260f2935c742ec9a0ebcde52b4d1"
+      },
+      {
+        "path": "public/jeu/sprites/sol.svg",
+        "status": "??",
+        "digest": "65a4efbee2298033703169ea41c20972cd5c7f93361f0874b779944d6a68d961"
+      },
+      {
+        "path": "public/jeu/sprites/tir-ennemi.svg",
+        "status": "??",
+        "digest": "008587c448c087605a6b54920f30546fe300a6502d3dafcd5da2cfe7b0ed42fc"
+      },
+      {
+        "path": "public/jeu/sprites/tir-joueur.svg",
+        "status": "??",
+        "digest": "90e94fc99598ea85d0842213092055d1e60ad3e276d08320e186c1073b3f5e5a"
+      },
+      {
+        "path": "public/jeu/sprites/tir-neutre.svg",
+        "status": "??",
+        "digest": "c43db70a2d455094cc03d9c82ec3745bb6132c18c0c5d49db9d4776bde9bed82"
+      },
+      {
+        "path": "public/jeu/sprites/vaisseau-mere.svg",
+        "status": "??",
+        "digest": "d62d55dde3823e80d7e51e70d768d204b9ab04afee9b2288a476b5920ac8769c"
+      },
+      {
+        "path": "scripts/verify-jeu-engine.mjs",
+        "status": "??",
+        "digest": "8da69eb61f5eedfa6c478bb5de2799f1a88b995177cb9b2340a69816178557b2"
+      },
+      {
+        "path": "src/client/jeu/readability.ts",
+        "status": "??",
+        "digest": "7d87a53213d9d3361faeff8f99fccf694c4888a58abdba7f7e3a43cfa71990ab"
+      },
+      {
+        "path": "src/client/jeu/sheet.ts",
+        "status": "??",
+        "digest": "be42bac797738d5e9c5a9f315c7cfc3b273e3a6b89d7a686866a255fcf6d8cd1"
+      },
+      {
+        "path": "src/client/jeu/sprites.ts",
+        "status": "??",
+        "digest": "bd2a8b6c0f598dc2ddf415de72c30cb04df8d9e14721d7472b2a9cbd166938e0"
+      },
+      {
+        "path": "tests/jeu-preparation.test.mjs",
+        "status": "??",
+        "digest": "5903a6c1f799b9312a93075f9666e1d8af7ddba9e93decec6666744824a7fcea"
+      },
+      {
+        "path": "tests/jeu-readability.test.mjs",
+        "status": "??",
+        "digest": "6d01a0b2f2b1c056e1523be4fb1e244cea9ba80d70134912ca8b4e1419eddff0"
+      },
+      {
+        "path": "tests/jeu-snapshots.test.mjs",
+        "status": "??",
+        "digest": "015a49d3f17c40a2a6751c6a6b7e5ecf4d6411f8ebc8baeb2edc96daa50207d8"
+      },
+      {
+        "path": "tests/jeu-sprites.test.mjs",
+        "status": "??",
+        "digest": "1e955b22da506623d801c34419c5fd2996f084b51fc40a4b7b6b944be6774a9e"
+      }
+    ],
+    "after": [
+      {
+        "path": "docs/jeu/README.md",
+        "status": " M",
+        "digest": "32f098756a13ff4317248c8f6f21cba817d98a8ac636a0981fd2dd4de4b33f5f"
+      },
+      {
+        "path": "docs/jeu/vue-rectangulaire.md",
+        "status": " M",
+        "digest": "789a16ba9183595d693b00f3075b9270da74e19dca0fceeaae3230acb2e1a5d4"
+      },
+      {
+        "path": "evolution.json",
+        "status": " M",
+        "digest": "73f08e1235184e3a1d748bed0ff168d674fbd7d078ee78346bce87dc8c3dd1e9"
+      },
+      {
+        "path": "public/jeu-demo.css",
+        "status": " M",
+        "digest": "e966c0b1b96623574988932c685dc05141c611bc60feda071ed8f818cc15c882"
+      },
+      {
+        "path": "public/jeu-demo.html",
+        "status": " M",
+        "digest": "a9cf1a888c9a3647829b01b1f96f00a37f97526598803a7c0a38da667f2c1c88"
+      },
+      {
+        "path": "src/client/jeu/camera.ts",
+        "status": " M",
+        "digest": "91d50facef91542f181a75fd74cee82a5d0585fb47094fa00b2d5c08bb548e92"
+      },
+      {
+        "path": "src/client/jeu/demo.ts",
+        "status": " M",
+        "digest": "18f3601b357aabbb3caf94791d171cb096cb26b3b436575c860f0816424f5504"
+      },
+      {
+        "path": "src/client/jeu/renderer.ts",
+        "status": " M",
+        "digest": "2aad98abe48e8c6b7530bf8af601672252e1dafd47fa82e65f3985fe70516ead"
+      },
+      {
+        "path": "tests/jeu-browser.test.mjs",
+        "status": " M",
+        "digest": "562e6dc1836c255ad7cfba7e8fa8207398307128b47201f58fd385269105e766"
+      },
+      {
+        "path": "bilan-evolution2.json",
+        "status": "??",
+        "digest": "de31609e2874b90675f2e6fdd1c19643edd81ffcb6c4e831317becdd07feebed"
+      },
+      {
+        "path": "bilan-evolution3.json",
+        "status": "??",
+        "digest": "c73d525f7f356afee0f19044990817912a262dc4719e3b7fdab84b2b96d17302"
+      },
+      {
+        "path": "bilan-evolution4.json",
+        "status": "??",
+        "digest": "4fc4e44e3210a7e9864c2de7ced3c2fcd337376221d25d622b45809aa53e2e57"
+      },
+      {
+        "path": "docs/jeu/captures/apres-amas-dense-1280x720.png",
+        "status": "??",
+        "digest": "ade29e0b15d0c36cd69b76ce1d09fd22274d988f6d9437fd76d61b3f7fd03277"
+      },
+      {
+        "path": "docs/jeu/captures/apres-amas-dense-1920x1080.png",
+        "status": "??",
+        "digest": "d77b7b22489cd2f474d2da614e87d9da2f4f6909984dc03873949f0857a0b8c7"
+      },
+      {
+        "path": "docs/jeu/captures/apres-amas-dense-360x640.png",
+        "status": "??",
+        "digest": "0e4b6b316f050bcf61dd89640a7b5dc521b58098962c1738f5f281dac5373c05"
+      },
+      {
+        "path": "docs/jeu/captures/apres-amas-dense-800x800.png",
+        "status": "??",
+        "digest": "457f15a63df0b20b9b86615100b1769b282cf7954a3ac3348fbf0854e0eb4532"
+      },
+      {
+        "path": "docs/jeu/captures/apres-catalogue-1280x720.png",
+        "status": "??",
+        "digest": "3777a38f95c4f0ed539cd9419e81b7541506a44217f6d8a1add4f9765a52ca54"
+      },
+      {
+        "path": "docs/jeu/captures/apres-catalogue-1920x1080.png",
+        "status": "??",
+        "digest": "37aad029d3b0acfd0472e004af6f8aa64e45b95c147290488aa186b079ede0ed"
+      },
+      {
+        "path": "docs/jeu/captures/apres-catalogue-360x640.png",
+        "status": "??",
+        "digest": "655da043247282db214685ee6a35ab5c703bc2fd1013a55364cb8db84797dc29"
+      },
+      {
+        "path": "docs/jeu/captures/apres-catalogue-800x800.png",
+        "status": "??",
+        "digest": "7abd868cf0d7ccb4befb4d79d2a59d54ae4106793700eac692b2f7c17dd17586"
+      },
+      {
+        "path": "docs/jeu/captures/avant-amas-dense-1280x720.png",
+        "status": "??",
+        "digest": "98c6462928cc64aaf6aa7257ef3933311832f7bd942900c6178506f9d5b40d69"
+      },
+      {
+        "path": "docs/jeu/captures/avant-catalogue-1280x720.png",
+        "status": "??",
+        "digest": "b4e880f4a03a97dc834834056187c709e164a8901863bc3f83b74accf7a936ca"
+      },
+      {
+        "path": "docs/jeu/captures/avant.json",
+        "status": "??",
+        "digest": "a187dbc0b9e50bdbc1a7489d83961a6d3a24c1f9be6ab4941478c3217eab1a27"
+      },
+      {
+        "path": "docs/jeu/captures/etat-deplacement-90.png",
+        "status": "??",
+        "digest": "1e26e3b87c7539234f505a8e728a52c1ac94378c37442c67018041cdb5e6932a"
+      },
+      {
+        "path": "docs/jeu/captures/etat-destruction-0.png",
+        "status": "??",
+        "digest": "4d281805b33162bcd21a339f4a401fdda3cb9156c5605ef487d1e986335884f9"
+      },
+      {
+        "path": "docs/jeu/captures/etat-impact-270.png",
+        "status": "??",
+        "digest": "51266e053fdd7bb2582f97fdea0a9d949bfeeb893f31585d2c01486086bc64e3"
+      },
+      {
+        "path": "docs/jeu/captures/etat-tir-180.png",
+        "status": "??",
+        "digest": "391b3a7c9c0cb8a932542b00afea7c559f227065cce1c7b68f563ec5bccdda78"
+      },
+      {
+        "path": "docs/jeu/captures/evolution3/dense-1280x720-clair-couleur.png",
+        "status": "??",
+        "digest": "dbfd05fe1dc78faffa3c534c1197322330e67389d9e93f25ad79d51ac7036986"
+      },
+      {
+        "path": "docs/jeu/captures/evolution3/dense-1280x720-clair-gris.png",
+        "status": "??",
+        "digest": "c2b650be2af256d5f25e599c1f33bb15648cb844fc074b43053634625551f296"
+      },
+      {
+        "path": "docs/jeu/captures/evolution3/dense-1280x720-sombre-couleur.png",
+        "status": "??",
+        "digest": "019cc3c368d3eaa4fa7b0c2a75b094e45a19b08a72357bcbdef2a29e9bc4a4ea"
+      },
+      {
+        "path": "docs/jeu/captures/evolution3/dense-1280x720-sombre-gris.png",
+        "status": "??",
+        "digest": "3ea6e6b0ac96f70029960edeb6f7a0443eac6fe00d47d51acbc6e2095fa115cf"
+      },
+      {
+        "path": "docs/jeu/captures/evolution3/dense-1920x1080-clair-couleur.png",
+        "status": "??",
+        "digest": "a59d0336c1cefb54bdf04d70da9900c9e698c179a72c1671c5f898529208b110"
+      },
+      {
+        "path": "docs/jeu/captures/evolution3/dense-1920x1080-clair-gris.png",
+        "status": "??",
+        "digest": "a4e03963855072043111b0ff504bf6bf8ff159240c2bb9213fe57e4d2b06d576"
+      },
+      {
+        "path": "docs/jeu/captures/evolution3/dense-1920x1080-sombre-couleur.png",
+        "status": "??",
+        "digest": "7f7b40720a3c4630352214224cdb4b9b739613249d8c172f74583eb76fd4fbe7"
+      },
+      {
+        "path": "docs/jeu/captures/evolution3/dense-1920x1080-sombre-gris.png",
+        "status": "??",
+        "digest": "b1535ac7b97eb6ea1057dd78d78775e364b52aaf1ac550698c2693587fe2680d"
+      },
+      {
+        "path": "docs/jeu/captures/evolution3/dense-360x640-clair-couleur.png",
+        "status": "??",
+        "digest": "1ad49ab7eae93ff59c57b97955750e296b95b5e913a246f088d3bdd07b7dee01"
+      },
+      {
+        "path": "docs/jeu/captures/evolution3/dense-360x640-clair-gris.png",
+        "status": "??",
+        "digest": "eb80f5082ce339cef4b5e1b64b4f269bc7fde30a31eb967a7124a5efefb03b75"
+      },
+      {
+        "path": "docs/jeu/captures/evolution3/dense-360x640-sombre-couleur.png",
+        "status": "??",
+        "digest": "c7590696c16352b125d6c2e3b4121c7f973ddf1c6b48c047ad60c446de737daf"
+      },
+      {
+        "path": "docs/jeu/captures/evolution3/dense-360x640-sombre-gris.png",
+        "status": "??",
+        "digest": "17601d5f06715624a71e35129fff1dd255b618301e943a54b9e7dd3ab3667bd9"
+      },
+      {
+        "path": "docs/jeu/captures/evolution3/dense-800x800-clair-couleur.png",
+        "status": "??",
+        "digest": "cd277e239f5e1ed1a48ca3f9e76bab6d218477cd0cba9f8217ac8ce564aca4fb"
+      },
+      {
+        "path": "docs/jeu/captures/evolution3/dense-800x800-clair-gris.png",
+        "status": "??",
+        "digest": "7a7afd20e1784574cce92969aebd5af0e33941e7f4d6286136a534f070fac327"
+      },
+      {
+        "path": "docs/jeu/captures/evolution3/dense-800x800-sombre-couleur.png",
+        "status": "??",
+        "digest": "30d3391a3004e85693403dfa99ea974202e860b9aa8b05bbb6bace03824913b9"
+      },
+      {
+        "path": "docs/jeu/captures/evolution3/dense-800x800-sombre-gris.png",
+        "status": "??",
+        "digest": "f0caab1b7a9cbdd1b6e3e21dd979806abae9e0b05ada6e037bc5d2cf6f741f56"
+      },
+      {
+        "path": "docs/jeu/captures/evolution3/tirs-apres-destruction.png",
+        "status": "??",
+        "digest": "72ca35fcf03c53d131a23de90f2e1eccf16888bc320e7d4b830e3d820f5b8e95"
+      },
+      {
+        "path": "docs/jeu/captures/evolution4/dense-1280x720-clair-couleur.png",
+        "status": "??",
+        "digest": "5885ec9cc39c93821d244bdbd4478be442e14ef6d972b6e0d81b77e5682b3d4a"
+      },
+      {
+        "path": "docs/jeu/captures/evolution4/dense-1280x720-clair-gris.png",
+        "status": "??",
+        "digest": "ee85dcfdcdb10ea706cf1c7e46933d6af91a96b2b9493dc6ffbdcd4b3dd9ba87"
+      },
+      {
+        "path": "docs/jeu/captures/evolution4/dense-1280x720-sombre-couleur.png",
+        "status": "??",
+        "digest": "90cb48381791f1b8f2da21c332acac7136d9596f08fe06e329ca7947c1eb3eb8"
+      },
+      {
+        "path": "docs/jeu/captures/evolution4/dense-1280x720-sombre-gris.png",
+        "status": "??",
+        "digest": "48af9c01dc47c09744dd6f50ef0a7ac3b18201e426a61bb232c666c4e3eaa192"
+      },
+      {
+        "path": "docs/jeu/captures/evolution4/dense-1920x1080-clair-couleur.png",
+        "status": "??",
+        "digest": "e0b10d6061bf749e950b08c6309a677e2c689d6ccd5c2c618303ad09bd90f9fa"
+      },
+      {
+        "path": "docs/jeu/captures/evolution4/dense-1920x1080-clair-gris.png",
+        "status": "??",
+        "digest": "33ac0b009c1d24568ebb370fbb1d7cc3b4ec0c32037916aa2b15c2ebf51b6ec9"
+      },
+      {
+        "path": "docs/jeu/captures/evolution4/dense-1920x1080-sombre-couleur.png",
+        "status": "??",
+        "digest": "fc6a2a015edf8a3abfba46fa50c0ce60acc9e11039cc4fa87020adb058f96c8f"
+      },
+      {
+        "path": "docs/jeu/captures/evolution4/dense-1920x1080-sombre-gris.png",
+        "status": "??",
+        "digest": "f69280eb4c5f220a11f3265b62cb4509142b6553e55696e0ac673c545884d859"
+      },
+      {
+        "path": "docs/jeu/captures/evolution4/dense-360x640-clair-couleur.png",
+        "status": "??",
+        "digest": "16a079096827509dc49026b0374f2a617b651cd6e3154f1bb2405fa745a6cf48"
+      },
+      {
+        "path": "docs/jeu/captures/evolution4/dense-360x640-clair-gris.png",
+        "status": "??",
+        "digest": "02779505ff9f5e80b432b9d6e0a66d2bf69f8f5c8d4b0af9ee7797d793b640e4"
+      },
+      {
+        "path": "docs/jeu/captures/evolution4/dense-360x640-sombre-couleur.png",
+        "status": "??",
+        "digest": "fcdae8d388ea74cce276121612488ebc02c6b5ba17b64c4c43faf77a90eb02db"
+      },
+      {
+        "path": "docs/jeu/captures/evolution4/dense-360x640-sombre-gris.png",
+        "status": "??",
+        "digest": "a519b8fe23afe501cf2913b008a9a193ba19a80d710b4be114cb948daa9a1d9f"
+      },
+      {
+        "path": "docs/jeu/captures/evolution4/dense-800x800-clair-couleur.png",
+        "status": "??",
+        "digest": "7cbbe5c4811ff36a0e4bf753a4d16929b7961ee1ae2698887f0f2865e22ba971"
+      },
+      {
+        "path": "docs/jeu/captures/evolution4/dense-800x800-clair-gris.png",
+        "status": "??",
+        "digest": "cd75094024eae17c91d01ec5ed9ea0822bc5696414b4deaeda259f457cf59d9e"
+      },
+      {
+        "path": "docs/jeu/captures/evolution4/dense-800x800-sombre-couleur.png",
+        "status": "??",
+        "digest": "302ca4a31fca3333f23459ce6a7883fe79724bd75f878d68f68a8a91a09fc8ad"
+      },
+      {
+        "path": "docs/jeu/captures/evolution4/dense-800x800-sombre-gris.png",
+        "status": "??",
+        "digest": "2f1f3fedc3110fa21953d5c92183c669a2c09657702f0bd9c7e86c1084ecf8c9"
+      },
+      {
+        "path": "docs/jeu/captures/evolution4/planete-1280x720.png",
+        "status": "??",
+        "digest": "b94d2f649f723fced4a36a82122d32a637fc7cd2dde3677f5273baac1dc02075"
+      },
+      {
+        "path": "docs/jeu/captures/evolution4/planete-1920x1080.png",
+        "status": "??",
+        "digest": "d2fdf9b02e45d5e0424188b1012c757268cd37af0c0bfbfe9d2ae45e20193544"
+      },
+      {
+        "path": "docs/jeu/captures/evolution4/planete-360x640.png",
+        "status": "??",
+        "digest": "e92bc157502db5b6692af2b4d6144efe35027df431811d3cb60e5f1d1aeee04c"
+      },
+      {
+        "path": "docs/jeu/captures/evolution4/planete-800x800.png",
+        "status": "??",
+        "digest": "1d158e4aef8e91de564bf993f5ca9c5fa59241afd28e67747e9a8428f6e593a6"
+      },
+      {
+        "path": "docs/jeu/captures/gris-amas-dense-1280x720.png",
+        "status": "??",
+        "digest": "e668f424334c3114c80522bdf791dd72e9e0bb02d8ac37df884f513d98d98018"
+      },
+      {
+        "path": "docs/jeu/captures/gris-amas-dense-1920x1080.png",
+        "status": "??",
+        "digest": "fc956b5d1e8141e3052773a9940d7ba08e0d82e389b8f72ab8c1d6a029d7724b"
+      },
+      {
+        "path": "docs/jeu/captures/gris-amas-dense-360x640.png",
+        "status": "??",
+        "digest": "4791a4004f1924a96f13c60f77eabbd06bf334394fb8e0c61a7b7345b22b5b01"
+      },
+      {
+        "path": "docs/jeu/captures/gris-amas-dense-800x800.png",
+        "status": "??",
+        "digest": "176ee905aa36ed3e96db68a9290fb3da76ddce1779676b7e20682f054082cfe5"
+      },
+      {
+        "path": "docs/jeu/captures/planche-1280x720.png",
+        "status": "??",
+        "digest": "1ee9a5ab798d45a53b8c34b46ac853141d6711d1143609d339e950271dea0ec9"
+      },
+      {
+        "path": "docs/jeu/captures/planche-1920x1080.png",
+        "status": "??",
+        "digest": "698795b5f8c58d90fbf369317180beac34470981280d566e487ed269bf2570fe"
+      },
+      {
+        "path": "docs/jeu/captures/planche-360x640.png",
+        "status": "??",
+        "digest": "9f73e31124ef9c6de9807f23cf838ef28ee803b5fd6e35e57e0dce1688e60539"
+      },
+      {
+        "path": "docs/jeu/captures/planche-800x800.png",
+        "status": "??",
+        "digest": "93e07c640130384eb8251d79f2b93e9a3371097dbd1fb47cd9248ec26db2ad4e"
+      },
+      {
+        "path": "docs/jeu/guidage.md",
+        "status": "??",
+        "digest": "5fb4b80a23f722d07f1d01faee2e94fb27cf22de9bb0224541424de32d702a77"
+      },
+      {
+        "path": "docs/jeu/lisibilite.md",
+        "status": "??",
+        "digest": "9290592098a514b9ce54526d3fe24673d987cf18030fc0cde3e18d6759768c2d"
+      },
+      {
+        "path": "docs/jeu/sprites.md",
+        "status": "??",
+        "digest": "f535ad80d02b72471f42a1e70357ecfe010adf7c0476a376d4288c83bd073ef0"
+      },
+      {
+        "path": "public/jeu/sprites/README.md",
+        "status": "??",
+        "digest": "5513676703b19e665ccf3e21ef63b709b82faab4627d8a40ecffbe74d2a53f9a"
+      },
+      {
+        "path": "public/jeu/sprites/boss.svg",
+        "status": "??",
+        "digest": "d7f51fa744b9178f2a91f6b98fac5cd8a4862f1a5082ee072e842374c241f202"
+      },
+      {
+        "path": "public/jeu/sprites/caisse.svg",
+        "status": "??",
+        "digest": "699b744f035c41254ca9038f6d21c4686949f0da5484325cb99a5147ee7dc2cc"
+      },
+      {
+        "path": "public/jeu/sprites/ennemi.svg",
+        "status": "??",
+        "digest": "412d49bff81a4143c5a7ba8736d394de412a4da4d8d98ebabf9bd1e6171075be"
+      },
+      {
+        "path": "public/jeu/sprites/joueur.svg",
+        "status": "??",
+        "digest": "367b849e7f8cb145eb404b34f0af9f88ad792e7af28f3dc434cfd01527d6b9a9"
+      },
+      {
+        "path": "public/jeu/sprites/rocher.svg",
+        "status": "??",
+        "digest": "d574f7be0a6bfe904e7cb131276ed0828155260f2935c742ec9a0ebcde52b4d1"
+      },
+      {
+        "path": "public/jeu/sprites/sol.svg",
+        "status": "??",
+        "digest": "65a4efbee2298033703169ea41c20972cd5c7f93361f0874b779944d6a68d961"
+      },
+      {
+        "path": "public/jeu/sprites/tir-ennemi.svg",
+        "status": "??",
+        "digest": "008587c448c087605a6b54920f30546fe300a6502d3dafcd5da2cfe7b0ed42fc"
+      },
+      {
+        "path": "public/jeu/sprites/tir-joueur.svg",
+        "status": "??",
+        "digest": "90e94fc99598ea85d0842213092055d1e60ad3e276d08320e186c1073b3f5e5a"
+      },
+      {
+        "path": "public/jeu/sprites/tir-neutre.svg",
+        "status": "??",
+        "digest": "c43db70a2d455094cc03d9c82ec3745bb6132c18c0c5d49db9d4776bde9bed82"
+      },
+      {
+        "path": "public/jeu/sprites/vaisseau-mere.svg",
+        "status": "??",
+        "digest": "d62d55dde3823e80d7e51e70d768d204b9ab04afee9b2288a476b5920ac8769c"
+      },
+      {
+        "path": "scripts/verify-jeu-engine.mjs",
+        "status": "??",
+        "digest": "3e10acd7ac3af1f40aa9c53b5a6755db707289fd995d3a361ddf739e9ebc05a5"
+      },
+      {
+        "path": "src/client/jeu/guidance-scene.ts",
+        "status": "??",
+        "digest": "9af4a410b6261c25513bfcea2044325509d75fb05683c5fa2005718ddcfe52b0"
+      },
+      {
+        "path": "src/client/jeu/guidance.ts",
+        "status": "??",
+        "digest": "a5d3ffacd17f82f9ddf5d126dc91f314c1801a350c96f9e6d053f88c79eec500"
+      },
+      {
+        "path": "src/client/jeu/readability.ts",
+        "status": "??",
+        "digest": "7d87a53213d9d3361faeff8f99fccf694c4888a58abdba7f7e3a43cfa71990ab"
+      },
+      {
+        "path": "src/client/jeu/sheet.ts",
+        "status": "??",
+        "digest": "be42bac797738d5e9c5a9f315c7cfc3b273e3a6b89d7a686866a255fcf6d8cd1"
+      },
+      {
+        "path": "src/client/jeu/sprites.ts",
+        "status": "??",
+        "digest": "bd2a8b6c0f598dc2ddf415de72c30cb04df8d9e14721d7472b2a9cbd166938e0"
+      },
+      {
+        "path": "tests/jeu-guidance-browser.test.mjs",
+        "status": "??",
+        "digest": "6d44bcc1f8ae0484d05e4c320c66929e68a767b187dec450ca2271ad12c7cab6"
+      },
+      {
+        "path": "tests/jeu-guidance.test.mjs",
+        "status": "??",
+        "digest": "a822a8d7f02913b6d65847affadfb519fab4beb2272d668ca29ed3db41ff50e2"
+      },
+      {
+        "path": "tests/jeu-preparation.test.mjs",
+        "status": "??",
+        "digest": "5903a6c1f799b9312a93075f9666e1d8af7ddba9e93decec6666744824a7fcea"
+      },
+      {
+        "path": "tests/jeu-readability.test.mjs",
+        "status": "??",
+        "digest": "6d01a0b2f2b1c056e1523be4fb1e244cea9ba80d70134912ca8b4e1419eddff0"
+      },
+      {
+        "path": "tests/jeu-snapshots.test.mjs",
+        "status": "??",
+        "digest": "015a49d3f17c40a2a6751c6a6b7e5ecf4d6411f8ebc8baeb2edc96daa50207d8"
+      },
+      {
+        "path": "tests/jeu-sprites.test.mjs",
+        "status": "??",
+        "digest": "1e955b22da506623d801c34419c5fd2996f084b51fc40a4b7b6b944be6774a9e"
+      }
+    ]
+  },
+  "commands": [
+    {
+      "name": "suite-actuelle-207-cas",
+      "executable": "npm",
+      "args": [
+        "test"
+      ],
+      "status": "passed",
+      "covers": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "name": "jeu-guidage-aucune-cible-active-ni-reference",
+      "executable": "node",
+      "args": [
+        "scripts/test.mjs",
+        "jeu-guidage-aucune-cible-active-ni-reference"
+      ],
+      "status": "passed",
+      "covers": [
+        0,
+        3
+      ]
+    },
+    {
+      "name": "jeu-guidage-boss-seul-hors-ecran",
+      "executable": "node",
+      "args": [
+        "scripts/test.mjs",
+        "jeu-guidage-boss-seul-hors-ecran"
+      ],
+      "status": "passed",
+      "covers": [
+        0
+      ]
+    },
+    {
+      "name": "jeu-guidage-vaisseau-mere-seul-hors-ecran",
+      "executable": "node",
+      "args": [
+        "scripts/test.mjs",
+        "jeu-guidage-vaisseau-mere-seul-hors-ecran"
+      ],
+      "status": "passed",
+      "covers": [
+        0
+      ]
+    },
+    {
+      "name": "jeu-guidage-plus-proche-toutes-categories-distance-monde",
+      "executable": "node",
+      "args": [
+        "scripts/test.mjs",
+        "jeu-guidage-plus-proche-toutes-categories-distance-monde"
+      ],
+      "status": "passed",
+      "covers": [
+        0
+      ]
+    },
+    {
+      "name": "jeu-guidage-egalites-identifiants-stables-sans-mutation",
+      "executable": "node",
+      "args": [
+        "scripts/test.mjs",
+        "jeu-guidage-egalites-identifiants-stables-sans-mutation"
+      ],
+      "status": "passed",
+      "covers": [
+        0
+      ]
+    },
+    {
+      "name": "jeu-guidage-visibilite-croisee-partielle-tangence-et-hud",
+      "executable": "node",
+      "args": [
+        "scripts/test.mjs",
+        "jeu-guidage-visibilite-croisee-partielle-tangence-et-hud"
+      ],
+      "status": "passed",
+      "covers": [
+        1
+      ]
+    },
+    {
+      "name": "jeu-guidage-huit-directions-marges-formats-camera-et-sans-hud",
+      "executable": "node",
+      "args": [
+        "scripts/test.mjs",
+        "jeu-guidage-huit-directions-marges-formats-camera-et-sans-hud"
+      ],
+      "status": "passed",
+      "covers": [
+        2,
+        4
+      ]
+    },
+    {
+      "name": "jeu-guidage-douze-scenarios-oracles-evolution-zero",
+      "executable": "node",
+      "args": [
+        "scripts/test.mjs",
+        "jeu-guidage-douze-scenarios-oracles-evolution-zero"
+      ],
+      "status": "passed",
+      "covers": [
+        0,
+        1
+      ]
+    },
+    {
+      "name": "jeu-guidage-instantanes-deplacements-destructions-camera-et-nettoyage",
+      "executable": "node",
+      "args": [
+        "scripts/test.mjs",
+        "jeu-guidage-instantanes-deplacements-destructions-camera-et-nettoyage"
+      ],
+      "status": "passed",
+      "covers": [
+        1,
+        3
+      ]
+    },
+    {
+      "name": "jeu-guidage-rendu-unique-huit-caps-redimensionnement-dpr-et-hud",
+      "executable": "node",
+      "args": [
+        "scripts/test.mjs",
+        "jeu-guidage-rendu-unique-huit-caps-redimensionnement-dpr-et-hud"
+      ],
+      "status": "passed",
+      "covers": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "name": "jeu-guidage-parcours-visuel-complet-scenes-effets-et-diagrammes",
+      "executable": "node",
+      "args": [
+        "scripts/test.mjs",
+        "jeu-guidage-parcours-visuel-complet-scenes-effets-et-diagrammes"
+      ],
+      "status": "passed",
+      "covers": [
+        0,
+        1,
+        4,
+        5
+      ]
+    },
+    {
+      "name": "verification-types-trois-cibles",
+      "executable": "npm",
+      "args": [
+        "run",
+        "typecheck"
+      ],
+      "status": "passed",
+      "covers": [
+        5
+      ]
+    },
+    {
+      "name": "npm run build",
+      "executable": "npm",
+      "args": [
+        "run",
+        "build"
+      ],
+      "status": "passed",
+      "covers": []
+    }
+  ]
+}

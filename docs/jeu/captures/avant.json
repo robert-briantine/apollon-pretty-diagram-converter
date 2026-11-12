@@ -1,0 +1,74 @@
+{
+  "catalogue": {
+    "camera": {
+      "x": 0,
+      "y": 0,
+      "zoom": 1
+    },
+    "game": {
+      "x": 0,
+      "y": 0,
+      "width": 1040,
+      "height": 720
+    },
+    "hud": {
+      "x": 1040,
+      "y": 0,
+      "width": 240,
+      "height": 720
+    },
+    "world": {
+      "x": -520,
+      "y": -360,
+      "width": 1040,
+      "height": 720
+    },
+    "dpr": 1,
+    "following": false,
+    "visibleIds": [
+      "joueur-01",
+      "decor-01",
+      "caisse-01",
+      "tir-ennemi-01",
+      "tir-joueur-01",
+      "boss-est",
+      "mere-nord"
+    ]
+  },
+  "amas-dense": {
+    "camera": {
+      "x": 0,
+      "y": 0,
+      "zoom": 1
+    },
+    "game": {
+      "x": 0,
+      "y": 0,
+      "width": 1040,
+      "height": 720
+    },
+    "hud": {
+      "x": 1040,
+      "y": 0,
+      "width": 240,
+      "height": 720
+    },
+    "world": {
+      "x": -520,
+      "y": -360,
+      "width": 1040,
+      "height": 720
+    },
+    "dpr": 1,
+    "following": false,
+    "visibleIds": [
+      "joueur-01",
+      "decor-01",
+      "caisse-01",
+      "tir-ennemi-01",
+      "tir-joueur-01",
+      "caisse-bord",
+      "tir-inactif"
+    ]
+  }
+}

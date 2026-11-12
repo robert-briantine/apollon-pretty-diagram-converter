@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Démonstration de rendu — vue rectangulaire</title>
+  <title>Atlas orbital — sprites et vue rectangulaire</title>
   <link rel="stylesheet" href="/jeu-demo.css">
   <script type="module" src="/assets/jeu/demo.js"></script>
 </head>
@@ -11,9 +11,12 @@
   <main aria-label="Démonstration de rendu — sans moteur de jeu">
     <canvas id="world" tabindex="0" aria-label="Vue du monde : glisser pour déplacer la caméra, cliquer pour inspecter" aria-describedby="help"></canvas>
     <aside id="hud" aria-label="Informations de la démonstration">
-      <h1>Vue monde</h1>
+      <p class="eyebrow">ATELIER ORBITAL / 02</p>
+      <h1>Atlas des sprites</h1>
       <p>Démo de rendu. Sans moteur de jeu.</p>
       <p id="status" role="status">Chargement…</p>
+      <output id="guidance" aria-label="Cible du guidage" aria-live="polite"></output>
+      <p>Cercle cyan : cap vers la cible majeure la plus proche, si aucune n’est visible.</p>
       <label for="scenario">Scène</label>
       <select id="scenario" disabled></select>
       <button id="reset" type="button">Recadrer</button>
@@ -24,9 +27,27 @@
         <button id="zoom-in" type="button" aria-label="Augmenter le zoom">+</button>
       </div>
       <output id="camera" aria-label="Position et zoom de la caméra"></output>
+      <button id="sheet" type="button" aria-pressed="false">Planche des sprites · 1:1</button>
+      <button id="readability" type="button">Lisibilité · scène dense</button>
+      <button id="guidance-scene" type="button">Guidage · scène dense</button>
+      <label for="background">Fond de contrôle</label>
+      <select id="background"><option value="sombre">Sombre</option><option value="clair">Clair</option></select>
+      <label><input id="grayscale" type="checkbox"> Niveaux de gris</label>
+      <p>Équerres : destructible. Double pointe : tir ennemi. Petits verrous latéraux : tir destructible.</p>
+      <h2>États visuels</h2>
+      <p>Échantillons de 150 ms, sans action de combat.</p>
+      <label for="visual-state">État à examiner</label>
+      <select id="visual-state">
+        <option value="repos">Repos</option><option value="deplacement">Déplacement</option>
+        <option value="tir">Tir</option><option value="impact">Impact</option><option value="destruction">Destruction</option>
+      </select>
+      <label for="orientation">Orientation</label><input id="orientation" type="range" min="0" max="360" step="15" value="0">
+      <label for="timeline">Transition · 0 à 150 ms</label><input id="timeline" type="range" min="0" max="150" value="75">
+      <output id="visual-time"></output>
+      <button id="animate" type="button">Lire la transition</button>
       <h2>Entité</h2>
       <output id="inspection" aria-live="polite">Cliquer une entité.</output>
-      <p id="help">Glisser la vue ou utiliser les flèches. + / − : zoom. Les rectangles sont les enveloppes de référence.</p>
+      <p id="help">Glisser la vue ou utiliser les flèches. + / − : zoom. Sprites locaux, pivot central. Les états visuels ne changent pas la scène.</p>
       <a href="/">Retour aux diagrammes</a>
     </aside>
   </main>

@@ -1,5 +1,8 @@
 # Préparation du rendu — évolution 0
 
+Les sprites sont désormais intégrés : consulter [le guide des sprites](sprites.md).
+Le guidage conditionnel est livré : consulter [la recette finale](guidage.md).
+
 Ce document conserve l'inventaire et le contrat préparés lors de l'évolution 0.
 La vue rectangulaire est maintenant implémentée par l'évolution 1 : consulter
 [le guide actuel et les recettes de vérification](vue-rectangulaire.md).
@@ -162,13 +165,14 @@ remplacées en entier. `include` vaut `all` ou une liste explicite d'IDs ; aucun
 génération d'entités. La caméra et le viewport sont propres à chaque scénario.
 `expected` est un oracle, pas un champ du contrat d'entité.
 
-Pour préparer l'indication : considérer les boss et vaisseaux mères actifs.
+L'indication implémentée considère les boss et vaisseaux mères actifs.
 Si au moins un est visible, ne pas indiquer de cible hors champ. Sinon prendre
 le centre le plus proche du joueur, départager une égalité par ID lexical ;
 sans candidat, aucune flèche. Sa direction est le vecteur joueur→cible projeté
-dans le viewport ; la flèche doit rester à 16 px du bord hors HUD, avec
-silhouette de la cible et distance monde. Aucun azimut, distance ou choix ne
-dépend du rayon de la planète. Ce plan n'introduit pas encore cette flèche.
+dans le viewport ; son médaillon reste à 16 px du bord hors HUD, avec catégorie,
+identifiant et distance monde dans la bande droite. Aucun azimut, distance ou
+choix ne dépend du rayon de la planète. Voir [le contrat livré](guidage.md),
+y compris l'adaptation des marges aux fenêtres miniatures.
 
 La référence comporte plusieurs cibles, dont la plus proche n'est pas la
 première dans le tableau. Les variantes couvrent : toutes catégories, amas
@@ -213,3 +217,6 @@ ARM64, tauri-driver, WebKitWebDriver, Xvfb, xdotool et dbus-run-session ;
 `scripts/verify-windows.ps1` demande Windows 10/11 x64, WebView2, paquet installé,
 PowerShell et un opérateur. Les recettes indisponibles doivent être signalées
 comme non exécutées. Aucune installation n'est autorisée par cette préparation.
+
+La distinction fondée sur les propriétés réelles, le banc dense clair/sombre
+et les contrôles en gris sont décrits dans [la lisibilité des catégories](lisibilite.md).

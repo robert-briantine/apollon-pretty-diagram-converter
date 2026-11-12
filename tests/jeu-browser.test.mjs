@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import { resolve } from 'node:path';
-import { interfaceTest } from './ui-fixtures.mjs';
+import { generation, interfaceTest } from './ui-fixtures.mjs';
 
 const reference = JSON.parse(await readFile(new URL('../docs/jeu/scene-reference.json', import.meta.url), 'utf8'));
 const sizes = [{ width: 1280, height: 720 }, { width: 1920, height: 1080 }, { width: 800, height: 800 }, { width: 360, height: 640 }];
@@ -55,7 +55,7 @@ test('jeu-navigateur-formats-redimensionnement-et-hud', { timeout: 60000 }, asyn
   }
 });
 
-test('jeu-navigateur-coins-centre-hors-champ-et-pixels', { timeout: 60000 }, async t => {
+test('jeu-sprites-coins-centre-hors-champ-et-fond', { timeout: 60000 }, async t => {
   const { page } = await open(t);
   for (const size of sizes) {
     await resize(page, size);
@@ -81,14 +81,17 @@ test('jeu-navigateur-coins-centre-hors-champ-et-pixels', { timeout: 60000 }, asy
         corners: [[0, 0], [w - 1, 0], [0, h - 1], [w - 1, h - 1]].map(([x, y]) => pixel(x, y)), opaque };
     }, reference);
     assert.deepEqual(result.visible, [0, 1, 2, 3, 4, 13, 14, 15, 16].map(i => `coin-${i}`));
-    assert.deepEqual(result.pixels, Array(5).fill([246, 205, 114, 255]), 'entités dessinées dans chaque coin et au centre');
+    for (const pixel of result.pixels) {
+      assert.equal(pixel[3], 255);
+      assert.ok(pixel[0] > 60 && pixel[1] > 40, 'sprite de caisse dessiné dans chaque coin et au centre');
+    }
     assert.deepEqual(result.corners, Array(4).fill([23, 40, 58, 255]), 'le monde atteint les quatre coins');
     assert.equal(result.opaque, true, 'aucun pixel vide hérité du masque circulaire');
     await capture(page, `coins-${size.width}x${size.height}`);
   }
 });
 
-test('jeu-navigateur-planete-circulaire-bords-et-proportions', { timeout: 60000 }, async t => {
+test('jeu-sprites-planete-circulaire-bords-et-proportions', { timeout: 60000 }, async t => {
   const { page } = await open(t);
   const result = await page.evaluate(async reference => {
     const view = await (await import('/assets/jeu/demo.js')).ready;
@@ -112,12 +115,14 @@ test('jeu-navigateur-planete-circulaire-bords-et-proportions', { timeout: 60000 
     for (const [x, y] of [[2400, 0], [-2400, 0], [0, 2400], [0, -2400], [2800, 2800]]) {
       const entity = { ...reference.entities[2], id: 'repere', position: { x, y }, dimensions: { width: 32, height: 20 } };
       view.setCamera({ x, y, zoom: 1 });
+      view.setScene({ ...reference, entities: [] });
+      const background = c.getImageData(490, 330, 60, 60);
       view.setScene({ ...reference, entities: [entity] });
       const image = c.getImageData(490, 330, 60, 60);
       const points = [];
       for (let py = 0; py < 60; py++) for (let px = 0; px < 60; px++) {
         const i = (py * 60 + px) * 4;
-        if (image.data[i] === 246 && image.data[i + 1] === 205) points.push([px, py]);
+        if ([0, 1, 2].some(channel => image.data[i + channel] !== background.data[i + channel])) points.push([px, py]);
       }
       const width = Math.max(...points.map(p => p[0])) - Math.min(...points.map(p => p[0])) + 1;
       const height = Math.max(...points.map(p => p[1])) - Math.min(...points.map(p => p[1])) + 1;
@@ -134,7 +139,9 @@ test('jeu-navigateur-planete-circulaire-bords-et-proportions', { timeout: 60000 
   assert.equal(result.planet.radius, 2400);
   result.edges.forEach((e, i) => {
     assert.deepEqual([e.camera.x, e.camera.y], [[2400, 0], [-2400, 0], [0, 2400], [0, -2400], [2800, 2800]][i]);
-    assert.deepEqual([e.width, e.height], [30, 18]);
+    assert.ok(Math.abs(e.width - e.height) <= 1, 'sprite carré proportionné dans une enveloppe 32 × 20');
+    assert.ok(e.width >= 18 && e.width <= 22);
+    assert.ok(e.height >= 18 && e.height <= 22);
     assert.deepEqual(e.visible, ['repere']); assert.deepEqual(e.alpha, [255, 255, 255, 255]);
   });
   await capture(page, 'bord-planete');
@@ -184,7 +191,7 @@ test('jeu-navigateur-interactions-suivi-et-coordonnees', { timeout: 60000 }, asy
   assert.equal((await snapshot(page)).camera.x, 2380);
 });
 
-test('jeu-navigateur-dpr-un-deux-et-changement-a-chaud', { timeout: 60000 }, async t => {
+test('jeu-sprites-dpr-nettete-selection-et-changement-a-chaud', { timeout: 60000 }, async t => {
   const { page, context } = await open(t);
   const session = await context.newCDPSession(page);
   const viewHandle = await page.evaluateHandle(async () => await (await import('/assets/jeu/demo.js')).ready);
@@ -202,24 +209,65 @@ test('jeu-navigateur-dpr-un-deux-et-changement-a-chaud', { timeout: 60000 }, asy
         center: [...canvas.getContext('2d').getImageData(640 * s.dpr, 420 * s.dpr, 1, 1).data] };
     });
     assert.deepEqual(result.backing, [1040 * dpr, 720 * dpr]);
-    assert.equal(result.picked, 'caisse-01'); assert.deepEqual(result.center, [246, 205, 114, 255]);
+    assert.equal(result.picked, 'caisse-01');
+    assert.equal(result.center[3], 255);
+    assert.ok(result.center[0] > 60 && result.center[1] > 40, 'sprite local visible à chaque DPR');
     await page.mouse.click(640, 420); assert.match(await page.locator('#inspection').textContent(), /caisse-01/);
     await capture(page, `dpr-${dpr}`);
   }
 });
 
-test('jeu-navigateur-scenarios-informations-et-retour-diagrammes', { timeout: 60000 }, async t => {
+test('jeu-sprites-scenarios-hud-mobile-et-commandes', { timeout: 60000 }, async t => {
   const { page } = await open(t);
   const ids = await page.locator('#scenario option').evaluateAll(options => options.map(o => o.value));
+  assert.equal(ids.length, 12);
   for (const id of ids) {
     await page.locator('#scenario').selectOption(id);
-    assert.match(await page.locator('#status').textContent(), /entités visibles/);
+    const s = await snapshot(page);
+    assert.equal(await page.locator('#status').textContent(), `${s.visibleIds.length} entités visibles`);
   }
   await resize(page, sizes[3]);
   await page.locator('#follow').click();
   assert.equal(await page.locator('#follow').getAttribute('aria-pressed'), 'true');
+  assert.equal((await snapshot(page)).following, true);
   await page.locator('#planet').click();
+  const s = await snapshot(page);
+  assert.equal(s.following, false);
+  assert.deepEqual(s.camera, { ...reference.planet.center,
+    zoom: Math.min(s.game.width, s.game.height) / (reference.planet.radius * 2 + 400) });
+  assert.equal(await page.locator('#follow').getAttribute('aria-pressed'), 'false');
   await capture(page, 'mobile-planete');
-  await page.locator('a[href="/"]').click();
+});
+
+test('jeu-sprites-retour-diagrammes-initialisation-retardee-et-conversion', { timeout: 60000 }, async t => {
+  const { page, url } = await open(t);
+  await resize(page, sizes[3]);
+  // Le HTML arrive avant son module : reproduire cet état sans délai arbitraire.
+  let releaseModule;
+  const moduleGate = new Promise(resolve => { releaseModule = resolve; });
+  await page.route('**/assets/main.js', async route => {
+    await moduleGate;
+    await route.continue();
+  });
+  const requested = page.waitForRequest(`${url}/assets/main.js`);
+  try {
+    await page.locator('a[href="/"]').click({ noWaitAfter: true });
+    await page.waitForURL(`${url}/`, { waitUntil: 'commit' });
+    await requested;
+    await page.locator('#diagram-file').waitFor({ state: 'visible' });
+    assert.equal(await page.locator('#diagram-file').isDisabled(), true, 'état de chargement réel');
+    assert.match(await page.locator('#app-status').textContent(), /Chargement/);
+  } finally {
+    releaseModule();
+  }
+  await page.waitForFunction(() => !document.querySelector('#diagram-file').disabled);
   assert.equal(await page.locator('#diagram-file').isEnabled(), true);
+  await generation(page);
+  const counts = await page.evaluate(async () => {
+    const svg = await (await fetch(document.querySelector('#download-svg').href)).text();
+    const documentSvg = new DOMParser().parseFromString(svg, 'image/svg+xml');
+    return { nodes: documentSvg.querySelectorAll('.noeud').length,
+      edges: documentSvg.querySelectorAll('.chemin').length };
+  });
+  assert.deepEqual(counts, { nodes: 18, edges: 24 });
 });

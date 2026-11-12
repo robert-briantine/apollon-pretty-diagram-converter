@@ -1,0 +1,1957 @@
+{
+  "version": 1,
+  "fingerprint": "97291a9c43afc5ce4f85d3ad536282f1fa753465d41fea6216dfc01b69752265",
+  "execution": {
+    "current": "evolution3.md",
+    "kind": "realize",
+    "status": "succeeded",
+    "error": null,
+    "summary": "Évolution 3 réalisée : signes de destructibilité fondés sur les propriétés réelles, fissures persistantes après dégâts, tirs ennemis orientés de taille stable et dessinés devant les effets. La combinaison projectile ennemi destructible est documentée. Scène dense de 40 entités et captures couleur/gris sur fonds clair/sombre dans quatre formats. Validation finale : 196 tests réussis, aucun ignoré ; TypeScript vérifié. Cinq nouveaux cas, dont un remplace une attente obsolète tout en conservant sa couverture. Replays de combat non exécutés : moteur, adaptateur et script JEU_ENGINE_VERIFICATION absents. Recette native Linux indisponible sans WebKitWebDriver, Xvfb et xdotool ; recette Windows indisponible sans Windows, WebView2, PowerShell et opérateur. Tous les processus démarrés sont arrêtés ; pilotage préservé. Aucun commit.",
+    "tests": [
+      {
+        "name": "suite-actuelle-196-cas",
+        "command": "\"npm\" \"test\"",
+        "exitCode": 0,
+        "output": "\n> diagrams-codex@0.1.0 test\n> node scripts/test.mjs\n\nInterface Tauri et moteur de conversion hors ligne : dist/desktop/\n✔ conversion-service-memoire-equivalence-et-immuabilite (8.94102ms)\n✔ conversion-service-diagnostics-json-import-calcul (0.905717ms)\n✔ conversion-cli-commande-documentee-utf8-et-service (3468.035772ms)\n✔ conversion-cli-svg-ouverture-navigateur (2125.674719ms)\n✔ conversion-cli-lecture-inexistante (160.171382ms)\n✔ conversion-cli-json-invalide (132.687614ms)\n✔ conversion-cli-diagramme-invalide (140.445428ms)\n✔ conversion-cli-erreur-geometrique-controlee (114.953238ms)\n✔ conversion-cli-refus-chemin-invalide (90.853456ms)\n✔ conversion-cli-refus-placements-superposes (136.484033ms)\n✔ conversion-cli-refus-chemin-traversant-forme (172.42789ms)\n✔ conversion-cli-diagnostic-rendu (147.108198ms)\n✔ conversion-cli-ecriture-interrompue-atomique (137.856535ms)\n✔ conversion-cli-destination-inaccessible (122.658972ms)\n✔ conversion-cli-refus-destination-source (137.946184ms)\n✔ conversion-cli-refus-alias-source (89.030519ms)\n✔ conversion-cli-remplacement-destination-et-chemins-espaces (76.615993ms)\n✔ conversion-cli-arguments-invalides (210.819871ms)\n✔ conversion-disposition-compacte-reference-connexions-et-conflits (7192.356001ms)\nserveur-test {\"pid\":3670832,\"port\":36493,\"stopped\":true}\n✔ desktop-worker-conversion-locale-remplacement-export-et-svg-autonome (3923.939795ms)\nserveur-test {\"pid\":3670832,\"port\":40583,\"stopped\":true}\n✔ desktop-plein-ecran-natif-echap-formulaire-cliquable-et-remplacement (3595.025641ms)\nserveur-test {\"pid\":3670832,\"port\":39243,\"stopped\":true}\n✔ desktop-plein-ecran-entree-retardee-apres-echap-libere-le-formulaire (560.68222ms)\nserveur-test {\"pid\":3670832,\"port\":45695,\"stopped\":true}\n✔ desktop-erreurs-json-metier-worker-expiration-et-reprise-sans-apercu-perime (893.262867ms)\nserveur-test {\"pid\":3670832,\"port\":39471,\"stopped\":true}\n✔ desktop-dialogue-annule-erreur-ecriture-et-ouverture-native-du-bon-resultat (543.832024ms)\n✔ connexions-losange-absolues (2.086794ms)\n✔ connexions-ovale-absolues (0.208177ms)\n✔ connexions-rectangle-ancres-multiples (0.649603ms)\n✔ connexions-rectangle-incidents-et-handles (0.409026ms)\n✔ connexions-rectangle-coins-dedupliques (0.248577ms)\n✔ connexions-diagnostics-invalides (0.716019ms)\n✔ destination-pas-signes-et-immuabilite (0.318866ms)\n✔ chemin-connexion-source-et-arrivees (0.672244ms)\n✔ chemin-tolerance-distance-carree (0.528626ms)\n✔ placements-separes-tangents-superposes (0.93314ms)\n✔ segments-interieur-bords-contacts-deux-sens (1.339702ms)\n✔ placement-chemin-exclusions-paralleles-deduplication (0.402018ms)\n✔ geometrie-configuration-valide-et-vide (0.450194ms)\n✔ geometrie-diagnostics-references-et-indices (2.069514ms)\n✔ geometrie-diagnostics-nombres-et-pas (1.447191ms)\n✔ geometrie-identifiants-speciaux (0.31189ms)\n✔ connexions-integration-diagramme-reference (7.043155ms)\nserveur-test {\"pid\":3671146,\"port\":38401,\"stopped\":true}\n✔ http-diagram-reference-svg-utf8-et-equivalence-service (3590.60908ms)\nserveur-test {\"pid\":3672640,\"port\":35281,\"stopped\":true}\n✔ http-json-mal-forme-et-reprise (3323.391071ms)\nserveur-test {\"pid\":3674055,\"port\":38753,\"stopped\":true}\n✔ http-reference-arc-invalide-et-reprise (3123.636531ms)\nserveur-test {\"pid\":3674811,\"port\":44037,\"stopped\":true}\n✔ http-structure-corps-et-refus-chemin-local (3059.25621ms)\nserveur-test {\"pid\":3674990,\"port\":45711,\"stopped\":true}\n✔ http-limite-un-mio-octets-et-reprise (2851.333551ms)\nserveur-test {\"pid\":3675203,\"port\":32919,\"stopped\":true}\n✔ http-format-contenu-charset-compression-et-reprise (2970.224662ms)\nserveur-test {\"pid\":3675315,\"port\":45475,\"stopped\":true}\n✔ http-erreur-interne-rendu-controlee-et-reprise (4624.165715ms)\nserveur-test {\"pid\":3675681,\"port\":36971,\"stopped\":true}\n✔ http-erreur-interne-import-inattendue-et-reprise (3016.185968ms)\nserveur-test {\"pid\":3676009,\"port\":34743,\"stopped\":true}\n✔ http-verificateur-chemin-bloque-succes (99.074247ms)\nserveur-test {\"pid\":3676016,\"port\":45059,\"stopped\":true}\n✔ http-verificateur-placement-bloque-succes (93.39358ms)\nserveur-test {\"pid\":3676023,\"port\":38803,\"stopped\":true}\n✔ http-verificateur-placement-chemin-bloque-succes (100.470607ms)\nserveur-test {\"pid\":3676030,\"port\":43737,\"stopped\":true}\n✔ http-trois-verificateurs-avant-rendu (2922.05003ms)\nserveur-test {\"pid\":3676251,\"port\":40547,\"stopped\":true}\n✔ http-interface-finale-ressources-host-port-zero (348.716725ms)\nserveur-test {\"pid\":3676440,\"port\":null,\"stopped\":true}\nserveur-test {\"pid\":3676447,\"port\":37079,\"stopped\":true}\nserveur-test {\"pid\":3676454,\"port\":null,\"stopped\":true}\nserveur-test {\"pid\":3676461,\"port\":null,\"stopped\":true}\nserveur-test {\"pid\":3676468,\"port\":null,\"stopped\":true}\nserveur-test {\"pid\":3676477,\"port\":null,\"stopped\":true}\nserveur-test {\"pid\":3676484,\"port\":null,\"stopped\":true}\n✔ http-host-personnalise-port-fixe-et-diagnostics-demarrage (533.937236ms)\nserveur-test {\"pid\":3676491,\"port\":43189,\"stopped\":true}\n✔ http-svg-consultation-et-enregistrement-navigateur (3309.204027ms)\n✔ diagram-reference (5.659196ms)\n✔ formes-et-dimensions (0.31501ms)\n✔ arcs-paralleles (0.161041ms)\n✔ cycle-et-boucle (0.097984ms)\n✔ noeud-isole (0.095216ms)\n✔ tableaux-vides (0.079265ms)\n✔ libelles-unicode-multilignes (0.102112ms)\n✔ json-mal-forme (0.284546ms)\n✔ identifiants-invalides-et-dupliques (0.567539ms)\n✔ references-absentes (0.239057ms)\n✔ dimensions-invalides (0.690195ms)\n✔ types-non-pris-en-charge (0.341537ms)\n✔ structure-invalide (0.6617ms)\n✔ indications-spatiales (0.519634ms)\n✔ absence-mutation-et-alias (0.130657ms)\n✔ identifiants-et-metadonnees-speciaux (0.097441ms)\n✔ metadonnees-non-json (0.780932ms)\n✔ import-nom-initial-presentation-et-noms-personnalises (0.193473ms)\n✔ import-noeud-final-nom-par-defaut-personnalise-et-metadonnees (0.289265ms)\nserveur-test {\"pid\":3670998,\"port\":35253,\"stopped\":true}\n✔ jeu-navigateur-formats-redimensionnement-et-hud (592.949452ms)\nserveur-test {\"pid\":3671803,\"port\":38919,\"stopped\":true}\n✔ jeu-sprites-coins-centre-hors-champ-et-fond (432.272084ms)\nserveur-test {\"pid\":3671996,\"port\":44419,\"stopped\":true}\n✔ jeu-sprites-planete-circulaire-bords-et-proportions (450.63739ms)\nserveur-test {\"pid\":3672108,\"port\":37051,\"stopped\":true}\n✔ jeu-navigateur-interactions-suivi-et-coordonnees (913.144567ms)\nserveur-test {\"pid\":3672227,\"port\":37065,\"stopped\":true}\n✔ jeu-sprites-dpr-nettete-selection-et-changement-a-chaud (507.521734ms)\nserveur-test {\"pid\":3672332,\"port\":43005,\"stopped\":true}\n✔ jeu-sprites-scenarios-hud-mobile-et-commandes (634.868698ms)\nserveur-test {\"pid\":3672533,\"port\":44321,\"stopped\":true}\n✔ jeu-sprites-retour-diagrammes-initialisation-retardee-et-conversion (2518.010509ms)\n✔ jeu-layout-rectangle-hud-et-sans-hud (3.199615ms)\n✔ jeu-conversions-oracles-zoom-decalage-et-redimensionnement (4.765607ms)\n✔ jeu-visibilite-quatre-coins-tangences-et-etats (0.749812ms)\n✔ jeu-scenes-reference-determinisme-et-visibilite-compatibles (6.909298ms)\n✔ preparation-scene-deux-chargements-identiques (34.238025ms)\n✔ preparation-proprietes-independantes-des-sprites (21.0862ms)\n✔ preparation-conversions-monde-ecran-oracles (35.501743ms)\n✔ preparation-scenarios-visibilite-distances-et-planete (42.430097ms)\nserveur-test {\"pid\":3671041,\"port\":42519,\"stopped\":true}\n✔ jeu-lisibilite-scene-dense-couleur-gris-fonds-et-quatre-formats (3509.525049ms)\nserveur-test {\"pid\":3672549,\"port\":44349,\"stopped\":true}\n✔ jeu-lisibilite-proprietes-reelles-degats-origines-et-double-identite (1493.034977ms)\nserveur-test {\"pid\":3673165,\"port\":42999,\"stopped\":true}\n✔ jeu-lisibilite-tirs-prioritaires-effets-trajectoire-redimensionnement-et-zoom (1461.312867ms)\nserveur-test {\"pid\":3673613,\"port\":42467,\"stopped\":true}\n✔ jeu-lisibilite-instantanes-geles-changement-scene-et-metadonnees-combat (604.770773ms)\nserveur-test {\"pid\":3674070,\"port\":38915,\"stopped\":true}\n✔ jeu-lisibilite-orientations-limites-visuelles-selection-et-disparition (1318.141297ms)\nserveur-test {\"pid\":3670999,\"port\":41355,\"stopped\":true}\n✔ jeu-sprites-succession-instantanes-figes-suivi-tirs-et-etats (474.576948ms)\nserveur-test {\"pid\":3670988,\"port\":32843,\"stopped\":true}\n✔ jeu-sprites-assets-transparents-silhouettes-et-palette (540.260248ms)\nserveur-test {\"pid\":3671794,\"port\":34475,\"stopped\":true}\n✔ jeu-sprites-planche-scenes-quatre-formats-et-densite (2668.049923ms)\nserveur-test {\"pid\":3672429,\"port\":43669,\"stopped\":true}\n✔ jeu-sprites-comparaison-reference-meme-cadrage-et-echelle (561.197727ms)\nserveur-test {\"pid\":3672725,\"port\":32947,\"stopped\":true}\n✔ jeu-sprites-orientations-transitions-pivots-et-instantanes-immuables (1044.285261ms)\nserveur-test {\"pid\":3673068,\"port\":34409,\"stopped\":true}\n✔ jeu-sprites-chargement-local-sans-reseau-distant-et-diagnostic-manquant (607.564931ms)\n✔ placements-diagram-reference (22.201966ms)\n✔ placements-chaine (1.107989ms)\n✔ placements-embranchement-convergence (0.916068ms)\n✔ placements-cycle-et-boucles (1.408695ms)\n✔ placements-sommet-isole (0.479378ms)\n✔ placements-composantes-deconnectees (0.85298ms)\n✔ placements-graphe-vide (0.515779ms)\n✔ placements-positions-superposees-negatives (0.833284ms)\n✔ placements-indications-compatibles (1.867034ms)\n✔ placements-libelles-longs-multilignes (3.086399ms)\n✔ texte-graphemes-et-coupures (0.665347ms)\n✔ placements-marges-limites-boites (0.648243ms)\n✔ placements-determinisme-et-immuabilite (2.245243ms)\n✔ placements-connexions-apres-deplacement-redimensionnement (2.83051ms)\n✔ placements-diagnostics-entrees-invalides (2.177323ms)\n✔ placements-identifiants-speciaux (0.84882ms)\n✔ placements-graphes-generes-reproductibles (148.776525ms)\n✔ placements-ports-libres-32px-texte-centre-et-ancres-fixes (2.091962ms)\n✔ placements-presentation-large-centres-alignes-et-connexions-regenerees (11.547801ms)\n✔ routage-diagram-reference (6370.284016ms)\n✔ routage-trajet-direct (0.740804ms)\n✔ routage-obstacle-interpose (5.574124ms)\n✔ routage-embranchement-convergence (4.080324ms)\n✔ routage-cycle-retour (1.795241ms)\n✔ routage-boucles-sur-soi (1.647016ms)\n✔ routage-arcs-paralleles (4.699095ms)\n✔ routage-paralleles-32px-hors-ports-communs-des-trois-formes (4.094276ms)\nespacement-routage {\"proche\":1174.8333333333333,\"tresProche\":144,\"longueur\":17463.833333333332}\n✔ routage-reference-proximite-32px-reduite-et-trajets-courts (1560.105418ms)\n✔ routage-rectangle-connexions-meme-cote (16.403553ms)\n✔ routage-preferences-ancres-handles (2.406364ms)\n✔ routage-points-importes-valides (0.426994ms)\n✔ routage-points-preferent-ports-lateraux (0.301122ms)\n✔ routage-indications-incoherentes-recalculees (17.835096ms)\n✔ routage-formes-cardinales-et-coins (4.484966ms)\n✔ routage-degagements-source-cible-tous-cotes (34.089016ms)\n✔ routage-echec-controle-budget (1.053221ms)\n✔ routage-repli-et-limite-essais (0.816324ms)\n✔ routage-determinisme-et-immuabilite (16880.752578ms)\n✔ routage-diagnostics-entrees (0.884036ms)\n✔ routage-vide-isoles-identifiants-speciaux (1.634952ms)\n✔ routage-graphes-generes-reproductibles (5870.3976ms)\n✔ routage-sans-demi-tour-degagements-et-points-importes (36.857589ms)\nqualite-routage {\"croisements\":9,\"contacts\":0,\"longueurCommune\":0}\n✔ routage-reference-croisements-reduits-et-absence-de-jonctions-ambigues (2842.635268ms)\nlongueur-routage {\"total\":17463.833333333332,\"maximum\":3148,\"longs\":5}\n✔ routage-presentation-large-coudes-reduits-longueur-bornee-et-ancres (1482.900657ms)\n✔ routage-compact-cycle-entrelace-court-deterministe-et-immuable (118.634999ms)\n✔ routage-reference-corps-hors-degagements-et-sans-auto-intersection (6801.445966ms)\n✔ svg-navigateur-croisements-couleurs-et-pointes-proches-preservees (529.646484ms)\n✔ svg-navigateur-diagram-taille-normale-et-double (5996.643852ms)\n✔ svg-navigateur-coordonnees-negatives-et-marges (172.782628ms)\n✔ svg-navigateur-texte-long-et-retours (166.77863ms)\n✔ svg-navigateur-xml-inerte-et-hors-ligne (185.691411ms)\n✔ svg-navigateur-theme-sombre-export-et-cadrage-compact (1613.123215ms)\n✔ svg-navigateur-debut-fleches-agrandies-et-export-autonome (1608.826489ms)\n✔ svg-croisements-halos-couleurs-et-geometrie-preservee (19.597649ms)\n✔ svg-croisements-excluent-ports-coudes-et-paralleles (21.526939ms)\n✔ svg-diagram-xml-complet-conditions-en-legende (6302.852084ms)\n✔ svg-formes-connexions-et-fleches (5762.853569ms)\n✔ svg-libelles-personnalises-sans-collision-et-legende-hors-geometrie (5468.083546ms)\n✔ svg-texte-placement-multiligne (2.200907ms)\n✔ svg-viewbox-negatif-et-detours (0.489458ms)\n✔ svg-xml-echappement-et-autonomie (1.307639ms)\n✔ svg-branches-oui-non-casse-espaces-et-arcs-neutres (13.10448ms)\n✔ svg-xml-caracteres-invalides (0.59109ms)\n✔ svg-vide-et-labels-vides (0.532194ms)\n✔ svg-arcs-paralleles-boucles-identifiants (3.980628ms)\n✔ svg-immuabilite-et-determinisme (5345.156483ms)\n✔ svg-diagnostics-associations-manquantes (0.942628ms)\n✔ svg-libelles-denses-repli (10.00245ms)\n✔ svg-arrondis-ports-proches-et-coins (1.799721ms)\n✔ svg-croisements-six-pistes-distinctes-pointes-reperes-et-contraste (2.089258ms)\n✔ svg-croisements-couleurs-stables-conditions-prioritaires-et-arcs-isoles (3.078303ms)\n✔ svg-croisements-palette-saturee-reduit-les-collisions-sans-rouge-ni-vert (1.53988ms)\n✔ svg-noeud-final-quatre-ports-entrees-orientees-et-trois-verificateurs (36.355731ms)\nserveur-test {\"pid\":3671015,\"port\":41279,\"stopped\":true}\n✔ ui-presentation-large-trajets-simplifies-apercu-et-export-autonome (4249.981339ms)\nserveur-test {\"pid\":3672962,\"port\":34719,\"stopped\":true}\n✔ ui-parcours-diagram-selection-apercu-ouverture-et-enregistrement-autonome (3972.066044ms)\nserveur-test {\"pid\":3674438,\"port\":39203,\"stopped\":true}\n✔ ui-branches-rouges-vertes-apercu-remplacement-et-export-hors-ligne (3942.479589ms)\nserveur-test {\"pid\":3674885,\"port\":37299,\"stopped\":true}\n✔ ui-absence-selection-json-invalide-et-diagramme-invalide-puis-reprise (1782.548879ms)\nserveur-test {\"pid\":3675001,\"port\":39943,\"stopped\":true}\n✔ ui-fichier-illisible-et-nouvelle-selection-valide (564.070907ms)\nserveur-test {\"pid\":3675103,\"port\":41355,\"stopped\":true}\n✔ ui-erreur-conversion-api-reelle-et-reprise (3734.485195ms)\nserveur-test {\"pid\":3675217,\"port\":45491,\"stopped\":true}\n✔ ui-reponses-api-inexploitables-et-reprise-sans-apercu-perime (1529.363356ms)\nserveur-test {\"pid\":3675353,\"port\":35811,\"stopped\":true}\n✔ ui-coupure-reseau-et-reprise (544.212792ms)\nserveur-test {\"pid\":3675449,\"port\":35821,\"stopped\":true}\n✔ ui-delai-reseau-expire-et-reprise (468.845909ms)\nserveur-test {\"pid\":3675550,\"port\":34231,\"stopped\":true}\n✔ ui-deux-diagrammes-remplacement-telechargement-et-liberation-des-url (3419.276676ms)\nserveur-test {\"pid\":3675702,\"port\":46681,\"stopped\":true}\n✔ ui-verrouillage-lecture-requete-et-double-soumission (421.947534ms)\nserveur-test {\"pid\":3675808,\"port\":44411,\"stopped\":true}\n✔ ui-clavier-fenetre-etroite-et-etats-accessibles (449.201636ms)\nserveur-test {\"pid\":3675907,\"port\":45185,\"stopped\":true}\n✔ ui-plein-ecran-natif-zoom-retour-et-enregistrement (3459.62439ms)\nserveur-test {\"pid\":3676041,\"port\":45109,\"stopped\":true}\n✔ ui-plein-ecran-repli-api-absente-ou-refusee-et-echap (518.646569ms)\nserveur-test {\"pid\":3676141,\"port\":43053,\"stopped\":true}\n✔ ui-plein-ecran-nouvelle-selection-et-echec-liberent-la-vue (702.369105ms)\nserveur-test {\"pid\":3676243,\"port\":37857,\"stopped\":true}\n✔ ui-chemins-raccourcis-apercu-et-fichier-autonome-identiques (3473.379413ms)\nserveur-test {\"pid\":3676639,\"port\":42303,\"stopped\":true}\n✔ ui-croisements-halos-visibles-apercu-export-et-remplacement (4094.659937ms)\ncouleurs-croisements {\"fichier\":\"diagram.json\",\"croisements\":9,\"conditionsIdentiques\":2,\"ordinaires\":3,\"palette\":[\"rgb(148, 163, 184)\",\"rgb(96, 165, 250)\"]}\ncouleurs-croisements {\"fichier\":\"pistes.json\",\"croisements\":9,\"conditionsIdentiques\":0,\"ordinaires\":9,\"palette\":[\"rgb(148, 163, 184)\",\"rgb(96, 165, 250)\"]}\nserveur-test {\"pid\":3676805,\"port\":34953,\"stopped\":true}\n✔ ui-pistes-32px-croisements-couleurs-distinctes-export-et-remplacement (6598.760677ms)\nserveur-test {\"pid\":3676980,\"port\":39301,\"stopped\":true}\n✔ ui-zoom-boutons-clavier-bornes-et-export-inchange (3355.670338ms)\nserveur-test {\"pid\":3677154,\"port\":34169,\"stopped\":true}\n✔ ui-zoom-molette-ancrage-defilement-et-vue-ensemble (1971.504603ms)\nserveur-test {\"pid\":3677260,\"port\":32819,\"stopped\":true}\n✔ ui-zoom-fenetre-etroite-plein-ecran-remplacement-et-reprise (2362.928061ms)\nserveur-test {\"pid\":3677416,\"port\":34107,\"stopped\":true}\n✔ ui-noeuds-finaux-legende-reprise-remplacement-et-export-autonome (1070.084075ms)\nℹ tests 196\nℹ suites 0\nℹ pass 196\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 53044.664596\n"
+      },
+      {
+        "name": "typecheck",
+        "command": "\"npm\" \"run\" \"typecheck\"",
+        "exitCode": 0,
+        "output": "\n> diagrams-codex@0.1.0 typecheck\n> tsc -p tsconfig.server.json --noEmit && tsc -p tsconfig.client.json --noEmit && tsc -p tsconfig.desktop.json\n\n"
+      },
+      {
+        "name": "jeu-lisibilite-scene-dense-couleur-gris-fonds-et-quatre-formats",
+        "command": "\"node\" \"scripts/test.mjs\" \"jeu-lisibilite-scene-dense-couleur-gris-fonds-et-quatre-formats\"",
+        "exitCode": 0,
+        "output": "Interface Tauri et moteur de conversion hors ligne : dist/desktop/\nserveur-test {\"pid\":3677826,\"port\":42411,\"stopped\":true}\n✔ jeu-lisibilite-scene-dense-couleur-gris-fonds-et-quatre-formats (3313.570105ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 3572.039999\n"
+      },
+      {
+        "name": "jeu-lisibilite-proprietes-reelles-degats-origines-et-double-identite",
+        "command": "\"node\" \"scripts/test.mjs\" \"jeu-lisibilite-proprietes-reelles-degats-origines-et-double-identite\"",
+        "exitCode": 0,
+        "output": "Interface Tauri et moteur de conversion hors ligne : dist/desktop/\nserveur-test {\"pid\":3678100,\"port\":41777,\"stopped\":true}\n✔ jeu-lisibilite-proprietes-reelles-degats-origines-et-double-identite (1372.855992ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 1611.855934\n"
+      },
+      {
+        "name": "jeu-lisibilite-tirs-prioritaires-effets-trajectoire-redimensionnement-et-zoom",
+        "command": "\"node\" \"scripts/test.mjs\" \"jeu-lisibilite-tirs-prioritaires-effets-trajectoire-redimensionnement-et-zoom\"",
+        "exitCode": 0,
+        "output": "Interface Tauri et moteur de conversion hors ligne : dist/desktop/\nserveur-test {\"pid\":3678325,\"port\":34447,\"stopped\":true}\n✔ jeu-lisibilite-tirs-prioritaires-effets-trajectoire-redimensionnement-et-zoom (1304.809273ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 1568.140374\n"
+      },
+      {
+        "name": "jeu-lisibilite-instantanes-geles-changement-scene-et-metadonnees-combat",
+        "command": "\"node\" \"scripts/test.mjs\" \"jeu-lisibilite-instantanes-geles-changement-scene-et-metadonnees-combat\"",
+        "exitCode": 0,
+        "output": "Interface Tauri et moteur de conversion hors ligne : dist/desktop/\nserveur-test {\"pid\":3678593,\"port\":45983,\"stopped\":true}\n✔ jeu-lisibilite-instantanes-geles-changement-scene-et-metadonnees-combat (603.947126ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 829.671866\n"
+      },
+      {
+        "name": "jeu-lisibilite-orientations-limites-visuelles-selection-et-disparition",
+        "command": "\"node\" \"scripts/test.mjs\" \"jeu-lisibilite-orientations-limites-visuelles-selection-et-disparition\"",
+        "exitCode": 0,
+        "output": "Interface Tauri et moteur de conversion hors ligne : dist/desktop/\nserveur-test {\"pid\":3678822,\"port\":43453,\"stopped\":true}\n✔ jeu-lisibilite-orientations-limites-visuelles-selection-et-disparition (1251.759971ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 1453.796275\n"
+      },
+      {
+        "name": "npm run build",
+        "command": "\"npm\" \"run\" \"build\"",
+        "exitCode": 0,
+        "output": "\n> diagrams-codex@0.1.0 build\n> tsc -p tsconfig.server.json && tsc -p tsconfig.client.json && node scripts/build-jeu.mjs\n\n"
+      }
+    ],
+    "updatedAt": "2026-11-12T17:56:01.270Z",
+    "rawResponse": "{\n  \"current\": \"evolution3.md\",\n  \"workCompleted\": true,\n  \"summary\": \"Évolution 3 réalisée : signes de destructibilité fondés sur les propriétés réelles, fissures persistantes après dégâts, tirs ennemis orientés de taille stable et dessinés devant les effets. La combinaison projectile ennemi destructible est documentée. Scène dense de 40 entités et captures couleur/gris sur fonds clair/sombre dans quatre formats. Validation finale : 196 tests réussis, aucun ignoré ; TypeScript vérifié. Cinq nouveaux cas, dont un remplace une attente obsolète tout en conservant sa couverture. Replays de combat non exécutés : moteur, adaptateur et script JEU_ENGINE_VERIFICATION absents. Recette native Linux indisponible sans WebKitWebDriver, Xvfb et xdotool ; recette Windows indisponible sans Windows, WebView2, PowerShell et opérateur. Tous les processus démarrés sont arrêtés ; pilotage préservé. Aucun commit.\",\n  \"tests\": [\n    {\n      \"name\": \"suite-actuelle-196-cas\",\n      \"executable\": \"npm\",\n      \"args\": [\"test\"],\n      \"status\": \"passed\",\n      \"covers\": [0, 1, 2, 3]\n    },\n    {\n      \"name\": \"typecheck\",\n      \"executable\": \"npm\",\n      \"args\": [\"run\", \"typecheck\"],\n      \"status\": \"passed\",\n      \"covers\": []\n    },\n    {\n      \"name\": \"jeu-lisibilite-scene-dense-couleur-gris-fonds-et-quatre-formats\",\n      \"executable\": \"node\",\n      \"args\": [\"scripts/test.mjs\", \"jeu-lisibilite-scene-dense-couleur-gris-fonds-et-quatre-formats\"],\n      \"status\": \"passed\",\n      \"covers\": [0, 1]\n    },\n    {\n      \"name\": \"jeu-lisibilite-proprietes-reelles-degats-origines-et-double-identite\",\n      \"executable\": \"node\",\n      \"args\": [\"scripts/test.mjs\", \"jeu-lisibilite-proprietes-reelles-degats-origines-et-double-identite\"],\n      \"status\": \"passed\",\n      \"covers\": [1, 2]\n    },\n    {\n      \"name\": \"jeu-lisibilite-tirs-prioritaires-effets-trajectoire-redimensionnement-et-zoom\",\n      \"executable\": \"node\",\n      \"args\": [\"scripts/test.mjs\", \"jeu-lisibilite-tirs-prioritaires-effets-trajectoire-redimensionnement-et-zoom\"],\n      \"status\": \"passed\",\n      \"covers\": [2, 3]\n    },\n    {\n      \"name\": \"jeu-lisibilite-instantanes-geles-changement-scene-et-metadonnees-combat\",\n      \"executable\": \"node\",\n      \"args\": [\"scripts/test.mjs\", \"jeu-lisibilite-instantanes-geles-changement-scene-et-metadonnees-combat\"],\n      \"status\": \"passed\",\n      \"covers\": [2, 4]\n    },\n    {\n      \"name\": \"jeu-lisibilite-orientations-limites-visuelles-selection-et-disparition\",\n      \"executable\": \"node\",\n      \"args\": [\"scripts/test.mjs\", \"jeu-lisibilite-orientations-limites-visuelles-selection-et-disparition\"],\n      \"status\": \"passed\",\n      \"covers\": [2, 3]\n    },\n    {\n      \"name\": \"rejeu-moteur-reel-avant-apres\",\n      \"executable\": \"node\",\n      \"args\": [\"scripts/verify-jeu-engine.mjs\"],\n      \"status\": \"not-run\",\n      \"covers\": [4]\n    },\n    {\n      \"name\": \"desktop-natif-linux-selection-worker-dialogue-export-fenetre-et-reprise\",\n      \"executable\": \"node\",\n      \"args\": [\"scripts/test-desktop-native.mjs\"],\n      \"status\": \"not-run\",\n      \"covers\": []\n    },\n    {\n      \"name\": \"desktop-natif-windows-installation-webview2-et-export-autonome\",\n      \"executable\": \"powershell\",\n      \"args\": [\"-NoProfile\", \"-ExecutionPolicy\", \"Bypass\", \"-File\", \"scripts/verify-windows.ps1\"],\n      \"status\": \"not-run\",\n      \"covers\": []\n    }\n  ],\n  \"testChanges\": {\n    \"removed\": [\n      {\n        \"name\": \"jeu-sprites-orientations-toutes-categories-enveloppes-et-disparition\",\n        \"reason\": \"L’attente imposait de rétrécir le tir ennemi tourné pour le contenir dans son enveloppe logique, ce qui nuisait à sa lisibilité. Le remplacement conserve les 45 combinaisons, les limites des autres sprites, la sélection et la disparition finale ; il vérifie les limites visuelles orientées du tir ennemi. Le contrôle complémentaire couvre sa taille minimale et sa visibilité pendant les effets.\",\n        \"covers\": [0, 2],\n        \"replacements\": [4, 6]\n      }\n    ],\n    \"added\": [2, 3, 4, 5, 6]\n  },\n  \"serversStopped\": true,\n  \"servers\": [\n    {\"pid\":3659818,\"port\":37699,\"stopped\":true},\n    {\"pid\":3647181,\"port\":35623,\"stopped\":true},\n    {\"pid\":3655738,\"port\":38077,\"stopped\":true},\n    {\"pid\":3656088,\"port\":43367,\"stopped\":true},\n    {\"pid\":3656088,\"port\":33789,\"stopped\":true},\n    {\"pid\":3656088,\"port\":36737,\"stopped\":true},\n    {\"pid\":3656088,\"port\":38349,\"stopped\":true},\n    {\"pid\":3656088,\"port\":34763,\"stopped\":true},\n    {\"pid\":3656285,\"port\":39729,\"stopped\":true},\n    {\"pid\":3658004,\"port\":43937,\"stopped\":true},\n    {\"pid\":3659440,\"port\":41355,\"stopped\":true},\n    {\"pid\":3660302,\"port\":36877,\"stopped\":true},\n    {\"pid\":3660496,\"port\":44897,\"stopped\":true},\n    {\"pid\":3660718,\"port\":43895,\"stopped\":true},\n    {\"pid\":3660895,\"port\":42115,\"stopped\":true},\n    {\"pid\":3661265,\"port\":34627,\"stopped\":true},\n    {\"pid\":3661620,\"port\":44901,\"stopped\":true},\n    {\"pid\":3661627,\"port\":32931,\"stopped\":true},\n    {\"pid\":3661634,\"port\":36647,\"stopped\":true},\n    {\"pid\":3661641,\"port\":45923,\"stopped\":true},\n    {\"pid\":3661871,\"port\":35693,\"stopped\":true},\n    {\"pid\":3661970,\"port\":null,\"stopped\":true},\n    {\"pid\":3661985,\"port\":33971,\"stopped\":true},\n    {\"pid\":3662079,\"port\":null,\"stopped\":true},\n    {\"pid\":3662089,\"port\":null,\"stopped\":true},\n    {\"pid\":3662098,\"port\":null,\"stopped\":true},\n    {\"pid\":3662105,\"port\":null,\"stopped\":true},\n    {\"pid\":3662112,\"port\":null,\"stopped\":true},\n    {\"pid\":3662119,\"port\":42679,\"stopped\":true},\n    {\"pid\":3656259,\"port\":44649,\"stopped\":true},\n    {\"pid\":3657051,\"port\":42071,\"stopped\":true},\n    {\"pid\":3657241,\"port\":33119,\"stopped\":true},\n    {\"pid\":3657362,\"port\":46785,\"stopped\":true},\n    {\"pid\":3657466,\"port\":37219,\"stopped\":true},\n    {\"pid\":3657581,\"port\":39451,\"stopped\":true},\n    {\"pid\":3657889,\"port\":45919,\"stopped\":true},\n    {\"pid\":3656298,\"port\":34479,\"stopped\":true},\n    {\"pid\":3657697,\"port\":36275,\"stopped\":true},\n    {\"pid\":3658385,\"port\":37229,\"stopped\":true},\n    {\"pid\":3658542,\"port\":37573,\"stopped\":true},\n    {\"pid\":3658795,\"port\":42091,\"stopped\":true},\n    {\"pid\":3656258,\"port\":44813,\"stopped\":true},\n    {\"pid\":3656318,\"port\":41621,\"stopped\":true},\n    {\"pid\":3657041,\"port\":43001,\"stopped\":true},\n    {\"pid\":3657674,\"port\":37603,\"stopped\":true},\n    {\"pid\":3657910,\"port\":45059,\"stopped\":true},\n    {\"pid\":3658270,\"port\":38091,\"stopped\":true},\n    {\"pid\":3656357,\"port\":36537,\"stopped\":true},\n    {\"pid\":3658223,\"port\":35875,\"stopped\":true},\n    {\"pid\":3659825,\"port\":45815,\"stopped\":true},\n    {\"pid\":3660369,\"port\":42989,\"stopped\":true},\n    {\"pid\":3660507,\"port\":45841,\"stopped\":true},\n    {\"pid\":3660608,\"port\":34369,\"stopped\":true},\n    {\"pid\":3660799,\"port\":36011,\"stopped\":true},\n    {\"pid\":3660905,\"port\":43181,\"stopped\":true},\n    {\"pid\":3661009,\"port\":37941,\"stopped\":true},\n    {\"pid\":3661115,\"port\":43129,\"stopped\":true},\n    {\"pid\":3661289,\"port\":42251,\"stopped\":true},\n    {\"pid\":3661392,\"port\":34977,\"stopped\":true},\n    {\"pid\":3661516,\"port\":46205,\"stopped\":true},\n    {\"pid\":3661674,\"port\":41869,\"stopped\":true},\n    {\"pid\":3661771,\"port\":38193,\"stopped\":true},\n    {\"pid\":3661971,\"port\":43053,\"stopped\":true},\n    {\"pid\":3662270,\"port\":40383,\"stopped\":true},\n    {\"pid\":3662437,\"port\":36005,\"stopped\":true},\n    {\"pid\":3662617,\"port\":40925,\"stopped\":true},\n    {\"pid\":3662768,\"port\":41597,\"stopped\":true},\n    {\"pid\":3662878,\"port\":39293,\"stopped\":true},\n    {\"pid\":3662988,\"port\":32823,\"stopped\":true},\n    {\"pid\":3655135,\"port\":44923,\"stopped\":true},\n    {\"pid\":3663273,\"port\":39305,\"stopped\":true},\n    {\"pid\":3663273,\"port\":40253,\"stopped\":true},\n    {\"pid\":3663273,\"port\":39877,\"stopped\":true},\n    {\"pid\":3663273,\"port\":39371,\"stopped\":true},\n    {\"pid\":3663273,\"port\":32895,\"stopped\":true},\n    {\"pid\":3663473,\"port\":41911,\"stopped\":true},\n    {\"pid\":3665073,\"port\":41985,\"stopped\":true},\n    {\"pid\":3666607,\"port\":43055,\"stopped\":true},\n    {\"pid\":3667355,\"port\":44913,\"stopped\":true},\n    {\"pid\":3667521,\"port\":42365,\"stopped\":true},\n    {\"pid\":3667737,\"port\":46027,\"stopped\":true},\n    {\"pid\":3667846,\"port\":42229,\"stopped\":true},\n    {\"pid\":3668165,\"port\":43529,\"stopped\":true},\n    {\"pid\":3668514,\"port\":35835,\"stopped\":true},\n    {\"pid\":3668521,\"port\":38613,\"stopped\":true},\n    {\"pid\":3668528,\"port\":44483,\"stopped\":true},\n    {\"pid\":3668535,\"port\":39853,\"stopped\":true},\n    {\"pid\":3668660,\"port\":37377,\"stopped\":true},\n    {\"pid\":3668854,\"port\":null,\"stopped\":true},\n    {\"pid\":3668861,\"port\":45957,\"stopped\":true},\n    {\"pid\":3668868,\"port\":null,\"stopped\":true},\n    {\"pid\":3668882,\"port\":null,\"stopped\":true},\n    {\"pid\":3668890,\"port\":null,\"stopped\":true},\n    {\"pid\":3668982,\"port\":null,\"stopped\":true},\n    {\"pid\":3668998,\"port\":null,\"stopped\":true},\n    {\"pid\":3669005,\"port\":44881,\"stopped\":true},\n    {\"pid\":3663431,\"port\":41671,\"stopped\":true},\n    {\"pid\":3664274,\"port\":38443,\"stopped\":true},\n    {\"pid\":3664524,\"port\":37683,\"stopped\":true},\n    {\"pid\":3664638,\"port\":42921,\"stopped\":true},\n    {\"pid\":3664762,\"port\":32973,\"stopped\":true},\n    {\"pid\":3664864,\"port\":34099,\"stopped\":true},\n    {\"pid\":3665079,\"port\":43095,\"stopped\":true},\n    {\"pid\":3663461,\"port\":44119,\"stopped\":true},\n    {\"pid\":3665066,\"port\":43281,\"stopped\":true},\n    {\"pid\":3665701,\"port\":42923,\"stopped\":true},\n    {\"pid\":3666129,\"port\":41615,\"stopped\":true},\n    {\"pid\":3666575,\"port\":43275,\"stopped\":true},\n    {\"pid\":3663425,\"port\":38855,\"stopped\":true},\n    {\"pid\":3663466,\"port\":39823,\"stopped\":true},\n    {\"pid\":3664293,\"port\":37407,\"stopped\":true},\n    {\"pid\":3664962,\"port\":41915,\"stopped\":true},\n    {\"pid\":3665188,\"port\":39613,\"stopped\":true},\n    {\"pid\":3665601,\"port\":45049,\"stopped\":true},\n    {\"pid\":3663550,\"port\":41191,\"stopped\":true},\n    {\"pid\":3665500,\"port\":39095,\"stopped\":true},\n    {\"pid\":3666976,\"port\":44675,\"stopped\":true},\n    {\"pid\":3667421,\"port\":44859,\"stopped\":true},\n    {\"pid\":3667535,\"port\":45101,\"stopped\":true},\n    {\"pid\":3667632,\"port\":44347,\"stopped\":true},\n    {\"pid\":3667749,\"port\":38615,\"stopped\":true},\n    {\"pid\":3667857,\"port\":40583,\"stopped\":true},\n    {\"pid\":3667961,\"port\":40765,\"stopped\":true},\n    {\"pid\":3668060,\"port\":35005,\"stopped\":true},\n    {\"pid\":3668189,\"port\":45045,\"stopped\":true},\n    {\"pid\":3668297,\"port\":33809,\"stopped\":true},\n    {\"pid\":3668399,\"port\":36991,\"stopped\":true},\n    {\"pid\":3668552,\"port\":42727,\"stopped\":true},\n    {\"pid\":3668653,\"port\":43555,\"stopped\":true},\n    {\"pid\":3668875,\"port\":34139,\"stopped\":true},\n    {\"pid\":3669154,\"port\":39537,\"stopped\":true},\n    {\"pid\":3669347,\"port\":35397,\"stopped\":true},\n    {\"pid\":3669612,\"port\":46755,\"stopped\":true},\n    {\"pid\":3669755,\"port\":34941,\"stopped\":true},\n    {\"pid\":3669865,\"port\":44753,\"stopped\":true},\n    {\"pid\":3669975,\"port\":41015,\"stopped\":true},\n    {\"pid\":3647502,\"port\":41415,\"stopped\":true},\n    {\"pid\":3647502,\"port\":33245,\"stopped\":true},\n    {\"pid\":3647502,\"port\":44985,\"stopped\":true},\n    {\"pid\":3647502,\"port\":35679,\"stopped\":true},\n    {\"pid\":3647502,\"port\":35757,\"stopped\":true},\n    {\"pid\":3647755,\"port\":33375,\"stopped\":true},\n    {\"pid\":3649506,\"port\":42075,\"stopped\":true},\n    {\"pid\":3650847,\"port\":43459,\"stopped\":true},\n    {\"pid\":3651473,\"port\":34615,\"stopped\":true},\n    {\"pid\":3651671,\"port\":33303,\"stopped\":true},\n    {\"pid\":3651893,\"port\":44169,\"stopped\":true},\n    {\"pid\":3652017,\"port\":40153,\"stopped\":true},\n    {\"pid\":3652384,\"port\":39511,\"stopped\":true},\n    {\"pid\":3652730,\"port\":39779,\"stopped\":true},\n    {\"pid\":3652737,\"port\":40515,\"stopped\":true},\n    {\"pid\":3652750,\"port\":33003,\"stopped\":true},\n    {\"pid\":3652757,\"port\":33777,\"stopped\":true},\n    {\"pid\":3652975,\"port\":33539,\"stopped\":true},\n    {\"pid\":3653165,\"port\":null,\"stopped\":true},\n    {\"pid\":3653187,\"port\":36991,\"stopped\":true},\n    {\"pid\":3653196,\"port\":null,\"stopped\":true},\n    {\"pid\":3653203,\"port\":null,\"stopped\":true},\n    {\"pid\":3653210,\"port\":null,\"stopped\":true},\n    {\"pid\":3653217,\"port\":null,\"stopped\":true},\n    {\"pid\":3653224,\"port\":null,\"stopped\":true},\n    {\"pid\":3653231,\"port\":43289,\"stopped\":true},\n    {\"pid\":3647661,\"port\":37751,\"stopped\":true},\n    {\"pid\":3648463,\"port\":42011,\"stopped\":true},\n    {\"pid\":3648761,\"port\":41839,\"stopped\":true},\n    {\"pid\":3648885,\"port\":35891,\"stopped\":true},\n    {\"pid\":3649094,\"port\":44887,\"stopped\":true},\n    {\"pid\":3649201,\"port\":43053,\"stopped\":true},\n    {\"pid\":3649514,\"port\":35655,\"stopped\":true},\n    {\"pid\":3647698,\"port\":43855,\"stopped\":true},\n    {\"pid\":3648661,\"port\":37937,\"stopped\":true},\n    {\"pid\":3648992,\"port\":34161,\"stopped\":true},\n    {\"pid\":3649297,\"port\":34931,\"stopped\":true},\n    {\"pid\":3647721,\"port\":36599,\"stopped\":true},\n    {\"pid\":3647685,\"port\":46113,\"stopped\":true},\n    {\"pid\":3648461,\"port\":46337,\"stopped\":true},\n    {\"pid\":3649304,\"port\":46369,\"stopped\":true},\n    {\"pid\":3649615,\"port\":33329,\"stopped\":true},\n    {\"pid\":3649926,\"port\":39877,\"stopped\":true},\n    {\"pid\":3650028,\"port\":44999,\"stopped\":true},\n    {\"pid\":3647687,\"port\":37187,\"stopped\":true},\n    {\"pid\":3649824,\"port\":40389,\"stopped\":true},\n    {\"pid\":3651087,\"port\":43811,\"stopped\":true},\n    {\"pid\":3651545,\"port\":45949,\"stopped\":true},\n    {\"pid\":3651681,\"port\":43031,\"stopped\":true},\n    {\"pid\":3651787,\"port\":42261,\"stopped\":true},\n    {\"pid\":3651915,\"port\":36521,\"stopped\":true},\n    {\"pid\":3652030,\"port\":46529,\"stopped\":true},\n    {\"pid\":3652132,\"port\":41903,\"stopped\":true},\n    {\"pid\":3652255,\"port\":45041,\"stopped\":true},\n    {\"pid\":3652405,\"port\":39379,\"stopped\":true},\n    {\"pid\":3652502,\"port\":44395,\"stopped\":true},\n    {\"pid\":3652624,\"port\":45869,\"stopped\":true},\n    {\"pid\":3652772,\"port\":42317,\"stopped\":true},\n    {\"pid\":3652878,\"port\":43941,\"stopped\":true},\n    {\"pid\":3652983,\"port\":36365,\"stopped\":true},\n    {\"pid\":3653377,\"port\":39179,\"stopped\":true},\n    {\"pid\":3653546,\"port\":41053,\"stopped\":true},\n    {\"pid\":3653721,\"port\":42997,\"stopped\":true},\n    {\"pid\":3653859,\"port\":45627,\"stopped\":true},\n    {\"pid\":3653967,\"port\":45539,\"stopped\":true},\n    {\"pid\":3654084,\"port\":41787,\"stopped\":true},\n    {\"pid\":3654875,\"port\":41325,\"stopped\":true}\n  ]\n}",
+    "report": {
+      "current": "evolution3.md",
+      "workCompleted": true,
+      "summary": "Évolution 3 réalisée : signes de destructibilité fondés sur les propriétés réelles, fissures persistantes après dégâts, tirs ennemis orientés de taille stable et dessinés devant les effets. La combinaison projectile ennemi destructible est documentée. Scène dense de 40 entités et captures couleur/gris sur fonds clair/sombre dans quatre formats. Validation finale : 196 tests réussis, aucun ignoré ; TypeScript vérifié. Cinq nouveaux cas, dont un remplace une attente obsolète tout en conservant sa couverture. Replays de combat non exécutés : moteur, adaptateur et script JEU_ENGINE_VERIFICATION absents. Recette native Linux indisponible sans WebKitWebDriver, Xvfb et xdotool ; recette Windows indisponible sans Windows, WebView2, PowerShell et opérateur. Tous les processus démarrés sont arrêtés ; pilotage préservé. Aucun commit.",
+      "tests": [
+        {
+          "name": "suite-actuelle-196-cas",
+          "executable": "npm",
+          "args": [
+            "test"
+          ],
+          "status": "passed",
+          "covers": [
+            0,
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "name": "typecheck",
+          "executable": "npm",
+          "args": [
+            "run",
+            "typecheck"
+          ],
+          "status": "passed",
+          "covers": []
+        },
+        {
+          "name": "jeu-lisibilite-scene-dense-couleur-gris-fonds-et-quatre-formats",
+          "executable": "node",
+          "args": [
+            "scripts/test.mjs",
+            "jeu-lisibilite-scene-dense-couleur-gris-fonds-et-quatre-formats"
+          ],
+          "status": "passed",
+          "covers": [
+            0,
+            1
+          ]
+        },
+        {
+          "name": "jeu-lisibilite-proprietes-reelles-degats-origines-et-double-identite",
+          "executable": "node",
+          "args": [
+            "scripts/test.mjs",
+            "jeu-lisibilite-proprietes-reelles-degats-origines-et-double-identite"
+          ],
+          "status": "passed",
+          "covers": [
+            1,
+            2
+          ]
+        },
+        {
+          "name": "jeu-lisibilite-tirs-prioritaires-effets-trajectoire-redimensionnement-et-zoom",
+          "executable": "node",
+          "args": [
+            "scripts/test.mjs",
+            "jeu-lisibilite-tirs-prioritaires-effets-trajectoire-redimensionnement-et-zoom"
+          ],
+          "status": "passed",
+          "covers": [
+            2,
+            3
+          ]
+        },
+        {
+          "name": "jeu-lisibilite-instantanes-geles-changement-scene-et-metadonnees-combat",
+          "executable": "node",
+          "args": [
+            "scripts/test.mjs",
+            "jeu-lisibilite-instantanes-geles-changement-scene-et-metadonnees-combat"
+          ],
+          "status": "passed",
+          "covers": [
+            2,
+            4
+          ]
+        },
+        {
+          "name": "jeu-lisibilite-orientations-limites-visuelles-selection-et-disparition",
+          "executable": "node",
+          "args": [
+            "scripts/test.mjs",
+            "jeu-lisibilite-orientations-limites-visuelles-selection-et-disparition"
+          ],
+          "status": "passed",
+          "covers": [
+            2,
+            3
+          ]
+        },
+        {
+          "name": "rejeu-moteur-reel-avant-apres",
+          "executable": "node",
+          "args": [
+            "scripts/verify-jeu-engine.mjs"
+          ],
+          "status": "not-run",
+          "covers": [
+            4
+          ]
+        },
+        {
+          "name": "desktop-natif-linux-selection-worker-dialogue-export-fenetre-et-reprise",
+          "executable": "node",
+          "args": [
+            "scripts/test-desktop-native.mjs"
+          ],
+          "status": "not-run",
+          "covers": []
+        },
+        {
+          "name": "desktop-natif-windows-installation-webview2-et-export-autonome",
+          "executable": "powershell",
+          "args": [
+            "-NoProfile",
+            "-ExecutionPolicy",
+            "Bypass",
+            "-File",
+            "scripts/verify-windows.ps1"
+          ],
+          "status": "not-run",
+          "covers": []
+        }
+      ],
+      "testChanges": {
+        "removed": [
+          {
+            "name": "jeu-sprites-orientations-toutes-categories-enveloppes-et-disparition",
+            "reason": "L’attente imposait de rétrécir le tir ennemi tourné pour le contenir dans son enveloppe logique, ce qui nuisait à sa lisibilité. Le remplacement conserve les 45 combinaisons, les limites des autres sprites, la sélection et la disparition finale ; il vérifie les limites visuelles orientées du tir ennemi. Le contrôle complémentaire couvre sa taille minimale et sa visibilité pendant les effets.",
+            "covers": [
+              0,
+              2
+            ],
+            "replacements": [
+              4,
+              6
+            ]
+          }
+        ],
+        "added": [
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      "serversStopped": true,
+      "servers": [
+        {
+          "pid": 3659818,
+          "port": 37699,
+          "stopped": true
+        },
+        {
+          "pid": 3647181,
+          "port": 35623,
+          "stopped": true
+        },
+        {
+          "pid": 3655738,
+          "port": 38077,
+          "stopped": true
+        },
+        {
+          "pid": 3656088,
+          "port": 43367,
+          "stopped": true
+        },
+        {
+          "pid": 3656088,
+          "port": 33789,
+          "stopped": true
+        },
+        {
+          "pid": 3656088,
+          "port": 36737,
+          "stopped": true
+        },
+        {
+          "pid": 3656088,
+          "port": 38349,
+          "stopped": true
+        },
+        {
+          "pid": 3656088,
+          "port": 34763,
+          "stopped": true
+        },
+        {
+          "pid": 3656285,
+          "port": 39729,
+          "stopped": true
+        },
+        {
+          "pid": 3658004,
+          "port": 43937,
+          "stopped": true
+        },
+        {
+          "pid": 3659440,
+          "port": 41355,
+          "stopped": true
+        },
+        {
+          "pid": 3660302,
+          "port": 36877,
+          "stopped": true
+        },
+        {
+          "pid": 3660496,
+          "port": 44897,
+          "stopped": true
+        },
+        {
+          "pid": 3660718,
+          "port": 43895,
+          "stopped": true
+        },
+        {
+          "pid": 3660895,
+          "port": 42115,
+          "stopped": true
+        },
+        {
+          "pid": 3661265,
+          "port": 34627,
+          "stopped": true
+        },
+        {
+          "pid": 3661620,
+          "port": 44901,
+          "stopped": true
+        },
+        {
+          "pid": 3661627,
+          "port": 32931,
+          "stopped": true
+        },
+        {
+          "pid": 3661634,
+          "port": 36647,
+          "stopped": true
+        },
+        {
+          "pid": 3661641,
+          "port": 45923,
+          "stopped": true
+        },
+        {
+          "pid": 3661871,
+          "port": 35693,
+          "stopped": true
+        },
+        {
+          "pid": 3661970,
+          "port": null,
+          "stopped": true
+        },
+        {
+          "pid": 3661985,
+          "port": 33971,
+          "stopped": true
+        },
+        {
+          "pid": 3662079,
+          "port": null,
+          "stopped": true
+        },
+        {
+          "pid": 3662089,
+          "port": null,
+          "stopped": true
+        },
+        {
+          "pid": 3662098,
+          "port": null,
+          "stopped": true
+        },
+        {
+          "pid": 3662105,
+          "port": null,
+          "stopped": true
+        },
+        {
+          "pid": 3662112,
+          "port": null,
+          "stopped": true
+        },
+        {
+          "pid": 3662119,
+          "port": 42679,
+          "stopped": true
+        },
+        {
+          "pid": 3656259,
+          "port": 44649,
+          "stopped": true
+        },
+        {
+          "pid": 3657051,
+          "port": 42071,
+          "stopped": true
+        },
+        {
+          "pid": 3657241,
+          "port": 33119,
+          "stopped": true
+        },
+        {
+          "pid": 3657362,
+          "port": 46785,
+          "stopped": true
+        },
+        {
+          "pid": 3657466,
+          "port": 37219,
+          "stopped": true
+        },
+        {
+          "pid": 3657581,
+          "port": 39451,
+          "stopped": true
+        },
+        {
+          "pid": 3657889,
+          "port": 45919,
+          "stopped": true
+        },
+        {
+          "pid": 3656298,
+          "port": 34479,
+          "stopped": true
+        },
+        {
+          "pid": 3657697,
+          "port": 36275,
+          "stopped": true
+        },
+        {
+          "pid": 3658385,
+          "port": 37229,
+          "stopped": true
+        },
+        {
+          "pid": 3658542,
+          "port": 37573,
+          "stopped": true
+        },
+        {
+          "pid": 3658795,
+          "port": 42091,
+          "stopped": true
+        },
+        {
+          "pid": 3656258,
+          "port": 44813,
+          "stopped": true
+        },
+        {
+          "pid": 3656318,
+          "port": 41621,
+          "stopped": true
+        },
+        {
+          "pid": 3657041,
+          "port": 43001,
+          "stopped": true
+        },
+        {
+          "pid": 3657674,
+          "port": 37603,
+          "stopped": true
+        },
+        {
+          "pid": 3657910,
+          "port": 45059,
+          "stopped": true
+        },
+        {
+          "pid": 3658270,
+          "port": 38091,
+          "stopped": true
+        },
+        {
+          "pid": 3656357,
+          "port": 36537,
+          "stopped": true
+        },
+        {
+          "pid": 3658223,
+          "port": 35875,
+          "stopped": true
+        },
+        {
+          "pid": 3659825,
+          "port": 45815,
+          "stopped": true
+        },
+        {
+          "pid": 3660369,
+          "port": 42989,
+          "stopped": true
+        },
+        {
+          "pid": 3660507,
+          "port": 45841,
+          "stopped": true
+        },
+        {
+          "pid": 3660608,
+          "port": 34369,
+          "stopped": true
+        },
+        {
+          "pid": 3660799,
+          "port": 36011,
+          "stopped": true
+        },
+        {
+          "pid": 3660905,
+          "port": 43181,
+          "stopped": true
+        },
+        {
+          "pid": 3661009,
+          "port": 37941,
+          "stopped": true
+        },
+        {
+          "pid": 3661115,
+          "port": 43129,
+          "stopped": true
+        },
+        {
+          "pid": 3661289,
+          "port": 42251,
+          "stopped": true
+        },
+        {
+          "pid": 3661392,
+          "port": 34977,
+          "stopped": true
+        },
+        {
+          "pid": 3661516,
+          "port": 46205,
+          "stopped": true
+        },
+        {
+          "pid": 3661674,
+          "port": 41869,
+          "stopped": true
+        },
+        {
+          "pid": 3661771,
+          "port": 38193,
+          "stopped": true
+        },
+        {
+          "pid": 3661971,
+          "port": 43053,
+          "stopped": true
+        },
+        {
+          "pid": 3662270,
+          "port": 40383,
+          "stopped": true
+        },
+        {
+          "pid": 3662437,
+          "port": 36005,
+          "stopped": true
+        },
+        {
+          "pid": 3662617,
+          "port": 40925,
+          "stopped": true
+        },
+        {
+          "pid": 3662768,
+          "port": 41597,
+          "stopped": true
+        },
+        {
+          "pid": 3662878,
+          "port": 39293,
+          "stopped": true
+        },
+        {
+          "pid": 3662988,
+          "port": 32823,
+          "stopped": true
+        },
+        {
+          "pid": 3655135,
+          "port": 44923,
+          "stopped": true
+        },
+        {
+          "pid": 3663273,
+          "port": 39305,
+          "stopped": true
+        },
+        {
+          "pid": 3663273,
+          "port": 40253,
+          "stopped": true
+        },
+        {
+          "pid": 3663273,
+          "port": 39877,
+          "stopped": true
+        },
+        {
+          "pid": 3663273,
+          "port": 39371,
+          "stopped": true
+        },
+        {
+          "pid": 3663273,
+          "port": 32895,
+          "stopped": true
+        },
+        {
+          "pid": 3663473,
+          "port": 41911,
+          "stopped": true
+        },
+        {
+          "pid": 3665073,
+          "port": 41985,
+          "stopped": true
+        },
+        {
+          "pid": 3666607,
+          "port": 43055,
+          "stopped": true
+        },
+        {
+          "pid": 3667355,
+          "port": 44913,
+          "stopped": true
+        },
+        {
+          "pid": 3667521,
+          "port": 42365,
+          "stopped": true
+        },
+        {
+          "pid": 3667737,
+          "port": 46027,
+          "stopped": true
+        },
+        {
+          "pid": 3667846,
+          "port": 42229,
+          "stopped": true
+        },
+        {
+          "pid": 3668165,
+          "port": 43529,
+          "stopped": true
+        },
+        {
+          "pid": 3668514,
+          "port": 35835,
+          "stopped": true
+        },
+        {
+          "pid": 3668521,
+          "port": 38613,
+          "stopped": true
+        },
+        {
+          "pid": 3668528,
+          "port": 44483,
+          "stopped": true
+        },
+        {
+          "pid": 3668535,
+          "port": 39853,
+          "stopped": true
+        },
+        {
+          "pid": 3668660,
+          "port": 37377,
+          "stopped": true
+        },
+        {
+          "pid": 3668854,
+          "port": null,
+          "stopped": true
+        },
+        {
+          "pid": 3668861,
+          "port": 45957,
+          "stopped": true
+        },
+        {
+          "pid": 3668868,
+          "port": null,
+          "stopped": true
+        },
+        {
+          "pid": 3668882,
+          "port": null,
+          "stopped": true
+        },
+        {
+          "pid": 3668890,
+          "port": null,
+          "stopped": true
+        },
+        {
+          "pid": 3668982,
+          "port": null,
+          "stopped": true
+        },
+        {
+          "pid": 3668998,
+          "port": null,
+          "stopped": true
+        },
+        {
+          "pid": 3669005,
+          "port": 44881,
+          "stopped": true
+        },
+        {
+          "pid": 3663431,
+          "port": 41671,
+          "stopped": true
+        },
+        {
+          "pid": 3664274,
+          "port": 38443,
+          "stopped": true
+        },
+        {
+          "pid": 3664524,
+          "port": 37683,
+          "stopped": true
+        },
+        {
+          "pid": 3664638,
+          "port": 42921,
+          "stopped": true
+        },
+        {
+          "pid": 3664762,
+          "port": 32973,
+          "stopped": true
+        },
+        {
+          "pid": 3664864,
+          "port": 34099,
+          "stopped": true
+        },
+        {
+          "pid": 3665079,
+          "port": 43095,
+          "stopped": true
+        },
+        {
+          "pid": 3663461,
+          "port": 44119,
+          "stopped": true
+        },
+        {
+          "pid": 3665066,
+          "port": 43281,
+          "stopped": true
+        },
+        {
+          "pid": 3665701,
+          "port": 42923,
+          "stopped": true
+        },
+        {
+          "pid": 3666129,
+          "port": 41615,
+          "stopped": true
+        },
+        {
+          "pid": 3666575,
+          "port": 43275,
+          "stopped": true
+        },
+        {
+          "pid": 3663425,
+          "port": 38855,
+          "stopped": true
+        },
+        {
+          "pid": 3663466,
+          "port": 39823,
+          "stopped": true
+        },
+        {
+          "pid": 3664293,
+          "port": 37407,
+          "stopped": true
+        },
+        {
+          "pid": 3664962,
+          "port": 41915,
+          "stopped": true
+        },
+        {
+          "pid": 3665188,
+          "port": 39613,
+          "stopped": true
+        },
+        {
+          "pid": 3665601,
+          "port": 45049,
+          "stopped": true
+        },
+        {
+          "pid": 3663550,
+          "port": 41191,
+          "stopped": true
+        },
+        {
+          "pid": 3665500,
+          "port": 39095,
+          "stopped": true
+        },
+        {
+          "pid": 3666976,
+          "port": 44675,
+          "stopped": true
+        },
+        {
+          "pid": 3667421,
+          "port": 44859,
+          "stopped": true
+        },
+        {
+          "pid": 3667535,
+          "port": 45101,
+          "stopped": true
+        },
+        {
+          "pid": 3667632,
+          "port": 44347,
+          "stopped": true
+        },
+        {
+          "pid": 3667749,
+          "port": 38615,
+          "stopped": true
+        },
+        {
+          "pid": 3667857,
+          "port": 40583,
+          "stopped": true
+        },
+        {
+          "pid": 3667961,
+          "port": 40765,
+          "stopped": true
+        },
+        {
+          "pid": 3668060,
+          "port": 35005,
+          "stopped": true
+        },
+        {
+          "pid": 3668189,
+          "port": 45045,
+          "stopped": true
+        },
+        {
+          "pid": 3668297,
+          "port": 33809,
+          "stopped": true
+        },
+        {
+          "pid": 3668399,
+          "port": 36991,
+          "stopped": true
+        },
+        {
+          "pid": 3668552,
+          "port": 42727,
+          "stopped": true
+        },
+        {
+          "pid": 3668653,
+          "port": 43555,
+          "stopped": true
+        },
+        {
+          "pid": 3668875,
+          "port": 34139,
+          "stopped": true
+        },
+        {
+          "pid": 3669154,
+          "port": 39537,
+          "stopped": true
+        },
+        {
+          "pid": 3669347,
+          "port": 35397,
+          "stopped": true
+        },
+        {
+          "pid": 3669612,
+          "port": 46755,
+          "stopped": true
+        },
+        {
+          "pid": 3669755,
+          "port": 34941,
+          "stopped": true
+        },
+        {
+          "pid": 3669865,
+          "port": 44753,
+          "stopped": true
+        },
+        {
+          "pid": 3669975,
+          "port": 41015,
+          "stopped": true
+        },
+        {
+          "pid": 3647502,
+          "port": 41415,
+          "stopped": true
+        },
+        {
+          "pid": 3647502,
+          "port": 33245,
+          "stopped": true
+        },
+        {
+          "pid": 3647502,
+          "port": 44985,
+          "stopped": true
+        },
+        {
+          "pid": 3647502,
+          "port": 35679,
+          "stopped": true
+        },
+        {
+          "pid": 3647502,
+          "port": 35757,
+          "stopped": true
+        },
+        {
+          "pid": 3647755,
+          "port": 33375,
+          "stopped": true
+        },
+        {
+          "pid": 3649506,
+          "port": 42075,
+          "stopped": true
+        },
+        {
+          "pid": 3650847,
+          "port": 43459,
+          "stopped": true
+        },
+        {
+          "pid": 3651473,
+          "port": 34615,
+          "stopped": true
+        },
+        {
+          "pid": 3651671,
+          "port": 33303,
+          "stopped": true
+        },
+        {
+          "pid": 3651893,
+          "port": 44169,
+          "stopped": true
+        },
+        {
+          "pid": 3652017,
+          "port": 40153,
+          "stopped": true
+        },
+        {
+          "pid": 3652384,
+          "port": 39511,
+          "stopped": true
+        },
+        {
+          "pid": 3652730,
+          "port": 39779,
+          "stopped": true
+        },
+        {
+          "pid": 3652737,
+          "port": 40515,
+          "stopped": true
+        },
+        {
+          "pid": 3652750,
+          "port": 33003,
+          "stopped": true
+        },
+        {
+          "pid": 3652757,
+          "port": 33777,
+          "stopped": true
+        },
+        {
+          "pid": 3652975,
+          "port": 33539,
+          "stopped": true
+        },
+        {
+          "pid": 3653165,
+          "port": null,
+          "stopped": true
+        },
+        {
+          "pid": 3653187,
+          "port": 36991,
+          "stopped": true
+        },
+        {
+          "pid": 3653196,
+          "port": null,
+          "stopped": true
+        },
+        {
+          "pid": 3653203,
+          "port": null,
+          "stopped": true
+        },
+        {
+          "pid": 3653210,
+          "port": null,
+          "stopped": true
+        },
+        {
+          "pid": 3653217,
+          "port": null,
+          "stopped": true
+        },
+        {
+          "pid": 3653224,
+          "port": null,
+          "stopped": true
+        },
+        {
+          "pid": 3653231,
+          "port": 43289,
+          "stopped": true
+        },
+        {
+          "pid": 3647661,
+          "port": 37751,
+          "stopped": true
+        },
+        {
+          "pid": 3648463,
+          "port": 42011,
+          "stopped": true
+        },
+        {
+          "pid": 3648761,
+          "port": 41839,
+          "stopped": true
+        },
+        {
+          "pid": 3648885,
+          "port": 35891,
+          "stopped": true
+        },
+        {
+          "pid": 3649094,
+          "port": 44887,
+          "stopped": true
+        },
+        {
+          "pid": 3649201,
+          "port": 43053,
+          "stopped": true
+        },
+        {
+          "pid": 3649514,
+          "port": 35655,
+          "stopped": true
+        },
+        {
+          "pid": 3647698,
+          "port": 43855,
+          "stopped": true
+        },
+        {
+          "pid": 3648661,
+          "port": 37937,
+          "stopped": true
+        },
+        {
+          "pid": 3648992,
+          "port": 34161,
+          "stopped": true
+        },
+        {
+          "pid": 3649297,
+          "port": 34931,
+          "stopped": true
+        },
+        {
+          "pid": 3647721,
+          "port": 36599,
+          "stopped": true
+        },
+        {
+          "pid": 3647685,
+          "port": 46113,
+          "stopped": true
+        },
+        {
+          "pid": 3648461,
+          "port": 46337,
+          "stopped": true
+        },
+        {
+          "pid": 3649304,
+          "port": 46369,
+          "stopped": true
+        },
+        {
+          "pid": 3649615,
+          "port": 33329,
+          "stopped": true
+        },
+        {
+          "pid": 3649926,
+          "port": 39877,
+          "stopped": true
+        },
+        {
+          "pid": 3650028,
+          "port": 44999,
+          "stopped": true
+        },
+        {
+          "pid": 3647687,
+          "port": 37187,
+          "stopped": true
+        },
+        {
+          "pid": 3649824,
+          "port": 40389,
+          "stopped": true
+        },
+        {
+          "pid": 3651087,
+          "port": 43811,
+          "stopped": true
+        },
+        {
+          "pid": 3651545,
+          "port": 45949,
+          "stopped": true
+        },
+        {
+          "pid": 3651681,
+          "port": 43031,
+          "stopped": true
+        },
+        {
+          "pid": 3651787,
+          "port": 42261,
+          "stopped": true
+        },
+        {
+          "pid": 3651915,
+          "port": 36521,
+          "stopped": true
+        },
+        {
+          "pid": 3652030,
+          "port": 46529,
+          "stopped": true
+        },
+        {
+          "pid": 3652132,
+          "port": 41903,
+          "stopped": true
+        },
+        {
+          "pid": 3652255,
+          "port": 45041,
+          "stopped": true
+        },
+        {
+          "pid": 3652405,
+          "port": 39379,
+          "stopped": true
+        },
+        {
+          "pid": 3652502,
+          "port": 44395,
+          "stopped": true
+        },
+        {
+          "pid": 3652624,
+          "port": 45869,
+          "stopped": true
+        },
+        {
+          "pid": 3652772,
+          "port": 42317,
+          "stopped": true
+        },
+        {
+          "pid": 3652878,
+          "port": 43941,
+          "stopped": true
+        },
+        {
+          "pid": 3652983,
+          "port": 36365,
+          "stopped": true
+        },
+        {
+          "pid": 3653377,
+          "port": 39179,
+          "stopped": true
+        },
+        {
+          "pid": 3653546,
+          "port": 41053,
+          "stopped": true
+        },
+        {
+          "pid": 3653721,
+          "port": 42997,
+          "stopped": true
+        },
+        {
+          "pid": 3653859,
+          "port": 45627,
+          "stopped": true
+        },
+        {
+          "pid": 3653967,
+          "port": 45539,
+          "stopped": true
+        },
+        {
+          "pid": 3654084,
+          "port": 41787,
+          "stopped": true
+        },
+        {
+          "pid": 3654875,
+          "port": 41325,
+          "stopped": true
+        }
+      ]
+    }
+  },
+  "gitScope": {
+    "root": "/home/blockapicoder/qwen-generation/diagrams-codex",
+    "base": "72f272d9f6f2ca13a2c4eea52e06252978fb6e2b",
+    "before": [
+      {
+        "path": "docs/jeu/README.md",
+        "status": " M",
+        "digest": "09bce91c80f5456b89909a6a083aa8e6b5570ec78e5f9906b060b7accaffbd6c"
+      },
+      {
+        "path": "docs/jeu/vue-rectangulaire.md",
+        "status": " M",
+        "digest": "16e073ba2494a5cbb16071c38510acad1a8ce1b3e991d1793958758f3abf318a"
+      },
+      {
+        "path": "evolution.json",
+        "status": " M",
+        "digest": "0efc3d9f72628eb3b80f841a5a51bdd4ebf7dae8d218bff4bb2a0258d11f4f82"
+      },
+      {
+        "path": "public/jeu-demo.css",
+        "status": " M",
+        "digest": "e966c0b1b96623574988932c685dc05141c611bc60feda071ed8f818cc15c882"
+      },
+      {
+        "path": "public/jeu-demo.html",
+        "status": " M",
+        "digest": "584150ab4267c5f129e4354da13cb80ee97e93e42697cb420c037d71a0a112af"
+      },
+      {
+        "path": "src/client/jeu/camera.ts",
+        "status": " M",
+        "digest": "99b439c5dc946d4ae1b7d39788d433899f2609afaafc789021effdbc7acd9288"
+      },
+      {
+        "path": "src/client/jeu/demo.ts",
+        "status": " M",
+        "digest": "5de48e05db916badb11ff925df3e7a014c938157222967c5ceba30b0447f5ffe"
+      },
+      {
+        "path": "src/client/jeu/renderer.ts",
+        "status": " M",
+        "digest": "0f8ff221e9af7ff6d639d115704433cd2bba4252ac27a91e055e648456c9352a"
+      },
+      {
+        "path": "tests/jeu-browser.test.mjs",
+        "status": " M",
+        "digest": "562e6dc1836c255ad7cfba7e8fa8207398307128b47201f58fd385269105e766"
+      },
+      {
+        "path": "bilan-evolution2.json",
+        "status": "??",
+        "digest": "de31609e2874b90675f2e6fdd1c19643edd81ffcb6c4e831317becdd07feebed"
+      },
+      {
+        "path": "docs/jeu/captures/apres-amas-dense-1280x720.png",
+        "status": "??",
+        "digest": "478493a44ab85f4154a3dc72b4a70ce111233b870236fa91123fb134524b7af3"
+      },
+      {
+        "path": "docs/jeu/captures/apres-amas-dense-1920x1080.png",
+        "status": "??",
+        "digest": "74660cef974a6dcad84732fad3dad80bfc674294c4b63cff5d00b9822e91812d"
+      },
+      {
+        "path": "docs/jeu/captures/apres-amas-dense-360x640.png",
+        "status": "??",
+        "digest": "40d9d2f693165c55eddae5497c814ab18e21b60fd928bfffebbbdefa659b2320"
+      },
+      {
+        "path": "docs/jeu/captures/apres-amas-dense-800x800.png",
+        "status": "??",
+        "digest": "7c0dbc003a0327459fc955e438226f8ed1fd9e7422e64ee3c04dea8724af0831"
+      },
+      {
+        "path": "docs/jeu/captures/apres-catalogue-1280x720.png",
+        "status": "??",
+        "digest": "ac25f800f1132ab4fb57f0ff166bbbf5ee1158b9bfcddb56d56a1d2a93041518"
+      },
+      {
+        "path": "docs/jeu/captures/apres-catalogue-1920x1080.png",
+        "status": "??",
+        "digest": "3da4433c8c60943c3a84c468d9d00966dc5dbffc1b679614a23aab59e6800b68"
+      },
+      {
+        "path": "docs/jeu/captures/apres-catalogue-360x640.png",
+        "status": "??",
+        "digest": "9a4dd9ae31fb9036ef82b66799dc51bc067257f285de09003667e6e9f07a4d4b"
+      },
+      {
+        "path": "docs/jeu/captures/apres-catalogue-800x800.png",
+        "status": "??",
+        "digest": "a3c152533a06afe26bb160e473cbc16f1dc9428d04ef8222334c62bf2000d232"
+      },
+      {
+        "path": "docs/jeu/captures/avant-amas-dense-1280x720.png",
+        "status": "??",
+        "digest": "98c6462928cc64aaf6aa7257ef3933311832f7bd942900c6178506f9d5b40d69"
+      },
+      {
+        "path": "docs/jeu/captures/avant-catalogue-1280x720.png",
+        "status": "??",
+        "digest": "b4e880f4a03a97dc834834056187c709e164a8901863bc3f83b74accf7a936ca"
+      },
+      {
+        "path": "docs/jeu/captures/avant.json",
+        "status": "??",
+        "digest": "a187dbc0b9e50bdbc1a7489d83961a6d3a24c1f9be6ab4941478c3217eab1a27"
+      },
+      {
+        "path": "docs/jeu/captures/etat-deplacement-90.png",
+        "status": "??",
+        "digest": "69a27bd97d813bebd98b838157f1313e17dbed4b08a8ddd0be7354f7db494316"
+      },
+      {
+        "path": "docs/jeu/captures/etat-destruction-0.png",
+        "status": "??",
+        "digest": "aebf42509c97a6d313fab2eca21116d747c37bb108407c635d90fae30a8f5eb7"
+      },
+      {
+        "path": "docs/jeu/captures/etat-impact-270.png",
+        "status": "??",
+        "digest": "1bf7795a4de6eb5a7651ecdeb7fef90fadf3f99ec947a713b04779b424f3f7b8"
+      },
+      {
+        "path": "docs/jeu/captures/etat-tir-180.png",
+        "status": "??",
+        "digest": "2479a3678a19cc5240f9af7bc1462c1f51fcfa618697dcb250b34f46dcbb7841"
+      },
+      {
+        "path": "docs/jeu/captures/gris-amas-dense-1280x720.png",
+        "status": "??",
+        "digest": "42a3920db915dd03ac6ef9186b07bc8f24e399cb024170d237663f94289bee3d"
+      },
+      {
+        "path": "docs/jeu/captures/gris-amas-dense-1920x1080.png",
+        "status": "??",
+        "digest": "10dbca298be9a9d896e47c2891dbdd54067ae67288c026220fe5bc8057ab697b"
+      },
+      {
+        "path": "docs/jeu/captures/gris-amas-dense-360x640.png",
+        "status": "??",
+        "digest": "8f73f4401827cbb8868acef5cb58465c62ccb1241e93e1046d6b94fb0ce46ff5"
+      },
+      {
+        "path": "docs/jeu/captures/gris-amas-dense-800x800.png",
+        "status": "??",
+        "digest": "8938c32e7321088d004a5644837153c8f74e63933ddc6c1770e123e851575531"
+      },
+      {
+        "path": "docs/jeu/captures/planche-1280x720.png",
+        "status": "??",
+        "digest": "5e52708ae45f0b22294589132933c942984aaf90757000bb43a9300ec572ee86"
+      },
+      {
+        "path": "docs/jeu/captures/planche-1920x1080.png",
+        "status": "??",
+        "digest": "dc4887e76df64aada4301ed558c94833f50433582464b6f892ea4d83942584be"
+      },
+      {
+        "path": "docs/jeu/captures/planche-360x640.png",
+        "status": "??",
+        "digest": "545e4404da17ee5173816622efec9ae5bc40cbe65344207d71c1fe346a28c908"
+      },
+      {
+        "path": "docs/jeu/captures/planche-800x800.png",
+        "status": "??",
+        "digest": "ab6cf0f076fa7f3541396938970177d7b0de5a47f8180f8f0aee5017ac4e7b27"
+      },
+      {
+        "path": "docs/jeu/sprites.md",
+        "status": "??",
+        "digest": "4dfdf45e9b7760360d2f4dde91ceeb30cdeb091c858c1b93dae43b3d2ffb9d7b"
+      },
+      {
+        "path": "public/jeu/sprites/README.md",
+        "status": "??",
+        "digest": "5513676703b19e665ccf3e21ef63b709b82faab4627d8a40ecffbe74d2a53f9a"
+      },
+      {
+        "path": "public/jeu/sprites/boss.svg",
+        "status": "??",
+        "digest": "d7f51fa744b9178f2a91f6b98fac5cd8a4862f1a5082ee072e842374c241f202"
+      },
+      {
+        "path": "public/jeu/sprites/caisse.svg",
+        "status": "??",
+        "digest": "699b744f035c41254ca9038f6d21c4686949f0da5484325cb99a5147ee7dc2cc"
+      },
+      {
+        "path": "public/jeu/sprites/ennemi.svg",
+        "status": "??",
+        "digest": "412d49bff81a4143c5a7ba8736d394de412a4da4d8d98ebabf9bd1e6171075be"
+      },
+      {
+        "path": "public/jeu/sprites/joueur.svg",
+        "status": "??",
+        "digest": "367b849e7f8cb145eb404b34f0af9f88ad792e7af28f3dc434cfd01527d6b9a9"
+      },
+      {
+        "path": "public/jeu/sprites/rocher.svg",
+        "status": "??",
+        "digest": "d574f7be0a6bfe904e7cb131276ed0828155260f2935c742ec9a0ebcde52b4d1"
+      },
+      {
+        "path": "public/jeu/sprites/sol.svg",
+        "status": "??",
+        "digest": "65a4efbee2298033703169ea41c20972cd5c7f93361f0874b779944d6a68d961"
+      },
+      {
+        "path": "public/jeu/sprites/tir-ennemi.svg",
+        "status": "??",
+        "digest": "008587c448c087605a6b54920f30546fe300a6502d3dafcd5da2cfe7b0ed42fc"
+      },
+      {
+        "path": "public/jeu/sprites/tir-joueur.svg",
+        "status": "??",
+        "digest": "1af4e2adf10198a41ee2a088f6c05ac5956f002322f566de6f6d33bcf450441b"
+      },
+      {
+        "path": "public/jeu/sprites/tir-neutre.svg",
+        "status": "??",
+        "digest": "c43db70a2d455094cc03d9c82ec3745bb6132c18c0c5d49db9d4776bde9bed82"
+      },
+      {
+        "path": "public/jeu/sprites/vaisseau-mere.svg",
+        "status": "??",
+        "digest": "d62d55dde3823e80d7e51e70d768d204b9ab04afee9b2288a476b5920ac8769c"
+      },
+      {
+        "path": "scripts/verify-jeu-engine.mjs",
+        "status": "??",
+        "digest": "8da69eb61f5eedfa6c478bb5de2799f1a88b995177cb9b2340a69816178557b2"
+      },
+      {
+        "path": "src/client/jeu/sheet.ts",
+        "status": "??",
+        "digest": "be42bac797738d5e9c5a9f315c7cfc3b273e3a6b89d7a686866a255fcf6d8cd1"
+      },
+      {
+        "path": "src/client/jeu/sprites.ts",
+        "status": "??",
+        "digest": "42b20e76fd55b4a4fbf5d4911ffe7db53f73aed52c8961260aa2418f53e57ef9"
+      },
+      {
+        "path": "tests/jeu-preparation.test.mjs",
+        "status": "??",
+        "digest": "5903a6c1f799b9312a93075f9666e1d8af7ddba9e93decec6666744824a7fcea"
+      },
+      {
+        "path": "tests/jeu-snapshots.test.mjs",
+        "status": "??",
+        "digest": "015a49d3f17c40a2a6751c6a6b7e5ecf4d6411f8ebc8baeb2edc96daa50207d8"
+      },
+      {
+        "path": "tests/jeu-sprites.test.mjs",
+        "status": "??",
+        "digest": "2eac6eb40ffd3be55c5f1456d2a95ddac76c83387d7c451fa555ddf1a133c6c5"
+      }
+    ],
+    "after": [
+      {
+        "path": "docs/jeu/README.md",
+        "status": " M",
+        "digest": "15ea9063ecf878a118e8108254bd3efdb2dcd3494cdf5faffbafb541c1fea210"
+      },
+      {
+        "path": "docs/jeu/vue-rectangulaire.md",
+        "status": " M",
+        "digest": "16e073ba2494a5cbb16071c38510acad1a8ce1b3e991d1793958758f3abf318a"
+      },
+      {
+        "path": "evolution.json",
+        "status": " M",
+        "digest": "0efc3d9f72628eb3b80f841a5a51bdd4ebf7dae8d218bff4bb2a0258d11f4f82"
+      },
+      {
+        "path": "public/jeu-demo.css",
+        "status": " M",
+        "digest": "e966c0b1b96623574988932c685dc05141c611bc60feda071ed8f818cc15c882"
+      },
+      {
+        "path": "public/jeu-demo.html",
+        "status": " M",
+        "digest": "13289172863eb1a0f2ec066bc10591f43edc6c0d435b712ff5c90448a26c1966"
+      },
+      {
+        "path": "src/client/jeu/camera.ts",
+        "status": " M",
+        "digest": "91d50facef91542f181a75fd74cee82a5d0585fb47094fa00b2d5c08bb548e92"
+      },
+      {
+        "path": "src/client/jeu/demo.ts",
+        "status": " M",
+        "digest": "f7fe7187ca9b1ff841d64be527e2d7a975e60a2d4afb43655d94d09349fc3262"
+      },
+      {
+        "path": "src/client/jeu/renderer.ts",
+        "status": " M",
+        "digest": "6081e145c71bf39777c7d0fba09b4685233097971a9668ae4ffdad32ff8abfe2"
+      },
+      {
+        "path": "tests/jeu-browser.test.mjs",
+        "status": " M",
+        "digest": "562e6dc1836c255ad7cfba7e8fa8207398307128b47201f58fd385269105e766"
+      },
+      {
+        "path": "bilan-evolution2.json",
+        "status": "??",
+        "digest": "de31609e2874b90675f2e6fdd1c19643edd81ffcb6c4e831317becdd07feebed"
+      },
+      {
+        "path": "bilan-evolution3.json",
+        "status": "??",
+        "digest": "02b7b480322fe5a89c524418cf8492205bf4065ee302d61da169325ebf3ec9ae"
+      },
+      {
+        "path": "docs/jeu/captures/apres-amas-dense-1280x720.png",
+        "status": "??",
+        "digest": "81315db5ee32e5c3e24bc8acbc0532b6bad4c50b7107fe874c348e57c3fb322f"
+      },
+      {
+        "path": "docs/jeu/captures/apres-amas-dense-1920x1080.png",
+        "status": "??",
+        "digest": "e55cecf93797eaf0030302a1eee63aa746f8397367c29a273eb0ee659fb2b469"
+      },
+      {
+        "path": "docs/jeu/captures/apres-amas-dense-360x640.png",
+        "status": "??",
+        "digest": "64dbee4ee0e063256689060e197a951410250f6073db5174a337c07787e715e6"
+      },
+      {
+        "path": "docs/jeu/captures/apres-amas-dense-800x800.png",
+        "status": "??",
+        "digest": "8352f9464a4739a6807f03b0bb8b4e64ed1eef4269f748e76e033ebc09684d8b"
+      },
+      {
+        "path": "docs/jeu/captures/apres-catalogue-1280x720.png",
+        "status": "??",
+        "digest": "6569bcbe3273728a70463ecf562cf035f09a33d8d1fdd43861a82b54e2065e8b"
+      },
+      {
+        "path": "docs/jeu/captures/apres-catalogue-1920x1080.png",
+        "status": "??",
+        "digest": "56a8126ca8142c02ba3644d6e5524293c9cc7a78a03b3ec6d38efca661863517"
+      },
+      {
+        "path": "docs/jeu/captures/apres-catalogue-360x640.png",
+        "status": "??",
+        "digest": "e961570f6cb7de0fd1cbbe3d6e9760d4432dc4d58d912e1075d577347521236e"
+      },
+      {
+        "path": "docs/jeu/captures/apres-catalogue-800x800.png",
+        "status": "??",
+        "digest": "eb1cb537d2daf40823ccd1431128b1a2d492ef595bf2ff0903fdcd45266e0c6f"
+      },
+      {
+        "path": "docs/jeu/captures/avant-amas-dense-1280x720.png",
+        "status": "??",
+        "digest": "98c6462928cc64aaf6aa7257ef3933311832f7bd942900c6178506f9d5b40d69"
+      },
+      {
+        "path": "docs/jeu/captures/avant-catalogue-1280x720.png",
+        "status": "??",
+        "digest": "b4e880f4a03a97dc834834056187c709e164a8901863bc3f83b74accf7a936ca"
+      },
+      {
+        "path": "docs/jeu/captures/avant.json",
+        "status": "??",
+        "digest": "a187dbc0b9e50bdbc1a7489d83961a6d3a24c1f9be6ab4941478c3217eab1a27"
+      },
+      {
+        "path": "docs/jeu/captures/etat-deplacement-90.png",
+        "status": "??",
+        "digest": "077419fbe2853aba2ebb9149d2a5f38865fe1e70e3cbb27ac7648f90f50bda01"
+      },
+      {
+        "path": "docs/jeu/captures/etat-destruction-0.png",
+        "status": "??",
+        "digest": "feb68e50ed83131f46f191e3ec77b4156f5940bec67ce5b664fd9645b4fe80c9"
+      },
+      {
+        "path": "docs/jeu/captures/etat-impact-270.png",
+        "status": "??",
+        "digest": "998bfe19801d1cce518bf8656c666cef752a6c881a8d85e354938d2e31671f94"
+      },
+      {
+        "path": "docs/jeu/captures/etat-tir-180.png",
+        "status": "??",
+        "digest": "83f2bdd4fa00698dbb8d6ac786f40d80687e7e4dabe6747848bb289a67f74062"
+      },
+      {
+        "path": "docs/jeu/captures/evolution3/dense-1280x720-clair-couleur.png",
+        "status": "??",
+        "digest": "dbfd05fe1dc78faffa3c534c1197322330e67389d9e93f25ad79d51ac7036986"
+      },
+      {
+        "path": "docs/jeu/captures/evolution3/dense-1280x720-clair-gris.png",
+        "status": "??",
+        "digest": "c2b650be2af256d5f25e599c1f33bb15648cb844fc074b43053634625551f296"
+      },
+      {
+        "path": "docs/jeu/captures/evolution3/dense-1280x720-sombre-couleur.png",
+        "status": "??",
+        "digest": "019cc3c368d3eaa4fa7b0c2a75b094e45a19b08a72357bcbdef2a29e9bc4a4ea"
+      },
+      {
+        "path": "docs/jeu/captures/evolution3/dense-1280x720-sombre-gris.png",
+        "status": "??",
+        "digest": "3ea6e6b0ac96f70029960edeb6f7a0443eac6fe00d47d51acbc6e2095fa115cf"
+      },
+      {
+        "path": "docs/jeu/captures/evolution3/dense-1920x1080-clair-couleur.png",
+        "status": "??",
+        "digest": "a59d0336c1cefb54bdf04d70da9900c9e698c179a72c1671c5f898529208b110"
+      },
+      {
+        "path": "docs/jeu/captures/evolution3/dense-1920x1080-clair-gris.png",
+        "status": "??",
+        "digest": "a4e03963855072043111b0ff504bf6bf8ff159240c2bb9213fe57e4d2b06d576"
+      },
+      {
+        "path": "docs/jeu/captures/evolution3/dense-1920x1080-sombre-couleur.png",
+        "status": "??",
+        "digest": "7f7b40720a3c4630352214224cdb4b9b739613249d8c172f74583eb76fd4fbe7"
+      },
+      {
+        "path": "docs/jeu/captures/evolution3/dense-1920x1080-sombre-gris.png",
+        "status": "??",
+        "digest": "b1535ac7b97eb6ea1057dd78d78775e364b52aaf1ac550698c2693587fe2680d"
+      },
+      {
+        "path": "docs/jeu/captures/evolution3/dense-360x640-clair-couleur.png",
+        "status": "??",
+        "digest": "1ad49ab7eae93ff59c57b97955750e296b95b5e913a246f088d3bdd07b7dee01"
+      },
+      {
+        "path": "docs/jeu/captures/evolution3/dense-360x640-clair-gris.png",
+        "status": "??",
+        "digest": "eb80f5082ce339cef4b5e1b64b4f269bc7fde30a31eb967a7124a5efefb03b75"
+      },
+      {
+        "path": "docs/jeu/captures/evolution3/dense-360x640-sombre-couleur.png",
+        "status": "??",
+        "digest": "c7590696c16352b125d6c2e3b4121c7f973ddf1c6b48c047ad60c446de737daf"
+      },
+      {
+        "path": "docs/jeu/captures/evolution3/dense-360x640-sombre-gris.png",
+        "status": "??",
+        "digest": "17601d5f06715624a71e35129fff1dd255b618301e943a54b9e7dd3ab3667bd9"
+      },
+      {
+        "path": "docs/jeu/captures/evolution3/dense-800x800-clair-couleur.png",
+        "status": "??",
+        "digest": "cd277e239f5e1ed1a48ca3f9e76bab6d218477cd0cba9f8217ac8ce564aca4fb"
+      },
+      {
+        "path": "docs/jeu/captures/evolution3/dense-800x800-clair-gris.png",
+        "status": "??",
+        "digest": "7a7afd20e1784574cce92969aebd5af0e33941e7f4d6286136a534f070fac327"
+      },
+      {
+        "path": "docs/jeu/captures/evolution3/dense-800x800-sombre-couleur.png",
+        "status": "??",
+        "digest": "30d3391a3004e85693403dfa99ea974202e860b9aa8b05bbb6bace03824913b9"
+      },
+      {
+        "path": "docs/jeu/captures/evolution3/dense-800x800-sombre-gris.png",
+        "status": "??",
+        "digest": "f0caab1b7a9cbdd1b6e3e21dd979806abae9e0b05ada6e037bc5d2cf6f741f56"
+      },
+      {
+        "path": "docs/jeu/captures/evolution3/tirs-apres-destruction.png",
+        "status": "??",
+        "digest": "72ca35fcf03c53d131a23de90f2e1eccf16888bc320e7d4b830e3d820f5b8e95"
+      },
+      {
+        "path": "docs/jeu/captures/gris-amas-dense-1280x720.png",
+        "status": "??",
+        "digest": "56003acae475a973bcc0c8bdc1f1abe0e96c9a330b22bb9df14289f9c35be2b3"
+      },
+      {
+        "path": "docs/jeu/captures/gris-amas-dense-1920x1080.png",
+        "status": "??",
+        "digest": "927b4f75c6f5f6c69cecf7b579b10e9b3662d1fa5ef0ad318b49399b97018f06"
+      },
+      {
+        "path": "docs/jeu/captures/gris-amas-dense-360x640.png",
+        "status": "??",
+        "digest": "b923b234c1879341df60dac364de1120878248ecdee1fa7074ca5672765fa3a3"
+      },
+      {
+        "path": "docs/jeu/captures/gris-amas-dense-800x800.png",
+        "status": "??",
+        "digest": "34700bf58dfe464a7859770ccdce46a0320e85302a5968c97e0acfae21b02a0f"
+      },
+      {
+        "path": "docs/jeu/captures/planche-1280x720.png",
+        "status": "??",
+        "digest": "65a6299220db8c208c16b1151a10f462cc8edc0caca1895ccf203c63f51b3d4e"
+      },
+      {
+        "path": "docs/jeu/captures/planche-1920x1080.png",
+        "status": "??",
+        "digest": "1ae7c77edf834b75160b599fa8fb42ae92bc29948882d677417e78cc2a373b03"
+      },
+      {
+        "path": "docs/jeu/captures/planche-360x640.png",
+        "status": "??",
+        "digest": "a27903bb0004f163edf87d9420bbb5ca41bbf5d8dcd12083735c0ffe39a965da"
+      },
+      {
+        "path": "docs/jeu/captures/planche-800x800.png",
+        "status": "??",
+        "digest": "9907fedb7edd84bd8d0afb8c0a097b14b53db9e58f74a7fc414ea784965f1f26"
+      },
+      {
+        "path": "docs/jeu/lisibilite.md",
+        "status": "??",
+        "digest": "9290592098a514b9ce54526d3fe24673d987cf18030fc0cde3e18d6759768c2d"
+      },
+      {
+        "path": "docs/jeu/sprites.md",
+        "status": "??",
+        "digest": "4dfdf45e9b7760360d2f4dde91ceeb30cdeb091c858c1b93dae43b3d2ffb9d7b"
+      },
+      {
+        "path": "public/jeu/sprites/README.md",
+        "status": "??",
+        "digest": "5513676703b19e665ccf3e21ef63b709b82faab4627d8a40ecffbe74d2a53f9a"
+      },
+      {
+        "path": "public/jeu/sprites/boss.svg",
+        "status": "??",
+        "digest": "d7f51fa744b9178f2a91f6b98fac5cd8a4862f1a5082ee072e842374c241f202"
+      },
+      {
+        "path": "public/jeu/sprites/caisse.svg",
+        "status": "??",
+        "digest": "699b744f035c41254ca9038f6d21c4686949f0da5484325cb99a5147ee7dc2cc"
+      },
+      {
+        "path": "public/jeu/sprites/ennemi.svg",
+        "status": "??",
+        "digest": "412d49bff81a4143c5a7ba8736d394de412a4da4d8d98ebabf9bd1e6171075be"
+      },
+      {
+        "path": "public/jeu/sprites/joueur.svg",
+        "status": "??",
+        "digest": "367b849e7f8cb145eb404b34f0af9f88ad792e7af28f3dc434cfd01527d6b9a9"
+      },
+      {
+        "path": "public/jeu/sprites/rocher.svg",
+        "status": "??",
+        "digest": "d574f7be0a6bfe904e7cb131276ed0828155260f2935c742ec9a0ebcde52b4d1"
+      },
+      {
+        "path": "public/jeu/sprites/sol.svg",
+        "status": "??",
+        "digest": "65a4efbee2298033703169ea41c20972cd5c7f93361f0874b779944d6a68d961"
+      },
+      {
+        "path": "public/jeu/sprites/tir-ennemi.svg",
+        "status": "??",
+        "digest": "008587c448c087605a6b54920f30546fe300a6502d3dafcd5da2cfe7b0ed42fc"
+      },
+      {
+        "path": "public/jeu/sprites/tir-joueur.svg",
+        "status": "??",
+        "digest": "90e94fc99598ea85d0842213092055d1e60ad3e276d08320e186c1073b3f5e5a"
+      },
+      {
+        "path": "public/jeu/sprites/tir-neutre.svg",
+        "status": "??",
+        "digest": "c43db70a2d455094cc03d9c82ec3745bb6132c18c0c5d49db9d4776bde9bed82"
+      },
+      {
+        "path": "public/jeu/sprites/vaisseau-mere.svg",
+        "status": "??",
+        "digest": "d62d55dde3823e80d7e51e70d768d204b9ab04afee9b2288a476b5920ac8769c"
+      },
+      {
+        "path": "scripts/verify-jeu-engine.mjs",
+        "status": "??",
+        "digest": "8da69eb61f5eedfa6c478bb5de2799f1a88b995177cb9b2340a69816178557b2"
+      },
+      {
+        "path": "src/client/jeu/readability.ts",
+        "status": "??",
+        "digest": "7d87a53213d9d3361faeff8f99fccf694c4888a58abdba7f7e3a43cfa71990ab"
+      },
+      {
+        "path": "src/client/jeu/sheet.ts",
+        "status": "??",
+        "digest": "be42bac797738d5e9c5a9f315c7cfc3b273e3a6b89d7a686866a255fcf6d8cd1"
+      },
+      {
+        "path": "src/client/jeu/sprites.ts",
+        "status": "??",
+        "digest": "bd2a8b6c0f598dc2ddf415de72c30cb04df8d9e14721d7472b2a9cbd166938e0"
+      },
+      {
+        "path": "tests/jeu-preparation.test.mjs",
+        "status": "??",
+        "digest": "5903a6c1f799b9312a93075f9666e1d8af7ddba9e93decec6666744824a7fcea"
+      },
+      {
+        "path": "tests/jeu-readability.test.mjs",
+        "status": "??",
+        "digest": "6d01a0b2f2b1c056e1523be4fb1e244cea9ba80d70134912ca8b4e1419eddff0"
+      },
+      {
+        "path": "tests/jeu-snapshots.test.mjs",
+        "status": "??",
+        "digest": "015a49d3f17c40a2a6751c6a6b7e5ecf4d6411f8ebc8baeb2edc96daa50207d8"
+      },
+      {
+        "path": "tests/jeu-sprites.test.mjs",
+        "status": "??",
+        "digest": "1e955b22da506623d801c34419c5fd2996f084b51fc40a4b7b6b944be6774a9e"
+      }
+    ]
+  },
+  "commands": [
+    {
+      "name": "suite-actuelle-196-cas",
+      "executable": "npm",
+      "args": [
+        "test"
+      ],
+      "status": "passed",
+      "covers": [
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "name": "typecheck",
+      "executable": "npm",
+      "args": [
+        "run",
+        "typecheck"
+      ],
+      "status": "passed",
+      "covers": []
+    },
+    {
+      "name": "jeu-lisibilite-scene-dense-couleur-gris-fonds-et-quatre-formats",
+      "executable": "node",
+      "args": [
+        "scripts/test.mjs",
+        "jeu-lisibilite-scene-dense-couleur-gris-fonds-et-quatre-formats"
+      ],
+      "status": "passed",
+      "covers": [
+        0,
+        1
+      ]
+    },
+    {
+      "name": "jeu-lisibilite-proprietes-reelles-degats-origines-et-double-identite",
+      "executable": "node",
+      "args": [
+        "scripts/test.mjs",
+        "jeu-lisibilite-proprietes-reelles-degats-origines-et-double-identite"
+      ],
+      "status": "passed",
+      "covers": [
+        1,
+        2
+      ]
+    },
+    {
+      "name": "jeu-lisibilite-tirs-prioritaires-effets-trajectoire-redimensionnement-et-zoom",
+      "executable": "node",
+      "args": [
+        "scripts/test.mjs",
+        "jeu-lisibilite-tirs-prioritaires-effets-trajectoire-redimensionnement-et-zoom"
+      ],
+      "status": "passed",
+      "covers": [
+        2,
+        3
+      ]
+    },
+    {
+      "name": "jeu-lisibilite-instantanes-geles-changement-scene-et-metadonnees-combat",
+      "executable": "node",
+      "args": [
+        "scripts/test.mjs",
+        "jeu-lisibilite-instantanes-geles-changement-scene-et-metadonnees-combat"
+      ],
+      "status": "passed",
+      "covers": [
+        2,
+        4
+      ]
+    },
+    {
+      "name": "jeu-lisibilite-orientations-limites-visuelles-selection-et-disparition",
+      "executable": "node",
+      "args": [
+        "scripts/test.mjs",
+        "jeu-lisibilite-orientations-limites-visuelles-selection-et-disparition"
+      ],
+      "status": "passed",
+      "covers": [
+        2,
+        3
+      ]
+    },
+    {
+      "name": "npm run build",
+      "executable": "npm",
+      "args": [
+        "run",
+        "build"
+      ],
+      "status": "passed",
+      "covers": []
+    }
+  ]
+}

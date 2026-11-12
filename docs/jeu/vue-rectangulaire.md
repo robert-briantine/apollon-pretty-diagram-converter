@@ -1,5 +1,8 @@
 # Vue rectangulaire — évolution 1
 
+Les enveloppes provisoires décrites ici sont remplacées par les sprites de
+[l’évolution 2](sprites.md). Le contrat de caméra ci-dessous reste valable.
+
 Après `npm run build` puis `npm start`, ouvrir
 <http://127.0.0.1:3000/jeu-demo.html>. L'application de diagrammes reste à `/`.
 La démonstration indique explicitement l'absence de moteur. Elle utilise les
@@ -13,8 +16,8 @@ le cadrage du scénario, « Planète entière » montre le disque complet.
 Cliquer une enveloppe affiche son identifiant, sa catégorie et sa position monde.
 « Suivre le joueur » centre la caméra sur sa position, y compris lors de la
 réception d'un nouvel instantané ; déplacer manuellement la caméra libère le suivi.
-Les rectangles colorés sont les enveloppes de référence : les sprites et la
-flèche de cible relèvent des évolutions suivantes.
+Les enveloppes provisoires sont remplacées par les [sprites](sprites.md) ;
+la [flèche de cible](guidage.md) est désormais intégrée au même rectangle.
 
 Le jeu occupe toute la hauteur et la largeur restante après la bande droite.
 Sa largeur vaut `largeurFenêtre − min(240, floor(largeurFenêtre × 0.2))` en pixels CSS.
